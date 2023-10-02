@@ -24,6 +24,13 @@ use Illuminate\Support\Facades\Route;
     return 'Route, Config and View cache has been cleared';
 });
 */
+
+Route::get('/cacheclear', function(){
+Artisan::Call('config:cache');
+Artisan::Call('view:cache');
+Artisan::Call('route:cache');
+});
+
 Route::get('/login', function () {
     return view('login');
 });
@@ -91,9 +98,5 @@ Route::get('/about-us', function () {
 });
 
 
-Route::get('/cacheclear', function(){
-Artisan::Call('config:cache');
-Artisan::Call('view:cache');
-Artisan::Call('route:cache');
-});
+
  
