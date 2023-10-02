@@ -97,6 +97,4 @@ Route::get('/about-us', function () {
     return view('frontend.about-us');
 });
 
-
-
- 
+?>
