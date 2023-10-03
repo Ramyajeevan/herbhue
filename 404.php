@@ -5,6 +5,6 @@
     <meta name="viewport" content="width=device-width,  initial-scale=1.0, maximum-scale=1.0, user-scalable=no”, shrink-to-fit=no">
   </head>
   <body>
-    <h1>Hai</h1>
+    <h1>Error</h1>
   </body>
 </html>
