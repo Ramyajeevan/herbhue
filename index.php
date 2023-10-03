@@ -3,7 +3,7 @@
     <meta charset="utf-8">
   </head>
   <body>
-    <h1>Hai</h1>
+    <h1>Azure</h1>
     <?php
 echo "This is my file";
 ?>
