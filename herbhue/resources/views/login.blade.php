@@ -13,7 +13,7 @@
         integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href=" {{asset('css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('css/style.css')}}">
 </head>
 
 <body> 
@@ -47,13 +47,13 @@
                     </div>
 
                     <button class="submit-button" type="submit">Sign In</button>
-                    <p class="text-center mt-4">Have a query?  <a href="{{('/contact-us')}}" class="text-green text-decoration-none">Contact Us</a> </p>
+                    <p class="text-center mt-4">Have a query?  <a href="{{ route('contact-us')}}" class="text-green text-decoration-none">Contact Us</a> </p>
                     
-                    <p class="text-center p-0 m-0">Don't have an account?<a href="{{('/signup')}}" class="text-green text-decoration-none"> Register Now</a> </p>
+                    <p class="text-center p-0 m-0">Don't have an account?<a href="{{ route('signup')}}" class="text-green text-decoration-none"> Register Now</a> </p>
                 </div>
             </div>
             <div class="col-lg-5 text-end pe-0">
-                <img src="img/login-img.png" class="w-75 h-75" alt="">
+                <img src="{{ asset('img/login-img.png') }}" class="w-75 h-75" alt="">
             </div>
         </div>
     </div>
