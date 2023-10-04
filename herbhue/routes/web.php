@@ -15,13 +15,19 @@ use Illuminate\Support\Facades\Route;
 
 
 // Clear All cache:
-Route::get('/clear', function () {
+/*Route::get('/clear', function () {
     Artisan::call('cache:clear');
     Artisan::call('route:cache');
     Artisan::call('config:cache');
     Artisan::call('view:clear');
     Cache::flush();
     return 'Route, Config and View cache has been cleared';
+});
+*/
+Route::get('/cacheclear', function(){
+Artisan::Call('config:cache');
+Artisan::Call('view:cache');
+Artisan::Call('route:cache');
 });
 
 Route::get('/login', function () {
