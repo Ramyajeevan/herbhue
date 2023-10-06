@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,7 +30,7 @@ Artisan::Call('config:cache');
 Artisan::Call('view:cache');
 Artisan::Call('route:cache');
 });
-
+Route::get('/',[HomeController::class, 'index'])->name('home');
 Route::get('login', function () {
     return view('login');
 })->name('login');
