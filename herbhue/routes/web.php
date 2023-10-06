@@ -30,7 +30,13 @@ Artisan::Call('config:cache');
 Artisan::Call('view:cache');
 Artisan::Call('route:cache');
 });
+
+
 Route::get('/',[HomeController::class, 'index'])->name('home');
+
+
+
+
 Route::get('login', function () {
     return view('login');
 })->name('login');
