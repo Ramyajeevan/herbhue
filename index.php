@@ -5,7 +5,7 @@
   <body>
     <h1>Azure</h1>
     <?php
-echo "This is my Azure file";
+echo "This is my Azure first file";
 ?>
   </body>
 </html>
