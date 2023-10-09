@@ -27,7 +27,7 @@
                    
                     <p class="fs-5 mt-4 ">Thanks for registering your account on Herb Hue. You should have received an email from us.</p>
  
-                    <button class="btn btn-outline-primary btn-lg px-3" type="submit">Continue</button>
+                    <a href="{{ route('login') }}" class="btn btn-outline-primary btn-lg px-3" type="submit">Continue</a>
                    
                     
                     
