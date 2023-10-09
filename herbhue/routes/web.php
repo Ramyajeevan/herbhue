@@ -24,8 +24,6 @@ Route::get('/clear', function () {
     return 'Route, Config and View cache has been cleared';
 });
 
-
-
 Route::get('/login', function () {
     return view('login');
 });
@@ -37,8 +35,6 @@ Route::get('/registrationsuccessfull', function () {
     return view('registrationsuccessfull');
 });
 
-
-
 Route::get('/', function () {
     return view('frontend.index');
 });
@@ -46,7 +42,6 @@ Route::get('/', function () {
 Route::get('/productpage', function () {
     return view('frontend.productpage');
 });
-
 
 Route::get('/cart', function () {
     return view('frontend.cart');
