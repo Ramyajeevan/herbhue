@@ -4,8 +4,6 @@
   </head>
   <body>
     <h1>Azure</h1>
-    <?php
-echo "This is my First Azure file";
-?>
+    <p>This is my First Azure file</p>
   </body>
 </html>
