@@ -1,4 +1,7 @@
 @extends('layouts.app1')
+@section('title')
+<title>Herbhue - Admin Panel</title>
+@endsection
 @section('content')
 
 
