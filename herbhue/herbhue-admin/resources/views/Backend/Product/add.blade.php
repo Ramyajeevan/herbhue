@@ -1,4 +1,9 @@
 @extends('layouts.app')
+@section('css')
+    <!-- This Page CSS -->
+    <link rel="stylesheet" href="{{ asset('dist/libs/ckeditor/samples/toolbarconfigurator/lib/codemirror/neo.css') }}">
+    <link rel="stylesheet" href="{{ asset('dist/libs/ckeditor/samples/css/samples.css') }}">
+@endsection
 @section('breadcrumb')
 <!-- -------------------------------------------------------------- -->
 <!-- Bread crumb and right sidebar toggle -->
@@ -106,13 +111,26 @@
              <div class="mb-3 row">
                 <label class="col-md-2 col-form-label" for="description">Product Description</label>
                 <div class="col-md-10">
-              <textarea class="form-control" name="description" id="description" required></textarea>
+              <textarea class="form-control" cols="80" id="description" name="description"
+                    rows="10"
+                    data-sample="1"
+                    data-sample-short="" required></textarea>
               </div>
             </div>
             <div class="mb-3 row">
                 <label class="col-md-2 col-form-label" for="describe">Short description</label>
                 <div class="col-md-10">
                   <input class="form-control" name="describe" id="describe" type="text" placeholder="Enter Short Description" required>
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label class="col-md-2 col-form-label" for="wellness">Wellness</label>
+                <div class="col-md-10">
+                  <input type="radio" class="btn-check" name="wellness" id="wellness1" value="yes" autocomplete="off" checked>
+                  <label class="btn btn-outline-primary rounded-pill font-weight-medium" for="wellness1">Yes</label>
+
+                  <input type="radio" class="btn-check" name="wellness" id="wellness2" value="no" autocomplete="off">
+                  <label class="btn btn-outline-warning rounded-pill font-weight-medium" for="wellness2">No</label>
                 </div>
             </div>
             <div class="mb-3 row">
@@ -259,6 +277,10 @@
 <!-- --------------------------------------------------------------- -->
 <script src="{{ asset('dist/libs/jquery.repeater/jquery.repeater.min.js') }}"></script>
 <script src="{{ asset('dist/js/plugins/repeater-init.js') }}"></script>
+
+
+    <script src="{{ asset('dist/libs/ckeditor/ckeditor.js') }}"></script>
+    <script src="{{ asset('dist/libs/ckeditor/samples/js/sample.js') }}"></script>
 <script>
    function onlyNumberKey(evt) {
              
@@ -291,4 +313,62 @@
     }
   }
 </script>
+<script>
+      //default
+      initSample();
+      var editor1 = CKEDITOR.replace('description', {
+        extraAllowedContent: 'div',
+        height: 460,
+      });
+      editor1.on('instanceReady', function () {
+        // Output self-closing tags the HTML4 way, like <br>.
+        this.dataProcessor.writer.selfClosingEnd = '>';
+
+        // Use line breaks for block elements, tables, and lists.
+        var dtd = CKEDITOR.dtd;
+        for (var e in CKEDITOR.tools.extend(
+          {},
+          dtd.$nonBodyContent,
+          dtd.$block,
+          dtd.$listItem,
+          dtd.$tableContent,
+        )) {
+          this.dataProcessor.writer.setRules(e, {
+            indent: true,
+            breakBeforeOpen: true,
+            breakAfterOpen: true,
+            breakBeforeClose: true,
+            breakAfterClose: true,
+          });
+        }
+        // Start in source mode.
+        this.setMode('source');
+      });
+    </script>
+     <script data-sample="1">
+      CKEDITOR.replace('testedit', {
+        height: 150,
+      });
+    </script>
+    <script>
+    function showalert()
+    {
+      alert('You are not Logged In. Please Register/LogIn yourself !');
+    }
+  function addtowishlist(product_id)
+  {
+    //alert(product_id);
+     var url="{{URL('addtowishlist')}}";
+      $.ajax(
+        {
+          url: url,
+          method: 'post', 
+          data:{"product_id":product_id, "_token": "{{ csrf_token() }}" },
+          success: function (response)
+          {
+             alert(response);
+           // window.location.reload();
+          }
+        });
+  }
 @endsection

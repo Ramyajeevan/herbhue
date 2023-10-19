@@ -10,7 +10,7 @@ use App\Http\Controllers\Backend\ProductController;
 use App\Http\Controllers\Backend\CouponController;
 use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\Backend\OrderController;
-
+use App\Http\Controllers\Backend\BrandController;
 use App\Http\Controllers\HomeController;
 /*
 |--------------------------------------------------------------------------
@@ -93,4 +93,11 @@ Route::delete('coupon/{id}',[CouponController::class, 'destroy'])->name('coupon.
 Route::get('coupon/update/{id}',[CouponController::class, 'edit'])->name('coupon.edit');
 Route::post('coupon/update/{id}',[CouponController::class, 'update'])->name('coupon.update');
 Route::post('coupon/status',[CouponController::class, 'changestatus'])->name('coupon.status');
+
+Route::get('brand',[BrandController::class, 'index'])->name('brand.index');
+Route::get('brand/create',[BrandController::class, 'create'])->name('brand.create');
+Route::post('brand/create',[BrandController::class, 'store'])->name('brand.store');
+Route::delete('brand/{id}',[BrandController::class, 'destroy'])->name('brand.destroy');
+Route::get('brand/update/{id}',[BrandController::class, 'edit'])->name('brand.edit');
+Route::post('brand/update/{id}',[BrandController::class, 'update'])->name('brand.update');
 ?>

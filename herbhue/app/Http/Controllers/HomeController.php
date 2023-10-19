@@ -7,7 +7,12 @@ use Illuminate\Http\Request;
 use App\Repositories\HomeRepository;
 use DB;
 use Session;
-
+use App\Models\Banner;
+use App\Models\Category;
+use App\Models\SubCategory;
+use App\Models\Brand;
+use App\Models\Product;
+use Illuminate\Support\Str;
 class HomeController extends Controller
 {
   protected $homeRepository;
@@ -23,7 +28,9 @@ class HomeController extends Controller
         $banner=$this->homeRepository->getAllBanners();
         $category=$this->homeRepository->getAllCategories();
         $product=$this->homeRepository->getAllProducts();
-        return view('index',["banner"=>$banner,"category"=>$category,"product"=>$product]);
+        $brand=$this->homeRepository->getAllBrands();
+        $wellproduct=$this->homeRepository->getAllWellProducts();
+        return view('index',["banner"=>$banner,"category"=>$category,"product"=>$product,"brand"=>$brand,"wellproduct"=>$wellproduct]);
      // return view('home');
     }
     public function login()
@@ -49,8 +56,24 @@ class HomeController extends Controller
         else
         {
           session()->put('username',$email);
+          	$session_id=Session::getId();
+          $cartcount=DB::table('tbl_cart')->where("session_id",$session_id)->count();
+          if($cartcount>0)
+          {
+            
+            $user=DB::table('tbl_user')->where("email",Session::get('username'))->first();
+            if($user)
+            {
+            	$user_id=$user->id;
+            
+                DB::table('tbl_cart')->where("session_id",$session_id)->update(["user_id"=>$user_id]);
+            	return redirect()->route('checkout');
+            }
+          }
+          else
+          {
           return redirect()->route('myaccount');
-          //return redirect()->back();
+          }
         }
       }
       else
@@ -158,7 +181,7 @@ class HomeController extends Controller
       $email=Session::get('username');
       $user=DB::table('tbl_user')->where("email",$email)->first();
       $user_id=$user->id;
-	  DB::table('tbl_user')->where("email",$email)->update(["name"=>$request->name,"mobile"=>$request->mobile]);
+	    DB::table('tbl_user')->where("email",$email)->update(["name"=>$request->name,"mobile"=>$request->mobile,'dob'=>$request->dob]);
        return redirect()->route('myaccount');
     }
     
@@ -242,52 +265,68 @@ class HomeController extends Controller
         }
       return view('vieworder', ["user"=>$user,'order' => $orders,'order_products'=>$order_products,'billing'=>$billing,'page'=>$url['5']]);
     }
-  	public function products(Request $request)
+  	public function products()
     {
       //dd(request());
         
-        
-        $products = Product::where("status","1");
+      /* $products = Product::where("id","!=","");
         $category_name=""; $subcategory_name="";
-        if(!empty($request->category_id))
+        $category_id=request()->category_id;
+        $subcategory_id=request()->subcategory_id;
+        if(!empty($category_id))
         {
-          $category=Category::find($request->category_id);
+          $category=Category::find($category_id);
           if(isset($category)) $category_name=$category->name; else $category_name="";
-          $products=$products->where("category_id",$request->category_id);
+          $products=$products->where("category_id",$category_id);
         }
-        if(!empty($request->subcategory_id))
+        if(!empty($subcategory_id))
         {
-          $subcategory=SubCategory::find($request->subcategory_id);
+          $subcategory=SubCategory::find($subcategory_id);
           if(isset($subcategory)) $subcategory_name=$subcategory->name; else $subcategory_name="";
-          $products=$products->where("subcategory_id",$request->subcategory_id);
+          $products=$products->where("subcategory_id",$subcategory_id);
         }  
        
        // $products=$products->get();
-        $pricefilter=request()->pricefilter;
-      	if($pricefilter!="")
+        $min_price=request()->min_price;
+      	if($min_price!="")
         {
-          list($min,$max)=@explode(";",$pricefilter);
-          $products=$products->where("selling_price",">=",$min)->where("selling_price","<=",$max);
+
         }
-        
+        $max_price=request()->max_price;
+      	if($max_price!="")
+        {
+
+        }*/
+        $category_id=request()->category_id;
+        $subcategory_id=request()->subcategory_id;
+        $min_price=request()->min_price;
+        $max_price=request()->max_price;
+        $products = $this->homeRepository->getProducts($category_id,$subcategory_id,$min_price,$max_price);
+        /*
        if(isset($request->searchkey))
        {
            $products=$products->where("name", 'like', '%'.$request->searchkey.'%');
        }
-       $products=$products->paginate(12);
+       
    
         
         $maxprice=0;
         $price=Product::max("selling_price");
-        $maxprice=round($price);
-        return view('products', ['products' => $products,'maxprice'=>$maxprice,'category_name'=>$category_name]);
+        $maxprice=round($price);*/
+       // $products=$products->paginate(12);
+       /* for($i=0;$i<count($products);$i++)
+        {
+          $products[$i]->description=Str::limit($products[$i]->description, 30, '...');
+            $product_options=DB::table("tbl_product_options")->where("product_id",$products[$i]->id)->first();
+            $products[$i]->product_options=$product_options;
+        }*/
+        //$min_price=0;
+        return view('products', ['products' => $products,'category_id'=>$category_id,'subcategory_id'=>$subcategory_id,'min_price'=>$min_price,'max_price'=>$max_price]);
     }
   	
   	public function productdetail($id)
     {
-      $products = Product::where("id",$id)->first();
-	  $category=Category::where("id",$products->category_id)->first();
-      $subcategory=SubCategory::where("id",$products->subcategory_id)->first();
+      /*
       
       
       $related_products = Product::where("id","!=",$id);
@@ -302,21 +341,15 @@ class HomeController extends Controller
           else
             $related_products[$i]->category_name="";
         }
-      $rating_product = DB::table('tbl_rating_review')->select('product_id', DB::raw('SUM(rating) as sum_rating'),DB::raw('count(user_id) as totalusers')) ->where('status','1')->where('product_id',$products->id) ->groupBy("product_id")->first();
-        if(isset($rating_product))
-        {
-          $sum_rating=$rating_product->sum_rating;   
-          $totalusers=$rating_product->totalusers;
-          $rating=$sum_rating/$totalusers;
-        }
-        else
-        {
-          $sum_rating=0;   
-          $totalusers=0;
-          $rating=0;
-        }
-         $rating_products = DB::table('tbl_rating_review')->where('status','1')->where('product_id',$products->id)->get();
-      return view('productdetail', ['products' => $products,'related_products'=>$related_products,'rating_products'=>$rating_products,'category_name'=>$category->name,'subcategory_name'=>$subcategory->name,'rating'=>$rating,'totalusers'=>$totalusers]);
+      
+         */
+         $products=$this->homeRepository->getProductDetail($id);
+         $wishlist_user=0;
+         $wishlist_user=$this->homeRepository->getWishlist($id);
+         $rating_products=$this->homeRepository->getProductReviews($id);
+         $rating=$this->homeRepository->getProductRatings($id);
+         //print_r($rating);
+      return view('productdetail', ['products' => $products,'wishlist_user'=>$wishlist_user,'rating_products'=>$rating_products,'stars'=>$rating["stars"],'totalusers'=>$rating["totalusers"]]);//,'related_products'=>$related_products]);
     }
   	
   	public function forgotpassword()
@@ -413,25 +446,29 @@ class HomeController extends Controller
     public function addtowishlist(Request $request)
     {
       $product_id=$request->product_id;
-     if(empty(Session::get('username')))
-        $user_id=0;
-      else
-      {
-        	$user=DB::table('tbl_user')->where("email",Session::get('username'))->first();
-        	$user_id=$user->id;
-      }
-       $wishlist=DB::table("tbl_wishlist")->where("user_id",$user_id)->where("product_id",$product_id)->first();
-       if(!$wishlist)
+      $wishlist = $this->homeRepository->addtowishlist($product_id);
+      if($wishlist)
        {
-       $id = DB::table('tbl_wishlist')->insertGetId([
-          	'product_id' => $product_id, 
-            'user_id' => $user_id
-	      ]);
-      echo "Product added to wishlist successfully";
+          echo "Product added to wishlist successfully";
        }
        else
        {
            echo "Product already added in wishlist";
+       }
+      exit;
+    }
+    public function checkpincode(Request $request)
+    {
+      $product_id=$request->product_id;
+      $pincode=$request->pincode;
+      $checkpincode = $this->homeRepository->checkpincode($pincode);
+      if($checkpincode)
+       {
+          echo "This is a deliverable pincode";
+       }
+       else
+       {
+           echo "This is not a deliverable pincode";
        }
       exit;
     }
@@ -445,20 +482,11 @@ class HomeController extends Controller
   	public function subscribe(Request $request)
     {
       $email=$request->email;
-      $subscribe=DB::table('tbl_newsletter')->where("email",$email)->first();
-      if($subscribe)
-      {
+      $subscribe = $this->homeRepository->subscribe($email);
+      
         echo "Newsletter subscribed successfully";
         exit;
-      }
-      else
-      {
-        $id = DB::table('tbl_newsletter')->insertGetId([
-          	'email' => $email
-	      ]);
-        echo "Newsletter subscribed successfully";
-        exit;
-      }
+      
     }
   	
   	public function addrating(Request $request)

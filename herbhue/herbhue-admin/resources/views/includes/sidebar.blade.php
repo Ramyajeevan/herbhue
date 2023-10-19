@@ -113,6 +113,28 @@
            
           </ul>
         </li>
+
+        <li class="sidebar-item">
+          <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0);" aria-expanded="false">
+            <i data-feather="sidebar" class="feather-icon"></i>
+            <span class="hide-menu">Brand </span>
+          </a>
+          <ul aria-expanded="false" class="collapse first-level">
+            <li class="sidebar-item">
+              <a href="{{ route('brand.index') }}" class="sidebar-link">
+                <i class="mdi mdi-view-quilt"></i>
+                <span class="hide-menu"> View Brands </span>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a href="{{ route('brand.create') }}" class="sidebar-link">
+                <i class="mdi mdi-view-parallel"></i>
+                <span class="hide-menu"> Add Brand </span>
+              </a>
+            </li>
+          </ul>
+        </li>
+
         <li class="sidebar-item">
           <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0);" aria-expanded="false">
             <i data-feather="cpu" class="feather-icon"></i>

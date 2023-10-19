@@ -5,18 +5,30 @@
             <ul class="  d-flex ul">
                 <li class="me-3">
                     @if(empty(Session::get('username')))
-                    <a class="nav-link active text-nowrap" aria-current="page" href="{{ route('login') }}">Login | Sign Up</a>
+                    <a class="nav-link text-nowrap" href="{{ route('login') }}">Login | Sign Up</a>
                     @else
-                    <a class="nav-link active text-nowrap" aria-current="page" href="{{ route('myaccount') }}">My Account</a>
+                    <a class="nav-link text-nowrap" href="{{ route('myaccount') }}">My Account</a>
                     @endif
                 </li>
                 <li class="me-3">
                     <a class="nav-link" href="javascript:void(0);">Offers</a>
                 </li>
+
+                @php
+                $cart_items=0;
+                $session_id=Session::getId();
+                $cart_items=DB::table('tbl_cart')->where("session_id",$session_id)->sum("quantity");
+                @endphp
                 <li class="me-3">
-                    <a class="nav-link" href="javascript:void(0);"><img src="{{ asset('img/shopping_cart_FILL1_wght400_GRAD0_opsz48 (3).svg') }}" alt="" class="nav-icon"></a>
-                    
+                    <a class="nav-link" href="{{ route('viewcart') }}">
+                    <button type="button" class="btn bg-transparent border-0 position-relative">
+                        <img src="{{ asset('img/shopping_cart_FILL1_wght400_GRAD0_opsz48 (3).svg') }}" alt="" class="nav-icon">
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                        {{ $cart_items }}
+                        </span>
+                    </a>
                 </li>
+               
                 <li class="me-3">
                     <a class="nav-link" href="javascript:void(0);"><img src="{{ asset('img/favorite_FILL1_wght400_GRAD0_opsz48 (2).svg') }}" alt="" class="nav-icon"></a>
                 </li>
@@ -58,20 +70,20 @@
             <nav class="d-none d-lg-block">
                 <ul class="main-menu d-flex flex-column flex-lg-row align-items-lg-center list-unstyled p-0 m-0">
                 @php
-                $category = DB::table('tbl_category')->select("id","name")->get();
+                $category = DB::table('tbl_category')->select("id","name")->take(10)->get();
                 @endphp
                 @foreach($category as $cat)
                     <li>
                         @php
                             $subcategory=DB::table('tbl_subcategory')->select("id","name")->where("category_id",$cat->id)->get();
                         @endphp
-                    <a href="javascript:void(0);" class="d-block">
+                        <a  href="{{ route('products')}}?category_id={{ $cat->id}}" class="d-block">
                             <span class="text-nowrap">{{ $cat->name }} <i class="fa fa-angle-down ms-1 fs-5"></i></span>
                         </a>
                         <ul class="sub-menu list-unstyled p-0 m-0">
                             @foreach($subcategory as $subcat)
                             <li>
-                                <a href="javascript:void(0);" class="d-block">
+                                <a href="{{ route('products')}}?category_id={{ $cat->id}}&subcategory_id={{$subcat->id}}" class="d-block">
                                     <span>{{ $subcat->name }} </span>
                                 </a>
                             </li>
@@ -113,3 +125,4 @@
     </div>
 </div>
 <!-- side menu end -->
+

@@ -36,12 +36,14 @@
                                 <img src="http://localhost/herbhue/herbhue-admin/public/images/{{ $prod->image1 }}" class="w-75" alt="">
                             </div>
                             <h5>{{ $prod->name }}</h5>
+                            <span class="text-secondary pb-1 mb-1 d-inline-block text-truncate" style="max-width: 265px;">
+                            {!! $prod->description !!}</p>
                             <p class="text-secondary p-0 m-0">{{ $prod->describe }}</p>
                             <span class="text-secondary">M.R.P: <span
                                     class="text-decoration-line-through text-secondary"> &pound; {{ $prod->product_options->mrp_price }}</span> </span>
                             <p>&pound; {{ $prod->product_options->price }}</p>
 
-                            <button type="button" class="btn btn-success w-100">Add to cart</button>
+                            <a href="{{ route('productdetail', $prod->id) }}"  class="btn btn-success w-100">View Product</a>
                         </div>
                     </div>
                 </div>
@@ -63,46 +65,13 @@
             <h4>Our Top Brands</h4>
 
             <div class="cate-2 owl-carousel owl-theme">
+                @foreach($brand as $brands)
                 <div class="item">
                     <div class="card border-0">
-                        <img src="img/dabur.png" class="w-100" alt="">
+                        <img src="http://localhost/herbhue/herbhue-admin/public/images/{{ $brands->image }}" class="w-100" alt="">
                     </div>
                 </div>
-                <div class="item">
-                    <div class="card border-0">
-                        <img src="img/dabur.png" class="w-100" alt="">
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="card border-0">
-                        <img src="img/dabur.png" class="w-100" alt="">
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="card border-0">
-                        <img src="img/dabur.png" class="w-100" alt="">
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="card border-0">
-                        <img src="img/dabur.png" class="w-100" alt="">
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="card border-0">
-                        <img src="img/dabur.png" class="w-100" alt="">
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="card border-0">
-                        <img src="img/dabur.png" class="w-100" alt="">
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="card border-0">
-                        <img src="img/dabur.png" class="w-100" alt="">
-                    </div>
-                </div>
+                @endforeach
             </div>
 
         </div>
@@ -119,7 +88,29 @@
                 <p class="text-green">View All</p>
             </div>
             <div class="cate-3 owl-carousel owl-theme">
+                @foreach($wellproduct as $wellprod)
                 <div class="item">
+                    <div class="card border-secondary">
+                        <div class="card-body">
+                            <div class="row  pb-2">
+                                <div class="col-3">
+                                    <img src="http://localhost/herbhue/herbhue-admin/public/images/{{ $wellprod->image1 }}" class="w-100" alt="">
+                                </div>
+                                <div class="col-9">
+                                    <h6 class="fw-bold">{{ $wellprod->name }}</h6>
+                                    <p class="text-secondary pb-1 mb-1 d-inline-block text-truncate" style="max-width: 265px;">{!! $wellprod->description !!}</p>
+                                    <p class="text-secondary p-0 m-0">{{ $wellprod->describe }}</p>
+                                    <span class="text-secondary">M.R.P: <span
+                                            class="text-decoration-line-through text-secondary">&pound; {{ $wellprod->product_options->mrp_price }}</span><br><span
+                                            class="fw-bold text-black">&pound; {{ $wellprod->product_options->price }}</span></span>
+                                </div>
+ 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @endforeach
+               <!-- <div class="item">
                     <div class="card border-secondary mb-3">
                         <div class="card-body">
                         <div class="row  pb-2">
@@ -278,7 +269,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
 
         </div>
@@ -315,4 +306,111 @@
             
         </div>
 
+@endsection
+@section('script')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+        integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+        <script async="" defer="" src="https://buttons.github.io/buttons.js"></script>
+    <script>
+        $(".cate-1").owlCarousel({
+            loop: true,
+            margin: 20,
+            nav: true,
+            autoplay: false,
+            dots: false,
+            responsive: {
+                0: {
+                    items: 1,
+                    nav: true,
+                },
+                600: {
+                    items: 2,
+                    nav: true,
+                },
+                1000: {
+                    items: 4,
+                    nav: true,
+                },
+            },
+        });
+
+
+        $(".cate-2").owlCarousel({
+            loop: true,
+            margin: 20,
+            nav: true,
+            autoplay: false,
+            dots: false,
+            responsive: {
+                0: {
+                    items: 1,
+                    nav: true,
+                },
+                600: {
+                    items: 3,
+                    nav: true,
+                },
+                1000: {
+                    items: 6,
+                    nav: true,
+                },
+            },
+        });
+
+
+
+
+        $(".cate-3").owlCarousel({
+            loop: true,
+            margin: 20,
+            nav: true,
+            autoplay: false,
+            dots: false,
+            responsive: {
+                0: {
+                    items: 1,
+                    nav: true,
+                },
+                600: {
+                    items: 2,
+                    nav: true,
+                },
+                1000: {
+                    items: 3,
+                    nav: true,
+                },
+            },
+        });
+
+
+
+
+        $(".testimonial").owlCarousel({
+            loop: true,
+            margin: 20,
+            nav: true,
+            autoplay: false,
+            dots: false,
+            responsive: {
+                0: {
+                    items: 1,
+                    nav: true,
+                },
+                600: {
+                    items: 1,
+                    nav: true,
+                },
+                1000: {
+                    items: 2,
+                    nav: true,
+                },
+            },
+        });
+
+
+    </script>
+    
+   
 @endsection

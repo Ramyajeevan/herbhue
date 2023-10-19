@@ -19,14 +19,9 @@
             <div class="col-lg-5">
                 <div class="form-container">
                     <img src="{{asset('img/Successful Registration Page.png')}}" width="350px" alt="">
-                <h2 class="text-green mt-4">Sign in to Account</h2>
-                   
+                    <h2 class="text-green mt-4">Congratulations !</h2>
                     <p class="fs-5 mt-4 ">Thanks for registering your account on Herb Hue. You should have received an email from us.</p>
- 
                     <a class="btn btn-outline-primary btn-lg px-3" href="{{ route('login') }}">Continue</a>
-                   
-                    
-                    
                 </div>
             </div>
             <div class="col-lg-2"></div>

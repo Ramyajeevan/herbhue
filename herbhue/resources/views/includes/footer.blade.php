@@ -14,10 +14,9 @@
             </div>
             <div class="col-lg-6">
                 <div class="input-group mb-3">
-                    <input type="text" class="form-control rounded-pill   form-control-lg w-100"
+                    <input type="email" id="subscribeEmail" name="subscribeEmail" class="form-control rounded-pill   form-control-lg w-100"
                         aria-label="Recipient's username" aria-describedby="button-addon2">
-                    <button class="btn btn-primary  px-3 rounded-pill signup" type="button"
-                        id="button-addon2">Sign Up</button>
+                        <button class="btn btn-primary  px-3 rounded-pill signup z-99" type="button"  id="button-addon2" onclick="subscribe();">Sign Up</button>
                 </div>
             </div>
 
@@ -40,14 +39,16 @@
                 <h6 class="text-uppercase fw-bold mb-4 text-black">
                     Got Questions? Call Us 24/7
                 </h6>
-                <p class="text-black fw-bold"><img src="img/Call Icon.svg" width="18px" class="me-2"
-                        alt="call icon">+44 0000 000000</p>
+                <p class="text-black fw-bold">
+                    <img src="{{ asset('img/Call Icon.svg') }}" width="18px" class="me-2" alt="call icon">+44 0000 000000
+                </p>
                 <h6 class="text-uppercase fw-bold my-4 text-black">
                     Contact Info
                 </h6>
-                <p class="text-black "><img src="{{ asset('img/Address Icon.svg') }}" width="18px" class="me-2"
-                        alt="address">Lorem Ipsum is simply <br>dummy text of the prin.</p>
-
+                <p class="text-black ">
+                    <img src="{{ asset('img/Address Icon.svg') }}" width="18px" class="me-2"alt="address">Lorem Ipsum is simply 
+                    <br>dummy text of the prin.
+                </p>
                 <ul class="ul">
                     <li class="social-icon me-2"><img src="{{ asset('img/Address Icon.svg') }}" alt="social icon"></li>
                     <li class="social-icon me-2"><img src="{{ asset('img/Address Icon.svg') }}" alt="social icon"></li>
@@ -140,7 +141,7 @@
             <div class="col-md-4">
                 <div class="row">
                     <div class="col-3">
-                        <img src="img/reliable.png" alt="reliable" width="100px">
+                        <img src="{{ asset('img/reliable.png') }}" alt="reliable" width="100px">
                     </div>
                     <div class="col-9">
                         <h6 class="text-black">Reliable</h6>
@@ -153,7 +154,7 @@
             <div class="col-md-4">
                 <div class="row">
                     <div class="col-3">
-                        <img src="img/secure.png" alt="Secure"   width="65px">
+                        <img src="{{ asset('img/secure.png') }}" alt="Secure"   width="65px">
                     </div>
                     <div class="col-9">
                         <h6 class="text-black">Secure</h6>
@@ -166,7 +167,7 @@
             <div class="col-md-4">
                 <div class="row">
                     <div class="col-3">
-                        <img src="img/affordable.png" alt="Affordable"   width="100px">
+                        <img src="{{ asset('img/affordable.png') }}" alt="Affordable"   width="100px">
                     </div>
                     <div class="col-9">
                         <h6 class="text-black">Affordable</h6>
@@ -188,7 +189,7 @@
                 <p class="fs-5 fw-bold text-white">&copy; Herbhue | All Rights Reserved | Powered By SDIM</p>
             </div>
             <div class="col-md-5 text-end">
-                <img src="img/Payment Method.png" width="320px" alt="">
+                <img src="{{ asset('img/Payment Method.png') }}" width="320px" alt="">
             </div>
         </div>
 

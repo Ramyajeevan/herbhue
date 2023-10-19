@@ -76,6 +76,7 @@ class ProductRepository extends BaseRepository
         $product->name = $post['name'];
 	    $product->description = $post['description'];
         $product->describe = $post['describe'];
+        $product->wellness=$post['wellness'];
       	$product->image1 = $post['image1'];
         $product->image2 = $post['image2'];
         $product->image3 = $post['image3'];
@@ -118,6 +119,7 @@ class ProductRepository extends BaseRepository
             $product->name = $post['name'];
             $product->description = $post['description'];
             $product->describe = $post['describe'];
+            $product->wellness=$post['wellness'];
             if($post['image1']!='') $product->image1 = $post['image1'];
             if($post['image2']!='') $product->image2 = $post['image2'];
             if($post['image3']!='') $product->image3 = $post['image3'];

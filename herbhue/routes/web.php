@@ -19,7 +19,7 @@ use App\Http\Controllers\DeliveryController;
 Route::get('/cacheclear', function(){
 Artisan::Call('config:cache');
 Artisan::Call('view:cache');
-Artisan::Call('route:cache');
+//Artisan::Call('route:cache');
 });
 
 Route::get('/',[HomeController::class, 'index'])->name('home');
@@ -36,3 +36,41 @@ Route::post('register',[HomeController::class, 'doRegister'])->name('register');
 Route::get('registrationsuccessfull',[HomeController::class, 'registrationsuccessfull'])->name('registrationsuccessfull');
 Route::get('forgotpassword',[HomeController::class, 'forgotpassword'])->name('forgotpassword');
 Route::get('myaccount',[HomeController::class, 'myaccount'])->name('myaccount');
+Route::post('myaccountsettings',[HomeController::class, 'myaccountsettings'])->name('myaccountsettings');
+Route::get('products/{category_id?}/{subcategory_id?}',[HomeController::class, 'products'])->name('products');
+Route::get('productdetail/{id}',[HomeController::class, 'productdetail'])->name('productdetail');
+
+Route::get('myorders',[HomeController::class, 'myorders'])->name('myorders');
+Route::get('mywishlist',[HomeController::class, 'mywishlist'])->name('mywishlist');
+Route::get('resetpassword',[HomeController::class, 'resetpassword'])->name('resetpassword');
+Route::post('updatepassword',[HomeController::class, 'updatepassword'])->name('updatepassword');
+Route::get('vieworder/{id}',[HomeController::class, 'vieworder'])->name('vieworder');
+
+Route::get('search',[HomeController::class, 'searchproducts'])->name('search');
+Route::get('privacy',[HomeController::class, 'privacy'])->name('privacy');
+Route::get('terms',[HomeController::class, 'terms'])->name('terms');
+Route::get('refund',[HomeController::class, 'refund'])->name('refund');
+
+Route::get('faq',[HomeController::class, 'faq'])->name('faq');
+Route::get('contact',[HomeController::class, 'contact'])->name('contact');
+Route::get('aboutus',[HomeController::class, 'aboutus'])->name('aboutus');
+
+Route::post('addtowishlist',[HomeController::class, 'addtowishlist'])->name('addtowishlist');
+Route::post('checkpincode',[HomeController::class, 'checkpincode'])->name('checkpincode');
+
+Route::post('subscribe',[HomeController::class, 'subscribe'])->name('subscribe');
+Route::post('addrating',[HomeController::class, 'addrating'])->name('addrating');
+
+Route::post('addtocart',[CartController::class, 'addtocart'])->name('addtocart');
+Route::post('incrementvalue',[CartController::class, 'incrementvalue'])->name('incrementvalue');
+Route::post('decrementvalue',[CartController::class, 'decrementvalue'])->name('decrementvalue');
+Route::delete('deletecart',[CartController::class, 'deletecart'])->name('deletecart');
+Route::get('viewcart',[CartController::class, 'viewcart'])->name('viewcart');
+Route::post('applycoupon',[CartController::class, 'applycoupon'])->name('applycoupon');
+Route::get('checkout',[CartController::class, 'checkout'])->name('checkout');
+Route::post('placeorder',[OrderController::class, 'placeorder'])->name('placeorder');
+Route::get('thankyou/{order_id}',[OrderController::class, 'thankyou'])->name('thankyou');
+
+
+Route::get('shipping',[OrderController::class, 'shipping'])->name('shipping');
+?>
