@@ -272,6 +272,7 @@
     function addtocart()
     {
       var option_id = $("input[name='option_id']:checked").val();
+        alert(option_id);
       var quantity=$("#quantity").val();
       var url="{{URL('addtocart')}}";
       $.ajax(
