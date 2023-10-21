@@ -274,7 +274,6 @@
       var option_id = $("input[name='option_id']:checked").val();
       var quantity=$("#quantity").val();
       var url="{{URL('addtocart')}}";
-        alert(option_id);alert("entered");
       $.ajax(
         {
           url: url,
