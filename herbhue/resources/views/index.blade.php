@@ -18,7 +18,7 @@
         <div id="owl-demo" class="owl-carousel  owl-theme">
         @foreach($banner as $ban)
         <div class="item">
-            <img src="http://localhost/herbhue/herbhue-admin/public/images/{{ $ban->image }}" alt="">
+            <img src="https://herbhue.azurewebsites.net/herbhue/herbhue-admin/public/images/{{ $ban->image }}" alt="">
         </div>
         @endforeach
         </div>
