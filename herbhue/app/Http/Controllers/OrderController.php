@@ -103,9 +103,9 @@ class OrderController extends Controller
      $session_id=Session::getId();
       $cart_option=DB::table("tbl_cart")->where("session_id",$session_id)->get();
       $cart=DB::table("tbl_cart")->select(DB::raw('SUM(quantity) as total_quantity'),DB::raw('SUM(total_price) as price'))->where("session_id",$session_id)->first();
-      $shipping_amount=DB::table("tbl_shipping")->where("id","1")->first();
+     
 
-      return view('shipping', ['address' => $address,'address_id'=>$address_id,'cart_option'=>$cart_option,'cart'=>$cart,'shipping_amount'=>$shipping_amount]);
+      return view('shipping', ['address' => $address,'address_id'=>$address_id,'cart_option'=>$cart_option,'cart'=>$cart]);
   } 
   public function thankyou($order_id)
   {
