@@ -432,7 +432,8 @@ class HomeController extends Controller
         $email=Session::get('username');
         $user=DB::table("tbl_user")->where("email",$email)->first();
         $wishlist=$this->homeRepository->getMyWishlist($user->id);
-        return view('mywishlist',["user"=>$user,"wishlist"=>$wishlist]);
+        $related_products=$this->homeRepository->getRelatedProducts();
+        return view('mywishlist',["user"=>$user,"wishlist"=>$wishlist,"related_products"=>$related_products]);
       }
     }
     public function addtowishlist(Request $request)

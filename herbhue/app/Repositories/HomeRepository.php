@@ -157,22 +157,7 @@ class HomeRepository extends BaseRepository
            echo false;
        }
     }
-    public function getWishlist($product_id)
-    {
-        $user_id=0;
-        if(empty(Session::get('username')))
-            $user_id=0;
-        else
-        {
-            $user=DB::table('tbl_user')->where("email",Session::get('username'))->first();
-            $user_id=$user->id;
-        }
-        $wishlist=DB::table("tbl_wishlist")->where("user_id",$user_id)->where("product_id",$product_id)->first();
-        if($wishlist)
-            return true;
-        else
-            return false;
-    }
+
     public function getMyWishlist($user_id)
     {
         $wishlist=DB::table("tbl_wishlist")->where("user_id",$user_id)->get();
@@ -187,6 +172,18 @@ class HomeRepository extends BaseRepository
             $wishlist[$i]->mrp_price=$product_options->mrp_price;
         }
         return $wishlist;
+    }
+    public function getRelatedProducts()
+    {
+        $product=Product::get();
+        for($i=0;$i<count($product);$i++)
+        {
+            $product_options=DB::table("tbl_product_options")->select("price","mrp_price")->where("product_id",$product[$i]->id)->first();
+            $product[$i]->price=$product_options->price;
+            $product[$i]->mrp_price=$product_options->mrp_price;
+        }
+        return $product;
+
     }
     public function checkpincode($pincode)
     {
