@@ -173,7 +173,21 @@ class HomeRepository extends BaseRepository
         else
             return false;
     }
-
+    public function getMyWishlist($user_id)
+    {
+        $wishlist=DB::table("tbl_wishlist")->where("user_id",$user_id)->get();
+        for($i=0;$i<count($wishlist);$i++)
+        {
+            $product=Product::select("name","describe","image1")->where("id",$wishlist[$i]->product_id)->first();
+            $wishlist[$i]->product_name=$product->name;
+            $wishlist[$i]->describe=$product->describe;
+            $wishlist[$i]->product_image=$product->image1;
+            $product_options=DB::table("tbl_product_options")->select("price","mrp_price")->where("product_id",$wishlist[$i]->product_id)->first();
+            $wishlist[$i]->price=$product_options->price;
+            $wishlist[$i]->mrp_price=$product_options->mrp_price;
+        }
+        return $wishlist;
+    }
     public function checkpincode($pincode)
     {
         $pincode=DB::table("tbl_pincode")->where("pincode",$pincode)->first();

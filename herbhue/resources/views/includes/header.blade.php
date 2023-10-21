@@ -28,9 +28,21 @@
                         </span>
                     </a>
                 </li>
-               
+                @php
+                $wishlist_count=0;
+                if(!empty(Session::get('username')))
+                {
+                    $email=Session::get('username');
+                        $user=DB::table("tbl_user")->where("email",$email)->first();
+                        $wishlist_count=DB::table("tbl_wishlist")->where("user_id",$user->id)->count();
+                    // $wishlist_count=1;
+                }
+                @endphp
                 <li class="me-3">
-                    <a class="nav-link" href="javascript:void(0);"><img src="{{ asset('img/favorite_FILL1_wght400_GRAD0_opsz48 (2).svg') }}" alt="" class="nav-icon"></a>
+                    <a class="nav-link" href="{{ route('mywishlist') }}">
+                        <img src="{{ asset('img/favorite_FILL1_wght400_GRAD0_opsz48 (2).svg') }}" alt="" class="nav-icon">
+                        {{ $wishlist_count }}
+                    </a>
                 </li>
                 <li class="me-3">
                     <a class="nav-link text-nowrap" href="javascript:void(0);">Need Help ?</a>

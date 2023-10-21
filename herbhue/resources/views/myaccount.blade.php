@@ -58,6 +58,7 @@
                             </div>
                         </li>
                         <li class="list-group-item py-4">
+                            <a href="{{ route('viewcart') }}" class="text-black">
                             <div class="row">
                                 <div class="col-3">
                                     <img src="{{asset('img/shopping_cart_FILL1_wght400_GRAD0_opsz48 (3) (1).svg')}}" width="30px" alt="">
@@ -75,6 +76,7 @@
 
 
                         <li class="list-group-item py-3">
+                            <a href="{{ route('mywishlist') }}" class="text-black">
                             <div class="row">
                                 <div class="col-3">
                                     <img src="{{asset('img/favorite_FILL1_wght400_GRAD0_opsz48 (2) (1).svg')}}" width="30px" alt="">
@@ -88,6 +90,7 @@
                                 </div>
 
                             </div>
+                            </a>
                         </li>
 
                         <li class="list-group-item py-3">

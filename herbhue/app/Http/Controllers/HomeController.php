@@ -431,16 +431,8 @@ class HomeController extends Controller
       {
         $email=Session::get('username');
         $user=DB::table("tbl_user")->where("email",$email)->first();
-        $wishlist=DB::table("tbl_wishlist")->where("user_id",$user->id)->get();
-
-        $url = url()->current();
-        $url = explode('/', $url);
-        // dd($url);
-        
-        if(!isset($url[5])){
-          $url[5] = '';
-        }
-        return view('mywishlist',["user"=>$user,"wishlist"=>$wishlist,'page'=>$url['5']]);
+        $wishlist=$this->homeRepository->getMyWishlist($user->id);
+        return view('mywishlist',["user"=>$user,"wishlist"=>$wishlist]);
       }
     }
     public function addtowishlist(Request $request)

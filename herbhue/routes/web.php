@@ -40,6 +40,7 @@ Route::post('myaccountsettings',[HomeController::class, 'myaccountsettings'])->n
 Route::get('products/{category_id?}/{subcategory_id?}',[HomeController::class, 'products'])->name('products');
 Route::get('productdetail/{id}',[HomeController::class, 'productdetail'])->name('productdetail');
 
+Route::post('deletewishlist',[HomeController::class, 'deletewishlist'])->name('deletewishlist');
 Route::get('myorders',[HomeController::class, 'myorders'])->name('myorders');
 Route::get('mywishlist',[HomeController::class, 'mywishlist'])->name('mywishlist');
 Route::get('resetpassword',[HomeController::class, 'resetpassword'])->name('resetpassword');
@@ -68,6 +69,7 @@ Route::delete('deletecart',[CartController::class, 'deletecart'])->name('deletec
 Route::get('viewcart',[CartController::class, 'viewcart'])->name('viewcart');
 Route::post('applycoupon',[CartController::class, 'applycoupon'])->name('applycoupon');
 Route::get('checkout',[CartController::class, 'checkout'])->name('checkout');
+Route::post('movetocart',[CartController::class, 'movetocart'])->name('movetocart');
 
 Route::post('placeorder',[OrderController::class, 'placeorder'])->name('placeorder');
 Route::get('thankyou/{order_id}',[OrderController::class, 'thankyou'])->name('thankyou');

@@ -33,6 +33,32 @@ class CartController extends Controller
       exit;
       
     }
+
+    public function movetocart(Request $request)
+    {
+      $wishlist_id=$request->wishlist_id;
+      $wish=DB::table('tbl_wishlist')->where("id",$wishlist_id)->first();
+      $prod_id=$wish->product_id;
+    $product=Product::find($prod_id);
+    $product_id=$product->id;
+      $session_id=Session::getId();
+      $quantity=1;
+      
+      $product_option=DB::table('tbl_product_options')->where("product_id",$prod_id)->first();
+      $option_id=$product_option->id;
+      $cart=$this->cartRepository->addtocart($option_id,$quantity);
+      if($cart)
+      {
+       DB::table('tbl_wishlist')->where("id",$wishlist_id)->delete();
+      echo "Product moved to cart successfully";
+      }
+      else
+      {
+        echo "Product cannot be moved";
+      }
+      exit;
+      
+    }
   	
   	public function incrementvalue(Request $request)
     {
@@ -115,9 +141,11 @@ class CartController extends Controller
         return redirect()->route('login');
       }
       $address=$this->cartRepository->showAddress($user_id);
-      $cart=$this->cartRepository->showcartUser($user_id);
-      $cart_total=$this->cartRepository->getCartTotalUser($user_id);
-      $cart_total_mrp=$this->cartRepository->getCartTotalMrpUser($user_id);
+      $session_id=Session::getId();
+      $cart=$this->cartRepository->showcart($session_id);
+      //echo "<pre>";print_r($cart);echo "</pre>";
+      $cart_total=$this->cartRepository->getCartTotal($session_id);
+      $cart_total_mrp=$this->cartRepository->getCartTotalMrp($session_id);
       return view('checkout',["cart"=>$cart,"cart_total"=>$cart_total,"cart_total_mrp"=>$cart_total_mrp,"addresses"=>$address]);
     }
 }
