@@ -16,7 +16,7 @@
                         @foreach($wishlist as $wish)
                         <div class="row border-bottom pb-2">
                             <div class="col-2">
-                                <img src="http://localhost/herbhue/herbhue-admin/public/images/{{ $wish->product_image }}" class="w-75" alt="">
+                                <img src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/{{ $wish->product_image }}" class="w-75" alt="">
                             </div>
                             <div class="col-7">
                                 <h5>{{ $wish->product_name }}</h5>
