@@ -41,7 +41,7 @@
                     <div class="card border-secondary">
                         <div class="card-body">
                             <div class="text-center mb-3">
-                                <img src="http://localhost/herbhue/herbhue-admin/public/images/{{ $prod->image1 }}" class="w-75" alt="">
+                                <img src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/{{ $prod->image1 }}" class="w-75" alt="">
                             </div>
                             <h5>{{ $prod->name }}</h5>
                             <p class="text-secondary pb-1 mb-1 d-inline-block text-truncate" style="max-width: 265px;">
