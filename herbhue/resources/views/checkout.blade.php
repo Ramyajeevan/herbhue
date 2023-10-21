@@ -112,7 +112,7 @@
                       
                         <p class="d-flex justify-content-between text-secondary"> <span>Coupon Charges</span> <span>&pound; {{ $coupon_amount }}</span></p>
                         @endif
-                        </p>
+                        
                         <hr class="m-0 p-0">
                         <p class="d-flex justify-content-between text-secondary"> 
                             <span>Order Total</span> <span>&pound; {{ $cart_total-$coupon_amount }}</span>

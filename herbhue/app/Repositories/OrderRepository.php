@@ -1,18 +1,19 @@
 <?php
 
-namespace App\Repositories\Backend;
+namespace App\Repositories;
 
+use App\Models\Banner;
+use App\Models\Category;
+use App\Models\Brand;
 use App\Models\Product;
-use App\Models\UsersT;
+use App\Models\Cart;
 use App\Models\Order;
-use App\Models\Address;
-use App\Models\Orderproducts;
-use App\Repositories\BaseRepository;
-
-use Illuminate\Support\Facades\DB;
-
+use DB;
+use Session;
+use App\Repositories\OrderRepository;
+use Illuminate\Support\Str;
 /**
- * Class OrderRepository.
+ * Class UserRepository.
  */
 class OrderRepository extends BaseRepository
 {
@@ -23,93 +24,34 @@ class OrderRepository extends BaseRepository
     {
         return Order::class;
     }
-
-    public function getAllOrder()
+      
+    public function getCartTotal($session_id)
     {
-        $order = Order::get();
-        return $order;
-    }
-  
-    public function getOrder($id)
-    {
-        $order = Order::findOrFail($id);
-      //dd($order->user_id);
-         if(isset($order)){
-          $user=UsersT::find($order->user_id);
-           //dd($user);
-          $order->user_name=$user->name;
-        return $order;
-        }else{
-            return false;
-        }
-    }
-
-    public function updateOrder($post,$id)
-    {
-      $order = Order::find($id);
-      //dd($order);
-      if($post['status']=="delivered")
+      $cart_total=0;
+      $cart=Cart::where("session_id",$session_id)->get();
+      for($i=0;$i<count($cart);$i++)
       {
-      $order_id=$order->order_id;
-        $orderproducts=DB::table('tbl_order_products')->where('order_id',$order_id)->get();
-        for($i=0;$i<count($orderproducts);$i++)
-        {
-          $productoptions=DB::table('tbl_product_options')->where('id',$orderproducts[$i]->option_id)->first();
-          $stock=$productoptions->stock;
-          $newstock=$stock-$orderproducts[$i]->quantity;
-          DB::table('tbl_product_options')->where('id',$orderproducts[$i]->option_id)->update(['stock'=>$newstock]);
-        }
+        $cart_total+=$cart[$i]->total_price;
       }
-      //  dd($orderproducts);
-       if(isset($order))
-       {
-            $order->status = $post['status'];
-            $order->save();
-            return $order;
-        }else{
-            return false;
-        }
-     // return $order;
+      return $cart_total;
+    }
+    public function getCartTotalMrp($session_id)
+    {
+      $cart_total_mrp=0;
+      $cart=Cart::where("session_id",$session_id)->get();
+      for($i=0;$i<count($cart);$i++)
+      {
+        $product_options=DB::table('tbl_product_options')->where("id",$cart[$i]->option_id)->first();
+        $total_mrp=$product_options->mrp_price*$cart[$i]->quantity;
+        $cart_total_mrp+=$total_mrp;
+      }
+      return $cart_total_mrp;
+    }
+
+    public function showAddress($user_id)
+    {
+      $address=DB::table("tbl_address")->where("user_id",$user_id)->get();
+      return $address;
     }
     
-    public function getOrderProducts($orderid)
-    {
-        $orderproducts = Orderproducts::where('order_id',$orderid)->get();
-        for($i=0;$i<count($orderproducts);$i++)
-        {
-            $product_name=Product::find($orderproducts[$i]->product_id);
-            $orderproducts[$i]->product_name=$product_name->name;
-        }
-        return $orderproducts;
-    }
-	public function getBillingDetails($orderid)
-    {
-      $billing=DB::table('tbl_billing_address')->where('order_id',$orderid)->first();
-      return $billing;
-    }
-  	public function getShippingDetails($orderid)
-    {
-      $shipping=DB::table('tbl_shipping_address')->where('order_id',$orderid)->first();
-      return $shipping;
-    }
-    public function deleteOrder($id)
-    {
-        try{
-            $order = Order::find($id);
-            if(isset($order)){
-                $orderid=$order->orderid;
-               
-            $orderproducts = Orderproducts::where('orderid',$orderid)->delete();
-             $order->delete();
-            }else{
-                return false;
-            }
-        }catch(\Exception $exception){
-            report($exception);
-        }
-
-        return true;
-    }
-	
 }
-?>

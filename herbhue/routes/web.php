@@ -68,9 +68,9 @@ Route::delete('deletecart',[CartController::class, 'deletecart'])->name('deletec
 Route::get('viewcart',[CartController::class, 'viewcart'])->name('viewcart');
 Route::post('applycoupon',[CartController::class, 'applycoupon'])->name('applycoupon');
 Route::get('checkout',[CartController::class, 'checkout'])->name('checkout');
+
 Route::post('placeorder',[OrderController::class, 'placeorder'])->name('placeorder');
 Route::get('thankyou/{order_id}',[OrderController::class, 'thankyou'])->name('thankyou');
-
-
-Route::get('shipping',[OrderController::class, 'shipping'])->name('shipping');
+Route::get('payment',[OrderController::class, 'payment'])->name('payment');
+Route::post('placeorder1',[OrderController::class, 'placeorder1'])->name('placeorder1');
 ?>
