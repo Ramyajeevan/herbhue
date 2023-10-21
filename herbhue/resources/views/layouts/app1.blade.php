@@ -85,8 +85,7 @@
     <!--Custom JavaScript -->
     <script src="{{ asset('dist/js/feather.min.js') }}"></script>
     <script src="{{ asset('dist/js/custom.min.js') }}"></script>
-	<script src="{{ asset('dist/libs/prismjs/prism.js') }}"></script>
-  
+
 </body>
 
 </html>
