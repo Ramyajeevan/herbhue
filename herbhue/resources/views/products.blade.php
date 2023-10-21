@@ -4,8 +4,7 @@
 @endsection
 @section('css')
 <style>
-    input[type=range]{-webkit-appearance:none;border:1px solid #fff;width:300px;position:absolute;left:0}input[type=range]::-webkit-slider-runnable-track{width:300px;height:5px;background:#ddd;border:none;border-radius:3px}input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;border:none;height:16px;width:16px;border-radius:50%;background:#3038ac;margin-top:-4px;cursor:pointer;position:relative;z-index:1}input[type=range]:focus{outline:0}input[type=range]:focus::-webkit-slider-runnable-track{background:#ccc}input[type=range]::-moz-range-track{width:300px;height:5px;background:#ddd;border:none;border-radius:3px}input[type=range]::-moz-range-thumb{border:none;height:16px;width:16px;border-radius:50%;background:#3038ac}input[type=range]:-moz-focusring{outline:white solid 1px;outline-offset:-1px}input[type=range]::-ms-track{width:300px;height:5px;background:0 0;border-color:transparent;border-width:6px 0;color:transparent;z-index:-4}input[type=range]::-ms-fill-lower{background:#777;border-radius:10px}input[type=range]::-ms-fill-upper{background:#ddd;border-radius:10px}input[type=range]::-ms-thumb{border:none;height:16px;width:16px;border-radius:50%;background:#21c1ff}input[type=range]:focus::-ms-fill-lower{background:#888}input[type=range]:focus::-ms-fill-upper{background:#ccc}
-    
+    input[type=range]{-webkit-appearance:none;border:1px solid #fff;width:300px;position:absolute;left:0}input[type=range]::-webkit-slider-runnable-track{width:300px;height:5px;background:#ddd;border:none;border-radius:3px}input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;border:none;height:16px;width:16px;border-radius:50%;background:#3038ac;margin-top:-4px;cursor:pointer;position:relative;z-index:1}input[type=range]:focus{outline:0}input[type=range]:focus::-webkit-slider-runnable-track{background:#ccc}input[type=range]::-moz-range-track{width:300px;height:5px;background:#ddd;border:none;border-radius:3px}input[type=range]::-moz-range-thumb{border:none;height:16px;width:16px;border-radius:50%;background:#3038ac}input[type=range]:-moz-focusring{outline:white solid 1px;outline-offset:-1px}input[type=range]::-ms-track{width:300px;height:5px;background:0 0;border-color:transparent;border-width:6px 0;color:transparent;z-index:-4}input[type=range]::-ms-fill-lower{background:#777;border-radius:10px}input[type=range]::-ms-fill-upper{background:#ddd;border-radius:10px}input[type=range]::-ms-thumb{border:none;height:16px;width:16px;border-radius:50%;background:#21c1ff}input[type=range]:focus::-ms-fill-lower{background:#888}input[type=range]:focus::-ms-fill-upper{background:#ccc}  
 </style>
 @endsection
 @section('content')
@@ -41,7 +40,7 @@
                     <div class="card border-secondary">
                         <div class="card-body">
                             <div class="text-center mb-3">
-                                <img src="http://localhost/herbhue/herbhue-admin/public/images/{{ $prod->image1 }}" class="w-75" alt="">
+                                <img src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/{{ $prod->image1 }}" class="w-75" alt="">
                             </div>
                             <h5>{{ $prod->name }}</h5>
                             <p class="text-secondary pb-1 mb-1 d-inline-block text-truncate" style="max-width: 265px;">
