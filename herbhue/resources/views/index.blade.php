@@ -1,9 +1,29 @@
 @extends('layouts.app') 
 @section('title')
 <title>Herbhue Home Page</title>
+@endsection
+@section('css')
+<style>
+    #owl-demo .item img{
+    display: block;
+    width: 100%;
+    height: auto;
+}
+</style>
+@endsection
 @section('content')
 <div class="container-fluid px-0">
-    <img src="{{ asset('img/Main Banner.png') }}" class="w-100 mb-3" alt="">
+    <div class="row">
+        <div class="col-md-12">
+        <div id="owl-demo" class="owl-carousel  owl-theme">
+        @foreach($banner as $ban)
+        <div class="item">
+            <img src="http://localhost/herbhue/herbhue-admin/public/images/{{ $ban->image }}" alt="">
+        </div>
+        @endforeach
+        </div>
+        </div>
+    </div>
 </div>
 
 <div class="container-fluid bg-white py-2">
@@ -411,6 +431,21 @@
 
 
     </script>
-    
+    <script>
+
+ $("#owl-demo").owlCarousel({
+
+     navigation : true, // Show next and prev buttons
+     items : 1,
+     itemsDesktop : false,
+      itemsDesktopSmall : false,
+      itemsTablet: false,
+      itemsMobile : false, 
+     autoplay: true
+
+ });
+
+
+    </script>
    
 @endsection
