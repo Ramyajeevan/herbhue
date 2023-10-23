@@ -96,6 +96,7 @@
                         </li>
 
                         <li class="list-group-item py-3">
+                            <a href="{{ route('contact') }}" class="text-black">
                             <div class="row">
                                 <div class="col-3">
                                     <img src="{{asset('img/contact_page_FILL1_wght400_GRAD0_opsz48 (1).svg')}}" width="30px" alt="">
@@ -109,6 +110,7 @@
                                 </div>
 
                             </div>
+                            </a>
                         </li>
 
                         <li class="list-group-item py-3">
