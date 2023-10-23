@@ -1,5 +1,7 @@
 <?php
+
 namespace App\Http\Controllers\Backend;
+
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Repositories\Backend\ProductRepository;
@@ -8,6 +10,7 @@ use Illuminate\Support\Facades\DB;
 class ProductController extends Controller
 {
     protected $productRepository;
+
     public function __construct(ProductRepository $productRepository)
     {
         $this->productRepository = $productRepository;
@@ -20,7 +23,9 @@ class ProductController extends Controller
     public function index()
     {
         $product = $this->productRepository->getAllProduct();
-       return view('Backend.Product.index', ['product' => $product]);
+
+
+        return view('Backend.Product.index', ['product' => $product]);
     }
 
      /**
@@ -30,7 +35,9 @@ class ProductController extends Controller
      */
     public function create()
     {
+      
         $category = $this->productRepository->getAllCategory();
+
         return view('Backend.Product.add', ['category' => $category]);
     }
 
@@ -42,8 +49,7 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        echo "entered";
-      dd($request);
+      
         $imagename1='';
         $imagename2='';
         $imagename3='';
@@ -54,6 +60,7 @@ class ProductController extends Controller
         {
         $image1 = $request->file('image1');
         $imagename1 = time().'-1.'.$image1->extension();
+
         $destinationPath = public_path('images');
         $image1->move($destinationPath,$imagename1);
         }
