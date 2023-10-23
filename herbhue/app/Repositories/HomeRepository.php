@@ -173,6 +173,46 @@ class HomeRepository extends BaseRepository
         }
         return $wishlist;
     }
+    public function getMyOrders($user)
+    {
+        $orders=DB::table("tbl_order")->where("user_id",$user->id)->latest('id');
+        $orders=$orders->get();
+        for($i=0;$i<count($orders);$i++)
+        {
+            $order_products=DB::table("tbl_order_products")->where("order_id",$orders[$i]->order_id)->first();
+            $orders[$i]->product_id=$order_products->product_id;
+            $productdetail=DB::table("tbl_product")->where("id",$orders[$i]->product_id)->first();
+            $orders[$i]->product_name=$productdetail->name;
+            $orders[$i]->image1=$productdetail->image1;
+            $orders[$i]->added_date=date("Y-m-d",strtotime($orders[$i]->added_date));
+        }
+        //dd($orders);
+        return $orders;
+
+    }
+    public function getWishlist($product_id)
+    {
+        if(empty(Session::get('username')))
+        {
+            $user_id=0;
+            $wishlist_user=0;
+        }
+        else
+        {
+            $user=DB::table('tbl_user')->where("email",Session::get('username'))->first();
+            $user_id=$user->id;
+            $wishlist=DB::table("tbl_wishlist")->where("user_id",$user_id)->where("product_id",$product_id)->first();
+            if(isset($wishlist))
+            {
+                $wishlist_user=1;
+            }
+            else
+            {
+                $wishlist_user=0;
+            }
+        }
+        return $wishlist_user;
+    }
     public function getRelatedProducts()
     {
         $product=Product::get();

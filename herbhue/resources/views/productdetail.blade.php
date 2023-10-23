@@ -54,21 +54,27 @@
             <div class="row mb-4">
                 <div class="col-md-6">
                     <div class="productImage text-center">
-                      <img id="largeImage" src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/{{ $products->image1 }}" alt="Default Image">
+                      @if($products->image1!="")
+                      <img id="largeImage" src="http://localhost/herbhue/herbhue-admin/public/images/{{ $products->image1 }}" alt="Default Image">
+                      @else
+                      <img src="{{ asset('img/no_image.svg') }}" alt="">
+                      @endif
                     </div>
                     <div id="thumbs" class="mt-3 text-center">
-                        <img src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/{{ $products->image1 }}" alt="1st image  " />
+                        @if(!empty($products->image1))
+                        <img src="http://localhost/herbhue/herbhue-admin/public/images/{{ $products->image1 }}" alt="1st image  " />
+                        @endif
                         @if(!empty($products->image2))
-                        <img src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/{{ $products->image2 }}" alt="2nd image  " />
+                        <img src="http://localhost/herbhue/herbhue-admin/public/images/{{ $products->image2 }}" alt="2nd image  " />
                         @endif
                         @if(!empty($products->image3))
-                        <img src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/{{ $products->image3 }}" alt="3rd image  " />
+                        <img src="http://localhost/herbhue/herbhue-admin/public/images/{{ $products->image3 }}" alt="3rd image  " />
                         @endif
                         @if(!empty($products->image4))
-                        <img src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/{{ $products->image4 }}" alt="4th image  " />
+                        <img src="http://localhost/herbhue/herbhue-admin/public/images/{{ $products->image4 }}" alt="4th image  " />
                         @endif
                         @if(!empty($products->image5))
-                        <img src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/{{ $products->image5 }}" alt="5th image  " />
+                        <img src="http://localhost/herbhue/herbhue-admin/public/images/{{ $products->image5 }}" alt="5th image  " />
                         @endif
                     </div>
                 </div>
@@ -83,13 +89,7 @@
                           <?php } else { ?>
                           <i class="fa fa-star-o text-green fs-5 me-2"></i>
                           <?php } } ?>
-
-                        <!--<i class="fa fa-star text-green fs-5 me-2"></i> 
-                        <i class="fa fa-star text-green fs-5 me-2"></i>
-                        <i class="fa fa-star text-green fs-5 me-2"></i>
-                        <i class="fa fa-star text-green fs-5 me-2"></i>
-                        <i class="fa fa-star-half-o text-green fs-5 me-2"></i> -->
-                        <span class="text-secondary">({{ $totalusers }} Customer Reviews)</span>
+                         <span class="text-secondary">({{ $totalusers }} Customer Reviews)</span>
                     </p>
                     <h5 class="fw-bold">&pound; <span id="price">{{ $products->product_options[0]->price }}</span>
                         <span class="fav">

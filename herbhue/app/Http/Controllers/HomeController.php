@@ -227,25 +227,8 @@ class HomeController extends Controller
       {
         $email=Session::get('username');
         $user=DB::table("tbl_user")->where("email",$email)->first();
-        $orders=DB::table("tbl_order")->where("user_id",$user->id)->latest('id');
-        $orders=$orders->paginate(5);
-        for($i=0;$i<count($orders);$i++)
-        {
-            $order_products=DB::table("tbl_order_products")->where("order_id",$orders[$i]->order_id)->first();
-            $orders[$i]->product_id=$order_products->product_id;
-            $productdetail=DB::table("tbl_product")->where("id",$orders[$i]->product_id)->first();
-            $orders[$i]->product_name=$productdetail->name;
-            $orders[$i]->image1=$productdetail->image1;
-        }
-        //dd($orders);
-        $url = url()->current();
-        $url = explode('/', $url);
-        // dd($url);
-        
-        if(!isset($url[5])){
-          $url[5] = '';
-        }
-        return view('myorders',["user"=>$user,"orders"=>$orders,'page'=>$url['5']]);
+        $orders=$this->homeRepository->getMyOrders($user);
+        return view('myorders',["user"=>$user,"orders"=>$orders]);
         //return view('myorders');
       }
     }

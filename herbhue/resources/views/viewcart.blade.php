@@ -18,7 +18,11 @@
                         @foreach($cart as $cart_product)
                         <div class="row @if(!$loop->last) border-bottom  @endif pb-2 mb-3">
                                 <div class="col-3">
-                                    <img src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/{{ $cart_product->product_image }}" class="w-100" alt="">
+                                    @if($cart_product->product_image!="")
+                                    <img src="http://localhost/herbhue/herbhue-admin/public/images/{{ $cart_product->product_image }}" class="w-100" alt="">
+                                    @else
+                                    <img src="{{ asset('img/no_image.svg') }}"  class="w-100" alt="">
+                                    @endif
                                 </div>
                                 <div class="col-6">
                                     <h6 class="fw-bold">{{ $cart_product->product_name }}</h6>
