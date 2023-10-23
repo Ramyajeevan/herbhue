@@ -18,7 +18,7 @@
         <div id="owl-demo" class="owl-carousel  owl-theme">
         @foreach($banner as $ban)
         <div class="item">
-            <img src="http://localhost/herbhue/herbhue-admin/public/images/{{ $ban->image }}" alt="">
+            <img src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/{{ $ban->image }}" alt="">
         </div>
         @endforeach
         </div>
@@ -32,7 +32,7 @@
         <div class="row mt-3">
             @foreach($category as $cat)
             <div class="col-md-2">
-                <img src="http://localhost/herbhue/herbhue-admin/public/images/{{ $cat->image }}" class="w-100" alt="">
+                <img src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/{{ $cat->image }}" class="w-100" alt="">
                 <h5 class="text-center mt-2">{{ $cat->name }}</h5>
             </div>
             @endforeach
@@ -54,7 +54,7 @@
                         <div class="card-body">
                             <div class="text-center mb-3">
                                 @if($prod->image1!="")
-                                <img src="http://localhost/herbhue/herbhue-admin/public/images/{{ $prod->image1 }}" class="w-75" alt="">
+                                <img src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/{{ $prod->image1 }}" class="w-75" alt="">
                                 @else
                                 <img src="{{ asset('img/no_image.svg') }}"  class="w-75" alt="">
                                 @endif
@@ -92,7 +92,7 @@
                 @foreach($brand as $brands)
                 <div class="item">
                     <div class="card border-0">
-                        <img src="http://localhost/herbhue/herbhue-admin/public/images/{{ $brands->image }}" class="w-100" alt="">
+                        <img src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/{{ $brands->image }}" class="w-100" alt="">
                     </div>
                 </div>
                 @endforeach
@@ -119,7 +119,7 @@
                             <div class="row  pb-2">
                                 <div class="col-3">
                                     @if($wellprod->image1!="")
-                                    <img src="http://localhost/herbhue/herbhue-admin/public/images/{{ $wellprod->image1 }}" class="w-100" alt="">
+                                    <img src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/{{ $wellprod->image1 }}" class="w-100" alt="">
                                     @else
                                     <img src="{{ asset('img/no_image.svg') }}"  class="w-75" alt="">
                                     @endif

@@ -29,7 +29,7 @@
             <tr>
                 <th scope="row">
                     @if($ord->image1!="")
-                      <img  src="http://localhost/herbhue/herbhue-admin/public/images/{{ $ord->image1 }}"  style="width: 75px;" >
+                      <img  src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/{{ $ord->image1 }}"  style="width: 75px;" >
                       @else
                       <img src="{{ asset('img/no_image.svg') }}" alt="" style="width: 75px;">
                       @endif
