@@ -58,7 +58,6 @@ class ProductController extends Controller
         {
         $image1 = $request->file('image1');
         $imagename1 = time().'-1.'.$image1->extension();
-
         $destinationPath = public_path('images');
         $image1->move($destinationPath,$imagename1);
         }
