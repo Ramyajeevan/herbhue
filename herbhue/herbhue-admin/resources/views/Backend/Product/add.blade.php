@@ -1,8 +1,6 @@
 @extends('layouts.app')
 @section('css')
     <!-- This Page CSS -->
-    <link rel="stylesheet" href="{{ asset('dist/libs/ckeditor/samples/toolbarconfigurator/lib/codemirror/neo.css') }}">
-    <link rel="stylesheet" href="{{ asset('dist/libs/ckeditor/samples/css/samples.css') }}">
 @endsection
 @section('breadcrumb')
 <!-- -------------------------------------------------------------- -->
@@ -112,9 +110,7 @@
                 <label class="col-md-2 col-form-label" for="description">Product Description</label>
                 <div class="col-md-10">
               <textarea class="form-control" cols="80" id="description" name="description"
-                    rows="10"
-                    data-sample="1"
-                    data-sample-short="" ></textarea>
+                    rows="10" placeholder="Enter Product Description"></textarea>
               </div>
             </div>
             <div class="mb-3 row">
@@ -278,9 +274,6 @@
 <script src="{{ asset('dist/libs/jquery.repeater/jquery.repeater.min.js') }}"></script>
 <script src="{{ asset('dist/js/plugins/repeater-init.js') }}"></script>
 
-
-    <script src="{{ asset('dist/libs/ckeditor/ckeditor.js') }}"></script>
-    <script src="{{ asset('dist/libs/ckeditor/samples/js/sample.js') }}"></script>
 <script>
    function onlyNumberKey(evt) {
              
@@ -313,42 +306,54 @@
     }
   }
 </script>
+<script src="https://cdn.gaic.com/cdn/ui-bootstrap/0.58.0/js/lib/ckeditor/ckeditor.js"></script>
 <script>
-      //default
-      initSample();
-      var editor1 = CKEDITOR.replace('description', {
-        extraAllowedContent: 'div',
-        height: 460,
-      });
-      editor1.on('instanceReady', function () {
-        // Output self-closing tags the HTML4 way, like <br>.
-        this.dataProcessor.writer.selfClosingEnd = '>';
+$(() => {
+  CKEDITOR.config.toolbar = [
+    { name: 'clipboard', groups: [ 'clipboard', 'undo' ], items: [ 'Undo', 'Redo' ] },
+    { name: 'links', items: [ 'Link', 'Unlink'] },
+    { name: 'insert', items: [ 'Image', 'Table' ] },
+    { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ], items: [ 'Bold', 'Italic', 'Underline'] },
+    { name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ], items: [ 'NumberedList', 'BulletedList', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'] },
+    { name: 'styles', items: [ 'FontSize' ] },
+    { name: 'colors', items: [ 'TextColor' ] },
+    { name: 'others', items: [ '-' ] },
+    { name: 'document', items : [ 'Source'] },
+  ];  
+  CKEDITOR.on( 'dialogDefinition', function( ev ) {
+    // Take the dialog name and its definition from the event data.
+    var dialogName = ev.data.name;
+    var dialogDefinition = ev.data.definition;
+    if ( dialogName == 'link' ) {
+        // Get a reference to the "Link Info" tab.
+        var targetTab = dialogDefinition.getContents( 'target' );
+        // Set the default value for the URL field.
+//         var urlField = infoTab.get( 'url' );
+//         urlField[ 'default' ] = 'www.example.com';
+      
+//         var linkTpyeField = infoTab.get('linkType');
+//         linkTpyeField['items'] = [["URL", 'url']];
+      // 重写target 效果
+        var targetField = targetTab.elements[0].children[0];
+        
+        targetField['items'] = [["New Window (_blank)", "_blank"]];
+        targetField['default'] = '_blank';
+      // 隐藏advance
+      var advancedtab = dialogDefinition.getContents( "advanced" );
+      advancedtab['hidden'] = true;
+      //
+      //
+      //
+     
+    } else  if(dialogName === 'image'){
+      var imageInfo = dialogDefinition.getContents('info');
+      console.log('ccc', imageInfo)
+    }
+});
+  CKEDITOR.replace('description');
 
-        // Use line breaks for block elements, tables, and lists.
-        var dtd = CKEDITOR.dtd;
-        for (var e in CKEDITOR.tools.extend(
-          {},
-          dtd.$nonBodyContent,
-          dtd.$block,
-          dtd.$listItem,
-          dtd.$tableContent,
-        )) {
-          this.dataProcessor.writer.setRules(e, {
-            indent: true,
-            breakBeforeOpen: true,
-            breakAfterOpen: true,
-            breakBeforeClose: true,
-            breakAfterClose: true,
-          });
-        }
-        // Start in source mode.
-        this.setMode('source');
-      });
+});
+
+
     </script>
-     <script data-sample="1">
-      CKEDITOR.replace('testedit', {
-        height: 150,
-      });
-    </script>
-  
 @endsection
