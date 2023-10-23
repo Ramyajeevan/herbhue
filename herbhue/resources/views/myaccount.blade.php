@@ -28,6 +28,7 @@
                 <div class="card shadow border-3 border-secondary">
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item py-3">
+                            <a href="{{ route('myorders') }}" class="text-black">
                             <div class="row">
                                 <div class="col-3">
                                     <img src="{{asset('img/inventory_2_FILL1_wght400_GRAD0_opsz48.png')}}" width="30px" alt="">
@@ -41,6 +42,7 @@
                                 </div>
 
                             </div>
+                            </a>
                         </li>
                         <li class="list-group-item py-3">
                             <div class="row">
