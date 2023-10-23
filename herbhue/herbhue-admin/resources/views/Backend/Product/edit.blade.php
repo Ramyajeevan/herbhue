@@ -114,13 +114,13 @@
              <div class="mb-3 row">
                 <label class="col-md-2 col-form-label" for="description">Product Description</label>
                 <div class="col-md-10">
-              <textarea class="form-control" name="description" id="description" required>{{ $product->description }}</textarea>
+              <textarea class="form-control" name="description" id="description">{{ $product->description }}</textarea>
               </div>
             </div>
             <div class="mb-3 row">
                 <label class="col-md-2 col-form-label" for="describe">Short description</label>
                 <div class="col-md-10">
-                  <input class="form-control" name="describe" id="describe" type="text" placeholder="Enter Short Description" value="{{ $product->describe }}" required>
+                  <input class="form-control" name="describe" id="describe" type="text" placeholder="Enter Short Description" value="{{ $product->describe }}">
                 </div>
             </div>
             <div class="mb-3 row">

@@ -114,13 +114,13 @@
               <textarea class="form-control" cols="80" id="description" name="description"
                     rows="10"
                     data-sample="1"
-                    data-sample-short="" required></textarea>
+                    data-sample-short="" ></textarea>
               </div>
             </div>
             <div class="mb-3 row">
                 <label class="col-md-2 col-form-label" for="describe">Short description</label>
                 <div class="col-md-10">
-                  <input class="form-control" name="describe" id="describe" type="text" placeholder="Enter Short Description" required>
+                  <input class="form-control" name="describe" id="describe" type="text" placeholder="Enter Short Description">
                 </div>
             </div>
             <div class="mb-3 row">
@@ -189,7 +189,7 @@
                       <span class="input-group-text">Upload</span>
 
                       <div class="custom-file" style="width:92.75%;">
-                        <input type="file" class="form-control" id="image1" name="image1" required>
+                        <input type="file" class="form-control" id="image1" name="image1">
                       </div>
                     </div>
               </div>
@@ -350,25 +350,5 @@
         height: 150,
       });
     </script>
-    <script>
-    function showalert()
-    {
-      alert('You are not Logged In. Please Register/LogIn yourself !');
-    }
-  function addtowishlist(product_id)
-  {
-    //alert(product_id);
-     var url="{{URL('addtowishlist')}}";
-      $.ajax(
-        {
-          url: url,
-          method: 'post', 
-          data:{"product_id":product_id, "_token": "{{ csrf_token() }}" },
-          success: function (response)
-          {
-             alert(response);
-           // window.location.reload();
-          }
-        });
-  }
+  
 @endsection
