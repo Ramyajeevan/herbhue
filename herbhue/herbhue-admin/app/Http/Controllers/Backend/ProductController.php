@@ -47,7 +47,8 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-      
+        echo "entered";
+      dd($request);
         $imagename1='';
         $imagename2='';
         $imagename3='';
