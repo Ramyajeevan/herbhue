@@ -1,7 +1,4 @@
 @extends('layouts.app')
-@section('css')
-    <!-- This Page CSS -->
-@endsection
 @section('breadcrumb')
 <!-- -------------------------------------------------------------- -->
 <!-- Bread crumb and right sidebar toggle -->
