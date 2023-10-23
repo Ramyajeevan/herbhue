@@ -56,13 +56,14 @@ class ProductController extends Controller
         $imagename4='';
         $imagename5='';
       
-  
+        if($request->file('image1')!='')
+        {
         $image1 = $request->file('image1');
         $imagename1 = time().'-1.'.$image1->extension();
 
         $destinationPath = public_path('images');
         $image1->move($destinationPath,$imagename1);
-        
+        }
         if($request->file('image2')!='')
         {
             $image2 = $request->file('image2');
