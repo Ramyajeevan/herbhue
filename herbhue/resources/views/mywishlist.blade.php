@@ -73,7 +73,7 @@
                 <div class="card border-secondary">
                     <div class="card-body">
                         <div class="text-center mb-3">
-                            <img src="http://localhost/herbhue/herbhue-admin/public/images/{{ $related->image1 }}" class="w-75" alt="">
+                            <img src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/{{ $related->image1 }}" class="w-75" alt="">
                         </div>
                         <h5>{{ $related->name }}</h5>
                         <p class="text-secondary p-0 m-0">{{ $related->describe }}</p>
