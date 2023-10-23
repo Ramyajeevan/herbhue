@@ -81,8 +81,7 @@
                 <div class="col-md-6">
                     <h6 class="text-green">{{ $products->category_name }}</h6>
                     <h3 class="text-black">{{ $products->name }}</h3>
-
-                    <p>
+                   <p>
                     <?php for($k=1;$k<=5;$k++) { 
     						if($k<=$stars){ ?>
                           <i class="fa fa-star text-green fs-5 me-2"></i>
