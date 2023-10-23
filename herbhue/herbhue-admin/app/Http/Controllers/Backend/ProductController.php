@@ -8,7 +8,6 @@ use Illuminate\Support\Facades\DB;
 class ProductController extends Controller
 {
     protected $productRepository;
-
     public function __construct(ProductRepository $productRepository)
     {
         $this->productRepository = $productRepository;
@@ -21,9 +20,7 @@ class ProductController extends Controller
     public function index()
     {
         $product = $this->productRepository->getAllProduct();
-
-
-        return view('Backend.Product.index', ['product' => $product]);
+       return view('Backend.Product.index', ['product' => $product]);
     }
 
      /**
@@ -33,9 +30,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-      
         $category = $this->productRepository->getAllCategory();
-
         return view('Backend.Product.add', ['category' => $category]);
     }
 
