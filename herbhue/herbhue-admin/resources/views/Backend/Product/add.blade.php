@@ -187,7 +187,6 @@
               <div class="col-md-10">
                   <div class="input-group mb-3">
                       <span class="input-group-text">Upload</span>
-
                       <div class="custom-file" style="width:92.75%;">
                         <input type="file" class="form-control" id="image1" name="image1">
                       </div>
