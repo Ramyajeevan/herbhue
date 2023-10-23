@@ -40,7 +40,11 @@
                     <div class="card border-secondary">
                         <div class="card-body">
                             <div class="text-center mb-3">
+                                  @if($prod->image1!="")
                                 <img src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/{{ $prod->image1 }}" class="w-75" alt="">
+                                @else
+                                <img src="{{ asset('img/no_image.svg') }}"  class="w-75" alt="">
+                                @endif
                             </div>
                             <h5>{{ $prod->name }}</h5>
                             <p class="text-secondary pb-1 mb-1 d-inline-block text-truncate" style="max-width: 265px;">
