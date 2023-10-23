@@ -55,26 +55,26 @@
                 <div class="col-md-6">
                     <div class="productImage text-center">
                       @if($products->image1!="")
-                      <img id="largeImage" src="http://localhost/herbhue/herbhue-admin/public/images/{{ $products->image1 }}" alt="Default Image">
+                      <img id="largeImage" src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/{{ $products->image1 }}" alt="Default Image">
                       @else
                       <img src="{{ asset('img/no_image.svg') }}" alt="">
                       @endif
                     </div>
                     <div id="thumbs" class="mt-3 text-center">
                         @if(!empty($products->image1))
-                        <img src="http://localhost/herbhue/herbhue-admin/public/images/{{ $products->image1 }}" alt="1st image  " />
+                        <img src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/{{ $products->image1 }}" alt="1st image  " />
                         @endif
                         @if(!empty($products->image2))
-                        <img src="http://localhost/herbhue/herbhue-admin/public/images/{{ $products->image2 }}" alt="2nd image  " />
+                        <img src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/{{ $products->image2 }}" alt="2nd image  " />
                         @endif
                         @if(!empty($products->image3))
-                        <img src="http://localhost/herbhue/herbhue-admin/public/images/{{ $products->image3 }}" alt="3rd image  " />
+                        <img src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/{{ $products->image3 }}" alt="3rd image  " />
                         @endif
                         @if(!empty($products->image4))
-                        <img src="http://localhost/herbhue/herbhue-admin/public/images/{{ $products->image4 }}" alt="4th image  " />
+                        <img src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/{{ $products->image4 }}" alt="4th image  " />
                         @endif
                         @if(!empty($products->image5))
-                        <img src="http://localhost/herbhue/herbhue-admin/public/images/{{ $products->image5 }}" alt="5th image  " />
+                        <img src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/{{ $products->image5 }}" alt="5th image  " />
                         @endif
                     </div>
                 </div>
