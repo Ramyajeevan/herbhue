@@ -68,9 +68,9 @@
   <!-- .row -->
   <div class="row">
     <div class="col-sm-12">
-      <!-- ---------------------
-                    start Default Basic Forms
-                ---------------- -->
+      <!-- --------------------- -->
+       <!-- start Default Basic Forms -->
+      <!-- ---------------- -->
       <div class="card">
         <div class="card-body">
           <h4 class="card-title">Add Product</h4>
