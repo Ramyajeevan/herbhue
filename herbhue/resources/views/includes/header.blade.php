@@ -51,7 +51,7 @@
         </div>
     </div>
 </div>
-<div class="container-fluid bg-green    pt-3">
+<div class="container-fluid bg-green  pt-3">
     <div class="container nav2">
         <div class="input-group mb-3 w-25 flex-nowrap">
             <span class="input-group-text bg-white border-0" id="basic-addon2"><img src="{{ asset('img/location.png') }}"
@@ -70,8 +70,7 @@
             <span class="input-group-text bg-white border-0" id="basic-addon2"><i
                     class="fa fa-search text-secondary"></i></span>
         </div>
-        <div class="w-25 px-4"><button type="button" class="btn btn-primary-light w-100 text-nowrap btn-lg">Quick
-                Order</button></div>
+        <div class="w-25 px-4"><button type="button" class="btn btn-primary-light w-100 text-nowrap btn-lg">Quick Order</button></div>
     </div>
 </div>
 

@@ -10,6 +10,7 @@ use App\Http\Controllers\Backend\ProductController;
 use App\Http\Controllers\Backend\CouponController;
 use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\Backend\OrderController;
+use App\Http\Controllers\Backend\TicketController;
 use App\Http\Controllers\Backend\BrandController;
 use App\Http\Controllers\HomeController;
 /*
@@ -100,4 +101,9 @@ Route::post('brand/create',[BrandController::class, 'store'])->name('brand.store
 Route::delete('brand/{id}',[BrandController::class, 'destroy'])->name('brand.destroy');
 Route::get('brand/update/{id}',[BrandController::class, 'edit'])->name('brand.edit');
 Route::post('brand/update/{id}',[BrandController::class, 'update'])->name('brand.update');
+
+Route::get('ticket',[TicketController::class, 'index'])->name('ticket.index');
+Route::delete('ticket/{id}',[TicketController::class, 'destroy'])->name('ticket.destroy');
+Route::get('ticket/update/{id}',[TicketController::class, 'edit'])->name('ticket.edit');
+Route::post('ticket/update/{id}',[TicketController::class, 'update'])->name('ticket.update');
 ?>

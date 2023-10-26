@@ -7,6 +7,7 @@ use App\Models\Category;
 use App\Models\Brand;
 use App\Models\User;
 use App\Models\Product;
+use App\Models\Contact;
 use DB;
 use Session;
 use App\Repositories\HomeRepository;
@@ -328,5 +329,28 @@ class HomeRepository extends BaseRepository
         $rating["totalusers"]=$totalusers;
         $rating["stars"]=$rating1;
         return $rating;
+    }
+
+    public function contactus($name,$email,$query)
+    {
+        $ticket_id=$this->getTicketId();
+        $contact=new Contact;
+        $contact->name=$name;
+        $contact->email=$email;
+        $contact->query=$query;
+        $contact->ticket_id=$ticket_id;
+        $contact->save();
+        return $contact;
+    }
+
+    public function getTicketId()
+    {
+        $ticket_id="HHTICK-".rand(100000,999999);
+        $count=Contact::where("ticket_id",$ticket_id)->count();
+        if($count>0)
+        {
+            $ticket_id=$this->getTicketId();
+        }
+        return $ticket_id;
     }
 }

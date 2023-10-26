@@ -12,7 +12,7 @@ use App\Models\Category;
 use App\Models\SubCategory;
 use App\Models\Brand;
 use App\Models\Product;
-use Illuminate\Support\Str;
+
 class HomeController extends Controller
 {
   protected $homeRepository;
@@ -251,35 +251,7 @@ class HomeController extends Controller
   	public function products()
     {
       //dd(request());
-        
-      /* $products = Product::where("id","!=","");
-        $category_name=""; $subcategory_name="";
-        $category_id=request()->category_id;
-        $subcategory_id=request()->subcategory_id;
-        if(!empty($category_id))
-        {
-          $category=Category::find($category_id);
-          if(isset($category)) $category_name=$category->name; else $category_name="";
-          $products=$products->where("category_id",$category_id);
-        }
-        if(!empty($subcategory_id))
-        {
-          $subcategory=SubCategory::find($subcategory_id);
-          if(isset($subcategory)) $subcategory_name=$subcategory->name; else $subcategory_name="";
-          $products=$products->where("subcategory_id",$subcategory_id);
-        }  
-       
-       // $products=$products->get();
-        $min_price=request()->min_price;
-      	if($min_price!="")
-        {
-
-        }
-        $max_price=request()->max_price;
-      	if($max_price!="")
-        {
-
-        }*/
+  
         $category_id=request()->category_id;
         $subcategory_id=request()->subcategory_id;
         $min_price=request()->min_price;
@@ -480,12 +452,17 @@ class HomeController extends Controller
       //dd($request);
       	return redirect()->route('productdetail',['id'=>$request->product_id]); 
     }
-    
-    public function updateaccount(Request $request)
+    public function contactus(Request $request)
     {
-      $email=Session::get('username');
-      $user=DB::table('tbl_user')->where("email",$email)->first();
-      $user_id=$user->id;
-      dd($user);
+     
+      $name=$request->name;
+      $email=$request->email;
+      $message=$request->message;
+      $save=$this->homeRepository->contactus($name,$email,$message);
+      if($save){
+        return  redirect()->route('contact')->with('success', 'Concern Person will contact you shortly!');
+      }else{
+        return redirect()->back()->with('errors','Error!');
+      }
     }
 }

@@ -55,6 +55,8 @@ Route::get('refund',[HomeController::class, 'refund'])->name('refund');
 Route::get('faq',[HomeController::class, 'faq'])->name('faq');
 Route::get('contact',[HomeController::class, 'contact'])->name('contact');
 Route::get('aboutus',[HomeController::class, 'aboutus'])->name('aboutus');
+Route::post('contactus',[HomeController::class, 'contactus'])->name('contactus');
+
 
 Route::post('addtowishlist',[HomeController::class, 'addtowishlist'])->name('addtowishlist');
 Route::post('checkpincode',[HomeController::class, 'checkpincode'])->name('checkpincode');
