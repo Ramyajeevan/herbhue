@@ -5,10 +5,7 @@
     <nav class="navbar top-navbar navbar-expand-md navbar-dark">
         <div class="navbar-header">
         <!-- This is for the sidebar toggle which is visible on mobile only -->
-        <a
-            class="nav-toggler waves-effect waves-light d-block d-md-none"
-            href="javascript:void(0)"
-        >
+        <a class="nav-toggler waves-effect waves-light d-block d-md-none" href="javascript:void(0)">
             <i class="ri-close-line fs-6 ri-menu-2-line"></i>
         </a>
         <!-- -------------------------------------------------------------- -->
@@ -84,7 +81,11 @@
             <!-- -------------------------------------------------------------- -->
             <li class="nav-item dropdown">
             <a
+<<<<<<< HEAD
                 class="nav-link dropdown-toggle text-muted waves-effect waves-dark"
+=======
+                class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic"
+>>>>>>> de157da9c9466cb6459f82797f6962a949cbf747
                 href="javascript:void(0);"
                 data-bs-toggle="dropdown"
                 aria-haspopup="true"
