@@ -84,8 +84,8 @@
             <!-- -------------------------------------------------------------- -->
             <li class="nav-item dropdown">
             <a
-                class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic"
-                href=""
+                class="nav-link dropdown-toggle text-muted waves-effect waves-dark"
+                href="javascript:void(0);"
                 data-bs-toggle="dropdown"
                 aria-haspopup="true"
                 aria-expanded="false"
