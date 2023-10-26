@@ -42,7 +42,7 @@
                                 Show Password
                             </label>
                         </div>
-                        <p><a href="#" class="text-green text-decoration-none">Forgot Password ?</a></p>
+                        <p><a href="{{ route('forgotpassword') }}" class="text-green text-decoration-none">Forgot Password ?</a></p>
                     </div>
 
                     <button class="submit-button" type="submit">Sign In</button>
