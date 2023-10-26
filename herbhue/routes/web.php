@@ -35,6 +35,8 @@ Route::get('register',[HomeController::class, 'register'])->name('register');
 Route::post('register',[HomeController::class, 'doRegister'])->name('register');
 Route::get('registrationsuccessfull',[HomeController::class, 'registrationsuccessfull'])->name('registrationsuccessfull');
 Route::get('forgotpassword',[HomeController::class, 'forgotpassword'])->name('forgotpassword');
+Route::post('forgotpasswordlink',[HomeController::class, 'forgotpasswordlink'])->name('forgotpasswordlink');
+
 Route::get('myaccount',[HomeController::class, 'myaccount'])->name('myaccount');
 Route::post('myaccountsettings',[HomeController::class, 'myaccountsettings'])->name('myaccountsettings');
 Route::get('products/{category_id?}/{subcategory_id?}',[HomeController::class, 'products'])->name('products');

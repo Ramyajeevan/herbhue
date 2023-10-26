@@ -119,23 +119,8 @@ class HomeController extends Controller
     {
       //dd($request);
       $email=$request->email;
-      $user=DB::table('tbl_user')->where("email",$email)->first();
-      if(!$user)
-      {
-        return redirect()->back()->with('errors', 'Email not exists!');
-      }
-      else
-      {
-         //$usermail = DB::table('tbl_user')->where("email",$email)->first();
-        $touseremail=$user->email;
-        $message = '<p>Dear User,</p><p>Your Password need to reset!</b></p>';
-        $message .= '<div style="width:49%;float:left;padding-right:10px;">';
-        $link= url()->to("updatepassword")."?email=".$user->email;
-        $message .='<p><a href="'.$link.'">Click here</a> to reset your password.</p>';
-        $message .= '</div>';
-        $mail_sent = Parent::sendmail($message, env('APP_NAME').' Forgot Password', env('MAIL_USERNAME'), env('APP_NAME'),$touseremail,$user->name);
-        return redirect()->back()->with('success', 'Kindly Check your email to reset your password');
-      }
+      return view('resetpassword',["email"=>$email]);
+      
     }
     public function updateuserpassword(Request $request)
     {
@@ -313,8 +298,27 @@ class HomeController extends Controller
     }
   	public function updatepassword(Request $request)
     { 
-   // dd($request);
-      return view('updatepassword',['email',$request->email]);
+      $email=$request->email;
+      $password=$request->password;
+      $confirm_password=$request->confirm_password;
+      $user=DB::table('tbl_user')->where("email",$email)->first();
+      if(!$user)
+      {
+        return redirect()->back()->with('errors', 'Email not exists!');
+      }
+      else
+      {
+          if($password==$confirm_password)
+          {
+            DB::table('tbl_user')->where("email",$email)->update(["password"=>$password]);
+            return redirect()->route('forgotpassword')->with('success', 'Password Updated! Kindly login and continue');
+          }
+          else
+          {
+            return redirect()->route('forgotpassword')->with('errors', 'Password Mismatch!');
+          }
+      }
+     
     }
   	public function searchproducts(Request $request)
     {
@@ -464,5 +468,29 @@ class HomeController extends Controller
       }else{
         return redirect()->back()->with('errors','Error!');
       }
+    }
+
+    public function forgotpasswordlink(Request $request)
+    {
+      $email=$request->email;
+      $user=DB::table('tbl_user')->where("email",$email)->first();
+      if(!$user)
+      {
+        return redirect()->back()->with('errors', 'Email not exists!');
+      }
+      else
+      {
+         //$usermail = DB::table('tbl_user')->where("email",$email)->first();
+        $touseremail=$user->email;
+        $message = '<p>Dear User,</p><p>Your Password need to reset!</b></p>';
+        $message .= '<div style="width:49%;float:left;padding-right:10px;">';
+        $link= url()->to("resetpassword")."?email=".$user->email;
+        $message .='<p><a href="'.$link.'">Click here</a> to reset your password.</p>';
+        $message .= '</div>';
+       // $mail_sent = Parent::sendmail($message, env('APP_NAME').' Forgot Password', env('MAIL_USERNAME'), env('APP_NAME'),$touseremail,$user->name);
+       // return redirect()->back()->with('success', 'Kindly Check your email to reset your password');
+       return  redirect()->route('resetpassword')->with('email',$touseremail);
+      }
+      
     }
 }
