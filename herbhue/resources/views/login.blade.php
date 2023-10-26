@@ -46,7 +46,7 @@
                     </div>
 
                     <button class="submit-button" type="submit">Sign In</button>
-                    <p class="text-center mt-4">Have a query?  <a href="{{ route('home') }}" class="text-green text-decoration-none">Contact Us</a> </p>
+                    <p class="text-center mt-4">Have a query?  <a href="{{ route('contact') }}" class="text-green text-decoration-none">Contact Us</a> </p>
                     
                     <p class="text-center p-0 m-0">Don't have an account?<a href="{{ route('register') }}" class="text-green text-decoration-none"> Register Now</a> </p>
                 </div>
