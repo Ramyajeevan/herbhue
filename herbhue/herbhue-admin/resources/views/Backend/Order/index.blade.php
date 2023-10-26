@@ -76,7 +76,7 @@
       <div class="card-body">
         <div class="table-responsive">
        
-          <table id="file_export" class="table table-striped table-bordered display text-nowrap">
+          <table id="file_export" class="table table-striped table-bordered display">
             <thead>
               <!-- start row -->
               <tr>
@@ -110,9 +110,9 @@
                 <td>{{ $ord->status }}</td>
                 <td>
                   
-                  <a  href="{{route('order.edit',$ord->id)}}" class="btn btn-sm text-primary border-primary" data-original-title="Edit Order">
+                  <a  href="{{route('order.edit',$ord->id)}}" class="btn btn-sm text-primary border-primary" style="margin-bottom:10px;" data-original-title="Edit Order">
                       <i data-feather="edit-3"></i>
-                    </a>
+                    </a> <br>
                   <a  href="javascript:void(0);" onclick="deleteorder({{$ord->id}})"class="btn btn-sm text-danger border-danger" data-original-title="Delete">
                     <i data-feather="trash-2"></i></a>
                 </td>

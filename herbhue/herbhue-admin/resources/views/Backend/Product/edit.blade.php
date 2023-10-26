@@ -56,7 +56,6 @@
     </div>
 </div>
 @endif
-
 <!-- -------------------------------------------------------------- -->
 <!-- Container fluid  -->
 <!-- -------------------------------------------------------------- -->
@@ -99,7 +98,6 @@
                 </select>
               </div>
             </div>
-           
              <div class="mb-3 row">
                 <label class="col-md-2 col-form-label" for="name">Product Name</label>
               <div class="col-md-10">
@@ -222,7 +220,6 @@
               <div class="col-md-10">
                   <div class="input-group mb-3">
                       <span class="input-group-text">Upload</span>
-
                       <div class="custom-file" style="width:92.75%;">
                         <input type="file" class="form-control" id="image4" name="image4">
                       </div>
