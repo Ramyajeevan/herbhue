@@ -107,21 +107,21 @@
                       <input type="hidden" name="id[]" value="{{ $orderproduct->id }}" >
                       <td>{{ $orderproduct->product_name }} </td>
                       <td>{{ $orderproduct->quantity }} </td>
-                      <td>&#8377; {{ $orderproduct->price }}</td>
-                      <td>&#8377; {{ $orderproduct->total }}</td>
+                      <td>&pound; {{ $orderproduct->price }}</td>
+                      <td>&pound; {{ $orderproduct->total }}</td>
                   </tr>
                     @endforeach
                   <tr>
                     <th>SubTotal</th>
-                    <td colspan="3">&#8377; {{ $order->subtotal }} </td>
+                    <td colspan="3">&pound; {{ $order->subtotal }} </td>
                   </tr>
                   <tr>
                     <th>Coupon Amount</th>
-                    <td colspan="3">&#8377; {{ $order->coupon_amount }}</td>
+                    <td colspan="3">&pound; {{ $order->coupon_amount }}</td>
                   </tr>
                   <tr>
                     <th>Delivery Charge</th>
-                    <td colspan="3">&#8377; {{ $order->delivery_charge }}</td>
+                    <td colspan="3">&pound; {{ $order->delivery_charge }}</td>
                   </tr>
                   <tr>
                     <th>Payment Method</th>
@@ -129,7 +129,7 @@
                   </tr>
                   <tr>
                     <th>Net Total</th>
-                    <td colspan="3">&#8377; {{ $order->total }}</td>
+                    <td colspan="3">&pound; {{ $order->total }}</td>
                   </tr>
                 </table>
               </div>
