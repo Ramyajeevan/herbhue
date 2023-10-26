@@ -62,5 +62,5 @@ jobs:
         with:
           app-name: 'herbhue'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_3430E6C1CED64E498E9B0A18DE5F3610 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_F19A49407F994B148C43762569C11819 }}
           package: .
