@@ -187,7 +187,21 @@
            
           </ul>
         </li>
+        <li class="sidebar-item">
+          <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0);" aria-expanded="false">
+            <i data-feather="cpu" class="feather-icon"></i>
+            <span class="hide-menu">Tickets </span>
+          </a>
+          <ul aria-expanded="false" class="collapse first-level">
+            <li class="sidebar-item">
+              <a href="{{ route('ticket.index') }}" class="sidebar-link">
+                <i class="mdi mdi-box-shadow"></i>
+                <span class="hide-menu"> View Tickets</span></a
+              >
+            </li>
            
+          </ul>
+        </li>
           </ul>
         </li>
       </ul>
