@@ -46,9 +46,10 @@ a{
     font-size: 17px;
   }
   
-  .btn-check:checked+.btn{
-    background-color: #ddfaf9 !important;
-  }
+  .btn-check:checked+.btn {
+    background-color: #ffffff !important;
+    border-color: black !important;
+}
   
   ul.ul {
     list-style: none;
