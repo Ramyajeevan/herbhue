@@ -83,6 +83,14 @@
             </div>
             <div class="col-md-3">
                 <ul class="d-flex ul justify-content-end">
+                <li class="me-3">
+                    <a class="nav-link" href="#">
+                    <button type="button" class="btn bg-transparent border-0 position-relative">
+                        <img src="{{ asset('img/search icon (2).svg') }}" alt="" class="nav-icon">
+                         
+                    </button>
+                    </a>
+                </li>
                 @php
                 $cart_items=0;
                 $session_id=Session::getId();
