@@ -1,6 +1,7 @@
 <div class="container-fluid bg-light-green ">
     <div class="container d-flex justify-content-between">
        <!-- <a href="{{url('/')}}"><img src="{{ asset('img/logo.png') }}" alt="" class="main-logo" style="width: 170px;"></a>-->
+       <a href="#" class="nav-link text-nowrap"> 24/7 Free Support </a> <span class="mx-2">|</span>   <a href="#" class="nav-link text-nowrap"> Offers</a><span class="mx-2">|</span> <a href="#" class="nav-link text-nowrap">Need Help ? </a>
         <div class="pt-3">
             <ul class="  d-flex ul">
                 <li class="me-3">
