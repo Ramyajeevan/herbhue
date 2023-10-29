@@ -200,7 +200,7 @@
 <!-- Section: Links  -->
 
 <!-- Copyright -->
-<div class="container-fluid bg-green">
+<div class="container-fluid bg-secondary">
     <div class="container p-4">
         <div class="row">
             <div class="col-md-7">
