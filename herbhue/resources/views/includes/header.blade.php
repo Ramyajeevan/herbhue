@@ -17,7 +17,7 @@
             <ul class="  d-flex ul">
                 <li class="me-3">
                     @if(empty(Session::get('username')))
-                    <a class="nav-link text-nowrap" href="{{ route('login') }}">Login | Sign Up</a>
+                    <a class="nav-link text-nowrap" href="{{ route('login') }}"> Login | Sign Up</a>
                     @else
                     <a class="nav-link text-nowrap" href="{{ route('myaccount') }}">My Account</a>
                     @endif
