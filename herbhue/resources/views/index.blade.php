@@ -25,23 +25,7 @@
         </div>
     </div>
 </div>
-
-<div class="container-fluid bg-white py-2">
-    <div class="container mt-3 mb-4">
-        <h3>Shop by Health Concerns</h3>
-        <div class="row mt-3">
-            @foreach($category as $cat)
-            <div class="col-md-2">
-                <img src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/{{ $cat->image }}" class="w-100" alt="">
-                <h5 class="text-center mt-2">{{ $cat->name }}</h5>
-            </div>
-            @endforeach
-        </div>
-    </div>
-</div>
-
-
-    <div class="container-fluid bg-secondary">
+<div class="container-fluid bg-white">
         <div class="container mt-3 mb-4">
             <div class="d-flex justify-content-between pt-4">
                 <div>
@@ -63,13 +47,14 @@
                                 <img src="{{ asset('img/no_image.svg') }}"  width="100%" height="285px" alt="">
                                 @endif
                             </div>
-                            <h5 class=" d-inline-block text-truncate" style="max-width: 265px;">{{ $prod->name }}</h5>
-                            <span class="text-secondary pb-1 mb-1 d-inline-block text-truncate" style="max-width: 265px;">
+                            <p class="small text-center text-secondary py-0 my-0">220 gm</p>
+                            <h5 class="text-truncate text-center" style="max-width: 265px;">{{ $prod->name }}</h5>
+                            <p class="text-secondary text-center pb-1 mb-1  text-truncate" style="max-width: 265px;">
                             {!! $prod->description !!}</p>
-                            <p class="text-secondary p-0 m-0">{{ $prod->describe }}</p>
-                            <span class="text-secondary">M.R.P: <span
+                            <p class="text-secondary p-0 m-0 text-center">{{ $prod->describe }}</p>
+                            <span class="text-secondary ">M.R.P: <span
                                     class="text-decoration-line-through text-secondary"> &pound; {{ $prod->product_options->mrp_price }}</span> </span>
-                            <p>&pound; {{ $prod->product_options->price }}</p>
+                            <p class="text-center">&pound; {{ $prod->product_options->price }}</p>
 
                             <a href="{{ route('productdetail', $prod->id) }}"  class="btn btn-success w-100">View Product</a>
                         </div>
@@ -79,13 +64,55 @@
 
             </div>
 
-        </div>
-
-
-        <div class="container bg-green py-5 ">
-            <p class="text-center text-white mt-2">Static Banner Should Visible Here</p>
+        </div>         
+</div>
+<div class="container-fluid bg-secondary py-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                <div class="d-flex justify-content-center">
+                    <img src="{{asset('img/traceability-in.png')}}" class="w-50" alt="img">
+                </div>
+                <p class="text-center">
+                We use the finest ingredients and the most sought-after suppliers in our products.
+                </p>
+            </div>
+            <div class="col-md-4 mb-3"><div class="d-flex justify-content-center">
+                    <img src="{{asset('img/tested-and-certified-in.png')}}" class="w-50"  alt="img">
+                </div>
+                <p class="text-center">
+                We invest in the latest expertise, technology and facilities.
+                </p></div>
+            <div class="col-md-4 mb-3"><div class="d-flex justify-content-center">
+                    <img src="{{asset('img/science--and-safety-in.png')}}" class="w-50"  alt="img">
+                </div>
+                <p class="text-center">
+                Experiential scientists put product quality, safety and excellence above all.
+                </p></div>
+                <div class="col-md-12 text-center">
+                <button type="button" class="btn btn-secondary rounded-pill ">LEARN MORE</button>
+                </div>
         </div>
     </div>
+</div>
+
+
+<div class="container-fluid bg-white py-2">
+    <div class="container mt-3 mb-4">
+        <h3>Shop by Health Concerns</h3>
+        <div class="row mt-3">
+            @foreach($category as $cat)
+            <div class="col-md-2">
+                <img src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/{{ $cat->image }}" class="w-100" alt="">
+                <h5 class="text-center mt-2">{{ $cat->name }}</h5>
+            </div>
+            @endforeach
+        </div>
+    </div>
+</div>
+
+
+  
 
     <div class="container-fluid bg-white py-3">
         <div class="container mt-3 mb-4">
@@ -128,10 +155,11 @@
                                     <img src="{{ asset('img/no_image.svg') }}"  class="w-75" alt="">
                                     @endif
                                 </div>
+                                
                                 <div class="col-9">
-                                    <h6 class="fw-bold">{{ $wellprod->name }}</h6>
-                                    <p class="text-secondary pb-1 mb-1 d-inline-block text-truncate" style="max-width: 265px;">{!! $wellprod->description !!}</p>
-                                    <p class="text-secondary p-0 m-0">{{ $wellprod->describe }}</p>
+                                    <h6 class="fw-bold mb-0 pb-0">{{ $wellprod->name }}</h6>
+                                    <p class="text-secondary mb-0 pb-0 text-truncate" style="max-width: 265px;">{!! $wellprod->description !!}</p>
+                                    <p class="text-secondary py-0 my-0">{{ $wellprod->describe }}</p>
                                     <span class="text-secondary">M.R.P: <span
                                             class="text-decoration-line-through text-secondary">&pound; {{ $wellprod->product_options->mrp_price }}</span><br><span
                                             class="fw-bold text-black">&pound; {{ $wellprod->product_options->price }}</span></span>
