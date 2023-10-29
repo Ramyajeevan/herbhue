@@ -249,10 +249,41 @@
                 </div>
             
                 <div class="container-fluid">
+                <div class="container">
+                        <h5 class="text-center text-black mb-4">You may like to purchase</h5>
+                        <div class="cate-1 owl-carousel owl-theme">
+                            @foreach($product as $prod)
+                            <div class="item">
+                                <div class="card border-secondary">
+                                    <div class="card-body">
+                                        <div class="text-center mb-3">
+                                            @if($prod->image1!="")
+                                            <img src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/{{ $prod->image1 }}"style="width:100%; height:230px;" alt="">
+                                            @else
+                                            <img src="{{ asset('img/no_image.svg') }}" style="width:100%; height:230px;" alt="">
+                                            @endif
+                                        </div>
+                                        <p class="small text-center text-secondary py-0 my-0">220 gm</p>
+                                        <h5 class="text-truncate text-center" style="max-width: 265px;">{{ $prod->name }}</h5>
+                                        <p class="text-secondary text-center pb-1 mb-1  text-truncate" style="max-width: 265px;">
+                                        {!! $prod->description !!}</p>
+                                        <p class="text-secondary p-0 m-0 text-center">{{ $prod->describe }}</p>
+                                        <p class="text-secondary text-center pb-0 mb-0">M.R.P: <span
+                                                class="text-decoration-line-through text-secondary"> &pound; {{ $prod->product_options->mrp_price }}</span> </p>
+                                        <p class="text-center">&pound; {{ $prod->product_options->price }}</p>
+
+                                        <a href="{{ route('productdetail', $prod->id) }}"  class="btn btn-secondary text-black fw-bold w-100">Add to cart</a>
+                                    </div>
+                                </div>
+                            </div>
+                            @endforeach
+
+            </div>
+                </div>
                     <div class="container">
-                <div class="card">
-                    <div class="card-body">
-                    <div class="row ">
+                    <div class="card">
+                        <div class="card-body">
+                        <div class="row ">
                             <div class="col-md-7">
                             <div class="card border-0">
                                     <div class="card-header border-0 bg-white d-flex justify-content-between">
