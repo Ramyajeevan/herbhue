@@ -118,7 +118,7 @@
                       <img src="{{ asset('img/no_image.svg') }}" class="w-100" alt="">
                       @endif
                     </div>
-                    <button type="button" class="btn bg-black text-white w-100 btn-lg" onclick="addtocart();">Add to cart</button>
+                    <button type="button" class="btn bg-black text-white w-100 rounded-0 mt-3 btn-lg" onclick="addtocart();">Add to cart</button>
                     </div>
                    </div>
                 </div>
