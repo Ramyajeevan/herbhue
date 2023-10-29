@@ -142,6 +142,9 @@
                         <h4>Root, Seed & Berry Powders</h4>
                         <p class="text-secondary">For your skin, gut and muscle health.</p>
                     </div>
+                    <div class="desc-bottom">
+                    <button type="button" class="btn btn-secondary rounded-pill ">LEARN MORE</button>
+                    </div>
                 </div>
             </div>
             <div class="col-md-4 mb-3">
@@ -150,6 +153,9 @@
                     <div class="top-desc">
                         <h4>Root, Seed & Berry Powders</h4>
                         <p class="text-secondary">For your skin, gut and muscle health.</p>
+                    </div>
+                    <div class="desc-bottom">
+                    <button type="button" class="btn btn-secondary rounded-pill ">LEARN MORE</button>
                     </div>
                 </div>
             </div>
