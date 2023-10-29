@@ -44,7 +44,7 @@
                </li>
                 <li class="me-3">
                     @if(empty(Session::get('username')))
-                    <a class="nav-link text-nowrap" href="{{ route('login') }}"> <span> <img src="{{ asset('img/login.svg') }}" alt="" class="nav-icon">Login |</span>  <span> <img src="{{ asset('img/register.svg') }}" alt="" class="nav-icon">Sign Up</span>  </a>
+                    <a class="nav-link text-nowrap" href="{{ route('login') }}"> <span class="me-3"> <img src="{{ asset('img/login.svg') }}" alt="" class="nav-icon me-1"> Login |</span>  <span> <img src="{{ asset('img/register.svg') }}" alt="" class="nav-icon me-1"> Sign Up</span>  </a>
                     @else
                     <a class="nav-link text-nowrap" href="{{ route('myaccount') }}">My Account</a>
                     @endif
