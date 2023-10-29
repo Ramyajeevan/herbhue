@@ -1,4 +1,14 @@
  <!-- Footer -->
+
+ <style>
+    .rounded-end-circle{
+        border-radius: 37px 0px 0px 35px !important;
+    }
+.rounded-end-circle{
+    border-radius: 0px 32px 32px 0px !important;
+}
+    
+ </style>
  <footer class="text-center text-lg-start bg-white text-muted">
 
 
@@ -6,12 +16,14 @@
 <!-- Section: Social media -->
 <section class=" p-4 border-bottom " style=" background:#FDF4F4;">
     <div class="container ">
-        <h4 class="text-black fw-bold mb-1 pb-1">Sign up and save</h4>
-        <p class="text-black py-0 my-0">Sign up for email updates on products offers and discounts</p>
-        <div class="input-group mb-3">
-        <input type="email" id="subscribeEmail" name="subscribeEmail" class="rounded-start-pill form-control rounded-pill   form-control-lg" aria-label="Recipient's username" aria-describedby="button-addon2">
-        <button class="btn btn-primary rounded-end-circle  px-3 bg-secondary" type="button"  id="button-addon2" onclick="subscribe();">Sign Up</button>
+        <h4 class="text-black fw-bold mb-1 pb-1 text-center">Sign up and save</h4>
+        <p class="text-black py-0 my-0 text-center">Sign up for email updates on products offers and discounts</p>
+       <div class="d-flex justify-content-between">
+       <div class="input-group mb-3 w-75">
+        <input type="email" id="subscribeEmail" name="subscribeEmail" class="rounded-start-pill form-control   form-control-lg" aria-label="Recipient's username" aria-describedby="button-addon2">
+        <button class="btn btn-secondary rounded-end-circle  px-3 bg-secondary" type="button"  id="button-addon2" onclick="subscribe();">Sign Up</button>
 </div>
+       </div>
         <!-- <div class="row">
             <div class="col-lg-6">
                 <div class="me-5 d-none d-lg-block">
