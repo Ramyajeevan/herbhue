@@ -55,7 +55,7 @@
                 <div class="col-md-6">
                    <div class="row">
                     <div class="col-3"> 
-                    <div id="thumbs" class="mt-3 text-center">
+                    <div id="thumbs" class=" text-center">
                         @if(!empty($products->image1))
                         <img src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/{{ $products->image1 }}" alt="1st image  " class="mb-2" />
                         @endif
