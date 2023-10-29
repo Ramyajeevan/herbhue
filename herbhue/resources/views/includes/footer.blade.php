@@ -4,9 +4,15 @@
 
 
 <!-- Section: Social media -->
-<section class=" p-4 border-bottom bg-green">
+<section class=" p-4 border-bottom " style=" background:#FDF4F4;">
     <div class="container ">
-        <div class="row">
+        <h4 class="text-black fw-bold mb-1 pb-1">Sign up and save</h4>
+        <p class="text-black py-0 my-0">Sign up for email updates on products offers and discounts</p>
+        <div class="input-group mb-3">
+        <input type="email" id="subscribeEmail" name="subscribeEmail" class="rounded-start-pill form-control rounded-pill   form-control-lg" aria-label="Recipient's username" aria-describedby="button-addon2">
+        <button class="btn btn-primary rounded-end-circle  px-3 bg-secondary" type="button"  id="button-addon2" onclick="subscribe();">Sign Up</button>
+</div>
+        <!-- <div class="row">
             <div class="col-lg-6">
                 <div class="me-5 d-none d-lg-block">
                     <span class="h4 fw-bold text-white">Sign Up To Newsletter</span>
@@ -20,7 +26,7 @@
                 </div>
             </div>
 
-        </div>
+        </div> -->
 
 
     </div>
