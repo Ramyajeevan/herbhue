@@ -169,6 +169,29 @@
                         @endforeach
                       
                     </div>
+                    <div class="d-flex">
+                    <div class="me-3 text-center">
+                        <img src="{{asset('img/cetorganic.webp')}}" class="pd-icon" alt="">
+                        <p class="text-center fs-10 mt-2">CERT. ORGANIC</p>
+                    </div>
+                    <div class="me-3 text-center">
+                        <img src="{{asset('img/glutenfree.webp')}}" class="pd-icon" alt="">
+                        <p class="text-center fs-10 mt-2">GLUTEN-FREE</p>
+                    </div>
+                    <div class="me-3 text-center">
+                        <img src="{{asset('img/no-additives.we')}}bp" class="pd-icon" alt="">
+                        <p class="text-center fs-10 mt-2">NO ADDITIVES</p>
+                    </div>
+                    <div class="me-4 text-center">
+                        <img src="{{asset('img/non-gmo.webp" c')}}lass="pd-icon" alt="">
+                        <p class="text-center fs-10 mt-2">NON-GMO</p>
+                    </div>
+                    <div class="me-3 text-center">
+                        <img src="{{asset('img/vegan.webp" cla')}}ss="pd-icon" alt="">
+                        <p class="text-center fs-10 mt-2">VEGAN</p>
+                    </div>
+
+                </div>
                     <!-- <div class="d-flex mb-3">
                         <p class="fs-5 text-secondary me-2">Quantity</p>
                         <span class="minus btn btn-success btn-sm shadow  " style="height: 35px;">-</span>
