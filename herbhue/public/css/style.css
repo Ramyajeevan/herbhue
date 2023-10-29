@@ -32,12 +32,10 @@ a{
   .bg-light-blue{
   background-color: #E8F1FE !important;
   }
-   
-  
   .border-secondary {
     border: 2px solid #00000029 !important;
   }
-  
+
   img.nav-icon {
     width: 18px !important;
   }
