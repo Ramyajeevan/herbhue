@@ -46,6 +46,41 @@
 .rate > label:hover ~ input:checked ~ label {
     color: #3038AC;
 }
+
+
+.progress{
+	width: 80%;
+	height: 10px;
+    position: relative;
+    top: 5px;
+}
+.skill-wrapper{
+  margin-bottom:30px;
+}
+.skill-wrapper span {
+    font-size: 18px;
+    line-height: 20px;
+    text-transform: uppercase;
+    font-family: Inconsolata,monospace;
+    margin-bottom: 10px;
+}
+.progress-bar {
+    background: #01A10B;
+}
+.progressbar-active{
+	animation-name: progress;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+	animation-delay: 0.4s;
+}
+@keyframes progress{
+	0%{
+		width:0;
+	}
+	100%{
+		width:100%;
+	}
+}
 </style>
 @endsection
 @section('content')
@@ -163,6 +198,81 @@
             <p class="text-secondary fs-5 border-bottom pb-4 mb-5 border-3">
             {!! $products->description !!}
             </p>
+
+            <div class="row border">
+            <div class="col-md-7">
+            <div class="card border-0">
+                    <div class="card-header border-0 bg-white d-flex justify-content-between">
+                        <h5 class="pt-1">Reviews &amp; Ratings</h5>
+                       
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-4 pt-4">
+                                <h3 class="text-center mb-0 pb-0">4.5</h3>
+                                <p class="py-0 my-0 fs-5 text-center"><i class="fa fa-star green me-2"></i> <i class="fa fa-star green me-2"></i> <i class="fa fa-star green me-2"></i> <i class="fa fa-star green me-2"></i><i class="fa fa-star-half-full green "></i></p>
+                                <p class="py-1 my-1 text-center">Total Ratings : 1,050</p>
+                            </div>
+                            <div class="col-8">
+                                <div class="skill-wrapper d-flex justify-content-center mb-2">
+                                    <span class="float-left me-3 text-nowrap h4">5 <i class="fa fa-star text-secondary"></i></span>
+                                    <div class="progress me-3">
+                                        <div class="progress-bar progressbar-active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="max-width:100%;"></div>
+                                    </div>
+                                    <span class="d-block float-right h4">856</span>
+
+                                </div>
+                                <div class="skill-wrapper d-flex justify-content-center mb-2">
+                                    <span class="float-left me-3 text-nowrap h4">4 <i class="fa fa-star text-secondary"></i></span>
+                                    <div class="progress me-3">
+                                        <div class="progress-bar progressbar-active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="max-width:85%;"></div>
+                                    </div>
+                                    <span class="d-block float-right h4">135</span>
+
+                                </div>
+                                <div class="skill-wrapper d-flex justify-content-center mb-2">
+                                    <span class="float-left me-3 text-nowrap h4">3 <i class="fa fa-star text-secondary"></i></span>
+                                    <div class="progress me-3">
+                                        <div class="progress-bar progressbar-active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="max-width:75%;"></div>
+                                    </div>
+                                    <span class="d-block float-right h4">45</span>
+
+                                </div>
+                                <div class="skill-wrapper d-flex justify-content-center mb-2">
+                                    <span class="float-left me-3 text-nowrap h4">2 <i class="fa fa-star text-secondary"></i></span>
+                                    <div class="progress me-3">
+                                        <div class="progress-bar progressbar-active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="max-width:60%;"></div>
+                                    </div>
+                                    <span class="d-block float-right h4">15</span>
+
+                                </div>
+                                <div class="skill-wrapper d-flex justify-content-center mb-2">
+                                    <span class="float-left me-3 text-nowrap h4">1 <i class="fa fa-star text-secondary"></i></span>
+                                    <div class="progress me-3">
+                                        <div class="progress-bar progressbar-active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="max-width:30%;"></div>
+                                    </div>
+                                    <span class="d-block float-right h4">5</span>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5">
+
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
             @if(!empty(Session::get('username')))
             <form method="post" action="{{ route('addrating') }}">
                 @csrf
@@ -293,5 +403,17 @@
           }
         });
     }
+</script>
+<script>
+    $(window).on('scroll',function(){
+			let scroll = $(window).scrollTop();
+			let oTop = $('.progress-bar').offset().top - window.innerHeight;
+			if(scroll>oTop){
+				$(".progress-bar").addClass("progressbar-active");
+			}
+			else{
+				$(".progress-bar").removeClass("progressbar-active");
+			}
+		});
 </script>
 @endsection
