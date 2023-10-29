@@ -23,9 +23,9 @@
                     @endif
                 </li>
                 <li class="me-3">
-                    <!-- <a class="nav-link" href="javascript:void(0);">Offers</a> -->
-                    <p><img src="{{ asset('img/UK_flag.png') }}"
-                    width="20px" alt=""> <span class="ms-2">United Kingdom</span> </p>
+                   
+                    <a class="nav-link" href="#"><img src="{{ asset('img/UK_flag.png') }}"
+                    width="20px" alt=""> <span class="ms-2">United Kingdom</span> </a>
                 </li>
 
               
