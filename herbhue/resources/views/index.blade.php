@@ -18,7 +18,7 @@
     }
     .desc-bottom{
         position: absolute;
-        bottom: 15px;
+        bottom: 30px;
         right: 35%;
     }
 
