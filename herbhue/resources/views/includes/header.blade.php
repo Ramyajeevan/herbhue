@@ -91,7 +91,7 @@
                 <li class="me-3">
                     <a class="nav-link" href="{{ route('viewcart') }}">
                     <button type="button" class="btn bg-transparent border-0 position-relative">
-                        <img src="{{ asset('img/shopping_cart_FILL1_wght400_GRAD0_opsz48 (3).svg') }}" alt="" class="nav-icon">
+                        <img src="{{ asset('img/Cart Icon (1).svg') }}" alt="" class="nav-icon">
                         <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                         {{ $cart_items }}
                         </span>
@@ -111,7 +111,7 @@
                 <li class="me-3">
                     <a class="nav-link" href="{{ route('mywishlist') }}">
                     <button type="button" class="btn bg-transparent border-0 position-relative">
-                        <img src="{{ asset('img/favorite_FILL1_wght400_GRAD0_opsz48 (2).svg') }}" alt="" class="nav-icon">
+                        <img src="{{ asset('img/Wishlist Icon (1).svg') }}" alt="" class="nav-icon">
                         <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                         {{ $wishlist_count }}
                         </span>
