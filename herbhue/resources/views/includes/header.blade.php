@@ -64,7 +64,7 @@
   <a href="{{url('/')}}"><img src="{{ asset('img/logo.png') }}" alt="" class="main-logo" style="width: 170px;"></a>   
             </div>
             <div class="col-md-3">
-                <ul class="d-flex ul">
+                <ul class="d-flex ul justify-content-end">
                 @php
                 $cart_items=0;
                 $session_id=Session::getId();
