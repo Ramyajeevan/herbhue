@@ -124,7 +124,7 @@
         <div class="row">
             <div class="col-md-4 mb-3">
                 <div class="card border-0">
-                    <img src="{{asset('img/health.png')}}" class="w-100 card-img-top"  alt="">
+                    <img src="{{asset('img/health.png')}}" class=" card-img-top mb-3" width="150px" alt="">
                     <div class="top-desc">
                         <h4>Root, Seed & Berry Powders</h4>
                         <p class="text-secondary">For your skin, gut and muscle health.</p>
@@ -136,7 +136,7 @@
             </div>
             <div class="col-md-4 mb-3">
                 <div class="card border-0">
-                    <img src="{{asset('img/health.png')}}" class="w-100 card-img-top"  alt="">
+                    <img src="{{asset('img/health.png')}}" class=" card-img-top mb-3" width="150px"   alt="">
                     <div class="top-desc">
                         <h4>Root, Seed & Berry Powders</h4>
                         <p class="text-secondary">For your skin, gut and muscle health.</p>
@@ -145,7 +145,7 @@
             </div>
             <div class="col-md-4 mb-3">
                 <div class="card border-0">
-                    <img src="{{asset('img/health.png')}}" class="w-100 card-img-top"  alt="">
+                    <img src="{{asset('img/health.png')}}" class=" card-img-top mb-3" width="150px"   alt="">
                     <div class="top-desc">
                         <h4>Root, Seed & Berry Powders</h4>
                         <p class="text-secondary">For your skin, gut and muscle health.</p>
