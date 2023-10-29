@@ -8,7 +8,18 @@
     display: block;
     width: 100%;
     height: auto;
+  
 }
+.top-desc{
+        position: absolute;
+        top:10px;
+
+    }
+    .desc-bottom{
+        position: absolute;
+        bottom:10px;
+        right: 50px;
+    }
 </style>
 @endsection
 @section('content')
@@ -109,12 +120,46 @@
             @endforeach
         </div>
     </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                <div class="card border-0">
+                    <img src="{{asset('img/health.png')}}" class="w-100 card-img-top"  alt="">
+                    <div class="top-desc">
+                        <h4>Root, Seed & Berry Powders</h4>
+                        <p class="text-secondary">For your skin, gut and muscle health.</p>
+                    </div>
+                    <div class="desc-bottom">
+                    <button type="button" class="btn btn-secondary rounded-pill ">LEARN MORE</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card border-0">
+                    <img src="{{asset('img/health.png')}}" class="w-100 card-img-top"  alt="">
+                    <div class="top-desc">
+                        <h4>Root, Seed & Berry Powders</h4>
+                        <p class="text-secondary">For your skin, gut and muscle health.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card border-0">
+                    <img src="{{asset('img/health.png')}}" class="w-100 card-img-top"  alt="">
+                    <div class="top-desc">
+                        <h4>Root, Seed & Berry Powders</h4>
+                        <p class="text-secondary">For your skin, gut and muscle health.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 
   
 
-    <div class="container-fluid bg-white py-3">
+    <!-- <div class="container-fluid bg-white py-3">
         <div class="container mt-3 mb-4">
 
             <h4>Our Top Brands</h4>
@@ -130,7 +175,7 @@
             </div>
 
         </div>
-    </div>
+    </div> -->
 
     <div class="container-fluid bg-secondary py-4">
         <div class="container mt-3 mb-4">
