@@ -83,7 +83,7 @@
 
         </div>         
 </div>
-<div class="container-fluid bg-secondary py-4">
+<div class="container-fluid bg-light py-4">
     <div class="container">
         <div class="row">
             <div class="col-md-4 mb-3">

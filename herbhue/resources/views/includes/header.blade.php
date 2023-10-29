@@ -14,6 +14,10 @@
   .btn-secondary , .bg-secondary{
     background-color: #ACB69C !important;
   }
+
+  .bg-light{
+    background:#F6F6F6 !important;
+  }
 </style>
 <div class="container-fluid bg-light-green ">
     <div class="container d-flex justify-content-between">
