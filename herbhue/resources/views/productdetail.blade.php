@@ -237,12 +237,19 @@
 
                 </div>
             </div>
-            <div class="bg-light py-2"> 
-            <h3 class="text-black">Description</h3>
-            <p class="text-secondary fs-5 border-bottom pb-4 mb-5 border-3">
-            {!! $products->description !!}
-            </p>
+            </div>
+                </div>  
+                <div class="container-fluid bg-light py-2">
+                    <div class="container">
+                        <h3 class="text-black">Description</h3>
+                    <p class="text-secondary fs-5 border-bottom pb-4 mb-5 border-3">
+                    {!! $products->description !!}
+                    </p>
+                    </div>
                 </div>
+            
+                <div class="container-fluid">
+                    <div class="container">
                 <div class="card">
                     <div class="card-body">
                     <div class="row ">
