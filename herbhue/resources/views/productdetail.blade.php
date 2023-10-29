@@ -260,13 +260,13 @@
                                           
                                         </div>
                                         <p class="small text-center text-secondary py-0 my-0">220 gm</p>
-                                        <h5 class="text-truncate text-center" style="max-width: 265px;">{{ $prod->name }}</h5>
-                                        <p class="text-secondary text-center pb-1 mb-1  text-truncate" style="max-width: 265px;">
+                                        <h5 class="text-truncate text-center" style="max-width: 265px;">Relax & Focus Bundle</h5>
+                                        <p class="text-secondary text-center pb-1 mb-1  text-truncate" style="max-width: 265px;">Adaptogenic Mushrooms + Herbs
                                        </p>
-                                        <p class="text-secondary p-0 m-0 text-center"></p>
+                                     
                                         <p class="text-secondary text-center pb-0 mb-0">M.R.P: <span
-                                                class="text-decoration-line-through text-secondary"> &pound; </span> </p>
-                                        <p class="text-center">&pound; </p>
+                                                class="text-decoration-line-through text-secondary"> &pound; 241.00 </span> </p>
+                                        <p class="text-center">&pound; 241.00 </p>
 
                                         <a href="#"  class="btn btn-secondary text-black fw-bold w-100">Add to cart</a>
                                     </div>
