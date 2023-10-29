@@ -123,14 +123,14 @@
                    </div>
                 </div>
                 <div class="col-md-6">
-                    <h6 class="text-green">{{ $products->category_name }}</h6>
+                    <h6 class="text-secondary">Home / {{ $products->category_name }}</h6>
                     <h3 class="text-black">{{ $products->name }}</h3>
                    <p>
                     <?php for($k=1;$k<=5;$k++) { 
     						if($k<=$stars){ ?>
-                          <i class="fa fa-star text-green fs-5 me-2"></i>
+                          <i class="fa fa-star text-warning fs-5 me-2"></i>
                           <?php } else { ?>
-                          <i class="fa fa-star-o text-green fs-5 me-2"></i>
+                          <i class="fa fa-star-o text-warning fs-5 me-2"></i>
                           <?php } } ?>
                          <span class="text-secondary">({{ $totalusers }} Customer Reviews)</span>
                     </p>
