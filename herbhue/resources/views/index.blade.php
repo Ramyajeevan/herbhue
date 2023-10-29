@@ -237,7 +237,7 @@
 
 
     
-    <div class="container-fluid   py-5 ">
+    <!-- <div class="container-fluid   py-5 ">
             <div class="row">
                 <div class="col-md-4 bg-green py-5">
                         <img src="{{asset('img/inverted-quote.png')}}" width="100px" class="mt-4" alt="">
@@ -262,7 +262,7 @@
                 </div>
             </div>
             
-        </div>
+        </div> -->
 
 @endsection
 @section('script')
