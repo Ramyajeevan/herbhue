@@ -15,6 +15,11 @@
         </div>
          <div class="pt-3">
             <ul class="  d-flex ul">
+            <li class="me-3">
+                   
+                   <a class="nav-link" href="#"><img src="{{ asset('img/UK_flag.png') }}"
+                   width="20px" alt=""> <span class="ms-2">United Kingdom</span> </a>
+               </li>
                 <li class="me-3">
                     @if(empty(Session::get('username')))
                     <a class="nav-link text-nowrap" href="{{ route('login') }}"> Login | Sign Up</a>
@@ -22,11 +27,7 @@
                     <a class="nav-link text-nowrap" href="{{ route('myaccount') }}">My Account</a>
                     @endif
                 </li>
-                <li class="me-3">
-                   
-                    <a class="nav-link" href="#"><img src="{{ asset('img/UK_flag.png') }}"
-                    width="20px" alt=""> <span class="ms-2">United Kingdom</span> </a>
-                </li>
+                
 
               
                 <!-- <li class="me-3">
