@@ -1,3 +1,14 @@
+<style>
+      
+  .btn-check:checked+.btn {
+    background-color: #ffffff !important;
+    border-color: black !important;
+}
+
+.bg-light-green {
+    background-color: #ACB69C !important;
+  }
+</style>
 <div class="container-fluid bg-light-green ">
     <div class="container d-flex justify-content-between">
       <!-- <a href="{{url('/')}}"><img src="{{ asset('img/logo.png') }}" alt="" class="main-logo" style="width: 170px;"></a>  -->
@@ -59,10 +70,10 @@
         <div class="w-25 px-4"><button type="button" class="btn btn-primary-light w-100 text-nowrap btn-lg">Quick Order</button></div>
     </div> -->
 
-    <div class="container nav2">
+    <div class="container">
         <div class="row">
             <div class="col-md-9 text-center">
-  <a href="{{url('/')}}"><img src="{{ asset('img/logo.png') }}" alt="" class="main-logo" style="width: 170px;"></a>   
+                 <a href="{{url('/')}}"><img src="{{ asset('img/logo.png') }}" alt="" class="main-logo" style="width: 170px;position: relative;left: 57%; top: -10px;"></a>   
             </div>
             <div class="col-md-3">
                 <ul class="d-flex ul justify-content-end">
