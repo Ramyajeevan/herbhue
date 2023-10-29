@@ -173,7 +173,7 @@
                         <h6>Benefits</h6>
                         <div class="row mb-2">
                             <div class="col-1">
-                                <img src="{{asset('img/check_circle_FILL0_wght400_GRAD0_opsz24.svg')}}"style="width:15px;" alt="">
+                                <img src="{{asset('img/check_circle_FILL0_wght400_GRAD0_opsz24.svg')}}"style="width:25px;" alt="">
                             </div>
                             <div class="col-11">
                                 <p>Nutrient profile: Lion's mane mushroom is rich in beta-glucans, which may support natural immunity and brain health</p>
@@ -181,7 +181,7 @@
                         </div>
                         <div class="row mb-2">
                             <div class="col-1">
-                                <img src="{{asset('img/check_circle_FILL0_wght400_GRAD0_opsz24.svg')}}"style="width:15px;" alt="">
+                                <img src="{{asset('img/check_circle_FILL0_wght400_GRAD0_opsz24.svg')}}"style="width:25px;" alt="">
                             </div>
                             <div class="col-11">
                                 <p>Nutrient profile: Lion's mane mushroom is rich in beta-glucans, which may support natural immunity and brain health</p>
