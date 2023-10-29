@@ -47,7 +47,9 @@
     color: #3038AC;
 }
 
-
+.text-warning{
+    color:#D7B762 !important;
+}
 .progress{
 	width: 80%;
 	height: 10px;
@@ -65,7 +67,7 @@
     margin-bottom: 10px;
 }
 .progress-bar {
-    background: #01A10B;
+    background: #D7B762;
 }
 .progressbar-active{
 	animation-name: progress;
@@ -210,7 +212,7 @@
                         <div class="row">
                             <div class="col-4 pt-4">
                                 <h3 class="text-center mb-0 pb-0">4.5</h3>
-                                <p class="py-0 my-0 fs-5 text-center"><i class="fa fa-star green me-2"></i> <i class="fa fa-star green me-2"></i> <i class="fa fa-star green me-2"></i> <i class="fa fa-star green me-2"></i><i class="fa fa-star-half-full green "></i></p>
+                                <p class="py-0 my-0 fs-5 text-center"><i class="fa fa-star text-warning me-2"></i> <i class="fa fa-star text-warning me-2"></i> <i class="fa fa-star text-warning me-2"></i> <i class="fa fa-star text-warning me-2"></i><i class="fa fa-star-half-full text-warning "></i></p>
                                 <p class="py-1 my-1 text-center">Total Ratings : 1,050</p>
                             </div>
                             <div class="col-8">
