@@ -52,20 +52,23 @@
      <a href="{{url('/')}}"><img src="{{ asset('img/logo.png') }}" alt="" class="main-logo" style="width: 170px;"></a> 
             </div>
             <div class="col-md-3 text-end">
-                <a href="#"><i class="fa fa-search fs-4"></i></a>
-            @php
+                <ul class="d-flex ul">
+            <li class="me-3">
+                <a  class="nav-link" href="#"><i class="fa fa-search fs-4"></i></a></li>
+                @php
                 $cart_items=0;
                 $session_id=Session::getId();
                 $cart_items=DB::table('tbl_cart')->where("session_id",$session_id)->sum("quantity");
-                @endphp 
-                    <a class="nav-link me-2" href="{{ route('viewcart') }}">
+                @endphp
+                <li class="me-3">
+                    <a class="nav-link" href="{{ route('viewcart') }}">
                     <button type="button" class="btn bg-transparent border-0 position-relative">
                         <img src="{{ asset('img/shopping_cart_FILL1_wght400_GRAD0_opsz48 (3).svg') }}" alt="" class="nav-icon">
                         <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                         {{ $cart_items }}
                         </span>
                     </a>
-                 
+                </li>
                 @php
                 $wishlist_count=0;
                 if(!empty(Session::get('username')))
@@ -75,12 +78,14 @@
                         $wishlist_count=DB::table("tbl_wishlist")->where("user_id",$user->id)->count();
                     // $wishlist_count=1;
                 }
-                @endphp 
+                @endphp
+                <li class="me-3">
                     <a class="nav-link" href="{{ route('mywishlist') }}">
                         <img src="{{ asset('img/favorite_FILL1_wght400_GRAD0_opsz48 (2).svg') }}" alt="" class="nav-icon">
                         {{ $wishlist_count }}
                     </a>
-                
+                </li>
+                </ul>
             </div>
         </div>
     </div>
