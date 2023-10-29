@@ -17,36 +17,7 @@
                     width="20px" alt=""> <span class="ms-2">United Kingdom</span> </p>
                 </li>
 
-                @php
-                $cart_items=0;
-                $session_id=Session::getId();
-                $cart_items=DB::table('tbl_cart')->where("session_id",$session_id)->sum("quantity");
-                @endphp
-                <li class="me-3">
-                    <a class="nav-link" href="{{ route('viewcart') }}">
-                    <button type="button" class="btn bg-transparent border-0 position-relative">
-                        <img src="{{ asset('img/shopping_cart_FILL1_wght400_GRAD0_opsz48 (3).svg') }}" alt="" class="nav-icon">
-                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                        {{ $cart_items }}
-                        </span>
-                    </a>
-                </li>
-                @php
-                $wishlist_count=0;
-                if(!empty(Session::get('username')))
-                {
-                    $email=Session::get('username');
-                        $user=DB::table("tbl_user")->where("email",$email)->first();
-                        $wishlist_count=DB::table("tbl_wishlist")->where("user_id",$user->id)->count();
-                    // $wishlist_count=1;
-                }
-                @endphp
-                <li class="me-3">
-                    <a class="nav-link" href="{{ route('mywishlist') }}">
-                        <img src="{{ asset('img/favorite_FILL1_wght400_GRAD0_opsz48 (2).svg') }}" alt="" class="nav-icon">
-                        {{ $wishlist_count }}
-                    </a>
-                </li>
+              
                 <!-- <li class="me-3">
                     <a class="nav-link text-nowrap" href="javascript:void(0);">Need Help ?</a>
                 </li> -->
@@ -66,14 +37,50 @@
             </span>
             <span class="input-group-text bg-white border-0" id="basic-addon2"><img src="{{ asset('img/map.png') }}" width="17px"
                     alt=""></span>
-        </div> -->
+        </div> 
         <div class="input-group mb-3 text-center  w-50 pe-5">
             <input type="text" class="form-control border-0" placeholder="Recipient's username"
                 aria-label="Recipient's username " aria-describedby="basic-addon2">
             <span class="input-group-text bg-white border-0" id="basic-addon2"><i
                     class="fa fa-search text-secondary"></i></span>
         </div>
-        <div class="w-25 px-4"><button type="button" class="btn btn-primary-light w-100 text-nowrap btn-lg">Quick Order</button></div>
+        <div class="w-25 px-4"><button type="button" class="btn btn-primary-light w-100 text-nowrap btn-lg">Quick Order</button></div>-->
+        <div class="row">
+            <div class="col-md-9">
+     <a href="{{url('/')}}"><img src="{{ asset('img/logo.png') }}" alt="" class="main-logo" style="width: 170px;"></a> 
+            </div>
+            <div class="col-md-3 text-end">
+                <a href="#"><i class="fa fa-search fs-4"></i></a>
+            @php
+                $cart_items=0;
+                $session_id=Session::getId();
+                $cart_items=DB::table('tbl_cart')->where("session_id",$session_id)->sum("quantity");
+                @endphp 
+                    <a class="nav-link me-2" href="{{ route('viewcart') }}">
+                    <button type="button" class="btn bg-transparent border-0 position-relative">
+                        <img src="{{ asset('img/shopping_cart_FILL1_wght400_GRAD0_opsz48 (3).svg') }}" alt="" class="nav-icon">
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                        {{ $cart_items }}
+                        </span>
+                    </a>
+                 
+                @php
+                $wishlist_count=0;
+                if(!empty(Session::get('username')))
+                {
+                    $email=Session::get('username');
+                        $user=DB::table("tbl_user")->where("email",$email)->first();
+                        $wishlist_count=DB::table("tbl_wishlist")->where("user_id",$user->id)->count();
+                    // $wishlist_count=1;
+                }
+                @endphp 
+                    <a class="nav-link" href="{{ route('mywishlist') }}">
+                        <img src="{{ asset('img/favorite_FILL1_wght400_GRAD0_opsz48 (2).svg') }}" alt="" class="nav-icon">
+                        {{ $wishlist_count }}
+                    </a>
+                
+            </div>
+        </div>
     </div>
 </div>
 
