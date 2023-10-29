@@ -13,6 +13,7 @@
 
   .btn-secondary , .bg-secondary{
     background-color: #ACB69C !important;
+    border-color: #ACB69C !important;
   }
 
   .bg-light{
