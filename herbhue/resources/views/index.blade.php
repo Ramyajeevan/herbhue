@@ -13,12 +13,13 @@
 .top-desc{
         position: absolute;
         top:10px;
+        left: 25px;
 
     }
     .desc-bottom{
         position: absolute;
-        bottom:10px;
-        right: 50px;
+        bottom: 15px;
+        right: 35%;
     }
 </style>
 @endsection
