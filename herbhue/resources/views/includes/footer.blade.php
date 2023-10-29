@@ -1,7 +1,7 @@
  <!-- Footer -->
 
  <style>
-    .rounded-end-circle{
+    .rounded-start-pill{
         border-radius: 37px 0px 0px 35px !important;
     }
 .rounded-end-circle{
@@ -21,7 +21,7 @@
        <div class="d-flex justify-content-between">
        <div class="input-group mb-3 w-75">
         <input type="email" id="subscribeEmail" name="subscribeEmail" class="rounded-start-pill form-control   form-control-lg" aria-label="Recipient's username" aria-describedby="button-addon2">
-        <button class="btn btn-secondary rounded-end-circle  px-3 bg-secondary" type="button"  id="button-addon2" onclick="subscribe();">Sign Up</button>
+        <button class="btn btn-secondary rounded-end-circle  px-3 text-black" type="button"  id="button-addon2" onclick="subscribe();">Sign Up</button>
 </div>
        </div>
         <!-- <div class="row">
