@@ -1,5 +1,7 @@
 <style>
-      
+      body{
+        overflow-y: hidden !important;
+      }
   .btn-check:checked+.btn {
     background-color: #ffffff !important;
     border-color: black !important;
