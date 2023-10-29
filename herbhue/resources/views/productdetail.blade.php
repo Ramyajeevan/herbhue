@@ -81,6 +81,7 @@
                       <img src="{{ asset('img/no_image.svg') }}" class="w-100" alt="">
                       @endif
                     </div>
+                    <button type="button" class="btn bg-black text-white w-100 btn-lg" onclick="addtocart();">Add to cart</button>
                     </div>
                    </div>
                 </div>
@@ -125,19 +126,19 @@
                             @if(count($productoptions)>1) onclick="showprice({{ $options->id }},{{ $options->price }},{{ $options->mrp_price }});" @endif
                             @if($loop->index==0) checked @endif>
                             <label class="btn btn-outline-light text-black border-secondary px-4 py-2  text-start"
-                            for="option_id_{{$options->id}}"> {{$options->quantity}} {{$options->quantitytype}} <br> 
+                            for="option_id_{{$options->id}}"> {{$options->quantity}} {{$options->quantitytype}} 
                             <strong>&pound; {{$options->price}}</strong> </label>
                         @endforeach
                       
                     </div>
-                    <div class="d-flex mb-3">
+                    <!-- <div class="d-flex mb-3">
                         <p class="fs-5 text-secondary me-2">Quantity</p>
                         <span class="minus btn btn-success btn-sm shadow  " style="height: 35px;">-</span>
                         <input type="number" class="count shadow border-0 border-top border-bottom " id="quantity" name="qty"
                             value="1" style="width: 40px; height: 35px;" readonly>
                         <span class="plus btn btn-success btn-sm   shadow" style="height: 35px;">+</span>
-                    </div>
-                    <div class="d-flex">
+                    </div> -->
+                    <!-- <div class="d-flex">
                         <p class="fs-5 text-secondary me-2">Delivery</p>
                         <div class="input-group mb-3 pe-5 me-5">
                             <span class="input-group-text border-0 border-bottom bg-transparent rounded-0 border-3"
@@ -149,9 +150,9 @@
                                 id="basic-addon1"><a href="javascript:void(0);" onclick="checkpincode({{ $products->id }});">Check</a></span>
 
                         </div>
-                    </div>
+                    </div> -->
 
-                    <button type="button" class="btn btn-success w-50 btn-lg" onclick="addtocart();">Add to cart</button>
+                  
 
 
                 </div>
