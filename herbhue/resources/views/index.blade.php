@@ -21,6 +21,11 @@
         bottom: 15px;
         right: 35%;
     }
+
+    .btn-success {
+    background-color: #ACB69C !important;
+    color: white;
+  }
 </style>
 @endsection
 @section('content')
