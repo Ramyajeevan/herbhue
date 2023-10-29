@@ -1,6 +1,18 @@
 <div class="container-fluid bg-light-green ">
     <div class="container d-flex justify-content-between">
-      <a href="{{url('/')}}"><img src="{{ asset('img/logo.png') }}" alt="" class="main-logo" style="width: 170px;"></a> 
+      <!-- <a href="{{url('/')}}"><img src="{{ asset('img/logo.png') }}" alt="" class="main-logo" style="width: 170px;"></a>  -->
+      <div class="pt-3">
+            <ul class="  d-flex ul"> 
+            <li class="me-3">
+            <a class="nav-link text-nowrap" href="javascript:void(0);">24/7 Free Support</a>
+        </li>
+                    <li class="me-3">
+                    <a class="nav-link text-nowrap" href="javascript:void(0);">Offers </a></li>
+                 <li class="me-3">
+                    <a class="nav-link text-nowrap" href="javascript:void(0);">Need Help ?</a>
+                </li> 
+            </ul>
+        </div>
          <div class="pt-3">
             <ul class="  d-flex ul">
                 <li class="me-3">
@@ -28,6 +40,7 @@
                         <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                         {{ $cart_items }}
                         </span>
+                    </button>
                     </a>
                 </li>
                 @php
@@ -42,8 +55,13 @@
                 @endphp
                 <li class="me-3">
                     <a class="nav-link" href="{{ route('mywishlist') }}">
+                    <button type="button" class="btn bg-transparent border-0 position-relative">
                         <img src="{{ asset('img/favorite_FILL1_wght400_GRAD0_opsz48 (2).svg') }}" alt="" class="nav-icon">
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                         {{ $wishlist_count }}
+                        </span>
+                    </button>
+                        
                     </a>
                 </li>
                 <!-- <li class="me-3">
