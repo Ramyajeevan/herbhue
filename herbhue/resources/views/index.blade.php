@@ -64,8 +64,8 @@
                             <p class="text-secondary text-center pb-1 mb-1  text-truncate" style="max-width: 265px;">
                             {!! $prod->description !!}</p>
                             <p class="text-secondary p-0 m-0 text-center">{{ $prod->describe }}</p>
-                            <span class="text-secondary ">M.R.P: <span
-                                    class="text-decoration-line-through text-secondary"> &pound; {{ $prod->product_options->mrp_price }}</span> </span>
+                            <p class="text-secondary text-center">M.R.P: <span
+                                    class="text-decoration-line-through text-secondary"> &pound; {{ $prod->product_options->mrp_price }}</span> </p>
                             <p class="text-center">&pound; {{ $prod->product_options->price }}</p>
 
                             <a href="{{ route('productdetail', $prod->id) }}"  class="btn btn-success w-100">View Product</a>
