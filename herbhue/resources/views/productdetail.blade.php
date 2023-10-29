@@ -297,13 +297,31 @@
             <button type="submit" class="btn btn-primary mt-3">Add Review</button>
             </form>
             @endif
+ 
             <div class="card my-5">
             <div class="card-header bg-white">
             <h4 class="text-black">Reviews by customers</h4>
             </div>
             <ul class="list-group list-group-flush">
+<!-- new ui  -->
+            <li class="list-group-item border-bottom py-2" >
+                <div class="d-flex justify-content-between">
+                    <div class="d-flex">
+                        <img src="{{asset('img/verified-user.png')}}" width="60px" height="60px" alt="uaer" class="me-4">
+                        <h5 class="pt-3">User Name</h5>
+                    </div>
+                    <p class="text-muted pt-3">
+                        1 Month Ago
+                    </p>
+                </div>
+                <p class="fs-5"><i class="fa fa-star text-warning me-2"></i> <i class="fa fa-star text-warning me-2"></i> <i class="fa fa-star text-warning me-2"></i> <i class="fa fa-star text-warning me-2"></i><i class="fa fa-star-half-full text-warning "></i></p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+            </li>
+
+<!-- new ui  -->
                 @if(count($rating_products)>0)
                 @foreach($rating_products as $rating_product)
+
                 <li class="list-group-item">
                     <div class="mb-3">
                         <span class="badge bg-primary p-2 fs-5 px-3"><span>{{ $rating_product->rating }}</span> <i class="fa fa-star"></i></span>
