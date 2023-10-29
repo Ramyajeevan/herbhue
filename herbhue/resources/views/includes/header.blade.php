@@ -8,6 +8,10 @@
 .bg-light-green {
     background-color: #ACB69C !important;
   }
+
+  .btn-secondary , .bg-secondary{
+    background-color: #ACB69C !important;
+  }
 </style>
 <div class="container-fluid bg-light-green ">
     <div class="container d-flex justify-content-between">
