@@ -1,6 +1,6 @@
 <div class="container-fluid bg-light-green ">
     <div class="container d-flex justify-content-between">
-        <a href="{{url('/')}}"><img src="{{ asset('img/logo.png') }}" alt="" class="main-logo" style="width: 170px;"></a>
+       <!-- <a href="{{url('/')}}"><img src="{{ asset('img/logo.png') }}" alt="" class="main-logo" style="width: 170px;"></a>-->
         <div class="pt-3">
             <ul class="  d-flex ul">
                 <li class="me-3">
