@@ -1,10 +1,7 @@
 <div class="container-fluid bg-light-green ">
     <div class="container d-flex justify-content-between">
-       <!-- <a href="{{url('/')}}"><img src="{{ asset('img/logo.png') }}" alt="" class="main-logo" style="width: 170px;"></a>-->
-      <div class="pt-3">
-      <a href="#" class="nav-link text-nowrap"> 24/7 Free Support </a> <span class="mx-2">|</span>   <a href="#" class="nav-link text-nowrap"> Offers</a><span class="mx-2">|</span> <a href="#" class="nav-link text-nowrap">Need Help ? </a>
-      </div>
-        <div class="pt-3">
+      <a href="{{url('/')}}"><img src="{{ asset('img/logo.png') }}" alt="" class="main-logo" style="width: 170px;"></a> 
+         <div class="pt-3">
             <ul class="  d-flex ul">
                 <li class="me-3">
                     @if(empty(Session::get('username')))
@@ -19,42 +16,6 @@
                     width="20px" alt=""> <span class="ms-2">United Kingdom</span> </p>
                 </li>
 
-              
-                <!-- <li class="me-3">
-                    <a class="nav-link text-nowrap" href="javascript:void(0);">Need Help ?</a>
-                </li> -->
-            </ul>
-        </div>
-    </div>
-</div>
-<div class="container-fluid bg-green  pt-3">
-    <div class="container nav2">
-        <!-- <div class="input-group mb-3 w-25 flex-nowrap">
-            <span class="input-group-text bg-white border-0" id="basic-addon2"><img src="{{ asset('img/location.png') }}"
-                    width="15px" alt=""></span>
-            <span class="input-group-text bg-white border-0" id="basic-addon2"><img src="{{ asset('img/UK_flag.png') }}"
-                    width="20px" alt=""></span>
-            <span class="input-group-text bg-white border-0" id="basic-addon2">
-                <h6 class="pt-1">United Kingdom</h6>
-            </span>
-            <span class="input-group-text bg-white border-0" id="basic-addon2"><img src="{{ asset('img/map.png') }}" width="17px"
-                    alt=""></span>
-        </div> 
-        <div class="input-group mb-3 text-center  w-50 pe-5">
-            <input type="text" class="form-control border-0" placeholder="Recipient's username"
-                aria-label="Recipient's username " aria-describedby="basic-addon2">
-            <span class="input-group-text bg-white border-0" id="basic-addon2"><i
-                    class="fa fa-search text-secondary"></i></span>
-        </div>
-        <div class="w-25 px-4"><button type="button" class="btn btn-primary-light w-100 text-nowrap btn-lg">Quick Order</button></div>-->
-        <div class="row">
-            <div class="col-md-9">
-     <a href="{{url('/')}}"><img src="{{ asset('img/logo.png') }}" alt="" class="main-logo" style="width: 170px;"></a> 
-            </div>
-            <div class="col-md-3 text-end">
-                <ul class="d-flex ul">
-            <li class="me-3">
-                <a  class="nav-link" href="#"><i class="fa fa-search fs-4"></i></a></li>
                 @php
                 $cart_items=0;
                 $session_id=Session::getId();
@@ -85,9 +46,33 @@
                         {{ $wishlist_count }}
                     </a>
                 </li>
-                </ul>
-            </div>
+                <!-- <li class="me-3">
+                    <a class="nav-link text-nowrap" href="javascript:void(0);">Need Help ?</a>
+                </li> -->
+            </ul>
         </div>
+    </div>
+</div>
+<div class="container-fluid bg-green  pt-3">
+    <div class="container nav2">
+        <div class="input-group mb-3 w-25 flex-nowrap">
+            <span class="input-group-text bg-white border-0" id="basic-addon2"><img src="{{ asset('img/location.png') }}"
+                    width="15px" alt=""></span>
+            <span class="input-group-text bg-white border-0" id="basic-addon2"><img src="{{ asset('img/UK_flag.png') }}"
+                    width="20px" alt=""></span>
+            <span class="input-group-text bg-white border-0" id="basic-addon2">
+                <h6 class="pt-1">United Kingdom</h6>
+            </span>
+            <span class="input-group-text bg-white border-0" id="basic-addon2"><img src="{{ asset('img/map.png') }}" width="17px"
+                    alt=""></span>
+        </div>
+        <div class="input-group mb-3 text-center  w-50 pe-5">
+            <input type="text" class="form-control border-0" placeholder="Recipient's username"
+                aria-label="Recipient's username " aria-describedby="basic-addon2">
+            <span class="input-group-text bg-white border-0" id="basic-addon2"><i
+                    class="fa fa-search text-secondary"></i></span>
+        </div>
+        <div class="w-25 px-4"><button type="button" class="btn btn-primary-light w-100 text-nowrap btn-lg">Quick Order</button></div>
     </div>
 </div>
 
