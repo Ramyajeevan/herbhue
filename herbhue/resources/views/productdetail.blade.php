@@ -112,11 +112,12 @@
                     <span id="mrp_price">{{ $products->product_options[0]->mrp_price }}</span></strong> </p>
 
                     <div class="mb-4">
-                        @if($products->product_options[0]->stock > 0)
+                    <p class="small text-black fw-bold">Size</p>
+                        <!-- @if($products->product_options[0]->stock > 0)
                         <p class="fs-5 text-light-green fw-bold">In Stock</p>
                         @else
                         <p class="fs-5 text-light-red fw-bold">Out of Stock</p>
-                        @endif
+                        @endif -->
                         @php
                         $productoptions=$products->product_options;
                         @endphp
