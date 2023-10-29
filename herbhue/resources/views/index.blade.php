@@ -49,7 +49,7 @@
                       <p>New wellness range just for you!</p>
                 </div>
               
-                <p class="text-green">View All</p>
+                <p class="text-black fs-4 fw-bold pt-2">View All</p>
             </div>
             <div class="cate-1 owl-carousel owl-theme">
                 @foreach($product as $prod)
@@ -60,10 +60,10 @@
                                 @if($prod->image1!="")
                                 <img src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/{{ $prod->image1 }}" class="w-75" alt="">
                                 @else
-                                <img src="{{ asset('img/no_image.svg') }}"  class="w-75" alt="">
+                                <img src="{{ asset('img/no_image.svg') }}"  width="100%" height="285px" alt="">
                                 @endif
                             </div>
-                            <h5>{{ $prod->name }}</h5>
+                            <h5 class=" d-inline-block text-truncate" style="max-width: 265px;">{{ $prod->name }}</h5>
                             <span class="text-secondary pb-1 mb-1 d-inline-block text-truncate" style="max-width: 265px;">
                             {!! $prod->description !!}</p>
                             <p class="text-secondary p-0 m-0">{{ $prod->describe }}</p>
