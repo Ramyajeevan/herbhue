@@ -88,20 +88,20 @@
         <div class="row">
             <div class="col-md-4 mb-3">
                 <div class="d-flex justify-content-center">
-                    <img src="{{asset('img/traceability-in.png')}}" class="w-50" alt="img">
+                    <img src="{{asset('img/traceability-in.png')}}" style="width:150px" alt="img">
                 </div>
                 <p class="text-center">
                 We use the finest ingredients and the most sought-after suppliers in our products.
                 </p>
             </div>
             <div class="col-md-4 mb-3"><div class="d-flex justify-content-center">
-                    <img src="{{asset('img/tested-and-certified-in.png')}}" class="w-50"  alt="img">
+                    <img src="{{asset('img/tested-and-certified-in.png')}}" style="width:150px"  alt="img">
                 </div>
                 <p class="text-center">
                 We invest in the latest expertise, technology and facilities.
                 </p></div>
             <div class="col-md-4 mb-3"><div class="d-flex justify-content-center">
-                    <img src="{{asset('img/science--and-safety-in.png')}}" class="w-50"  alt="img">
+                    <img src="{{asset('img/science--and-safety-in.png')}}" style="width:150px"  alt="img">
                 </div>
                 <p class="text-center">
                 Experiential scientists put product quality, safety and excellence above all.
