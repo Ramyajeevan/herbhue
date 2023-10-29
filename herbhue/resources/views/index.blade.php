@@ -55,7 +55,7 @@
                                 @if($prod->image1!="")
                                 <img src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/{{ $prod->image1 }}" class="w-75" alt="">
                                 @else
-                                <img src="{{ asset('img/no_image.svg') }}"  width="100%" height="285px" alt="">
+                                <img src="{{ asset('img/no_image.svg') }}" style="width:100%; height:285px;" alt="">
                                 @endif
                             </div>
                             <p class="small text-center text-secondary py-0 my-0">220 gm</p>
