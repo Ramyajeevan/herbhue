@@ -12,7 +12,9 @@
                     @endif
                 </li>
                 <li class="me-3">
-                    <a class="nav-link" href="javascript:void(0);">Offers</a>
+                    <!-- <a class="nav-link" href="javascript:void(0);">Offers</a> -->
+                    <p><img src="{{ asset('img/UK_flag.png') }}"
+                    width="20px" alt=""> <span class="ms-2">United Kingdom</span> </p>
                 </li>
 
                 @php
@@ -45,16 +47,16 @@
                         {{ $wishlist_count }}
                     </a>
                 </li>
-                <li class="me-3">
+                <!-- <li class="me-3">
                     <a class="nav-link text-nowrap" href="javascript:void(0);">Need Help ?</a>
-                </li>
+                </li> -->
             </ul>
         </div>
     </div>
 </div>
 <div class="container-fluid bg-green  pt-3">
     <div class="container nav2">
-        <div class="input-group mb-3 w-25 flex-nowrap">
+        <!-- <div class="input-group mb-3 w-25 flex-nowrap">
             <span class="input-group-text bg-white border-0" id="basic-addon2"><img src="{{ asset('img/location.png') }}"
                     width="15px" alt=""></span>
             <span class="input-group-text bg-white border-0" id="basic-addon2"><img src="{{ asset('img/UK_flag.png') }}"
@@ -64,7 +66,7 @@
             </span>
             <span class="input-group-text bg-white border-0" id="basic-addon2"><img src="{{ asset('img/map.png') }}" width="17px"
                     alt=""></span>
-        </div>
+        </div> -->
         <div class="input-group mb-3 text-center  w-50 pe-5">
             <input type="text" class="form-control border-0" placeholder="Recipient's username"
                 aria-label="Recipient's username " aria-describedby="basic-addon2">
