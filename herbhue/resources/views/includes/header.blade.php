@@ -19,6 +19,12 @@
   .bg-light{
     background:#F6F6F6 !important;
   }
+
+  .pd-icon{
+  clip-path: circle();
+  width: 40px;
+}
+ 
 </style>
 <div class="container-fluid bg-light-green ">
     <div class="container d-flex justify-content-between">
