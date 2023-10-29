@@ -202,11 +202,11 @@
                         <p class="text-center fs-10 mt-2">NO ADDITIVES</p>
                     </div>
                     <div class="me-4 text-center">
-                        <img src="{{asset('img/non-gmo.webp" c')}}lass="pd-icon" alt="">
+                        <img src="{{asset('img/non-gmo.webp ')}} " class="pd-icon" alt="">
                         <p class="text-center fs-10 mt-2">NON-GMO</p>
                     </div>
                     <div class="me-3 text-center">
-                        <img src="{{asset('img/vegan.webp" cla')}}ss="pd-icon" alt="">
+                        <img src="{{asset('img/vegan.webp')}} " class="pd-icon" alt="">
                         <p class="text-center fs-10 mt-2">VEGAN</p>
                     </div>
 
