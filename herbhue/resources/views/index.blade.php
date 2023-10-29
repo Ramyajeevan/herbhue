@@ -43,8 +43,12 @@
 
     <div class="container-fluid bg-secondary">
         <div class="container mt-3 mb-4">
-            <div class="d-flex justify-content-between">
-                <h2>New Launches</h2>
+            <div class="d-flex justify-content-between pt-4">
+                <div>
+                      <h2 class="pb-1 mb-1">Popular Combo Deals</h2>
+                      <p>New wellness range just for you!</p>
+                </div>
+              
                 <p class="text-green">View All</p>
             </div>
             <div class="cate-1 owl-carousel owl-theme">
