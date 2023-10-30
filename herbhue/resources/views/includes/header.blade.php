@@ -47,7 +47,7 @@
             <li class="me-3">
             <a class="nav-link text-nowrap" href="javascript:void(0);">24/7 Free Support</a>
         </li>
-                    <li class="me-3">
+            <li class="me-3">
                     <a class="nav-link text-nowrap" href="javascript:void(0);">Offers </a></li>
                  <li class="me-3">
                     <a class="nav-link text-nowrap" href="javascript:void(0);">Need Help ?</a>
