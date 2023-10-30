@@ -38,8 +38,19 @@
     background-color: #ACB69C !important;
     color: white;
   }
+  .mob-view{
+    display: none;
+  }
+  @media only screen and (max-width: 600px) {
+    .mob-view{
+    display: block;
+  } 
+  .web-view{
+    display:none;
+  }
+  }
 </style>
-<div class="container-fluid bg-light-green ">
+<div class="container-fluid bg-light-green  web-view ">
     <div class="container d-flex justify-content-between">
       <!-- <a href="{{url('/')}}"><img src="{{ asset('img/logo.png') }}" alt="" class="main-logo" style="width: 170px;"></a>  -->
       <div class="pt-3">
