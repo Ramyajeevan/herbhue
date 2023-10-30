@@ -14,14 +14,12 @@
         position: absolute;
         top:10px;
         left: 25px;
-
     }
     .desc-bottom{
         position: absolute;
         bottom: 30px;
         right: 35%;
     }
-
     .btn-success {
     background-color: #ACB69C !important;
     color: white;
