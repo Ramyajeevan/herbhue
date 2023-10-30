@@ -41,10 +41,15 @@
                         <input type="email"  id="email"  name="email" required>
                         <label for="email">Email</label>
                     </div>
-                    <div class="form-group">
+                    <div class="input-group mb-3">
+                    <span class="input-group-text bg-white" id="basic-addon1"><img src="{{ asset('img/UK_flag.png') }}"
+                   width="15px" alt=""> +44</span> 
+                    <input type="text"  id="mobile" name="mobile" onkeypress="return onlyNumberKey(event);" maxlength = "10" aria-describedby="basic-addon1" required placeholder="Phone No.">
+                    </div>
+                    <!-- <div class="form-group">
                         <input type="text"  id="mobile" name="mobile" onkeypress="return onlyNumberKey(event);" maxlength = "10"  required>
                         <label for="mobile">Mobile</label>
-                    </div>
+                    </div> -->
                     <div class="form-group">
                         <input type="password"  id="password" name="password" required>
                         <label for="password">Password</label>
