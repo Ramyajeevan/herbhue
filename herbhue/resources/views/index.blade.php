@@ -286,7 +286,7 @@
                 <div class="container">
                         <h5 class=" text-black text-center mb-4">Recommended by you</h5>
                         <p class="text-center">Discover their stories and why they recommend HerbHue.</p>
-                        <div class="cate-1 owl-carousel owl-theme">
+                        <div class="testimonial owl-carousel owl-theme">
                             <div class="item">
                             <div class="card border-secondary"> 
                                  <div class="card-body">
@@ -445,11 +445,11 @@
                     nav: true,
                 },
                 600: {
-                    items: 1,
+                    items: 2,
                     nav: true,
                 },
                 1000: {
-                    items: 2,
+                    items: 4,
                     nav: true,
                 },
             },
