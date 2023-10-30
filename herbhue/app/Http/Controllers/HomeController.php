@@ -387,6 +387,11 @@ public function personalization()
     {
       return view('personalization');
     }
+
+    public function shop()
+    {
+      return view('shop');
+    }
 // added on 30-10-2023 by rahul 
   	public function mywishlist()
     {
