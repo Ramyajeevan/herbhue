@@ -19,7 +19,7 @@
                             <p class="text-secondary text-center pb-1 mb-1  text-truncate" style="max-width: 265px;">
                             Glucosamine HCL 1500 mg Tablet...</p>
                             
-                            <a href="#" class="btn btn-outline-dark text-black fw-bold w-100 text-black">Buy <span class="text-decoration-line-through text-muted mx-1"> £ 260</span> <span class="text-black"> £ 260</span></a>
+                            <a href="#" class="btn btn-outline-dark text-black bg-white fw-bold w-100 text-black">Buy <span class="text-decoration-line-through text-muted mx-1"> £ 260</span> <span class="text-black"> £ 260</span></a>
                         </div>
                  
             </div>
