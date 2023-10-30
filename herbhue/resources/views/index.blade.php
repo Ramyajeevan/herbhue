@@ -9,6 +9,13 @@
     width: 100%;
     height: auto;
 }
+.review{
+    background:#00B67A !important;
+    color:white;
+    width: 30px;
+    height:30px;
+    padding 3px;
+}
 
 </style>
 @endsection
@@ -235,7 +242,7 @@
 
 
     </div> -->
-    <div class="container-fluid mb-4">
+            <div class="container-fluid mb-4">
                 <div class="container">
                         <h5 class=" text-black mb-4">Trending Now</h5>
                         <div class="cate-1 owl-carousel owl-theme">
@@ -258,8 +265,8 @@
                             </div>
                             
 
-            </div>
                 </div>
+            </div>
 
                 <div class="container-fluid">
                 <div class="container">
@@ -275,7 +282,27 @@
                          </div>
                 </div>
 
+                <div class="container-fluid mb-4">
+                <div class="container">
+                        <h5 class=" text-black text-center mb-4">Recommended by you</h5>
+                        <p class="text-center">Discover their stories and why they recommend HerbHue.</p>
+                        <div class="cate-1 owl-carousel owl-theme">
+                            <div class="item">
+                            <div class="card border-secondary"> 
+                                 <div class="card-body">
+                                    <p><i class="fa fa-star review"></i></p>
+                                   <span class="fs-4 fw-bold">Rohit Kumar</span><small class="text-muted">1 hour ago</small>
 
+                                   <h5>Very quick service</h5>
+                                   <p class="pt-0 mt-0">Very quick service</p>
+                                    </div>
+
+                                    </div>
+                            </div>
+                            
+
+            </div>
+                </div>
     
     <!-- <div class="container-fluid   py-5 ">
             <div class="row">
