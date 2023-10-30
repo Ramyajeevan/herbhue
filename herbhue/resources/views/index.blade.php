@@ -12,9 +12,9 @@
 .review{
     background:#00B67A !important;
     color:white;
-    width: 30px;
-    height:30px;
-    padding 3px;
+    width: 22px;
+    height: 23px; 
+    padding: 3px;
 }
 
 </style>
@@ -290,7 +290,7 @@
                             <div class="item">
                             <div class="card border-secondary"> 
                                  <div class="card-body">
-                                    <p><i class="fa fa-star review"></i></p>
+                                    <p><i class="fa fa-star review me-1"></i><i class="fa fa-star review me-1"></i><i class="fa fa-star review me-1"></i><i class="fa fa-star review me-1"></i><i class="fa fa-star review me-1 text-secondary"></i></p>
                                    <span class="fs-4 fw-bold">Rohit Kumar</span><small class="text-muted">1 hour ago</small>
 
                                    <h5>Very quick service</h5>
