@@ -380,6 +380,14 @@ class HomeController extends Controller
     {
       return view('registrationsuccessfull');
     }
+
+// added on 30-10-2023 by rahul 
+
+public function personalized()
+    {
+      return view('personalized');
+    }
+// added on 30-10-2023 by rahul 
   	public function mywishlist()
     {
       if(empty(Session::get('username')))
