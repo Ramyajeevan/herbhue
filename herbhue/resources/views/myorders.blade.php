@@ -14,13 +14,13 @@
         @if(count($orders)>0)
         <thead>
             <tr>
-                <th scope="col" class="bg-green text-white">Product</th>
-                <th scope="col" class="bg-green text-white">Product Name</th>
-                <th scope="col" class="bg-green text-white">Order ID</th>
-                <th scope="col" class="bg-green text-white">Date</th>
-                <th scope="col" class="bg-green text-white">Status</th>
-                <th scope="col" class="bg-green text-white">Total</th>
-                <th scope="col" class="bg-green text-white">Actions</th>
+                <th scope="col" class="bg-black text-white">Product</th>
+                <th scope="col" class="bg-black text-white">Product Name</th>
+                <th scope="col" class="bg-black text-white">Order ID</th>
+                <th scope="col" class="bg-black text-white">Date</th>
+                <th scope="col" class="bg-black text-white">Status</th>
+                <th scope="col" class="bg-black text-white">Total</th>
+                <th scope="col" class="bg-black text-white">Actions</th>
 
             </tr>
         </thead>
