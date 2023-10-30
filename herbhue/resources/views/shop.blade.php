@@ -26,6 +26,23 @@
         </div>
        </div>
         </div>
+
+        <div class="container">
+            <div class="row">
+            <div class="col-md-4 mb-3">
+                        <div class="card border-0">
+                            <img src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/1697012848-1.png" class=" card-img-top mb-3" width="150px" alt="">
+                            <div class="top-desc">
+                                <h4>Category 1</h4>
+                                <!-- <p class="text-secondary">For your skin, gut and muscle health.</p> -->
+                            </div>
+                            <div class="desc-bottom">
+                            <a href="http://herbhue.azurewebsites.net/products?category_id=1" class="btn btn-secondary rounded-pill ">LEARN MORE</a>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
 </div>
 
  
