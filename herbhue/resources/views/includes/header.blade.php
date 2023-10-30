@@ -45,7 +45,7 @@
             <ul class="  d-flex ul">
             <li class="me-3">
                    
-                   <a class="nav-link" href="#"><img src="{{ asset('img/UK_flag.png') }}"
+                   <a class="nav-link" href="javascript:void(0);"><img src="{{ asset('img/UK_flag.png') }}"
                    width="20px" alt=""> <span class="ms-2">United Kingdom</span> </a>
                </li>
                @if(empty(Session::get('username')))
@@ -101,7 +101,7 @@
             <div class="col-md-3">
                 <ul class="d-flex ul justify-content-end">
                 <li class="me-3">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="javascript:void(0);">
                     <button type="button" class="btn bg-transparent border-0 position-relative">
                         <img src="{{ asset('img/search icon (2).svg') }}" alt="" class="nav-icon">
                          
