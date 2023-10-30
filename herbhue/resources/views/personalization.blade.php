@@ -63,7 +63,7 @@
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
-      <div class="modal-header bg-green">
+      <div class="modal-header bg-light-green">
         <h5 class="modal-title fs-5 text-white" id="exampleModalLabel">Few recommendations for you</h5>
       </div>
       <div class="modal-body">
@@ -85,7 +85,7 @@
       </div>
       </div>
       <div class="modal-footer border-top-0">
-        <button type="button" class="btn btn-light border-0 bg-transparent text-green"  data-bs-dismiss="modal">OK</button>
+        <button type="button" class="btn btn-light border-0 bg-transparent text-black fw-bold"  data-bs-dismiss="modal">OK</button>
 
       </div>
     </div>
