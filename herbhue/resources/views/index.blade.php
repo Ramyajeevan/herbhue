@@ -190,7 +190,7 @@
         </div>
     </div> -->
 
-    <div class="container-fluid bg-secondary py-4">
+    <div class="container-fluid bg-light py-4">
         <div class="container mt-3 mb-4">
             <div class="d-flex justify-content-between">
                 <div>
