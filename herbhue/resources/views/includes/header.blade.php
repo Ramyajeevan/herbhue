@@ -48,22 +48,25 @@
                    <a class="nav-link" href="#"><img src="{{ asset('img/UK_flag.png') }}"
                    width="20px" alt=""> <span class="ms-2">United Kingdom</span> </a>
                </li>
-                <li class="me-3">
-                    @if(empty(Session::get('username')))
-                    <a class="nav-link text-nowrap" href="{{ route('login') }}"> 
-                        <span class="me-3"> <img src="{{ asset('img/login.svg') }}" alt="" class="nav-icon me-1"> Login |</span>  
-                        <span> <img src="{{ asset('img/register.svg') }}" alt="" class="nav-icon me-1"> Sign Up</span>  
-                    </a>
-                    @else
-                    <a class="nav-link text-nowrap" href="{{ route('myaccount') }}">My Account</a>
-                    @endif
-                </li>
-                
-
-              
-                <!-- <li class="me-3">
-                    <a class="nav-link text-nowrap" href="javascript:void(0);">Need Help ?</a>
-                </li> -->
+               @if(empty(Session::get('username')))
+                 <li class="me-3">
+                      <a class="nav-link text-nowrap" href="{{ route('login') }}"> 
+                        <span class="me-3"> <img src="{{ asset('img/login.svg') }}" alt="" class="nav-icon me-1"> Login |</span>
+                      </a>
+                 </li>
+                 <li class="me-3">
+                      <a class="nav-link text-nowrap" href="{{ route('register') }}"> 
+                        <span> <img src="{{ asset('img/register.svg') }}" alt="" class="nav-icon me-1"> Sign Up</span> 
+                      </a>
+                 </li>
+                @else
+                  <li class="me-3">
+                      <a class="nav-link text-nowrap" href="{{ route('myaccount') }}">
+                           <span> <img src="{{ asset('img/register.svg') }}" alt="" class="nav-icon me-1"> My Account</span>
+                      </a>
+                  </li>
+                @endif
+               
             </ul>
         </div>
     </div>
