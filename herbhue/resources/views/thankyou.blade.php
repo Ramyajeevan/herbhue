@@ -10,6 +10,6 @@
     Thank You for ordering with us.<br>
     You have made a successfull order.<br>
     Your Order Id is {{ $order_id }}.<br>
-    <a href="{{ route('products') }}" class="btn btn-primary" style="background-color:#F44336;color:#ffffff;" title="Continue Shopping">Continue Shopping</a>
+    <a href="{{ route('products') }}" class="btn btn-outline-black"   title="Continue Shopping">Continue Shopping</a>
 </div>
 @endsection

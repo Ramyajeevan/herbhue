@@ -79,4 +79,9 @@ Route::post('placeorder',[OrderController::class, 'placeorder'])->name('placeord
 Route::get('thankyou/{order_id}',[OrderController::class, 'thankyou'])->name('thankyou');
 Route::get('payment',[OrderController::class, 'payment'])->name('payment');
 Route::post('placeorder1',[OrderController::class, 'placeorder1'])->name('placeorder1');
+
+
+// added on 30-10-2023
+
+Route::get('/personalized',[HomeController::class, 'personalized'])->name('personalized');
 ?>
