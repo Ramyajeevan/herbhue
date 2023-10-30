@@ -190,7 +190,7 @@
         </div>
     </div> -->
 
-    <div class="container-fluid bg-light py-4">
+    <!-- <div class="container-fluid bg-light py-4">
         <div class="container mt-3 mb-4">
             <div class="d-flex justify-content-between">
                 <div>
@@ -234,8 +234,8 @@
         </div>
 
 
-    </div>
-    <div class="container-fluid">
+    </div> -->
+    <div class="container-fluid mb-4">
                 <div class="container">
                         <h5 class=" text-black mb-4">Trending Now</h5>
                         <div class="cate-1 owl-carousel owl-theme">
@@ -263,7 +263,7 @@
 
                 <div class="container-fluid">
                 <div class="container">
-                        <h5 class=" text-black mb-4">Trending Now</h5>
+                        <h5 class=" text-black mb-4">Our Top Brands</h5>
                         <div class="cate-4 owl-carousel owl-theme">
                             <div class="item">
                             <div class="card border-secondary">
