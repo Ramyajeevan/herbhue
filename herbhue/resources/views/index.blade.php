@@ -121,7 +121,7 @@
                                 <!-- <p class="text-secondary">For your skin, gut and muscle health.</p> -->
                             </div>
                             <div class="desc-bottom">
-                            <a href="{{ route('products') }}/{{ $cat->id }}" class="btn btn-secondary rounded-pill ">LEARN MORE</a>
+                            <a href="{{ route('products')}}?category_id={{ $cat->id}}" class="btn btn-secondary rounded-pill ">LEARN MORE</a>
                             </div>
                         </div>
                     </div>
