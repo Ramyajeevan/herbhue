@@ -15,19 +15,23 @@
 <body> 
     <div class="container-fluid pb-0">
         <div class="row">
-          
-            <div class="col-lg-5">
-                <div class="form-container">
+        <div class="col-lg-3"></div>
+            <div class="col-lg-6">
+                <div class="card border-0">
+                <div class="text-center mb-4">
+                          <a href="{{url('/')}}"><img src="{{ asset('img/logo.png') }}" alt=""   style="width: 170px;"></a>  
+                        <p class="text-center">Login to your HerbHue account</p>
+                    </div>
                     <img src="{{asset('img/Successful Registration Page.png')}}" width="350px" alt="">
-                    <h2 class="text-green mt-4">Congratulations !</h2>
+                    <h2 class="text-black mt-4">Congratulations !</h2>
                     <p class="fs-5 mt-4 ">Thanks for registering your account on Herb Hue. You should have received an email from us.</p>
-                    <a class="btn btn-outline-primary btn-lg px-3" href="{{ route('login') }}">Continue</a>
+                    <a class="btn btn-outline-dark bg-white btn-lg px-3" href="{{ route('login') }}">Continue</a>
                 </div>
             </div>
-            <div class="col-lg-2"></div>
-            <div class="col-lg-5 text-end pe-0">
+            <div class="col-lg-3"></div>
+            <!-- <div class="col-lg-5 text-end pe-0">
                 <img src="{{asset('img/login-img.png') }}" class="w-75 h-75" alt="">
-            </div>
+            </div> -->
         </div>
     </div>
     
