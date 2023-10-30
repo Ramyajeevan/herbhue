@@ -72,8 +72,7 @@
                             <p class="text-secondary text-center pb-0 mb-0">M.R.P: <span
                                     class="text-decoration-line-through text-secondary"> &pound; {{ $prod->product_options->mrp_price }}</span> </p>
                             <p class="text-center">&pound; {{ $prod->product_options->price }}</p>
-
-                            <a href="{{ route('productdetail', $prod->id) }}"  class="btn btn-secondary text-black fw-bold w-100">View Product</a>
+                            <a href="{{ route('productdetail', $prod->id) }}" class="btn btn-secondary text-black fw-bold w-100">View Product</a>
                         </div>
                     </div>
                 </div>
