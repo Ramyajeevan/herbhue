@@ -50,7 +50,7 @@
                         <p><a href="{{ route('forgotpassword') }}" class="text-green text-decoration-none">Forgot Password ?</a></p>
                     </div>
 
-                    <button class="submit-button btn btn-dark" type="submit">Log In</button>
+                    <button class="btn btn-dark btn-lg w-100" type="submit">Log In</button>
                     <p class="text-center mt-4">Have a query?  <a href="{{ route('contact') }}" class="text-black fw-bold text-decoration-none">Contact Us</a> </p>
                     
                     <p class="text-center p-0 m-0">Don't have an account?<a href="{{ route('register') }}" class="text-black fw-bold text-decoration-none"> Register Now</a> </p>

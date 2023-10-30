@@ -61,7 +61,7 @@
                     </label>
                     </div>
                     <p class="text-center">Already have an account? <a href="{{ route('login') }}" class="text-black text-decoration-none">Login</a> </p>
-                    <button class="submit-button btn btn-dark" type="submit">Register</button>
+                    <button class=" btn btn-dark btn-lg w-100" type="submit">Register</button>
                 </div>
                 </form>
             </div>
