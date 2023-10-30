@@ -8,7 +8,6 @@
     display: block;
     width: 100%;
     height: auto;
-  
 }
 .top-desc{
         position: absolute;
