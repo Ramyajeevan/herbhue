@@ -84,4 +84,6 @@ Route::post('placeorder1',[OrderController::class, 'placeorder1'])->name('placeo
 // added on 30-10-2023
 
 Route::get('/personalization',[HomeController::class, 'personalization'])->name('personalization');
+
+Route::get('/shop',[HomeController::class, 'shop'])->name('shop');
 ?>
