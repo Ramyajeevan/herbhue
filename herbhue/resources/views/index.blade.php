@@ -261,7 +261,19 @@
             </div>
                 </div>
 
+                <div class="container-fluid">
+                <div class="container">
+                        <h5 class=" text-black mb-4">Trending Now</h5>
+                        <div class="cate-4 owl-carousel owl-theme">
+                            <div class="item">
+                            <div class="card border-secondary">
 
+                                    <img src="https://bemoreyouonline.com/wp-content/uploads/2021/04/Ayurveda-branding-integrative-medicine-membership-logo-design-brand-and-web-design-by-be-more-you.png" class="w-100" alt="">
+                            </div>
+                            
+
+                         </div>
+                </div>
 
 
     
@@ -370,6 +382,27 @@
             },
         });
 
+        $(".cate-4").owlCarousel({
+            loop: true,
+            margin: 20,
+            nav: true,
+            autoplay: false,
+            dots: false,
+            responsive: {
+                0: {
+                    items: 1,
+                    nav: true,
+                },
+                600: {
+                    items: 3,
+                    nav: true,
+                },
+                1000: {
+                    items: 5,
+                    nav: true,
+                },
+            },
+        });
 
 
 
