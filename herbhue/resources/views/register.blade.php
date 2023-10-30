@@ -11,20 +11,26 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href=" {{asset('css/style.css')}}">
+    <style>
+        .form-check-input:checked {
+    background-color: black !important;
+    border-color: black !important;
+}
+    </style>
 </head>
 
 <body> 
     <div class="container-fluid">
         <div class="row">
-            <div class="col-lg-2"></div>
-            <div class="col-lg-5">
+            <div class="col-lg-3"></div>
+            <div class="col-lg-6">
                 <form method="post" action="{{ route('register') }}">
                 @csrf
                 <div class="form-container">
-                    <div class="text-center mb-5">
-                        <div class="underline-text-center">
-                            <h2>Sign in to Account</h2>
-                        </div>
+                <div class="text-center mb-5">
+                          <a href="{{url('/')}}"><img src="{{ asset('img/logo.png') }}" alt=""   style="width: 170px;"></a>  
+                        <h3 class="text-center" style="color:#ACB69C;">Create Your Account</h3>
+                        <p class="text-center">Welcome to the world of HerbHue</p>
                     </div>
                     <div class="form-group">
                         <input type="text"  id="name" name="name" required>
@@ -43,15 +49,21 @@
                         <input type="password"  id="password" name="password" required>
                         <label for="password">Password</label>
                     </div>
-                    
-                    <p class="text-center">Already have an account? <a href="{{ route('login') }}" class="text-green text-decoration-none">Login</a> </p>
-                    <button class="submit-button" type="submit">Sign In</button>
+                    <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                    I agree to the <a href="#" class="fw-bold text-black">Terms & Conditions</a>  & <a href="#" class="fw-bold text-black"></a> Privacy Policy
+                    </label>
+                    </div>
+                    <p class="text-center">Already have an account? <a href="{{ route('login') }}" class="text-black text-decoration-none">Login</a> </p>
+                    <button class="submit-button btn btn-dark" type="submit">Register</button>
                 </div>
                 </form>
             </div>
-            <div class="col-lg-5 text-end pe-0">
+            <div class="col-lg-3"></div>
+            <!-- <div class="col-lg-5 text-end pe-0">
                 <img src="{{ asset('img/login-img.png') }}" class="w-75 h-75" alt="">
-            </div>
+            </div> -->
         </div>
     </div>
     <!-- JavaScript Bundle with Popper -->
