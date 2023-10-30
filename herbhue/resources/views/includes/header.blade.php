@@ -50,7 +50,7 @@
   }
   }
 </style>
-<div class="container-fluid bg-light-green  web-view ">
+<div class="container-fluid web-view  border-bottom pb-1">
     <div class="container d-flex justify-content-between">
       <!-- <a href="{{url('/')}}"><img src="{{ asset('img/logo.png') }}" alt="" class="main-logo" style="width: 170px;"></a>  -->
       <div class="pt-3">
@@ -202,7 +202,7 @@
     </div>
 </div>
 
-<header class="px-2 py-3 py-lg-0 px-sm-0 category-header">
+<header class="px-2 py-3 py-lg-0 px-sm-0 category-header border-top">
     <div class="container">
         <div class="d-flex  align-items-center justify-content-between">
             <img src="{{ asset('img/logo.png') }}" alt="" class="site-logo" style="width: 170px;">
