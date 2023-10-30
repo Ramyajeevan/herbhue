@@ -102,7 +102,7 @@
         <h3>Shop by Health Concerns</h3>
         <div class="row mt-3">
             @foreach($category as $cat)
-            <div class="col-md-2">
+            <div class="col-md-2 col-6">
                 <img src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/{{ $cat->image }}" class="w-100" alt="">
                 <h5 class="text-center mt-2">{{ $cat->name }}</h5>
             </div>
