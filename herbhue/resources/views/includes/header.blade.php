@@ -120,7 +120,35 @@
     <div class="container">
         <div class="row">
             <div class="col-md-9 text-center">
-                 <a href="{{url('/')}}"><img src="{{ asset('img/logo.png') }}" alt="" class="main-logo" style="width: 170px;position: relative;left: 57%; top: -10px;"></a>   
+            <div class="pt-3 mob-view">
+            <ul class="  d-flex ul">
+            <li class="me-3">
+                   
+                   <a class="nav-link small" href="javascript:void(0);"><img src="{{ asset('img/UK_flag.png') }}"
+                   width="20px" alt=""> <span class="ms-2">United Kingdom</span> </a>
+               </li>
+               @if(empty(Session::get('username')))
+                 <li class="me-3">
+                      <a class="nav-link text-nowrap small" href="{{ route('login') }}"> 
+                        <span class="me-3"> <img src="{{ asset('img/login.svg') }}" alt="" class="nav-icon me-1"> Login |</span>
+                      </a>
+                 </li>
+                 <li class="me-3">
+                      <a class="nav-link text-nowrap small" href="{{ route('register') }}"> 
+                        <span> <img src="{{ asset('img/register.svg') }}" alt="" class="nav-icon me-1"> Sign Up</span> 
+                      </a>
+                 </li>
+                @else
+                  <li class="me-3">
+                      <a class="nav-link text-nowrap small" href="{{ route('myaccount') }}">
+                           <span> <img src="{{ asset('img/register.svg') }}" alt="" class="nav-icon me-1"> My Account</span>
+                      </a>
+                  </li>
+                @endif
+               
+            </ul>
+        </div>
+                 <a href="{{url('/')}}" class="web-view"><img src="{{ asset('img/logo.png') }}" alt="" class="main-logo" style="width: 170px;position: relative;left: 57%; top: -10px;"></a>   
             </div>
             <div class="col-md-3">
                 <ul class="d-flex ul justify-content-end">
