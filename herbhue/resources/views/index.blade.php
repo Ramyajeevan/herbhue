@@ -281,7 +281,7 @@
 
                          </div>
                 </div>
-
+                </div>
                 <div class="container-fluid mb-4">
                 <div class="container">
                         <h3 class=" text-black text-center mb-4">Recommended by you</h3>
@@ -302,7 +302,7 @@
                             
 
             </div>
-                </div>
+               
     
     <!-- <div class="container-fluid   py-5 ">
             <div class="row">
