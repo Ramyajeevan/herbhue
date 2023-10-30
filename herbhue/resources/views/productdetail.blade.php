@@ -420,6 +420,32 @@
 @endsection
 @section('script')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+        $(".cate-1").owlCarousel({
+            loop: true,
+            margin: 20,
+            nav: true,
+            autoplay: false,
+            dots: false,
+            responsive: {
+                0: {
+                    items: 1,
+                    nav: true,
+                },
+                600: {
+                    items: 2,
+                    nav: true,
+                },
+                1000: {
+                    items: 4,
+                    nav: true,
+                },
+            },
+        });
+ 
+
+    </script>
 <script>
     $('#thumbs img').click(function () {
         $('#largeImage').attr('src', $(this).attr('src').replace('thumb', 'large'));
