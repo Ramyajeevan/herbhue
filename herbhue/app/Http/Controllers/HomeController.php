@@ -383,9 +383,9 @@ class HomeController extends Controller
 
 // added on 30-10-2023 by rahul 
 
-public function personalized()
+public function personalization()
     {
-      return view('personalized');
+      return view('personalization');
     }
 // added on 30-10-2023 by rahul 
   	public function mywishlist()
