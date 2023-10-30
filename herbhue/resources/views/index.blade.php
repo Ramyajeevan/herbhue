@@ -125,6 +125,23 @@
     </div>
     <div class="container mt-5">
         <div class="row">
+             @foreach($category as $cat)
+                @if($loop->index<3)
+                     <div class="col-md-4 mb-3">
+                        <div class="card border-0">
+                            <img src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/{{ $cat->image }}" class=" card-img-top mb-3" width="150px" alt="">
+                            <div class="top-desc">
+                                <h4>{{ $cat->name }}</h4>
+                                <!-- <p class="text-secondary">For your skin, gut and muscle health.</p> -->
+                            </div>
+                            <div class="desc-bottom">
+                            <a href="{{ route('products') }}/{{ $cat->id }}" class="btn btn-secondary rounded-pill ">LEARN MORE</a>
+                            </div>
+                        </div>
+                    </div>
+                @endif
+             @endforeach
+            <!--
             <div class="col-md-4 mb-3">
                 <div class="card border-0">
                     <img src="{{asset('img/health.png')}}" class=" card-img-top mb-3" width="150px" alt="">
@@ -161,6 +178,7 @@
                     </div>
                 </div>
             </div>
+            -->
         </div>
     </div>
 </div>
