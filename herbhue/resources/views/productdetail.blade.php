@@ -351,8 +351,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-5">
-
+                    <div class="col-md-5 pt-5">
+                        <div class="d-flex justify-content-center">
+                    <button type="button" class="btn btn-outline-dark">Write a review</button></div>
                     </div>
                 </div>
             </div>
