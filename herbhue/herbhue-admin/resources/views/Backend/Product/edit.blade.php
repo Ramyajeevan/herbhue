@@ -117,7 +117,7 @@
                 </div>
             </div>
             <div class="mb-3 row">
-                <label class="col-md-2 col-form-label" for="wellness">Wellness</label>
+                <label class="col-md-2 col-form-label" for="wellness">Trending Now</label>
                 <div class="col-md-10">
                   <input type="radio" class="btn-check" name="wellness" id="wellness1" value="yes" autocomplete="off" @if($product->wellness=="yes") checked @endif>
                   <label class="btn btn-outline-primary rounded-pill font-weight-medium" for="wellness1">Yes</label>
