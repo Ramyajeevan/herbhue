@@ -143,7 +143,7 @@
 
 <div class="container-fluid mb-4">
     <div class="container">
-        <h5 class=" text-black mb-4">Trending Now</h5>
+        <h3 class=" text-black mb-4">Trending Now</h5>
         <div class="cate-3 owl-carousel owl-theme">
             @foreach($wellproduct as $wellprod)
             <div class="item">
