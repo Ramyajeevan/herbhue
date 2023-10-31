@@ -22,8 +22,8 @@
 <body> 
     <div class="container-fluid">
         <div class="row">
-            <div class="col-lg-3"></div>
-            <div class="col-lg-6">
+            <div class="col-lg-4"></div>
+            <div class="col-lg-4">
                 <form method="post" action="{{ route('register') }}">
                 @csrf
                 <div class="form-container">
@@ -65,7 +65,7 @@
                 </div>
                 </form>
             </div>
-            <div class="col-lg-3"></div>
+            <div class="col-lg-4"></div>
             <!-- <div class="col-lg-5 text-end pe-0">
                 <img src="{{ asset('img/login-img.png') }}" class="w-75 h-75" alt="">
             </div> -->
