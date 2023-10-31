@@ -42,9 +42,59 @@
                 <h2 class="pb-1 mb-1">Popular Combo Deals</h2>
                 <p>New wellness range just for you!</p>
             </div>
-            <p class="text-black fs-4 fw-bold pt-2">View All</p>
+            <p class="text-black fs-5 fw-bold pt-2">View All</p>
         </div>
-        <div class="cate-1 owl-carousel owl-theme">
+
+
+        <div class="row">
+        @foreach($product as $prod)
+            <div class="col-md-3 mb-3">
+                 <div class="card border-secondary">
+                    <div class="card-body">
+                        <div class="text-center mb-3">
+                            @if($prod->image1!="")
+                            <img src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/{{ $prod->image1 }}"style="width:100%; height:230px;" alt="">
+                            @else
+                            <img src="{{ asset('img/no_image.svg') }}" style="width:100%; height:230px;" alt="">
+                            @endif
+                        </div>
+                        <p class="small text-center text-secondary py-0 my-0">220 gm</p>
+                        <h5 class="text-truncate text-center" style="max-width: 265px;">{{ $prod->name }}</h5>
+                        <p class="text-secondary text-center pb-1 mb-1  text-truncate" style="max-width: 265px;">
+                        {!! $prod->description !!}</p>
+                        <p class="text-secondary p-0 m-0 text-center">{{ $prod->describe }}</p>
+                        <p class="text-secondary text-center pb-0 mb-0">M.R.P: <span
+                                class="text-decoration-line-through text-secondary"> &pound; {{ $prod->product_options->mrp_price }}</span> </p>
+                        <p class="text-center">&pound; {{ $prod->product_options->price }}</p>
+                        <a href="{{ route('productdetail', $prod->id) }}" class="btn btn-secondary text-black fw-bold w-100">View Product</a>
+                    </div>
+                </div>
+            </div>
+            @endforeach
+        </div> 
+         <!--  new ui  -->
+                <!-- maam kindly do the backend in new ui  -->
+                <!-- <div class="card border-secondary shadow">
+
+                    <div class="card-body">
+                        <div class="text-center mb-3">
+                        <img src="{{asset('img/medicine.png')}}" style="width:100%; height:230px;" alt="">
+                        </div>
+                        <p class="small text-center text-secondary py-0 my-0">220 gm</p>
+                        <div class="d-flex justify-content-center">
+                        <h5 class="text-truncate text-center" style="max-width: 265px;">Glucosamine HCL 1500 mg Tablet</h5>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                        <p class="text-secondary text-center pb-1 mb-1  text-truncate" style="max-width: 265px;">
+                        Glucosamine HCL 1500 mg Tablet...</p></div>
+                        
+                        <a href="#" class="btn btn-outline-dark text-black bg-white fw-bold w-100 text-black">Buy <span class="text-decoration-line-through text-muted mx-1"> £ 260</span> <span class="text-black"> £ 260</span></a>
+                    </div>
+
+                </div> -->
+
+                    <!-- new ui -->
+        <!-- <div class="cate-1 owl-carousel owl-theme">
             @foreach($product as $prod)
             <div class="item">
                 <div class="card border-secondary">
@@ -69,32 +119,11 @@
                 </div>
 
 
-                <!--  new ui  -->
-                <!-- maam kindly do the backend in new ui  -->
-                <!-- <div class="card border-secondary shadow">
-
-                    <div class="card-body">
-                        <div class="text-center mb-3">
-                        <img src="{{asset('img/medicine.png')}}" style="width:100%; height:230px;" alt="">
-                        </div>
-                        <p class="small text-center text-secondary py-0 my-0">220 gm</p>
-                        <div class="d-flex justify-content-center">
-                        <h5 class="text-truncate text-center" style="max-width: 265px;">Glucosamine HCL 1500 mg Tablet</h5>
-                        </div>
-                        <div class="d-flex justify-content-center">
-                        <p class="text-secondary text-center pb-1 mb-1  text-truncate" style="max-width: 265px;">
-                        Glucosamine HCL 1500 mg Tablet...</p></div>
-                        
-                        <a href="#" class="btn btn-outline-dark text-black bg-white fw-bold w-100 text-black">Buy <span class="text-decoration-line-through text-muted mx-1"> £ 260</span> <span class="text-black"> £ 260</span></a>
-                    </div>
-
-                </div> -->
-
-                    <!-- new ui -->
+              
             </div>
 
             @endforeach
-        </div>
+        </div> -->
     </div>         
 </div>
 
