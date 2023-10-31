@@ -19,8 +19,10 @@
 
                 <p class="fs-5 text-center ">Total Price for item £482.00</p>
                 <p class="fs-5 text-center "><a href="#" class="text-decoration-none text-black"> View Details > </a></p>
-
-                <a href="{{ route('products') }}" class="btn btn-outline-black"   title="Continue Shopping">Continue Shopping</a>
+                <div class="text-center">
+                    <a href="{{ route('products') }}"    title="Continue Shopping"> <button type="button" class="btn btn-dark">Continue Shopping</button></a>
+                </div>
+              
             </div>
             <div class="col-md-4  pt-4">
                 <p class="fs-4 text-muted fw-bold">Thank you for shopping with us. <br> Visit again !</p>
