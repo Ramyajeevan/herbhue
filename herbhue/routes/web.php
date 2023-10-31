@@ -86,4 +86,6 @@ Route::post('placeorder1',[OrderController::class, 'placeorder1'])->name('placeo
 Route::get('/personalization',[HomeController::class, 'personalization'])->name('personalization');
 
 Route::get('/shop',[HomeController::class, 'shop'])->name('shop');
+
+Route::get('/cart2',[HomeController::class, 'cart2'])->name('cart2');
 ?>
