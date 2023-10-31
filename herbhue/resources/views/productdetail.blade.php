@@ -128,13 +128,13 @@
                 <p>
                 <?php for($k=1;$k<=5;$k++) { 
                         if($k<=$stars){ ?>
-                        <i class="fa fa-star text-warning fs-5 me-2"></i>
+                        <i class="fa fa-star text-warning fs-6 "></i>
                         <?php } else { ?>
-                        <i class="fa fa-star-o text-warning fs-5 me-2"></i>
+                        <i class="fa fa-star-o text-warning fs-6"></i>
                         <?php } } ?>
                         <span class="text-secondary">({{ $totalusers }} Customer Reviews)</span>
                 </p>
-                <h5 class="fw-bold">&pound; <span id="price">{{ $products->product_options[0]->price }}</span>
+                <h4 class="fw-bold">&pound; <span id="price">{{ $products->product_options[0]->price }}</span>
                     <span class="fav">
                     @if($wishlist_user==0)
                     <a href="javascript:void(0);" @if(!empty(Session::get('username'))) onclick="addtowishlist({{ $products->id }});" @else onclick="showalert();" @endif>
@@ -144,8 +144,8 @@
                     <i class="fa fa-heart text-primary"></i>
                     @endif
                     </span>
-                </h5>
-                <p class="fs-5">M.R.P: <strong class="text-decoration-line-through">&pound; 
+                </h4>
+                <p class="small">M.R.P: <strong class="text-decoration-line-through">&pound; 
                 <span id="mrp_price">{{ $products->product_options[0]->mrp_price }}</span></strong> </p>
 
                 <div class="mb-4">
@@ -237,8 +237,8 @@
 
 <div class="container-fluid bg-light py-2">
     <div class="container">
-        <h3 class="text-black">Description</h3>
-        <p class="text-secondary fs-5 border-bottom pb-4 mb-5 border-3">
+        <h4 class="text-black mt-3">Description</h4>
+        <p class="text-secondary fs-6 border-bottom pb-4 mb-5 border-3">
         {!! $products->description !!}
         </p>
     </div>
@@ -246,7 +246,7 @@
             
 <div class="container-fluid my-4">
     <div class="container">
-        <h3 class="text-center text-black mb-4">You may like to purchase</h5>
+        <p class="text-center text-black fs-4 mb-4">You may like to purchase</p>
         <div class="cate-1 owl-carousel owl-theme">
             @foreach($related_products as $related)
             <div class="item">
@@ -279,7 +279,7 @@
             @endforeach
         </div>
     </div>
-    <div class="container">
+    <div class="container mt-5">
         <div class="card">
             <div class="card-body">
                 <div class="row ">
@@ -367,7 +367,7 @@
             <form method="post" action="{{ route('addrating') }}">
                 @csrf
                 <input type="hidden" name="product_id" id="product_id" value="{{  $products->id }}">
-            <h3 class="text-black">Reviews & Ratings</h3>
+            <h3 class="text-black mt-5">Reviews & Ratings</h3>
             <div class="rate">
             <input type="radio" id="star5" name="rate" value="5" />
             <label for="star5" title="text">5 stars</label>
@@ -388,7 +388,7 @@
  
         <div class="card my-5">
             <div class="card-header bg-white">
-                <h4 class="text-black">Reviews by customers</h4>
+                <h4 class="text-black ">Reviews by customers</h4>
             </div>
             <ul class="list-group list-group-flush">
                 <!-- new ui  -->
