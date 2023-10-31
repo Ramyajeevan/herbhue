@@ -49,6 +49,25 @@
     display:none;
   }
   }
+  .owl-carousel .owl-nav button.owl-next {
+            position: absolute !important;
+            top: -60px;
+            right: 0 !important;
+            font-size: 40px !important;
+        }
+
+        .owl-carousel .owl-nav button.owl-prev {
+            position: absolute !important;
+            top: -60px;
+            right: 15px !important;
+            font-size: 40px !important;
+        }
+
+        .owl-carousel .owl-nav button.owl-prev,
+        .owl-carousel .owl-nav button.owl-next:hover {
+            background-color: transparent !important;
+            color: black !important;
+        }
 </style>
 <div class="container-fluid web-view  border-bottom pb-1">
     <div class="container d-flex justify-content-between">
