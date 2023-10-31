@@ -130,6 +130,7 @@
 
 <div class="container-fluid bg-light py-4">
     <div class="container">
+        <h3 class="text-black text-center">HerbHue Promise</h3>
         <div class="row">
             <div class="col-md-4 mb-3">
                 <div class="d-flex justify-content-center">
@@ -152,7 +153,7 @@
                 Experiential scientists put product quality, safety and excellence above all.
                 </p></div>
                 <div class="col-md-12 text-center">
-                <button type="button" class="btn btn-secondary rounded-pill ">LEARN MORE</button>
+                <button type="button" class="btn btn-secondary rounded-pill text-black btn-lg ">LEARN MORE</button>
                 </div>
         </div>
     </div>
