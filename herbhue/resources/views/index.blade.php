@@ -162,14 +162,28 @@
 <div class="container-fluid bg-white py-2">
     <div class="container mt-3 mb-4">
         <h3>Shop by Health Concerns</h3>
-        <div class="row mt-3">
+          <div class="category owl-carousel owl-theme">
+          @foreach($category as $cat)
+            <div class="item">
+                <div class="card border-secondary">
+                <img src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/{{ $cat->image }}" class="w-100 card-img-top" alt="">
+                <h5 class="text-center mt-2">{{ $cat->name }}</h5>
+                </div>
+
+
+              
+            </div>
+
+            @endforeach
+        </div>  
+        <!-- <div class="row mt-3">
             @foreach($category as $cat)
             <div class="col-md-2 col-6">
                 <img src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/{{ $cat->image }}" class="w-100" alt="">
                 <h5 class="text-center mt-2">{{ $cat->name }}</h5>
             </div>
             @endforeach
-        </div>
+        </div> -->
     </div>
     <div class="container mt-5">
         <div class="row">
@@ -376,6 +390,27 @@
             },
         });
 
+        $(".category").owlCarousel({
+            loop: true,
+            margin: 20,
+            nav: true,
+            autoplay: false,
+            dots: false,
+            responsive: {
+                0: {
+                    items: 1,
+                    nav: true,
+                },
+                600: {
+                    items: 4,
+                    nav: true,
+                },
+                1000: {
+                    items: 6,
+                    nav: true,
+                },
+            },
+        });
 
 
         $(".testimonial").owlCarousel({
