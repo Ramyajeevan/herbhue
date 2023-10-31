@@ -354,6 +354,7 @@
       itemsTablet: false,
       itemsMobile : false, 
      autoplay: true
+     dots:false,
 
  });
 
