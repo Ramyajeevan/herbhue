@@ -73,7 +73,7 @@
     <div class="container d-flex justify-content-between">
       <!-- <a href="{{url('/')}}"><img src="{{ asset('img/logo.png') }}" alt="" class="main-logo" style="width: 170px;"></a>  -->
       <div class="pt-3">
-            <ul class="  d-flex ul"> 
+            <ul class="  d-flex ul pb-0 mb-0"> 
             <li class="me-3">
             <a class="nav-link text-nowrap" href="javascript:void(0);">24/7 Free Support</a>
         </li>
@@ -85,7 +85,7 @@
             </ul>
         </div>
          <div class="pt-3">
-            <ul class="  d-flex ul">
+            <ul class="  d-flex ul pb-1 mb-1">
             <li class="me-3">
                    
                    <a class="nav-link" href="javascript:void(0);"><img src="{{ asset('img/UK_flag.png') }}"
@@ -137,14 +137,14 @@
     </div> -->
 
     <div class="container">
-        <div class="row">
+        <div class="row pb-2">
             <div class="col-9 text-center">
             <div class="pt-1 mob-view">
             <ul class="  d-flex ul">
             
                                 <li class="">
                       <a class="nav-link text-nowrap small" href="http://herbhue.azurewebsites.net/login"> 
-                        <span class="me-3"> <img src="http://herbhue.azurewebsites.net/img/login.svg" alt="" class="nav-icon me-1"> Login |</span>
+                        <span class="me-3"> <img src="http://herbhue.azurewebsites.net/img/login.svg" alt="" class="nav-icon me-1"> Login </span>
                       </a>
                  </li>
                  <li class="">
@@ -155,10 +155,13 @@
                                
             </ul>
         </div>
-                 <a href="http://herbhue.azurewebsites.net" class="web-view"><img src="http://herbhue.azurewebsites.net/img/logo.png" alt="" class="main-logo" style="width: 170px;position: relative;left: 57%; top: -10px;"></a>   
+                 <a href="http://herbhue.azurewebsites.net" class="web-view"><img src="http://herbhue.azurewebsites.net/img/logo.png" alt="" class="main-logo" style="width: 170px;position: relative;left: 57%; top: 0px;"></a>   
             </div>
             <div class="col-3">
-                <ul class="d-flex ul justify-content-end">
+                <ul class="d-flex ul justify-content-end" style="
+    position: relative;
+    top: 13px;
+">
                 <li class="">
                     <a class="nav-link" href="javascript:void(0);">
                     <button type="button" class="btn bg-transparent border-0 position-relative">

@@ -38,11 +38,11 @@ a{
   }
 
   img.nav-icon {
-    width: 18px !important;
+    width: 13px !important;
   }
   
   a.nav-link {
-    font-size: 17px;
+    font-size: 15px !important;
   }
   
   .btn-check:checked+.btn {
@@ -382,7 +382,7 @@ a{
   header .main-menu > li > a {
     color: #173966;
     font-size: 12px;
-    padding: 25px 1.5vw;
+    padding: 15px 1.5vw;
     font-weight: 700;
     display: block;
     transition: 0.4s;
