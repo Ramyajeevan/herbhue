@@ -247,7 +247,7 @@
     </div>
 </div>
 
-<div class="container-fluid mb-4">
+<div class="container-fluid mb-5">
     <div class="container">
         <h3 class=" text-black mb-4">Our Top Brands</h3>
         <div class="cate-4 owl-carousel owl-theme">
@@ -263,7 +263,7 @@
 </div>
                 
 
-<div class="container-fluid my-4">
+<div class="container-fluid my-5">
     <div class="container">
         <h3 class=" text-black text-center">Recommended by you</h3>
         <p class="text-center">Discover their stories and why they recommend HerbHue.</p>
