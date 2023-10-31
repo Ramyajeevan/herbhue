@@ -138,78 +138,51 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-md-9 text-center">
-            <div class="pt-3 mob-view">
+            <div class="col-9 text-center">
+            <div class="pt-1 mob-view">
             <ul class="  d-flex ul">
-            <li class="me-3">
-                   
-                   <a class="nav-link small" href="javascript:void(0);"><img src="{{ asset('img/UK_flag.png') }}"
-                   width="20px" alt=""> <span class="ms-2">United Kingdom</span> </a>
-               </li>
-               @if(empty(Session::get('username')))
-                 <li class="me-3">
-                      <a class="nav-link text-nowrap small" href="{{ route('login') }}"> 
-                        <span class="me-3"> <img src="{{ asset('img/login.svg') }}" alt="" class="nav-icon me-1"> Login |</span>
+            
+                                <li class="">
+                      <a class="nav-link text-nowrap small" href="http://herbhue.azurewebsites.net/login"> 
+                        <span class="me-3"> <img src="http://herbhue.azurewebsites.net/img/login.svg" alt="" class="nav-icon me-1"> Login |</span>
                       </a>
                  </li>
-                 <li class="me-3">
-                      <a class="nav-link text-nowrap small" href="{{ route('register') }}"> 
-                        <span> <img src="{{ asset('img/register.svg') }}" alt="" class="nav-icon me-1"> Sign Up</span> 
+                 <li class="">
+                      <a class="nav-link text-nowrap small" href="http://herbhue.azurewebsites.net/register"> 
+                        <span> <img src="http://herbhue.azurewebsites.net/img/register.svg" alt="" class="nav-icon me-1"> Sign Up</span> 
                       </a>
                  </li>
-                @else
-                  <li class="me-3">
-                      <a class="nav-link text-nowrap small" href="{{ route('myaccount') }}">
-                           <span> <img src="{{ asset('img/register.svg') }}" alt="" class="nav-icon me-1"> My Account</span>
-                      </a>
-                  </li>
-                @endif
-               
+                               
             </ul>
         </div>
-                 <a href="{{url('/')}}" class="web-view"><img src="{{ asset('img/logo.png') }}" alt="" class="main-logo" style="width: 170px;position: relative;left: 57%; top: -10px;"></a>   
+                 <a href="http://herbhue.azurewebsites.net" class="web-view"><img src="http://herbhue.azurewebsites.net/img/logo.png" alt="" class="main-logo" style="width: 170px;position: relative;left: 57%; top: -10px;"></a>   
             </div>
-            <div class="col-md-3">
+            <div class="col-3">
                 <ul class="d-flex ul justify-content-end">
-                <li class="me-3">
+                <li class="">
                     <a class="nav-link" href="javascript:void(0);">
                     <button type="button" class="btn bg-transparent border-0 position-relative">
-                        <img src="{{ asset('img/search icon (2).svg') }}" alt="" class="nav-icon">
+                        <img src="http://herbhue.azurewebsites.net/img/search icon (2).svg" alt="" class="nav-icon">
                          
                     </button>
                     </a>
                 </li>
-                @php
-                $cart_items=0;
-                $session_id=Session::getId();
-                $cart_items=DB::table('tbl_cart')->where("session_id",$session_id)->sum("quantity");
-                @endphp
-                <li class="me-3">
-                    <a class="nav-link" href="{{ route('viewcart') }}">
+                                <li class="me-1">
+                    <a class="nav-link" href="http://herbhue.azurewebsites.net/viewcart">
                     <button type="button" class="btn bg-transparent border-0 position-relative">
-                        <img src="{{ asset('img/Cart Icon (1).svg') }}" alt="" class="nav-icon">
+                        <img src="http://herbhue.azurewebsites.net/img/Cart Icon (1).svg" alt="" class="nav-icon">
                         <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                        {{ $cart_items }}
+                        2
                         </span>
                     </button>
                     </a>
                 </li>
-                @php
-                $wishlist_count=0;
-                if(!empty(Session::get('username')))
-                {
-                    $email=Session::get('username');
-                        $user=DB::table("tbl_user")->where("email",$email)->first();
-                        $wishlist_count=DB::table("tbl_wishlist")->where("user_id",$user->id)->count();
-                    // $wishlist_count=1;
-                }
-                @endphp
-                <li class="me-3">
-                    <a class="nav-link" href="{{ route('mywishlist') }}">
+                                <li class="">
+                    <a class="nav-link" href="http://herbhue.azurewebsites.net/mywishlist">
                     <button type="button" class="btn bg-transparent border-0 position-relative">
-                        <img src="{{ asset('img/Wishlist Icon (1).svg') }}" alt="" class="nav-icon">
+                        <img src="http://herbhue.azurewebsites.net/img/Wishlist Icon (1).svg" alt="" class="nav-icon">
                         <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                        {{ $wishlist_count }}
+                        0
                         </span>
                     </button>
                         
