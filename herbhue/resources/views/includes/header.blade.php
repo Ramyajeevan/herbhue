@@ -114,7 +114,7 @@
         </div>
     </div>
 </div>
-<div class="container-fluid bg-white  pt-3">
+<div class="container-fluid bg-white  pt-1">
     <!-- <div class="container nav2">
         <div class="input-group mb-3 w-25 flex-nowrap">
             <span class="input-group-text bg-white border-0" id="basic-addon2"><img src="{{ asset('img/location.png') }}"
