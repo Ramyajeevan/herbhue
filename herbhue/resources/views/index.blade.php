@@ -263,9 +263,9 @@
 </div>
                 
 
-<div class="container-fluid mb-4">
+<div class="container-fluid my-4">
     <div class="container">
-        <h3 class=" text-black text-center mb-4">Recommended by you</h3>
+        <h3 class=" text-black text-center">Recommended by you</h3>
         <p class="text-center">Discover their stories and why they recommend HerbHue.</p>
         <div class="testimonial owl-carousel owl-theme">
             @foreach($ratings as $rat)
@@ -278,9 +278,9 @@
                             @endfor
                         </p>
 
-                        <span class="fs-4 fw-bold">{{ $rat->user_name }}</span>
+                        <span class="fs-5 fw-bold">{{ $rat->user_name }}</span>
                         <small class="text-muted">{{ $rat->days }} ago</small>
-                        <h5>{{ $rat->product_name }}</h5>
+                        <h6>{{ $rat->product_name }}</h6>
                         <p class="pt-0 mt-0">{{ $rat->review }}</p>
                     </div>
                 </div>
