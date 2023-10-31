@@ -166,7 +166,7 @@
           <div class="category owl-carousel owl-theme">
           @foreach($category as $cat)
             <div class="item">
-                <div class="card border-secondary">
+                <div class="card border-0">
                 <img src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/{{ $cat->image }}" class="w-100 card-img-top" alt="">
                 <h5 class="text-center mt-2">{{ $cat->name }}</h5>
                 </div>
@@ -363,7 +363,7 @@
                     nav: true,
                 },
                 1000: {
-                    items: 3,
+                    items: 4,
                     nav: true,
                 },
             },
@@ -385,7 +385,7 @@
                     nav: true,
                 },
                 1000: {
-                    items: 5,
+                    items: 6,
                     nav: true,
                 },
             },
