@@ -104,6 +104,8 @@
                             </div>
                     </div>
                 </div>
+
+                <button type="button" class="btn btn-dark btn-lg w-100">Checkout</button>
             </div>
         </div>
     </div>
