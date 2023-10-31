@@ -83,20 +83,20 @@
                 <h6 class="text-black fw-bold mb-4">
                     Information
                 </h6>
-                <p class="pb-1 mb-1">
+                <p class="pb-0 mb-0">
                     <a href="javascript:void(0);" class="text-black fw-medium">Home</a>
                 </p>
-                <p class="pb-1 mb-1">
+                <p class="pb-0 mb-0">
                     <a href="javascript:void(0);" class="text-black fw-medium">About</a>
                 </p>
-                <p class="pb-1 mb-1">
+                <p class="pb-0 mb-0">
                     <a href="javascript:void(0);" class="text-black fw-medium">Shop</a>
                 </p>
-                <p class="pb-1 mb-1">
+                <p class="pb-0 mb-0">
                     <a href="javascript:void(0);" class="text-black fw-medium">Blog</a>
                 </p>
 
-                <p class="pb-1 mb-1">
+                <p class="pb-0 mb-0">
                     <a href="javascript:void(0);" class="text-black fw-medium">Contact Us</a>
                 </p>
             </div>
@@ -108,20 +108,20 @@
                 <h6 class="text-black fw-bold mb-4">
                     Accounts
                 </h6>
-                <p class="pb-1 mb-1">
+                <p class="pb-0 mb-0">
                     <a href="javascript:void(0);" class="text-black fw-medium">Your Account</a>
                 </p>
-                <p class="pb-1 mb-1">
+                <p class="pb-0 mb-0">
                     <a href="javascript:void(0);" class="text-black fw-medium">Login/Register</a>
                 </p>
-                <p class="pb-1 mb-1">
+                <p class="pb-0 mb-0">
                     <a href="javascript:void(0);" class="text-black fw-medium">Order History</a>
                 </p>
-                <p class="pb-1 mb-1">
+                <p class="pb-0 mb-0">
                     <a href="javascript:void(0);" class="text-black fw-medium">Wishlist</a>
                 </p>
 
-                <p class="pb-1 mb-1">
+                <p class="pb-0 mb-0">
                     <a href="javascript:void(0);" class="text-black fw-medium">Cart</a>
                 </p>
             </div>
@@ -134,20 +134,20 @@
                     Useful Links
                 </h6>
 
-                <p class="pb-1 mb-1">
+                <p class="pb-0 mb-0">
                     <a href="javascript:void(0);" class="text-black fw-medium"> Privacy Policy</a>
                 </p>
-                <p class="pb-1 mb-1">
+                <p class="pb-0 mb-0">
                     <a href="javascript:void(0);" class="text-black fw-medium"> Shipping Policy</a>
                 </p>
-                <p class="pb-1 mb-1">
+                <p class="pb-0 mb-0">
                     <a href="javascript:void(0);" class="text-black fw-medium">Return Policy </a>
                 </p>
-                <p class="pb-1 mb-1">
+                <p class="pb-0 mb-0">
                     <a href="javascript:void(0);" class="text-black fw-medium">Refund Policy</a>
                 </p>
 
-                <p class="pb-1 mb-1">
+                <p class="pb-0 mb-0">
                     <a href="javascript:void(0);" class="text-black fw-medium">Disclaimer</a>
                 </p>
             </div>
@@ -186,7 +186,7 @@
             <div class="col-md-4">
                 <div class="row">
                     <div class="col-2">
-                        <img src="{{ asset('img/affordable.png') }}" alt="Affordable"   width="90px">
+                        <img src="{{ asset('img/affordable.png') }}" alt="Affordable"   width="80px">
                     </div>
                     <div class="col-10 ps-3">
                         <h6 class="text-black">Affordable</h6>
