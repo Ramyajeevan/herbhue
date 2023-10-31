@@ -28,6 +28,7 @@ a{
   .btn-success {
     background-color: #ACB69C !important;
     color: white;
+    border-color:  #ACB69C !important;
   }
   .bg-light-blue{
   background-color: #E8F1FE !important;
