@@ -151,7 +151,7 @@
                     <div class="card-body">
                         <div class="text-center mb-3">
                             @if($wellprod->image1!="")
-                            <img src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/{{ $wellprod->image1 }}" class="w-100" alt="">
+                            <img src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/{{ $wellprod->image1 }}" style="width:100%; height:230px;" alt="">
                             @else
                             <img src="{{ asset('img/no_image.svg') }}"  class="w-75" alt="">
                             @endif
