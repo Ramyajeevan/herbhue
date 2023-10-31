@@ -382,7 +382,7 @@
             </div>
             <br><br>
             <textarea class="form-control w-25" placeholder="Your Message" name="review" id="review" required></textarea>
-            <button type="submit" class="btn btn-primary mt-3">Add Review</button>
+            <button type="submit" class="btn btn-primary mt-3 btn-lg" style="position: relative; top: 69px;}">Add Review</button>
             </form>
             @endif
  
