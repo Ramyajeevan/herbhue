@@ -33,13 +33,13 @@
                         <p class="text-center">Welcome to the world of HerbHue</p>
                     </div>
                     <div class="form-group">
-                        <input type="text"  id="name" name="name" required>
-                        <label for="name">Name</label>
+                        <input type="text"  id="name" name="name" required placeholder="Full Name">
+                       
                     </div>
                     
                     <div class="form-group">
-                        <input type="email"  id="email"  name="email" required>
-                        <label for="email">Email</label>
+                        <input type="email"  id="email"  name="email" required placeholder="Email ID">
+                        
                     </div>
                     <div class="input-group mb-3">
                     <span class="input-group-text bg-white" id="basic-addon1"><img src="{{ asset('img/UK_flag.png') }}"
@@ -51,8 +51,8 @@
                         <label for="mobile">Mobile</label>
                     </div> -->
                     <div class="form-group">
-                        <input type="password"  id="password" name="password" required>
-                        <label for="password">Password</label>
+                        <input type="password"  id="password" name="password" required placeholder="Password">
+                         
                     </div>
                     <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
