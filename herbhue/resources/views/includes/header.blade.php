@@ -51,16 +51,17 @@
   }
   .owl-carousel .owl-nav button.owl-next {
             position: absolute !important;
-            top: -60px;
+            top: -40px;
             right: 0 !important;
             font-size: 40px !important;
         }
 
         .owl-carousel .owl-nav button.owl-prev {
             position: absolute !important;
-            top: -60px;
-            right: 15px !important;
+            top: -40px;
+            right: 25px !important;
             font-size: 40px !important;
+           
         }
 
         .owl-carousel .owl-nav button.owl-prev,
