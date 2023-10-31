@@ -68,10 +68,11 @@
                     <br>dummy text of the prin.
                 </p>
                 <ul class="ul">
-                    <li class="social-icon me-2"><img src="{{ asset('img/Address Icon.svg') }}" alt="social icon"></li>
-                    <li class="social-icon me-2"><img src="{{ asset('img/Address Icon.svg') }}" alt="social icon"></li>
-                    <li class="social-icon me-2"><img src="{{ asset('img/Address Icon.svg') }}" alt="social icon"></li>
-                    <li class="social-icon me-2"><img src="{{ asset('img/Address Icon.svg') }}" alt="social icon"></li>
+                    <li class="social-icon me-2"><img src="{{ asset('img/Facebook.png') }}" alt="social icon"></li>
+                    <li class="social-icon me-2"><img src="{{ asset('img/Insta.png') }}" alt="social icon"></li>
+                    <li class="social-icon me-2"><img src="{{ asset('img/Pinterest.png') }}" alt="social icon"></li>
+                    <li class="social-icon me-2"><img src="{{ asset('img/Twitter.png') }}" alt="social icon"></li>
+                    <li class="social-icon me-2"><img src="{{ asset('img/Youtube.png') }}" alt="social icon"></li>
                 </ul>
             </div>
             <!-- Grid column -->
@@ -158,12 +159,12 @@
         <div class="row my-3">
             <div class="col-md-4">
                 <div class="row">
-                    <div class="col-3">
-                        <img src="{{ asset('img/reliable.png') }}" alt="reliable" width="100px">
+                    <div class="col-2">
+                        <img src="{{ asset('img/reliable.png') }}" alt="reliable" width="80px">
                     </div>
-                    <div class="col-9">
+                    <div class="col-10 ps-3">
                         <h6 class="text-black">Reliable</h6>
-                        <p class="text-secondary"> All products displayed on Gem Solution are procured from
+                        <p class="text-secondary small"> All products displayed on Gem Solution are procured from
                             verified and licensed pharmacies. All labs listed on the platform are accredited</p>
 
                     </div>
@@ -171,12 +172,12 @@
             </div>
             <div class="col-md-4">
                 <div class="row">
-                    <div class="col-3">
-                        <img src="{{ asset('img/secure.png') }}" alt="Secure"   width="65px">
+                    <div class="col-2">
+                        <img src="{{ asset('img/secure.png') }}" alt="Secure"   width="60px">
                     </div>
-                    <div class="col-9">
+                    <div class="col-10 ps-3">
                         <h6 class="text-black">Secure</h6>
-                        <p class="text-secondary"> Gem Solution uses Secure Sockets Layer (SSL) 128-bit encryption and is Payment Card Industry Data Security Standard (PCI DSS) compliant</p>
+                        <p class="text-secondary small"> Gem Solution uses Secure Sockets Layer (SSL) 128-bit encryption and is Payment Card Industry Data Security Standard (PCI DSS) compliant</p>
 
                     </div>
                 </div>
@@ -184,12 +185,12 @@
 
             <div class="col-md-4">
                 <div class="row">
-                    <div class="col-3">
-                        <img src="{{ asset('img/affordable.png') }}" alt="Affordable"   width="100px">
+                    <div class="col-2">
+                        <img src="{{ asset('img/affordable.png') }}" alt="Affordable"   width="90px">
                     </div>
-                    <div class="col-9">
+                    <div class="col-10 ps-3">
                         <h6 class="text-black">Affordable</h6>
-                        <p class="text-secondary">Find affordable medicine substitutes, save up to 50% on health products, up to 80% off on lab tests and free doctor consultations.</p>
+                        <p class="text-secondary small">Find affordable medicine substitutes, save up to 50% on health products, up to 80% off on lab tests and free doctor consultations.</p>
 
                     </div>
                 </div>
