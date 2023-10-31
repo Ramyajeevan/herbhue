@@ -16,7 +16,7 @@
                         <h6>Your Supplements</h6>
 
                         <p class="text-green text-end fw-bold pb-1 mb-1">
-                        <a href="javascript:void(0);" @if(!empty(Session::get('username'))) onclick="addtowishlist({{ $cart_product->product_id }});" @else onclick="showalert();" @endif>Save for Later</a>
+                        <a href="javascript:void(0);" @if(!empty(Session::get('username'))) onclick="addtowishlist({{ $cart_product->product_id }});" @else onclick="showalert();" @endif> <img src="{{asset('img/fav-out.svg')}}"width="17px" alt=""> Save for Later</a>
                                     </p>
                     </div>
                     <div class="card-body">
