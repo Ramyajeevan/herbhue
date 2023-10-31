@@ -67,7 +67,32 @@
                         <a href="{{ route('productdetail', $prod->id) }}" class="btn btn-secondary text-black fw-bold w-100">View Product</a>
                     </div>
                 </div>
+
+
+                <!--  new ui  -->
+                <!-- maam kindly do the backend in new ui  -->
+                <!-- <div class="card border-secondary shadow">
+
+                    <div class="card-body">
+                        <div class="text-center mb-3">
+                        <img src="{{asset('img/medicine.png')}}" style="width:100%; height:230px;" alt="">
+                        </div>
+                        <p class="small text-center text-secondary py-0 my-0">220 gm</p>
+                        <div class="d-flex justify-content-center">
+                        <h5 class="text-truncate text-center" style="max-width: 265px;">Glucosamine HCL 1500 mg Tablet</h5>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                        <p class="text-secondary text-center pb-1 mb-1  text-truncate" style="max-width: 265px;">
+                        Glucosamine HCL 1500 mg Tablet...</p></div>
+                        
+                        <a href="#" class="btn btn-outline-dark text-black bg-white fw-bold w-100 text-black">Buy <span class="text-decoration-line-through text-muted mx-1"> £ 260</span> <span class="text-black"> £ 260</span></a>
+                    </div>
+
+                </div> -->
+
+                    <!-- new ui -->
             </div>
+
             @endforeach
         </div>
     </div>         
@@ -157,9 +182,14 @@
                             @endif
                         </div>
                         <p class="small text-center text-secondary py-0 my-0">220 gm</p>
-                        <h5 class="text-truncate text-center" style="max-width: 265px;">{{ $wellprod->name }}</h5>  
-                        <p class="text-secondary text-center pb-1 mb-1  text-truncate" style="max-width: 265px;">
+                        <div class="d-flex justify-content-center">
+                                <h5 class="text-truncate text-center" style="max-width: 265px;">{{ $wellprod->name }}</h5> 
+                        </div>
+                     <div class="d-flex justify-content-center">
+                         <p class="text-secondary text-center pb-1 mb-1  text-truncate" style="max-width: 265px;">
                         {{ $wellprod->describe }}</p>
+                     </div>
+                       
                         <a href="{{ route('productdetail', $wellprod->id) }}" class="btn btn-outline-dark text-black bg-white fw-bold w-100 text-black">Buy 
                             <span class="text-decoration-line-through text-muted mx-1"> &pound; {{ $wellprod->product_options->mrp_price }}</span> 
                             <span class="text-black"> &pound; {{ $wellprod->product_options->price }}</span>
