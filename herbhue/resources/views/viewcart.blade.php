@@ -9,15 +9,10 @@
 <div class="container-fluid">
     <div class="container">
         <div class="row mt-3">
-            <div class="col-md-7">
-                <div class="card border-0">
+            <div class="col-md-5">
+                <div class="card border-radius-20 border-secondary">
                     <div class="card-header bg-transparent d-flex justify-content-between ">
-                        <!-- <h6>{{ count($cart) }} Item in your Cart</h6> -->
-                        <h6>Your Supplements</h6>
-
-                        <p class="text-green text-end fw-bold pb-1 mb-1">
-                        <a href="javascript:void(0);" @if(!empty(Session::get('username'))) onclick="addtowishlist({{ $cart_product->product_id }});" @else onclick="showalert();" @endif> <img src="{{asset('img/fav-out.svg')}}"width="17px" alt=""> Save for Later</a>
-                                    </p>
+                        <h3>{{ count($cart) }} Item in your Cart</h3>
                     </div>
                     <div class="card-body">
                         @foreach($cart as $cart_product)
@@ -43,39 +38,48 @@
                                     <p class="text-end">
                                         <a href="javascript:void(0);" onclick="deletecart({{ $cart_product->id }});"><img src="{{ asset('img/delete_FILL0_wght400_GRAD0_opsz24.svg') }}" alt="" style="width: 20px;"></a>
                                     </p>
-                                   
-                                   <!-- <div class="d-flex justify-content-end">
+                                    <p class="text-green text-end fw-bold pb-1 mb-1">
+                                        <a href="javascript:void(0);" @if(!empty(Session::get('username'))) onclick="addtowishlist({{ $cart_product->product_id }});" @else onclick="showalert();" @endif>Save for Later</a>
+                                    </p>
+                                    <div class="d-flex justify-content-end">
                                         <a class="minus btn btn-success btn-sm shadow"  style="height: 35px;" onclick="decrementvalue({{ $cart_product->option_id }})" href="javascript:void(0);">-</a>
                                         <input type="number" class="count shadow border-0 border-top border-bottom value{{ $cart_product->option_id }}"
                                         name="qty" value="{{ $cart_product->quantity }}" style="width: 40px; height: 35px;" disabled="">
                                         <a class="plus btn btn-success btn-sm   shadow"
                                             style="height: 35px;"  onclick="incrementvalue({{ $cart_product->option_id }})" href="javascript:void(0);">+</a>
-                                    </div>-->
+                                    </div>
                                 </div>
                             </div>
                         @endforeach
                     </div>
                 </div>
             </div>
-            <div class="col-md-5">
-              <!--  <div class="card mb-4">
-                     <div class="card-header bg-white">
+            <div class="col-md-7">
+                <div class="card mb-4">
+                    <div class="card-header bg-white">
                         <h4>Cart total: <span class="fw-bold">&pound; {{ $cart_total }}</span> </h4>
-                    </div> 
+                    </div>
                     <div class="card-body">
                         @if(empty(Session::get('username')))
                         <a href="{{ route('login') }}"  class="btn btn-success w-100 btn-lg py-3">Add Delivery Address</a>
                         @else
                         <a href="{{ route('checkout') }}"  class="btn btn-success w-100 btn-lg py-3">Add Delivery Address</a>
                         @endif
-                        
+                            <div class="card shadow mt-4 py-2">
+                                <div class="card-body d-flex justify-content-between" data-bs-toggle="modal" data-bs-target="#exampleModal" style="cursor:pointer;">
+
+                                    <h4><img src="{{ asset('img/Group 70.svg') }}" alt="" style="width: 35px;" class="me-2">Apply Coupon</h4>
+
+                                    <p><img src="{{ asset('img/Down Arrow.svg') }}" style="width: 15px;" alt=""></p>
+                                </div>
+                            </div>
                     </div>
-                </div>-->
-                <div class="card mb-4 border-0 bg-light-green rounded-0">
+                </div>
+                <div class="card mb-4">
                     <div class="card-body">
-                        <h4 class="text-black mb-3" style="color:#7B8B61;">Your Order</h4>
-                        <!-- <p class="d-flex justify-content-between text-secondary"> <span>Total MRP</span> <span>&pound; {{ $cart_total_mrp }}</span></p>
-                        <p class="d-flex justify-content-between text-secondary"> <span>Discount on MRP</span> <span class="text-green">-&pound; {{ $cart_total_mrp - $cart_total }}</span></p> -->
+                        <h4 class="text-black mb-3">Bill Summary</h4>
+                        <p class="d-flex justify-content-between text-secondary"> <span>Total MRP</span> <span>&pound; {{ $cart_total_mrp }}</span></p>
+                        <p class="d-flex justify-content-between text-secondary"> <span>Discount on MRP</span> <span class="text-green">-&pound; {{ $cart_total_mrp - $cart_total }}</span></p>
                         <hr class="m-0 p-0">
                         <p class="d-flex justify-content-between text-secondary"> <span>Cart Value</span> <span>&pound; {{ $cart_total }}</span></p>
 
@@ -88,24 +92,13 @@
                         @endif
                       <!--  <p class="d-flex justify-content-between text-secondary"> <span>Handling Charges</span> <span>£  19.00</span></p> -->
                         <hr class="m-0 p-0">
-                        <p class="d-flex justify-content-between text-black"> <span>Order Total</span> <span>&pound; {{ $cart_total-$coupon_amount }}</span></p>
+                        <p class="d-flex justify-content-between text-secondary"> <span>Order Total</span> <span>&pound; {{ $cart_total-$coupon_amount }}</span></p>
 
                         <hr class="m-0 p-0">
-                        <p class="d-flex justify-content-between text-black"> <span>Amount to be paid</span> <span>&pound; {{ $cart_total-$coupon_amount }}</span></p>
+                        <p class="d-flex justify-content-between text-secondary"> <span>Amount to be paid</span> <span>&pound; {{ $cart_total-$coupon_amount }}</span></p>
 
-
-                        <div class="card shadow m-4 py-2">
-                                <div class="card-body d-flex justify-content-between" data-bs-toggle="modal" data-bs-target="#exampleModal" style="cursor:pointer;">
-
-                                    <h4><img src="{{ asset('img/Group 70.svg') }}" alt="" style="width: 35px;" class="me-2">Apply Coupon</h4>
-
-                                    <p><img src="{{ asset('img/Down Arrow.svg') }}" style="width: 15px;" alt=""></p>
-                                </div>
-                            </div>
                     </div>
                 </div>
-
-                <button type="button" class="btn btn-dark btn-lg w-100">Checkout</button>
             </div>
         </div>
     </div>
