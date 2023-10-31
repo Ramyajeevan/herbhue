@@ -369,10 +369,10 @@ a{
     background: #F5F5F5;
     -webkit-box-shadow: 0 1px 5px 0 rgba(83, 83, 83, 0.4);
     box-shadow: 0 1px 5px 0 rgba(83, 83, 83, 0.4);
-    position: -webkit-sticky;
-    position: sticky;
+    /* position: -webkit-sticky; */
+    /* position: sticky;
     top: 0;
-    z-index: 1000;
+    z-index: 1000; */
   }
   
   header .main-menu > li {

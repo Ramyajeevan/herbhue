@@ -70,6 +70,7 @@
             color: black !important;
         }
 </style>
+<section class="sticky-top bg-white">
 <div class="container-fluid web-view  border-bottom pb-1">
     <div class="container d-flex justify-content-between">
       <!-- <a href="{{url('/')}}"><img src="{{ asset('img/logo.png') }}" alt="" class="main-logo" style="width: 170px;"></a>  -->
@@ -162,7 +163,7 @@
                 <ul class="d-flex ul justify-content-end" style="
     position: relative;
     top: 13px;
-">
+                ">
                 <li class="">
                     <a class="nav-link" href="javascript:void(0);">
                     <button type="button" class="btn bg-transparent border-0 position-relative">
@@ -197,7 +198,7 @@
         </div>
     </div>
 </div>
-
+    </section>
 <header class="px-2 py-3 py-lg-0 px-sm-0 category-header border-top">
     <div class="container">
         <div class="d-flex  align-items-center justify-content-between">
