@@ -205,7 +205,7 @@
     <div class="container px-4 pt-1">
         <div class="row">
             <div class="col-md-7 pt-2">
-                <p class="fs-5 fw-bold text-white">&copy; Herbhue | All Rights Reserved | Powered By SDIM</p>
+                <p class="fs-6 fw-bold text-black">&copy; Herbhue | All Rights Reserved | Powered By SDIM</p>
             </div>
             <div class="col-md-5 text-end">
                 <img src="{{ asset('img/Payment Method.png') }}" width="320px" alt="">
