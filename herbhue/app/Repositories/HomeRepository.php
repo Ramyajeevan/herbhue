@@ -325,7 +325,8 @@ class HomeRepository extends BaseRepository
        
         $product_totalusers=0;
         $total_rating_product = DB::table('tbl_rating_review')->select('product_id', DB::raw('count(user_id) as totalusers')) ->where('status','1')->where('product_id',$product_id)->groupBy("product_id")->first();
-        $product_totalusers=$total_rating_product->totalusers;
+        if(isset($total_rating_product))
+            $product_totalusers=$total_rating_product->totalusers;
         $rating_product = DB::table('tbl_rating_review')->select('product_id',DB::raw('count(user_id) as totalusers')) ->where('status','1')->where('product_id',$product_id)->where("rating",$rating)->groupBy("product_id")->first();
 
         if(isset($rating_product))
