@@ -260,9 +260,13 @@
                         @endif
                         </div>
                         <p class="small text-center text-secondary py-0 my-0">220 gm</p>
+                        <div class="d-flex justify-content-center">
                         <h5 class="text-truncate text-center" style="max-width: 265px;">{{ $related->name }}</h5>
+                        </div>
+                        <div class="d-flex justify-content-center">
                         <p class="text-secondary text-center pb-1 mb-1  text-truncate" style="max-width: 265px;">
                         {{ $related->describe }}</p>
+                        </div>
                         
                         <a href="{{ route('productdetail', $related->id) }}" class="btn btn-outline-dark text-black bg-white fw-bold w-100 text-black">Buy 
                             <span class="text-decoration-line-through text-muted mx-1"> &pound; {{ $related->mrp_price }}</span> 
