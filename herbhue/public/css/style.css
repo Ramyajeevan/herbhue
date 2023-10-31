@@ -166,9 +166,9 @@ a{
     box-shadow: 0px 1px 23px 0px rgba(0, 0, 0, 0.75) !important;
   }
   
-  .owl-carousel .owl-nav button.owl-prev {
+  /* .owl-carousel .owl-nav button.owl-prev {
     left: 0;
-  }
+  } */
   
   .owl-carousel .owl-nav button.owl-next {
     right: 0;
