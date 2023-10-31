@@ -267,30 +267,21 @@ class HomeController extends Controller
   	
   	public function productdetail($id)
     {
-      /*
-      
-      
-      $related_products = Product::where("id","!=",$id);
-       $related_products=$related_products->where("category_id",$products->category_id);
-      $related_products=$related_products->where("subcategory_id",$products->subcategory_id);
-      $related_products=$related_products->get();
-       for($i=0;$i<count($related_products);$i++)
-        {
-           $category_name=Category::find($related_products[$i]->category_id);
-          if(isset($category_name))
-            $related_products[$i]->category_name=$category_name->name;
-          else
-            $related_products[$i]->category_name="";
-        }
-      
-         */
          $products=$this->homeRepository->getProductDetail($id);
+         $related_products=$this->homeRepository->getRelatedProducts($id);
          $wishlist_user=0;
          $wishlist_user=$this->homeRepository->getWishlist($id);
          $rating_products=$this->homeRepository->getProductReviews($id);
          $rating=$this->homeRepository->getProductRatings($id);
-         //print_r($rating);
-      return view('productdetail', ['products' => $products,'wishlist_user'=>$wishlist_user,'rating_products'=>$rating_products,'stars'=>$rating["stars"],'totalusers'=>$rating["totalusers"]]);//,'related_products'=>$related_products]);
+         $rating1=$this->homeRepository->getProductRating($id,"1");
+         $rating2=$this->homeRepository->getProductRating($id,"2");
+         $rating3=$this->homeRepository->getProductRating($id,"3");
+         $rating4=$this->homeRepository->getProductRating($id,"4");
+         $rating5=$this->homeRepository->getProductRating($id,"5");
+        // print_r($rating5);
+      return view('productdetail', ['products' => $products,'wishlist_user'=>$wishlist_user,'rating_products'=>$rating_products,
+      'stars'=>$rating["stars"],'totalusers'=>$rating["totalusers"],'related_products'=>$related_products,
+      'rating1'=>$rating1,'rating2'=>$rating2,'rating3'=>$rating3,'rating4'=>$rating4,'rating5'=>$rating5]);
     }
   	
   	public function forgotpassword()

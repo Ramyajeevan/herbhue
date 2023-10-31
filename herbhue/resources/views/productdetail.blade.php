@@ -33,18 +33,18 @@
     content: '★ ';
 }
 .rate > input:checked ~ label {
-    color: #3038AC;    
+    color: #D7B762;    
 }
 .rate:not(:checked) > label:hover,
 .rate:not(:checked) > label:hover ~ label {
-    color: #3038AC;  
+    color: #D7B762;  
 }
 .rate > input:checked + label:hover,
 .rate > input:checked + label:hover ~ label,
 .rate > input:checked ~ label:hover,
 .rate > input:checked ~ label:hover ~ label,
 .rate > label:hover ~ input:checked ~ label {
-    color: #3038AC;
+    color: #D7B762;
 }
 
 .text-warning{
@@ -87,108 +87,108 @@
 @endsection
 @section('content')
 <div class="container-fluid">
-        <div class="container mt-5">
-            <div class="row mb-4">
-                <div class="col-md-6">
-                   <div class="row">
+    <div class="container mt-5">
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <div class="row">
                     <div class="col-3"> 
-                    <div id="thumbs" class=" text-center">
-                        @if(!empty($products->image1))
-                        <img src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/{{ $products->image1 }}" alt="1st image  " class="mb-2" />
-                        @endif
-                        @if(!empty($products->image2))
-                        <img src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/{{ $products->image2 }}" alt="2nd image  "class="mb-2" />
-                        @endif
-                        @if(!empty($products->image3))
-                        <img src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/{{ $products->image3 }}" alt="3rd image  " class="mb-2" />
-                        @endif
-                        @if(!empty($products->image4))
-                        <img src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/{{ $products->image4 }}" alt="4th image  " class="mb-2" />
-                        @endif
-                        @if(!empty($products->image5))
-                        <img src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/{{ $products->image5 }}" alt="5th image  "  class="mb-2" />
-                        @endif
-                    </div>
+                        <div id="thumbs" class=" text-center">
+                            @if(!empty($products->image1))
+                            <img src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/{{ $products->image1 }}" alt="1st image  " class="mb-2" />
+                            @endif
+                            @if(!empty($products->image2))
+                            <img src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/{{ $products->image2 }}" alt="2nd image  "class="mb-2" />
+                            @endif
+                            @if(!empty($products->image3))
+                            <img src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/{{ $products->image3 }}" alt="3rd image  " class="mb-2" />
+                            @endif
+                            @if(!empty($products->image4))
+                            <img src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/{{ $products->image4 }}" alt="4th image  " class="mb-2" />
+                            @endif
+                            @if(!empty($products->image5))
+                            <img src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/{{ $products->image5 }}" alt="5th image  "  class="mb-2" />
+                            @endif
+                        </div>
                     </div>
                     <div class="col-9">
-                    <div class="productImage text-center">
-                      @if($products->image1!="")
-                      <img id="largeImage" class="w-100" src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/{{ $products->image1 }}" alt="Default Image">
-                      @else
-                      <img src="{{ asset('img/no_image.svg') }}" class="w-100" alt="">
-                      @endif
-                    </div>
-                    <button type="button" class="btn bg-black text-white w-100 rounded-0 mt-3 btn-lg" onclick="addtocart();">Add to cart</button>
-                    </div>
-                   </div>
-                </div>
-                <div class="col-md-6">
-                    <h6 class="text-secondary">Home / {{ $products->category_name }}</h6>
-                    <h3 class="text-black">{{ $products->name }}</h3>
-                   <p>
-                    <?php for($k=1;$k<=5;$k++) { 
-    						if($k<=$stars){ ?>
-                          <i class="fa fa-star text-warning fs-5 me-2"></i>
-                          <?php } else { ?>
-                          <i class="fa fa-star-o text-warning fs-5 me-2"></i>
-                          <?php } } ?>
-                         <span class="text-secondary">({{ $totalusers }} Customer Reviews)</span>
-                    </p>
-                    <h5 class="fw-bold">&pound; <span id="price">{{ $products->product_options[0]->price }}</span>
-                        <span class="fav">
-                        @if($wishlist_user==0)
-                        <a href="javascript:void(0);" @if(!empty(Session::get('username'))) onclick="addtowishlist({{ $products->id }});" @else onclick="showalert();" @endif>
-                        <i class="fa fa-heart @if($wishlist_user==0) text-secondary @endif"></i>
-                        </a>
+                        <div class="productImage text-center">
+                        @if($products->image1!="")
+                        <img id="largeImage" class="w-100" src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/{{ $products->image1 }}" alt="Default Image">
                         @else
-                        <i class="fa fa-heart text-primary"></i>
+                        <img src="{{ asset('img/no_image.svg') }}" class="w-100" alt="">
                         @endif
-                        </span>
-                    </h5>
-                    <p class="fs-5">M.R.P: <strong class="text-decoration-line-through">&pound; 
-                    <span id="mrp_price">{{ $products->product_options[0]->mrp_price }}</span></strong> </p>
+                        </div>
+                        <button type="button" class="btn bg-black text-white w-100 rounded-0 mt-3 btn-lg" onclick="addtocart();">Add to cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <h6 class="text-secondary">Home / {{ $products->category_name }}</h6>
+                <h3 class="text-black">{{ $products->name }}</h3>
+                <p>
+                <?php for($k=1;$k<=5;$k++) { 
+                        if($k<=$stars){ ?>
+                        <i class="fa fa-star text-warning fs-5 me-2"></i>
+                        <?php } else { ?>
+                        <i class="fa fa-star-o text-warning fs-5 me-2"></i>
+                        <?php } } ?>
+                        <span class="text-secondary">({{ $totalusers }} Customer Reviews)</span>
+                </p>
+                <h5 class="fw-bold">&pound; <span id="price">{{ $products->product_options[0]->price }}</span>
+                    <span class="fav">
+                    @if($wishlist_user==0)
+                    <a href="javascript:void(0);" @if(!empty(Session::get('username'))) onclick="addtowishlist({{ $products->id }});" @else onclick="showalert();" @endif>
+                    <i class="fa fa-heart @if($wishlist_user==0) text-secondary @endif"></i>
+                    </a>
+                    @else
+                    <i class="fa fa-heart text-primary"></i>
+                    @endif
+                    </span>
+                </h5>
+                <p class="fs-5">M.R.P: <strong class="text-decoration-line-through">&pound; 
+                <span id="mrp_price">{{ $products->product_options[0]->mrp_price }}</span></strong> </p>
 
-                    <div class="mb-4">
+                <div class="mb-4">
                     <p class="small text-black fw-bold">Size</p>
                         <!-- @if($products->product_options[0]->stock > 0)
                         <p class="fs-5 text-light-green fw-bold">In Stock</p>
                         @else
                         <p class="fs-5 text-light-red fw-bold">Out of Stock</p>
                         @endif -->
-                        @php
-                        $productoptions=$products->product_options;
-                        @endphp
-                        @foreach($productoptions as $options)
-                            <input type="radio" class="btn-check" name="option_id" id="option_id_{{$options->id}}" 
-                            autocomplete="off" value="{{$options->id}}" 
-                            @if(count($productoptions)>1) onclick="showprice({{ $options->id }},{{ $options->price }},{{ $options->mrp_price }});" @endif
-                            @if($loop->index==0) checked @endif>
-                            <label class="btn btn-outline-light text-black border-secondary px-4 py-2  text-start"
-                            for="option_id_{{$options->id}}"> {{$options->quantity}} {{$options->quantitytype}} 
-                            <strong>&pound; {{$options->price}}</strong> </label>
-                        @endforeach
-                      
-                    </div>
-                    <div>
-                        <h6>Benefits</h6>
-                        <div class="row ">
-                            <div class="col-1">
-                                <img src="{{asset('img/check_circle_FILL0_wght400_GRAD0_opsz24.svg')}}"style="width:25px;" alt="">
-                            </div>
-                            <div class="col-11">
-                                <p class="pb-1 mb-1">Nutrient profile: Lion's mane mushroom is rich in beta-glucans, which may support natural immunity and brain health</p>
-                            </div>
+                    @php
+                    $productoptions=$products->product_options;
+                    @endphp
+                    @foreach($productoptions as $options)
+                        <input type="radio" class="btn-check" name="option_id" id="option_id_{{$options->id}}" 
+                        autocomplete="off" value="{{$options->id}}" 
+                        @if(count($productoptions)>1) onclick="showprice({{ $options->id }},{{ $options->price }},{{ $options->mrp_price }});" @endif
+                        @if($loop->index==0) checked @endif>
+                        <label class="btn btn-outline-light text-black border-secondary px-4 py-2  text-start"
+                        for="option_id_{{$options->id}}"> {{$options->quantity}} {{$options->quantitytype}} 
+                        <strong>&pound; {{$options->price}}</strong> </label>
+                    @endforeach
+                    
+                </div>
+                <div>
+                    <h6>Benefits</h6>
+                    <div class="row ">
+                        <div class="col-1">
+                            <img src="{{asset('img/check_circle_FILL0_wght400_GRAD0_opsz24.svg')}}"style="width:25px;" alt="">
                         </div>
-                        <div class="row">
-                            <div class="col-1">
-                                <img src="{{asset('img/check_circle_FILL0_wght400_GRAD0_opsz24.svg')}}"style="width:25px;" alt="">
-                            </div>
-                            <div class="col-11">
-                                <p class="pb-1 mb-1">Nutrient profile: Lion's mane mushroom is rich in beta-glucans, which may support natural immunity and brain health</p>
-                            </div>
+                        <div class="col-11">
+                            <p class="pb-1 mb-1">Nutrient profile: Lion's mane mushroom is rich in beta-glucans, which may support natural immunity and brain health</p>
                         </div>
                     </div>
-                    <div class="d-flex">
+                    <div class="row">
+                        <div class="col-1">
+                            <img src="{{asset('img/check_circle_FILL0_wght400_GRAD0_opsz24.svg')}}"style="width:25px;" alt="">
+                        </div>
+                        <div class="col-11">
+                            <p class="pb-1 mb-1">Nutrient profile: Lion's mane mushroom is rich in beta-glucans, which may support natural immunity and brain health</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex">
                     <div class="me-3 text-center">
                         <img src="{{asset('img/cetorganic.webp')}}" class="pd-icon" alt="">
                         <p class="text-center fs-10 mt-2">CERT. ORGANIC</p>
@@ -198,18 +198,17 @@
                         <p class="text-center fs-10 mt-2">GLUTEN-FREE</p>
                     </div>
                     <div class="me-3 text-center">
-                        <img src="{{asset('img/no-additives.we')}}bp" class="pd-icon" alt="">
+                        <img src="{{asset('img/no-additives.webp')}}" class="pd-icon" alt="">
                         <p class="text-center fs-10 mt-2">NO ADDITIVES</p>
                     </div>
                     <div class="me-4 text-center">
-                        <img src="{{asset('img/non-gmo.webp ')}} " class="pd-icon" alt="">
+                        <img src="{{asset('img/non-gmo.webp')}} " class="pd-icon" alt="">
                         <p class="text-center fs-10 mt-2">NON-GMO</p>
                     </div>
                     <div class="me-3 text-center">
                         <img src="{{asset('img/vegan.webp')}} " class="pd-icon" alt="">
                         <p class="text-center fs-10 mt-2">VEGAN</p>
                     </div>
-
                 </div>
                     <!-- <div class="d-flex mb-3">
                         <p class="fs-5 text-secondary me-2">Quantity</p>
@@ -231,126 +230,133 @@
 
                         </div>
                     </div> -->
-
-                  
-
-
-                </div>
             </div>
-            </div>
-                </div>  
-                <div class="container-fluid bg-light py-2">
-                    <div class="container">
-                        <h3 class="text-black">Description</h3>
-                    <p class="text-secondary fs-5 border-bottom pb-4 mb-5 border-3">
-                    {!! $products->description !!}
-                    </p>
-                    </div>
-                </div>
+        </div>
+    </div>
+</div>  
+
+<div class="container-fluid bg-light py-2">
+    <div class="container">
+        <h3 class="text-black">Description</h3>
+        <p class="text-secondary fs-5 border-bottom pb-4 mb-5 border-3">
+        {!! $products->description !!}
+        </p>
+    </div>
+</div>
             
-                <div class="container-fluid">
-                <div class="container">
-                        <h5 class="text-center text-black mb-4">You may like to purchase</h5>
-                        <div class="cate-1 owl-carousel owl-theme">
-                            <div class="item">
-                            <div class="card border-secondary">
+<div class="container-fluid">
+    <div class="container">
+        <h5 class="text-center text-black mb-4">You may like to purchase</h5>
+        <div class="cate-1 owl-carousel owl-theme">
+            @foreach($related_products as $related)
+            <div class="item">
+                <div class="card border-secondary">
+                    <div class="card-body">
+                        <div class="text-center mb-3">
+                         @if($related->image1!="")
+                        <img src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/{{ $related->image1 }}" style="width:100%; height:230px;" alt="">
+                        @else
+                        <img src="{{ asset('img/no_image.svg') }}" style="width:100%; height:230px;" alt="">
+                        @endif
+                        </div>
+                        <p class="small text-center text-secondary py-0 my-0">220 gm</p>
+                        <h5 class="text-truncate text-center" style="max-width: 265px;">{{ $related->name }}</h5>
+                        <p class="text-secondary text-center pb-1 mb-1  text-truncate" style="max-width: 265px;">
+                        {{ $related->describe }}</p>
+                        
+                        <a href="{{ route('productdetail', $related->id) }}" class="btn btn-outline-dark text-black bg-white fw-bold w-100 text-black">Buy 
+                            <span class="text-decoration-line-through text-muted mx-1"> &pound; {{ $related->mrp_price }}</span> 
+                            <span class="text-black"> &pound; {{ $related->price }}</span>
+                        </a>
+                    </div>
 
-                                    <div class="card-body">
-                                        <div class="text-center mb-3">
-                                        <img src="{{asset('img/medicine.png')}}" style="width:100%; height:230px;" alt="">
-                                        </div>
-                                        <p class="small text-center text-secondary py-0 my-0">220 gm</p>
-                                        <h5 class="text-truncate text-center" style="max-width: 265px;">Glucosamine HCL 1500 mg Tablet</h5>
-                                        <p class="text-secondary text-center pb-1 mb-1  text-truncate" style="max-width: 265px;">
-                                        Glucosamine HCL 1500 mg Tablet...</p>
-                                        
-                                        <a href="#" class="btn btn-outline-dark text-black bg-white fw-bold w-100 text-black">Buy <span class="text-decoration-line-through text-muted mx-1"> £ 260</span> <span class="text-black"> £ 260</span></a>
-                                    </div>
-
-                                    </div>
-                            </div>
-                            
-
-            </div>
                 </div>
-                    <div class="container">
-                    <div class="card">
-                        <div class="card-body">
-                        <div class="row ">
-                            <div class="col-md-7">
-                            <div class="card border-0">
-                                    <div class="card-header border-0 bg-white d-flex justify-content-between">
-                                        <h5 class="pt-1">Reviews &amp; Ratings</h5>
-                                    
+            </div>
+            @endforeach
+        </div>
+    </div>
+    <div class="container">
+        <div class="card">
+            <div class="card-body">
+                <div class="row ">
+                    <div class="col-md-7">
+                        <div class="card border-0">
+                            <div class="card-header border-0 bg-white d-flex justify-content-between">
+                                <h5 class="pt-1">Reviews &amp; Ratings</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-4 pt-4">
+                                        <h3 class="text-center mb-0 pb-0">{{ $stars }}</h3>
+                                        <p class="py-0 my-0 fs-5 text-center">
+                                            <?php
+                                            for($k=1;$k<=5;$k++) { 
+                                                if($k<=$stars){ ?>
+                                                <i class="fa fa-star text-warning me-2"></i>
+                                                <?php } else { ?>
+                                                <i class="fa fa-star-o text-warning me-2"></i>
+                                                <?php } } ?>
+                                            
+                                        </p>
+                                        <p class="py-1 my-1 text-center">Total Ratings : {{ $totalusers }}</p>
                                     </div>
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col-4 pt-4">
-                                                <h3 class="text-center mb-0 pb-0">4.5</h3>
-                                                <p class="py-0 my-0 fs-5 text-center"><i class="fa fa-star text-warning me-2"></i> <i class="fa fa-star text-warning me-2"></i> <i class="fa fa-star text-warning me-2"></i> <i class="fa fa-star text-warning me-2"></i><i class="fa fa-star-half-full text-warning "></i></p>
-                                                <p class="py-1 my-1 text-center">Total Ratings : 1,050</p>
+                                    <div class="col-8">
+                                        <div class="skill-wrapper d-flex justify-content-center mb-2">
+                                            <span class="float-left me-3 text-nowrap h4">5 <i class="fa fa-star text-secondary"></i></span>
+                                            <div class="progress me-3">
+                                                <div class="progress-bar progressbar-active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" 
+                                                style="max-width:<?php echo $rating5["percent"]; ?>%;"></div>
                                             </div>
-                                            <div class="col-8">
-                                                <div class="skill-wrapper d-flex justify-content-center mb-2">
-                                                    <span class="float-left me-3 text-nowrap h4">5 <i class="fa fa-star text-secondary"></i></span>
-                                                    <div class="progress me-3">
-                                                        <div class="progress-bar progressbar-active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="max-width:100%;"></div>
-                                                    </div>
-                                                    <span class="d-block float-right h4">856</span>
+                                            <span class="d-block float-right h4"><?php echo $rating5["totalusers"]; ?></span>
 
-                                                </div>
-                                                <div class="skill-wrapper d-flex justify-content-center mb-2">
-                                                    <span class="float-left me-3 text-nowrap h4">4 <i class="fa fa-star text-secondary"></i></span>
-                                                    <div class="progress me-3">
-                                                        <div class="progress-bar progressbar-active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="max-width:85%;"></div>
-                                                    </div>
-                                                    <span class="d-block float-right h4">135</span>
-
-                                                </div>
-                                                <div class="skill-wrapper d-flex justify-content-center mb-2">
-                                                    <span class="float-left me-3 text-nowrap h4">3 <i class="fa fa-star text-secondary"></i></span>
-                                                    <div class="progress me-3">
-                                                        <div class="progress-bar progressbar-active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="max-width:75%;"></div>
-                                                    </div>
-                                                    <span class="d-block float-right h4">45</span>
-
-                                                </div>
-                                                <div class="skill-wrapper d-flex justify-content-center mb-2">
-                                                    <span class="float-left me-3 text-nowrap h4">2 <i class="fa fa-star text-secondary"></i></span>
-                                                    <div class="progress me-3">
-                                                        <div class="progress-bar progressbar-active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="max-width:60%;"></div>
-                                                    </div>
-                                                    <span class="d-block float-right h4">15</span>
-
-                                                </div>
-                                                <div class="skill-wrapper d-flex justify-content-center mb-2">
-                                                    <span class="float-left me-3 text-nowrap h4">1 <i class="fa fa-star text-secondary"></i></span>
-                                                    <div class="progress me-3">
-                                                        <div class="progress-bar progressbar-active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="max-width:30%;"></div>
-                                                    </div>
-                                                    <span class="d-block float-right h4">5</span>
-
-                                                </div>
+                                        </div>
+                                        <div class="skill-wrapper d-flex justify-content-center mb-2">
+                                            <span class="float-left me-3 text-nowrap h4">4 <i class="fa fa-star text-secondary"></i></span>
+                                            <div class="progress me-3">
+                                                <div class="progress-bar progressbar-active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" 
+                                                style="max-width:<?php echo $rating4["percent"]; ?>%;"></div>
                                             </div>
+                                            <span class="d-block float-right h4"><?php echo $rating4["totalusers"]; ?></span>
+
+                                        </div>
+                                        <div class="skill-wrapper d-flex justify-content-center mb-2">
+                                            <span class="float-left me-3 text-nowrap h4">3 <i class="fa fa-star text-secondary"></i></span>
+                                            <div class="progress me-3">
+                                                <div class="progress-bar progressbar-active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" 
+                                                style="max-width:<?php echo $rating3["percent"]; ?>%;"></div>
+                                            </div>
+                                            <span class="d-block float-right h4"><?php echo $rating3["totalusers"]; ?></span>
+
+                                        </div>
+                                        <div class="skill-wrapper d-flex justify-content-center mb-2">
+                                            <span class="float-left me-3 text-nowrap h4">2 <i class="fa fa-star text-secondary"></i></span>
+                                            <div class="progress me-3">
+                                                <div class="progress-bar progressbar-active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" 
+                                                style="max-width:<?php echo $rating2["percent"]; ?>%;"></div>
+                                            </div>
+                                            <span class="d-block float-right h4"><?php echo $rating2["totalusers"]; ?></span>
+
+                                        </div>
+                                        <div class="skill-wrapper d-flex justify-content-center mb-2">
+                                            <span class="float-left me-3 text-nowrap h4">1 <i class="fa fa-star text-secondary"></i></span>
+                                            <div class="progress me-3">
+                                                <div class="progress-bar progressbar-active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" 
+                                                style="max-width:<?php echo $rating1["percent"]; ?>%;"></div>
+                                            </div>
+                                            <span class="d-block float-right h4"><?php echo $rating1["totalusers"]; ?></span>
+
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-5">
-
-                            </div>
                         </div>
+                    </div>
+                    <div class="col-md-5">
+
+                    </div>
                 </div>
-                </div>            
-
-
-
-
-
-
-
-
-
+            </div>
+        </div>            
 
             @if(!empty(Session::get('username')))
             <form method="post" action="{{ route('addrating') }}">
@@ -375,45 +381,58 @@
             </form>
             @endif
  
-            <div class="card my-5">
+        <div class="card my-5">
             <div class="card-header bg-white">
-            <h4 class="text-black">Reviews by customers</h4>
+                <h4 class="text-black">Reviews by customers</h4>
             </div>
             <ul class="list-group list-group-flush">
-<!-- new ui  -->
-            <li class="list-group-item border-bottom py-2" >
-                <div class="d-flex justify-content-between">
-                    <div class="d-flex">
-                        <img src="{{asset('img/verified-user.png')}}" width="60px" height="60px" alt="uaer" class="me-4">
-                        <h5 class="pt-3">User Name</h5>
+                <!-- new ui  -->
+                <!--<li class="list-group-item border-bottom py-2" >
+                    <div class="d-flex justify-content-between">
+                        <div class="d-flex">
+                            <img src="{{asset('img/verified-user.png')}}" width="60px" height="60px" alt="uaer" class="me-4">
+                            <h5 class="pt-3">User Name</h5>
+                        </div>
+                        <p class="text-muted pt-3">
+                            1 Month Ago
+                        </p>
                     </div>
-                    <p class="text-muted pt-3">
-                        1 Month Ago
-                    </p>
-                </div>
-                <p class="fs-5"><i class="fa fa-star text-warning me-2"></i> <i class="fa fa-star text-warning me-2"></i> <i class="fa fa-star text-warning me-2"></i> <i class="fa fa-star text-warning me-2"></i><i class="fa fa-star-half-full text-warning "></i></p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
-            </li>
+                    <p class="fs-5"><i class="fa fa-star text-warning me-2"></i> <i class="fa fa-star text-warning me-2"></i> <i class="fa fa-star text-warning me-2"></i> <i class="fa fa-star text-warning me-2"></i><i class="fa fa-star-half-full text-warning "></i></p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+                </li>-->
 
-<!-- new ui  -->
+                <!-- new ui  -->
                 @if(count($rating_products)>0)
                 @foreach($rating_products as $rating_product)
 
-                <li class="list-group-item">
-                    <div class="mb-3">
-                        <span class="badge bg-primary p-2 fs-5 px-3"><span>{{ $rating_product->rating }}</span> <i class="fa fa-star"></i></span>
+                <li class="list-group-item border-bottom py-2" >
+                    <div class="d-flex justify-content-between">
+                        <div class="d-flex">
+                            <img src="{{asset('img/verified-user.png')}}" width="60px" height="60px" alt="uaer" class="me-4">
+                            <h5 class="pt-3">{{ $rating_product->user_name }}</h5>
+                        </div>
+                        <p class="text-muted pt-3">
+                        {{ $rating_product->days }} Ago
+                        </p>
                     </div>
-                    <h5>{{ $rating_product->review }}</h5>
-                    <p class="text-secondary pb-1 mb-1">{{ $rating_product->user_name }}, {{ $rating_product->days }} Ago </p> 
-                </li> 
+                    <p class="fs-5">
+                    <?php for($k=1;$k<=5;$k++) { 
+                        if($k<=$rating_product->rating){ ?>
+                        <i class="fa fa-star text-warning me-2"></i>
+                        <?php } else { ?>
+                        <i class="fa fa-star-o text-warning me-2"></i>
+                    <?php } } ?>
+                    </p>
+                    <p>{{ $rating_product->review }}</p>
+                </li>
                 @endforeach
                 @else
                 <li class="list-group-item">No reviews found</li>
                 @endif
             </ul>
         </div>
-        </div>
     </div>
+</div>
 @endsection
 @section('script')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -512,7 +531,7 @@
     function addtocart()
     {
       var option_id = $("input[name='option_id']:checked").val();
-      var quantity=$("#quantity").val();
+      var quantity=1;
       var url="{{URL('addtocart')}}";
       $.ajax(
         {

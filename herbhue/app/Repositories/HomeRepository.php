@@ -214,18 +214,7 @@ class HomeRepository extends BaseRepository
         }
         return $wishlist_user;
     }
-    public function getRelatedProducts()
-    {
-        $product=Product::get();
-        for($i=0;$i<count($product);$i++)
-        {
-            $product_options=DB::table("tbl_product_options")->select("price","mrp_price")->where("product_id",$product[$i]->id)->first();
-            $product[$i]->price=$product_options->price;
-            $product[$i]->mrp_price=$product_options->mrp_price;
-        }
-        return $product;
 
-    }
     public function checkpincode($pincode)
     {
         $pincode=DB::table("tbl_pincode")->where("pincode",$pincode)->first();
@@ -327,7 +316,32 @@ class HomeRepository extends BaseRepository
         }
         $rating=array();
         $rating["totalusers"]=$totalusers;
-        $rating["stars"]=$rating1;
+        $rating["stars"]=round($rating1,2);
+        return $rating;
+    }
+
+    public function getProductRating($product_id,$rating)
+    {
+       
+        $product_totalusers=0;
+        $total_rating_product = DB::table('tbl_rating_review')->select('product_id', DB::raw('count(user_id) as totalusers')) ->where('status','1')->where('product_id',$product_id)->groupBy("product_id")->first();
+        $product_totalusers=$total_rating_product->totalusers;
+        $rating_product = DB::table('tbl_rating_review')->select('product_id',DB::raw('count(user_id) as totalusers')) ->where('status','1')->where('product_id',$product_id)->where("rating",$rating)->groupBy("product_id")->first();
+
+        if(isset($rating_product))
+        {
+            $totalusers=$rating_product->totalusers;
+            $rating1=$totalusers/$product_totalusers;
+        }
+        else
+        {
+            $totalusers=0;
+            $rating1=0;
+        }
+        $rating=array();
+        $rating["totalusers"]=$totalusers;
+        $rating["stars"]=round($rating1,2);
+        $rating["percent"]=round($rating1,2)*100;
         return $rating;
     }
     public function getAllRatings()
@@ -415,5 +429,21 @@ class HomeRepository extends BaseRepository
             $ticket_id=$this->getTicketId();
         }
         return $ticket_id;
+    }
+
+    public function getRelatedProducts($id)
+    {
+        $products=Product::find($id);
+        $related_products = Product::where("id","!=",$id);
+        $related_products=$related_products->where("category_id",$products->category_id);
+        $related_products=$related_products->where("subcategory_id",$products->subcategory_id);
+        $related_products=$related_products->get();
+        for($i=0;$i<count($related_products);$i++)
+        {
+            $product_options=DB::table("tbl_product_options")->select("price","mrp_price")->where("product_id",$related_products[$i]->id)->first();
+            $related_products[$i]->price=$product_options->price;
+            $related_products[$i]->mrp_price=$product_options->mrp_price;
+        }
+        return $related_products;
     }
 }
