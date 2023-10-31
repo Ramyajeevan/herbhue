@@ -688,13 +688,17 @@ a{
     background-color:#3038AC !important ;
     color: white;
    }
-   li.social-icon {
-    border: 2px solid black;
-    padding: 2%; 
+   li.social-icon {    border: 2px solid black;
+    padding: 2%;
     border-radius: 50%;
+    width: 32px;
+    height: 34px;
+    
    }
   .social-icon img{
-    width: 18px ;
+    width: 17px ;  
+    border-radius: 34%;
+    position: absolute;
    
   
    }
