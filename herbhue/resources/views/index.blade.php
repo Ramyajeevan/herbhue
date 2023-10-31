@@ -279,8 +279,8 @@
                         </p>
 
                         <span class="fs-5 fw-bold">{{ $rat->user_name }}</span>
-                        <small class="text-muted">{{ $rat->days }} ago</small>
-                        <h6>{{ $rat->product_name }}</h6>
+                        <small class="text-muted" style="font-size:10px;">{{ $rat->days }} ago</small>
+                        <h6 class="mt-2">{{ $rat->product_name }}</h6>
                         <p class="pt-0 mt-0">{{ $rat->review }}</p>
                     </div>
                 </div>
