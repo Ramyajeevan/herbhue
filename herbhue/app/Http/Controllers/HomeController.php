@@ -30,7 +30,8 @@ class HomeController extends Controller
         $product=$this->homeRepository->getAllProducts();
         $brand=$this->homeRepository->getAllBrands();
         $wellproduct=$this->homeRepository->getAllWellProducts();
-        return view('index',["banner"=>$banner,"category"=>$category,"product"=>$product,"brand"=>$brand,"wellproduct"=>$wellproduct]);
+        $ratings=$this->homeRepository->getAllRatings();
+        return view('index',["banner"=>$banner,"category"=>$category,"product"=>$product,"brand"=>$brand,"wellproduct"=>$wellproduct,"ratings"=>$ratings]);
      // return view('home');
     }
     public function login()

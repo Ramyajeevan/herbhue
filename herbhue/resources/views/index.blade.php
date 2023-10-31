@@ -194,23 +194,24 @@
         <h3 class=" text-black text-center mb-4">Recommended by you</h3>
         <p class="text-center">Discover their stories and why they recommend HerbHue.</p>
         <div class="testimonial owl-carousel owl-theme">
+            @foreach($ratings as $rat)
             <div class="item">
                 <div class="card border-secondary"> 
                     <div class="card-body">
                         <p>
-                        <i class="fa fa-star review me-1"></i>
-                        <i class="fa fa-star review me-1"></i>
-                        <i class="fa fa-star review me-1"></i>
-                        <i class="fa fa-star review me-1"></i>
-                        <i class="fa fa-star review me-1 text-secondary"></i>
+                            @for($i=1;$i<=5;$i++)
+                            <i class="fa fa-star review me-1 @if($i>$rat->rating) text-secondary @endif"></i>
+                            @endfor
                         </p>
-                        <span class="fs-4 fw-bold">Rohit Kumar</span>
-                        <small class="text-muted">1 hour ago</small>
-                        <h5>Very quick service</h5>
-                        <p class="pt-0 mt-0">Very quick service</p>
+
+                        <span class="fs-4 fw-bold">{{ $rat->user_name }}</span>
+                        <small class="text-muted">{{ $rat->days }} ago</small>
+                        <h5>{{ $rat->product_name }}</h5>
+                        <p class="pt-0 mt-0">{{ $rat->review }}</p>
                     </div>
                 </div>
             </div>
+            @endforeach
         </div>   
     </div>
 </div>
