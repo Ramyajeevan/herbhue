@@ -720,6 +720,7 @@ color: #3038AC !important ;
   
    .fw-medium{
     font-weight: 400 !important;
+    font-size: 14px;
    }
   @media only screen and (max-width: 770px) {
     .site-logo{
