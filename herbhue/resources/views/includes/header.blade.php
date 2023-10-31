@@ -39,14 +39,14 @@
     color: white;
   }
   .mob-view{
-    display: none;
+    display: none ;
   }
   @media only screen and (max-width: 600px) {
     .mob-view{
-    display: block;
+    display: block !important;
   } 
   .web-view{
-    display:none;
+    display:none !important;
   }
   }
   .owl-carousel .owl-nav button.owl-next {
