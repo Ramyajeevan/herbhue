@@ -244,9 +244,9 @@
     </div>
 </div>
             
-<div class="container-fluid">
+<div class="container-fluid my-4">
     <div class="container">
-        <h5 class="text-center text-black mb-4">You may like to purchase</h5>
+        <h3 class="text-center text-black mb-4">You may like to purchase</h5>
         <div class="cate-1 owl-carousel owl-theme">
             @foreach($related_products as $related)
             <div class="item">
