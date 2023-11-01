@@ -202,6 +202,26 @@
            
           </ul>
         </li>
+        <li class="nav-small-cap">
+          <i class="mdi mdi-dots-horizontal"></i>
+          <span class="hide-menu">Ratings</span>
+        </li>
+        <li class="sidebar-item">
+          <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0);" aria-expanded="false">
+            <i data-feather="cpu" class="feather-icon"></i>
+            <span class="hide-menu">Ratings </span>
+          </a>
+          <ul aria-expanded="false" class="collapse first-level">
+            <li class="sidebar-item">
+              <a href="{{ route('ratings.index') }}" class="sidebar-link">
+                <i class="mdi mdi-box-shadow"></i>
+                <span class="hide-menu"> View Ratings</span></a
+              >
+            </li>
+           
+          </ul>
+        </li>
+
           </ul>
         </li>
       </ul>

@@ -6,7 +6,7 @@ use App\Models\Product;
 use App\Models\Category;
 use App\Models\SubCategory;
 use App\Models\UsersT;
-
+use App\Models\RatingReview;
 
 use App\Repositories\BaseRepository;
 
@@ -166,6 +166,22 @@ class ProductRepository extends BaseRepository
         $subcategory=SubCategory::select("id","name")->where("category_id",$category_id)->get();
         return $subcategory;
     }
+    public function deleteRating($id)
+    {
+      try{
+            $rating = RatingReview::find($id);
+            if(isset($rating)){
+                $rating->delete();
+            }else{
+                return false;
+            }
+        }catch(\Exception $exception){
+            report($exception);
+        }
+
+        return true;
+    }
+   
   
 }
 ?>

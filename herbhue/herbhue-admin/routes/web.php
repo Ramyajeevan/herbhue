@@ -106,4 +106,7 @@ Route::get('ticket',[TicketController::class, 'index'])->name('ticket.index');
 Route::delete('ticket/{id}',[TicketController::class, 'destroy'])->name('ticket.destroy');
 Route::get('ticket/update/{id}',[TicketController::class, 'edit'])->name('ticket.edit');
 Route::post('ticket/update/{id}',[TicketController::class, 'update'])->name('ticket.update');
+
+Route::get('ratings',[ProductController::class, 'ratings'])->name('ratings.index');
+Route::delete('ratings/{id}',[ProductController::class, 'ratingsdestroy'])->name('ratings.destroy');
 ?>

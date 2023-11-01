@@ -298,6 +298,18 @@ class ProductController extends Controller
         $html.='</select>';
         echo $html;exit;
     }
+
+    public function ratings()
+    {
+        $ratings = $this->productRepository->getAllProductRatings();
+        return view('Backend.Ratings.index', ['ratings' => $ratings]);
+    }
+    
+  	public function ratingsdestroy($id)
+    {
+       $product = $this->productRepository->deleteRating($id);
+        echo "Rating deleted successfully";exit;
+    }
      
 }
 ?>
