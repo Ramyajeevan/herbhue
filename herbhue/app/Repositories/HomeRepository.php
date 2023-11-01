@@ -44,7 +44,7 @@ class HomeRepository extends BaseRepository
     }
     public function getAllProducts()
     {
-        $products = Product::get();
+        $products = Product::limit(4)->orderbydesc("id")->get();
         for($i=0;$i<count($products);$i++)
         {
             $product_options=DB::table("tbl_product_options")->where("product_id",$products[$i]->id)->first();
