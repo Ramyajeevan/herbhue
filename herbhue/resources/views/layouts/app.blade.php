@@ -10,19 +10,94 @@
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href=" {{asset('css/style.css')}}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css"
-        integrity="sha512-UTNP5BXLIptsaj5WdKFrkFov94lDx+eBvbKyoe1YAfjeRPC+gT5kyZ10kOHCfNZqEui1sxmqvodNUx3KbuYI/A=="
-        crossorigin="anonymous" referrerpolicy="no-referrer">
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
-        integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer">
+ 
     @yield('css')
     <style>
     .z-99{ 
         z-index: 99 !important;
     }
     </style>
+    <style>
+      body{
+        overflow-x: hidden !important;
+      }
+  .btn-check:checked+.btn {
+    background-color: #ffffff !important;
+    border-color: black !important;
+}
+
+.bg-light-green {
+    background-color: #ACB69C !important;
+  }
+
+  .btn-secondary , .bg-secondary{
+    background-color: #ACB69C !important;
+    border-color: #ACB69C !important;
+  }
+
+  .bg-light{
+    background:#F6F6F6 !important;
+  }
+
+  .pd-icon{
+  clip-path: circle();
+  width: 40px;
+}
+.top-desc{
+        position: absolute;
+        top:10px;
+        left: 25px;
+    }
+    .desc-bottom{
+        position: absolute;
+        bottom: 30px;
+        right: 35%;
+    }
+    .btn-success {
+    background-color: #ACB69C !important;
+    color: white;
+  }
+  .mob-view{
+    display: none ;
+  }
+  @media only screen and (max-width: 600px) {
+    .mob-view{
+    display: block !important;
+  } 
+  .web-view{
+    display:none !important;
+  }
+  }
+  .owl-carousel .owl-nav button.owl-next {
+            position: absolute !important;
+            top: -40px;
+            right: 0 !important;
+            font-size: 40px !important;
+        }
+
+        .owl-carousel .owl-nav button.owl-prev {
+            position: absolute !important;
+            top: -40px;
+            right: 25px !important;
+            font-size: 40px !important;
+           
+        }
+
+        .owl-carousel .owl-nav button.owl-prev,
+        .owl-carousel .owl-nav button.owl-next:hover {
+            background-color: transparent !important;
+            color: black !important;
+        }
+</style>
+<style>
+    .rounded-start-pill{
+        border-radius: 37px 0px 0px 35px !important;
+    }
+.rounded-end-circle{
+    border-radius: 0px 32px 32px 0px !important;
+}
+    
+ </style>
 </head>
 <body>
 

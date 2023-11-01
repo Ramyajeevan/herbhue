@@ -1,14 +1,6 @@
  <!-- Footer -->
 
- <style>
-    .rounded-start-pill{
-        border-radius: 37px 0px 0px 35px !important;
-    }
-.rounded-end-circle{
-    border-radius: 0px 32px 32px 0px !important;
-}
-    
- </style>
+
  <footer class="text-center text-lg-start bg-white text-muted">
 
 

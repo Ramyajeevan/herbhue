@@ -34,7 +34,7 @@ class OrderController extends Controller
       $lastname=$request->lastname;
       $street_address=$request->street_address;
       $street_address2=$request->street_address2;
-      $state=$request->state;
+
       $city=$request->city;
       $pincode=$request->pincode;
       $phone=$request->phone;
@@ -51,10 +51,6 @@ class OrderController extends Controller
         {
           $msg.="<strong>Street address</strong> is a required field.<br>";
         }
-        if($state=="")
-        {
-          $msg.="<strong>State</strong> is a required field.<br>";
-        }
         if($city=="")
         {
           $msg.="<strong>City</strong> is a required field.<br>";
@@ -68,53 +64,178 @@ class OrderController extends Controller
           $msg.="<strong>Phone</strong> is a required field.<br>";
         }
     }  
-    if($msg!="")
+    else
+    {
+      //shipping address
+      if(isset($request->address_id))
       {
-           return redirect()->back()->with('errors',$msg);
+        $address_id=$request->address_id;
+        
+      }
+    
+      //billing address
+      if(!isset($request->billing_address))
+      {
+        $address=DB::table("tbl_address")->where("id",$address_id)->first();
+        $billing_firstname=$address->firstname;
+        $billing_lastname=$address->lastname;
+        $billing_street_address=$address->street_address;
+        $billing_street_address2=$address->street_address2;
+        $billing_city=$address->city;
+        $billing_pincode=$address->pincode;
+        $billing_phone=$address->phone;
       }
       else
       {
-        if(isset($request->address_id))
+        
+        $billing_firstname=$request->billing_firstname;
+        $billing_lastname=$request->billing_lastname;
+        $billing_street_address=$request->billing_street_address;
+        $billing_street_address2=$request->billing_street_address2;
+        $billing_city=$request->billing_city;
+        $billing_pincode=$request->billing_pincode;
+        $billing_phone=$request->billing_phone;
+        if($billing_firstname=="")
         {
-        	$address_id=$request->address_id;
-          
+          $msg.="<strong>First name</strong> for billing is a required field.<br>";
+        }
+        if($billing_lastname=="")
+        {
+          $msg.="<strong>Last name</strong>  for billing  is a required field.<br>";
+        }
+        if($billing_street_address=="")
+        {
+          $msg.="<strong>Street address</strong>  for billing  is a required field.<br>";
+        }
+        if($billing_city=="")
+        {
+          $msg.="<strong>City</strong>  for billing  is a required field.<br>";
+        }
+        if($billing_pincode=="")
+        {
+          $msg.="<strong>Pincode</strong>  for billing  is a required field.<br>";
+        }
+        if($billing_phone=="")
+        {
+          $msg.="<strong>Phone</strong>  for billing  is a required field.<br>";
+        }
+      }
+      // card details
+      if($request->cardnumber=="")
+      {
+        $msg.="<strong>Card Number</strong> is a required field.<br>";
+      }
+      if($request->expire_month=="")
+      {
+        $msg.="<strong>Expire month of Card Number</strong> is a required field.<br>";
+      }
+      if($request->expire_year=="")
+      {
+        $msg.="<strong>Expire year of Card Number</strong> is a required field.<br>";
+      }
+      if($request->cvv=="")
+      {
+        $msg.="<strong>Cvv of Card Number</strong> is a required field.<br>";
+      }
+      if(!isset($request->privacy))
+      {
+        $msg.="Please check the <strong>Privacy Policy</strong>.<br>";
+      }
+      if($msg=="")
+      {
+         //adding shipping address
+        if(!isset($request->address_id))
+        {
+           
+            $email=Session::get('username');
+            $user=DB::table('tbl_user')->where("email",$email)->first();
+             $address_id=DB::table('tbl_address')->insertGetId([
+               'user_id'=>$user->id,
+               'firstname' => $firstname, 
+              'lastname' => $lastname, 
+               'street_address' => $street_address,
+              'street_address2' => $street_address2,
+               'city'=> $city,
+               'pincode'=>$pincode,
+               'phone'=>$phone
+              ]);
         }
         else
         {
-           $email=Session::get('username');
-     	   $user=DB::table('tbl_user')->where("email",$email)->first();
-           $address_id=DB::table('tbl_address')->insertGetId([
-             'user_id'=>$user->id,
-             'firstname' => $firstname, 
-            'lastname' => $lastname, 
-             'street_address' => $street_address,
-            'street_address2' => $street_address2,
-             'state'=> $state,
-             'city'=> $city,
-             'pincode'=>$pincode,
-             'phone'=>$phone
-            ]);
+          $address_id=$request->address_id;
         }
-        
-        session()->put('address_id',$address_id);
-       // print_r(session()->all());exit;
- 	      return redirect()->route('payment');
-      }
-      // return redirect()->route('productshipping');
-  }
-  public function payment()
-  {
-    
-    $address_id=Session::get('address_id');
-    $address=DB::table("tbl_address")->where("id",$address_id)->first();
-    $session_id=Session::getId();
-     // $cart=$this->orderRepository->showcart($session_id);
-     // echo "<pre>";print_r($cart);echo "</pre>";
-      $cart_total=$this->orderRepository->getCartTotal($session_id);
-      $cart_total_mrp=$this->orderRepository->getCartTotalMrp($session_id);
 
-      return view('payment', ['address' => $address,'address_id'=>$address_id,'cart_total'=>$cart_total,'cart_total_mrp'=>$cart_total_mrp]);
-  } 
+        $order_id="HH-ORD_".rand(10000,99999);
+        $subtotal=0;
+        $session_id=Session::getId();
+        $cart = Cart::where("session_id",$session_id)->get();
+        for($i=0;$i<count($cart);$i++)
+        {
+          $product_id=$cart[$i]->product_id;
+          $quantity=$cart[$i]->quantity;
+          $price=$cart[$i]->unit_price;
+          $total=$cart[$i]->total_price;
+          $subtotal+=$total;
+          $product_options=DB::table("tbl_product_options")->where("id",$cart[$i]->option_id)->first();
+          $order_products=DB::table('tbl_order_products')->insert([
+              'order_id'=>$order_id,
+              'option_id'=>$product_options->id,
+               'product_id' => $product_id, 
+               'quantity' => $quantity,
+               'price'=>$price,
+               'total'=>$total
+           ]);
+        }
+        $net_total=0;
+           
+        $delivery_charge=0;
+        $coupon_amount=0;
+        if(!empty(Session::get('coupon_code'))) $coupon_amount=Session::get('coupon_amount'); 
+        $net_total=$subtotal+$delivery_charge-$coupon_amount;
+        $email=Session::get('username');
+        $user=DB::table('tbl_user')->where("email",$email)->first();
+        $order_id_payment=DB::table('tbl_order')->insertGetId([
+              'order_id'=>$order_id,
+              'user_id'=>$user->id,
+               'subtotal' => $subtotal, 
+               'delivery_charge' => $delivery_charge,
+               'coupon_amount'=>$coupon_amount,
+               'total'=>$net_total,
+              'address_id'=>$address_id
+           ]);
+          
+         $billing=DB::table('tbl_billing_address')->insert([
+              'order_id'=>$order_id,
+              'user_id'=>$user->id,
+               'billing_firstname' => $billing_firstname, 
+             'billing_lastname' => $billing_lastname, 
+               'billing_street_address' => $billing_street_address,
+             'billing_street_address2' => $billing_street_address2,
+                'billing_pincode'=>$billing_pincode,
+               'billing_city'=>$billing_city,
+               'billing_phone'=>$billing_phone
+           ]);
+   
+        Cart::where("session_id",$session_id)->delete();
+          //Payment starts here
+          DB::table('tbl_order')
+          ->where("order_id",$order_id)
+          ->update(['payment_method'=>$request->card_type,'cardnumber'=>$request->cardnumber,
+          'expire_month'=>$request->expire_month,'expire_year'=>$request->expire_year,
+          'cvv'=>$request->cvv]);
+        return redirect()->route('thankyou', [$order_id]);
+
+      }
+      else
+      {
+        return redirect()->back()->with('errors',$msg);
+      }
+      
+         
+    }
+
+  }
+ 
   public function thankyou($order_id)
   {
     if(!empty(Session::get('coupon_code')))
@@ -126,113 +247,6 @@ class OrderController extends Controller
     
   }
 
-  public function placeorder1(Request $request)
-  {
-
-     
-    $address_id=$request->address_id;
-    if($request->billing_address=="same")
-    {
-       $address=DB::table("tbl_address")->where("id",$address_id)->first();
-      $billing_firstname=$address->firstname;
-      $billing_lastname=$address->lastname;
-      $billing_street_address=$address->street_address;
-      $billing_street_address2=$address->street_address2;
-      $billing_state=$address->state;
-      $billing_city=$address->city;
-      $billing_pincode=$address->pincode;
-      $billing_phone=$address->phone;
-	  }
-    else
-    {
-      $billing_firstname=$request->billing_firstname;
-      $billing_lastname=$request->billing_lastname;
-      $billing_street_address=$request->billing_street_address;
-      $billing_street_address2=$request->billing_street_address2;
-      $billing_state=$request->billing_state;
-      $billing_city=$request->billing_city;
-      $billing_pincode=$request->billing_pincode;
-      $billing_phone=$request->billing_phone;
-    }
-   // dd($billing_firstname);
-   $payment_method=$request->payment_method;
-    //place the order now
-    
-     $order_id="HH-ORD_".rand(10000,99999);
-     $subtotal=0;
-     $session_id=Session::getId();
-     $cart = Cart::where("session_id",$session_id)->get();
-     for($i=0;$i<count($cart);$i++)
-     {
-       $product_id=$cart[$i]->product_id;
-       $quantity=$cart[$i]->quantity;
-       $price=$cart[$i]->unit_price;
-       $total=$cart[$i]->total_price;
-       $subtotal+=$total;
-       $product_options=DB::table("tbl_product_options")->where("id",$cart[$i]->option_id)->first();
-       $order_products=DB::table('tbl_order_products')->insert([
-         	'order_id'=>$order_id,
-         	'option_id'=>$product_options->id,
-          	'product_id' => $product_id, 
-            'quantity' => $quantity,
-          	'price'=>$price,
-          	'total'=>$total
-	      ]);
-     }
-     $net_total=0;
-        
-     $delivery_charge=0;
-     $coupon_amount=0;
-     if(!empty(Session::get('coupon_code'))) $coupon_amount=Session::get('coupon_amount'); 
-     $net_total=$subtotal+$delivery_charge-$coupon_amount;
-     $email=Session::get('username');
-     $user=DB::table('tbl_user')->where("email",$email)->first();
-     $order_id_payment=DB::table('tbl_order')->insertGetId([
-         	'order_id'=>$order_id,
-       		'user_id'=>$user->id,
-          	'subtotal' => $subtotal, 
-            'delivery_charge' => $delivery_charge,
-          	'coupon_amount'=>$coupon_amount,
-          	'total'=>$net_total,
-       		'address_id'=>$address_id,
-          	'payment_method'=>$payment_method
-	      ]);
-       
-      $billing=DB::table('tbl_billing_address')->insert([
-         	'order_id'=>$order_id,
-       		'user_id'=>$user->id,
-          	'billing_firstname' => $billing_firstname, 
-        	'billing_lastname' => $billing_lastname, 
-            'billing_street_address' => $billing_street_address,
-        	'billing_street_address2' => $billing_street_address2,
-            'billing_state'=>$billing_state,
-            'billing_pincode'=>$billing_pincode,
-          	'billing_city'=>$billing_city,
-          	'billing_phone'=>$billing_phone
-	      ]);
-
-     Cart::where("session_id",$session_id)->delete();
-       //Payment starts here
-    
-        if($payment_method=="cod")
-        {
-             DB::table('tbl_order')
-              ->where("order_id",$order_id)
-              ->update(['payment_method'=>$payment_method]);
-            return redirect()->route('thankyou', [$order_id]);
-        }
-        else
-        {
-           
-        
-          DB::table('tbl_order')
-          ->where("order_id",$order_id)
-          ->update(['payment_method'=>$payment_method]);
-        return redirect()->route('thankyou', [$order_id]);
-       
-        }
-     //payment ends here
-    // return redirect()->route('thankyou', ["$order_id"]);
-  }
+  
 }
 ?>

@@ -1,75 +1,4 @@
-<style>
-      body{
-        overflow-x: hidden !important;
-      }
-  .btn-check:checked+.btn {
-    background-color: #ffffff !important;
-    border-color: black !important;
-}
 
-.bg-light-green {
-    background-color: #ACB69C !important;
-  }
-
-  .btn-secondary , .bg-secondary{
-    background-color: #ACB69C !important;
-    border-color: #ACB69C !important;
-  }
-
-  .bg-light{
-    background:#F6F6F6 !important;
-  }
-
-  .pd-icon{
-  clip-path: circle();
-  width: 40px;
-}
-.top-desc{
-        position: absolute;
-        top:10px;
-        left: 25px;
-    }
-    .desc-bottom{
-        position: absolute;
-        bottom: 30px;
-        right: 35%;
-    }
-    .btn-success {
-    background-color: #ACB69C !important;
-    color: white;
-  }
-  .mob-view{
-    display: none ;
-  }
-  @media only screen and (max-width: 600px) {
-    .mob-view{
-    display: block !important;
-  } 
-  .web-view{
-    display:none !important;
-  }
-  }
-  .owl-carousel .owl-nav button.owl-next {
-            position: absolute !important;
-            top: -40px;
-            right: 0 !important;
-            font-size: 40px !important;
-        }
-
-        .owl-carousel .owl-nav button.owl-prev {
-            position: absolute !important;
-            top: -40px;
-            right: 25px !important;
-            font-size: 40px !important;
-           
-        }
-
-        .owl-carousel .owl-nav button.owl-prev,
-        .owl-carousel .owl-nav button.owl-next:hover {
-            background-color: transparent !important;
-            color: black !important;
-        }
-</style>
 <section class="sticky-top bg-white">
 <div class="container-fluid web-view  border-bottom pb-1">
     <div class="container d-flex justify-content-between">
@@ -194,9 +123,9 @@
                     }
                     @endphp
                     <li class="">
-                        <a class="nav-link" href="http://herbhue.azurewebsites.net/mywishlist">
+                        <a class="nav-link" href="{{ route('mywishlist') }}">
                         <button type="button" class="btn bg-transparent border-0 position-relative">
-                            <img src="http://herbhue.azurewebsites.net/img/Wishlist Icon (1).svg" alt="" class="nav-icon">
+                            <img src="{{ asset('img/Wishlist Icon (1).svg') }}" alt="" class="nav-icon">
                             <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                             {{ $wishlist_count }}
                             </span>
