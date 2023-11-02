@@ -165,9 +165,9 @@
                     <div class="card-body">
                         <div class="text-center mb-3">
                             @if($wellprod->image1!="")
-                            <img src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/{{ $wellprod->image1 }}" class="w-100" alt="">
+                            <img src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/{{ $wellprod->image1 }}" class="w-100" style="height:300px" alt="">
                             @else
-                            <img src="{{ asset('img/no_image.svg') }}"  class="w-75" alt="">
+                            <img src="{{ asset('img/no_image.svg') }}"  class="w-100" alt="" style="height:300px">
                             @endif
                         </div>
                         <p class="small text-center text-secondary py-0 my-0">220 gm</p>
@@ -219,8 +219,8 @@
                         </p>
 
                         <span class="fs-6 fw-bold">{{ $rat->user_name }}</span>
-                        <small class="text-muted">{{ $rat->days }} ago</small>
-                        <p>{{ $rat->product_name }}</p>
+                        <small class="text-muted fs-10">{{ $rat->days }} ago</small>
+                        <p class="py-0 my-0">{{ $rat->product_name }}</p>
                         <p class="pt-0 mt-0">{{ $rat->review }}</p>
                     </div>
                 </div>
