@@ -145,7 +145,7 @@
                     @endif
                     </span>
                 </h5>
-                <p class="fs-5">M.R.P: <strong class="text-decoration-line-through">&pound; 
+                <p class="fs-6">M.R.P: <strong class="text-decoration-line-through">&pound; 
                 <span id="mrp_price">{{ $products->product_options[0]->mrp_price }}</span></strong> </p>
                 <div class="d-flex">
                     <div class="me-3 text-center">
