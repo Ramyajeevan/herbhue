@@ -64,10 +64,10 @@
                             @endif
                         </div>
                         <p class="small text-center text-secondary py-0 my-0">220 gm</p>
-                        <div class="d-flex justify-contyent-center">
+                        <div class="d-flex justify-content-center">
                           <h5 class="text-truncate text-center" style="max-width: 265px;">{{ $prod->name }}</h5>   
                         </div>
-                        <div class="d-flex justify-contyent-center">
+                        <div class="d-flex justify-content-center">
                                <p class="text-secondary text-center pb-1 mb-1  text-truncate" style="max-width: 265px;"> {!! $prod->description !!}</p>
                             </div>
                      
@@ -110,7 +110,7 @@
                 Experiential scientists put product quality, safety and excellence above all.
                 </p></div>
                 <div class="col-md-12 text-center">
-                <button type="button" class="btn btn-secondary rounded-pill text-black btn-lg py-3 ">LEARN MORE</button>
+                <button type="button" class="btn btn-secondary rounded-pill text-black  py-3 ">LEARN MORE</button>
                 </div>
         </div>
     </div>
@@ -143,7 +143,7 @@
                                 <!-- <p class="text-secondary">For your skin, gut and muscle health.</p> -->
                             </div>
                             <div class="desc-bottom">
-                            <a href="{{ route('products')}}?category_id={{ $cat->id}}" class="btn btn-secondary rounded-pill ">LEARN MORE</a>
+                            <a href="{{ route('products')}}?category_id={{ $cat->id}}" class="btn btn-secondary text-black rounded-pill ">LEARN MORE</a>
                             </div>
                         </div>
                     </div>
@@ -171,9 +171,15 @@
                             @endif
                         </div>
                         <p class="small text-center text-secondary py-0 my-0">220 gm</p>
-                        <h5 class="text-truncate text-center" style="max-width: 265px;">{{ $wellprod->name }}</h5>  
-                        <p class="text-secondary text-center pb-1 mb-1  text-truncate" style="max-width: 265px;">
+                        <div class="d-flex justify-content-center">
+                            <h5 class="text-truncate text-center" style="max-width: 265px;">{{ $wellprod->name }}</h5> 
+                        </div>
+                     
+                        <div class="d-flex justify-content-center">
+                               <p class="text-secondary text-center pb-1 mb-1  text-truncate" style="max-width: 265px;">
                         {{ $wellprod->describe }}</p>
+                            </div> 
+                     
                         <a href="{{ route('productdetail', $wellprod->id) }}" class="btn btn-outline-dark text-black bg-white fw-bold w-100 text-black">Buy 
                             <span class="text-decoration-line-through text-muted mx-1"> &pound; {{ $wellprod->product_options->mrp_price }}</span> 
                             <span class="text-black"> &pound; {{ $wellprod->product_options->price }}</span>
