@@ -49,10 +49,12 @@
                 <h2 class="pb-1 mb-1">Popular Combo Deals</h2>
                 <p>New wellness range just for you!</p>
             </div>
-            <p class="text-black fs-4 fw-bold pt-2">View All</p>
+            <!-- <p class="text-black fs-4 fw-bold pt-2">View All</p> -->
+        
+      
         </div>
         <div class="row">
-        @foreach($product as $prod)
+            @foreach($product as $prod)
             <div class="col-md-3 mb-3">
                 <div class="card border-secondary">
                     <div class="card-body">
@@ -81,6 +83,9 @@
             </div>
             @endforeach
         </div> 
+        <div class="text-center">
+          <button type="button" class="btn btn-outline-dark btn-lg ">View More</button>
+            </div>
     </div>         
 </div>
 
