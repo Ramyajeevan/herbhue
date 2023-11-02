@@ -56,7 +56,56 @@
                 </div>
             </div>
             <div class="col-md-7">
-                <div class="card mb-4">
+
+            <div class="card border-0  rounded-0 p-4 order-summary">
+                    <p class="fs-5 ps-3 mt-1">Order Summary</p>
+                    <p class="d-flex justify-content-between px-0 pb-2 mb-1">
+                        <strong>Cart value</strong> 
+                        <span class="text-muted">&pound; {{ $cart_total }}</span>
+                    </p>    
+                    <p class="d-flex justify-content-between border-bottom px-0 pb-2 mb-1">
+                        <strong>Delivery Charges</strong> 
+                        <span class="text-success">free</span>
+                    </p>    
+                    @php $coupon_amount=0; @endphp
+                    @if(!empty(Session::get('coupon_code')))
+                    @php $coupon_amount=Session::get('coupon_amount'); @endphp
+                    
+                    <p class="d-flex justify-content-between border-bottom px-0 pb-2 mb-1">
+                        <strong>Coupon Charges</strong> 
+                        <span  class="text-muted">&pound; {{ $coupon_amount }}</span>
+                    </p>
+                    @endif
+                    <p class="d-flex justify-content-between border-bottom px-0 pb-2 mb-1">
+                        <strong>Order Total</strong> 
+                        <span class="text-success">&pound; {{ $cart_total-$coupon_amount }}</span>
+                    </p> 
+
+                    <p class="d-flex justify-content-between px-0 pb-2 mb-1">
+                        <strong>Amount To be paid</strong> 
+                        <span class="text-success">&pound; {{ $cart_total-$coupon_amount }}</span>
+                    </p> 
+
+                    <div class="card-footer bg-transparent border-0">
+                           
+                    <div class="card shadow mt-4 py-2">
+                                <div class="card-body d-flex justify-content-between" data-bs-toggle="modal" data-bs-target="#exampleModal" style="cursor:pointer;">
+
+                                    <h4><img src="{{ asset('img/Group 70.svg') }}" alt="" style="width: 35px;" class="me-2">Apply Coupon</h4>
+
+                                    <p><img src="{{ asset('img/Down Arrow.svg') }}" style="width: 15px;" alt=""></p>
+                                </div>
+                            </div>
+                    </div>
+                    @if(empty(Session::get('username')))
+                        <a href="{{ route('login') }}"  class="btn bg-black text-white w-100 btn-lg py-3">Place Order</a>
+                        @else
+                        <a href="{{ route('checkout') }}"  class="btn bg-black text-white w-100 btn-lg py-3">Place Order</a>
+                        @endif
+                </div>
+
+
+                <!-- <div class="card mb-4">
                     <div class="card-header bg-white">
                         <h4>Cart total: <span class="fw-bold">&pound; {{ $cart_total }}</span> </h4>
                     </div>
@@ -91,7 +140,7 @@
                       
                         <p class="d-flex justify-content-between text-secondary"> <span>Coupon Charges</span> <span>&pound; {{ $coupon_amount }}</span></p>
                         @endif
-                      <!--  <p class="d-flex justify-content-between text-secondary"> <span>Handling Charges</span> <span>£  19.00</span></p> -->
+                    
                         <hr class="m-0 p-0">
                         <p class="d-flex justify-content-between text-secondary"> <span>Order Total</span> <span>&pound; {{ $cart_total-$coupon_amount }}</span></p>
 
@@ -99,8 +148,9 @@
                         <p class="d-flex justify-content-between text-secondary"> <span>Amount to be paid</span> <span>&pound; {{ $cart_total-$coupon_amount }}</span></p>
 
                     </div>
-                </div>
+                </div> -->
             </div>
+
         </div>
     </div>
 
