@@ -12,6 +12,7 @@ use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\Backend\OrderController;
 use App\Http\Controllers\Backend\TicketController;
 use App\Http\Controllers\Backend\BrandController;
+use App\Http\Controllers\Backend\PersonaliseController;
 use App\Http\Controllers\HomeController;
 /*
 |--------------------------------------------------------------------------
@@ -109,4 +110,11 @@ Route::post('ticket/update/{id}',[TicketController::class, 'update'])->name('tic
 
 Route::get('ratings',[ProductController::class, 'ratings'])->name('ratings.index');
 Route::delete('ratings/{id}',[ProductController::class, 'ratingsdestroy'])->name('ratings.destroy');
+
+Route::get('personalise',[PersonaliseController::class, 'index'])->name('personalise.index');
+Route::get('personalise/create',[PersonaliseController::class, 'create'])->name('personalise.create');
+Route::post('personalise/create',[PersonaliseController::class, 'store'])->name('personalise.store');
+Route::delete('personalise/{id}',[PersonaliseController::class, 'destroy'])->name('personalise.destroy');
+Route::get('personalise/update/{id}',[PersonaliseController::class, 'edit'])->name('personalise.edit');
+Route::post('personalise/update/{id}',[PersonaliseController::class, 'update'])->name('personalise.update');
 ?>

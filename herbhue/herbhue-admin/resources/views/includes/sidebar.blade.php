@@ -26,7 +26,7 @@
         </li>
         <li class="sidebar-item">
           <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0);" aria-expanded="false">
-            <i data-feather="sidebar" class="feather-icon"></i>
+            <i data-feather="image" class="feather-icon"></i>
             <span class="hide-menu">Banner </span>
           </a>
           <ul aria-expanded="false" class="collapse first-level">
@@ -74,7 +74,7 @@
 
         <li class="sidebar-item">
           <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0);" aria-expanded="false">
-            <i data-feather="bookmark" class="feather-icon"></i>
+            <i data-feather="sidebar" class="feather-icon"></i>
             <span class="hide-menu">Sub Category </span>
           </a>
           <ul aria-expanded="false" class="collapse first-level">
@@ -137,7 +137,7 @@
 
         <li class="sidebar-item">
           <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0);" aria-expanded="false">
-            <i data-feather="cpu" class="feather-icon"></i>
+            <i data-feather="package" class="feather-icon"></i>
             <span class="hide-menu">Orders </span>
           </a>
           <ul aria-expanded="false" class="collapse first-level">
@@ -153,7 +153,7 @@
 
         <li class="sidebar-item">
           <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0);" aria-expanded="false">
-            <i data-feather="cpu" class="feather-icon"></i>
+            <i data-feather="tag" class="feather-icon"></i>
             <span class="hide-menu">Coupons </span>
           </a>
           <ul aria-expanded="false" class="collapse first-level">
@@ -174,7 +174,7 @@
 
         <li class="sidebar-item">
           <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0);" aria-expanded="false">
-            <i data-feather="cpu" class="feather-icon"></i>
+            <i data-feather="users" class="feather-icon"></i>
             <span class="hide-menu">Users </span>
           </a>
           <ul aria-expanded="false" class="collapse first-level">
@@ -189,7 +189,7 @@
         </li>
         <li class="sidebar-item">
           <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0);" aria-expanded="false">
-            <i data-feather="cpu" class="feather-icon"></i>
+            <i data-feather="bookmark" class="feather-icon"></i>
             <span class="hide-menu">Tickets </span>
           </a>
           <ul aria-expanded="false" class="collapse first-level">
@@ -202,13 +202,33 @@
            
           </ul>
         </li>
+        <li class="sidebar-item">
+          <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0);" aria-expanded="false">
+            <i data-feather="sidebar" class="feather-icon"></i>
+            <span class="hide-menu">Personalization </span>
+          </a>
+          <ul aria-expanded="false" class="collapse first-level">
+            <li class="sidebar-item">
+              <a href="{{ route('personalise.index') }}" class="sidebar-link">
+                <i class="mdi mdi-view-quilt"></i>
+                <span class="hide-menu"> View Personalization </span>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a href="{{ route('personalise.create') }}" class="sidebar-link">
+                <i class="mdi mdi-view-parallel"></i>
+                <span class="hide-menu"> Add Personalization </span>
+              </a>
+            </li>
+          </ul>
+        </li>
         <li class="nav-small-cap">
           <i class="mdi mdi-dots-horizontal"></i>
           <span class="hide-menu">Ratings</span>
         </li>
         <li class="sidebar-item">
           <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0);" aria-expanded="false">
-            <i data-feather="cpu" class="feather-icon"></i>
+            <i data-feather="star" class="feather-icon"></i>
             <span class="hide-menu">Ratings </span>
           </a>
           <ul aria-expanded="false" class="collapse first-level">
@@ -221,6 +241,7 @@
            
           </ul>
         </li>
+        
 
           </ul>
         </li>
