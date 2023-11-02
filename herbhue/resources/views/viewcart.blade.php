@@ -46,14 +46,14 @@
                                         <a href="javascript:void(0);" onclick="deletecart({{ $cart_product->id }});"><img src="{{ asset('img/delete_FILL0_wght400_GRAD0_opsz24.svg') }}" alt="" style="width: 20px;"></a>
                                     </p>
                                
-                                    <p class="text-green text-end fw-bold pb-1 mb-1">
-                                        <a href="javascript:void(0);" @if(!empty(Session::get('username'))) onclick="addtowishlist({{ $cart_product->product_id }});" @else onclick="showalert();" @endif>Save for Later</a>
+                                    <p class="text-black text-end fw-bold pb-1 mb-1">
+                                        <a href="javascript:void(0);" @if(!empty(Session::get('username'))) onclick="addtowishlist({{ $cart_product->product_id }});" @else onclick="showalert();" @endif><i class="fa fa-heart"></i> Save for Later</a>
                                     </p>
                                     <div class="d-flex justify-content-end">
-                                        <a class="minus btn btn-success btn-sm shadow"  style="height: 35px;" onclick="decrementvalue({{ $cart_product->option_id }})" href="javascript:void(0);">-</a>
+                                        <a class="minus btn btn-dark btn-sm shadow"  style="height: 35px;" onclick="decrementvalue({{ $cart_product->option_id }})" href="javascript:void(0);">-</a>
                                         <input type="number" class="count shadow border-0 border-top border-bottom value{{ $cart_product->option_id }}"
                                         name="qty" value="{{ $cart_product->quantity }}" style="width: 40px; height: 35px;" disabled="">
-                                        <a class="plus btn btn-success btn-sm   shadow"
+                                        <a class="plus btn btn-dark btn-sm   shadow"
                                             style="height: 35px;"  onclick="incrementvalue({{ $cart_product->option_id }})" href="javascript:void(0);">+</a>
                                     </div>
                                 </div>
