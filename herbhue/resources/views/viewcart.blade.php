@@ -10,9 +10,12 @@
     <div class="container">
         <div class="row mt-3">
             <div class="col-md-5">
-                <div class="card border-radius-20 border-secondary">
+                <div class="card border-0">
                     <div class="card-header bg-transparent d-flex justify-content-between ">
-                        <h3>{{ count($cart) }} Item in your Cart</h3>
+                        <h5>{{ count($cart) }} Item in your Cart</h3>
+                        <p class="text-green text-end fw-bold small pb-1 mb-1">
+                                        <a href="javascript:void(0);" @if(!empty(Session::get('username'))) onclick="addtowishlist({{ $cart_product->product_id }});" @else onclick="showalert();" @endif>Save for Later</a>
+                                    </p>
                     </div>
                     <div class="card-body">
                         @foreach($cart as $cart_product)
@@ -39,9 +42,7 @@
                                         <a href="javascript:void(0);" onclick="deletecart({{ $cart_product->id }});"><img src="{{ asset('img/delete_FILL0_wght400_GRAD0_opsz24.svg') }}" alt="" style="width: 20px;"></a>
                                     </p>
                                
-                                    <p class="text-green text-end fw-bold pb-1 mb-1">
-                                        <a href="javascript:void(0);" @if(!empty(Session::get('username'))) onclick="addtowishlist({{ $cart_product->product_id }});" @else onclick="showalert();" @endif>Save for Later</a>
-                                    </p>
+                                  
                                     <div class="d-flex justify-content-end">
                                         <a class="minus btn btn-success btn-sm shadow"  style="height: 35px;" onclick="decrementvalue({{ $cart_product->option_id }})" href="javascript:void(0);">-</a>
                                         <input type="number" class="count shadow border-0 border-top border-bottom value{{ $cart_product->option_id }}"
