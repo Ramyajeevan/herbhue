@@ -116,12 +116,12 @@
             <a href="javascript:void(0);" class="close" data-bs-dismiss="modal" aria-label="Close"><img  src="{{ asset('img/close_FILL0_wght400_GRAD0_opsz48 (2).svg') }}" style="width: 60px;position:absolute;top: -17%;left: 40%;background: white;padding: 2%; clip-path:circle();" alt="X"></a>
 
                     <div class="mb-3">
-                        <label for="coupon_code" class="form-label text-green">Coupon Code </label>
+                        <label for="coupon_code" class="form-label text-black">Coupon Code </label>
                         <input type="text" class="form-control border-0 border-bottom border border-black rounded-0" id="coupon_code" name="coupon_code" placeholder="Enter Coupon Code" required>
                     </div>
                     
                     <div>
-                        <button type="button" class="btn btn-primary w-100" onclick="applycoupon();">Apply Coupon</button>
+                        <button type="button" class="btn btn-dark text-white w-100" onclick="applycoupon();">Apply Coupon</button>
 
                     </div>
  
