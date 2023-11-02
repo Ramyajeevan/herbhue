@@ -3,12 +3,19 @@
 <title>Herbhue - Cart</title>
 @endsection
 @section('css')
+<style>
+    .order-summary{
+    background:#ACB69C2B;
+    position: sticky; 
+    top: 158px;
+}
+</style>
 @endsection
 @section('content')
 <div class="container-fluid">
     <div class="container">
         <div class="row mt-3">
-            <div class="col-md-5">
+            <div class="col-md-6">
                 <div class="card border-0">
                     <div class="card-header bg-transparent d-flex justify-content-between ">
                         <h5>{{ count($cart) }} Item in your Cart</h3>
@@ -55,7 +62,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-7">
+            <div class="col-md-6">
 
             <div class="card border-0  rounded-0 p-4 order-summary">
                     <p class="fs-5 ps-3 mt-1">Order Summary</p>
