@@ -80,44 +80,10 @@ class HomeRepository extends BaseRepository
         return  $products;
     }
 
-    public function getProducts($category_id,$subcategory_id,$min_price,$max_price)
+    public function getProducts($category_id,$subcategory_id)
     {
-        $ids=array();
-        if($min_price!="" && $max_price!="")
-        {
-            $product_ids=DB::table("tbl_product_options")->select("product_id")->where("price",">=",$min_price)->where("price","<=",$max_price)->distinct("product_id")->get();
-            for($i=0;$i<count($product_ids);$i++)
-            {
-                //$ids[$i]=$product_ids[$i]->product_id;
-                array_push($ids, $product_ids[$i]->product_id);
-            }
-        }
-        else
-        {
-            if($min_price!="")
-            {
-                $product_ids=DB::table("tbl_product_options")->select("product_id")->where("price",">=",$min_price)->distinct("product_id")->get();
-                for($i=0;$i<count($product_ids);$i++)
-                {
-                    //$ids[$i]=$product_ids[$i]->product_id;
-                    array_push($ids, $product_ids[$i]->product_id);
-                }
-            }
-            if($max_price!="")
-            {
-                $product_ids=DB::table("tbl_product_options")->select("product_id")->where("price","<=",$max_price)->distinct("product_id")->get();
-                for($j=0;$j<count($product_ids);$j++)
-                {
-                    array_push($ids, $product_ids[$j]->product_id);
-                }
-            }
-        }
-        //print_r($ids);
+       
         $products = Product::where("id","!=","");
-        if(count($ids)>0)
-        {
-            $products=$products->whereIn('id',$ids);
-        }
         if(!empty($category_id))
         {
           $products=$products->where("category_id",$category_id);
@@ -439,6 +405,18 @@ class HomeRepository extends BaseRepository
         $related_products=$related_products->where("category_id",$products->category_id);
         $related_products=$related_products->where("subcategory_id",$products->subcategory_id);
         $related_products=$related_products->get();
+        for($i=0;$i<count($related_products);$i++)
+        {
+            $product_options=DB::table("tbl_product_options")->select("price","mrp_price")->where("product_id",$related_products[$i]->id)->first();
+            $related_products[$i]->price=$product_options->price;
+            $related_products[$i]->mrp_price=$product_options->mrp_price;
+        }
+        return $related_products;
+    }
+
+    public function getAllRelatedProducts()
+    {
+        $related_products = Product::get();
         for($i=0;$i<count($related_products);$i++)
         {
             $product_options=DB::table("tbl_product_options")->select("price","mrp_price")->where("product_id",$related_products[$i]->id)->first();

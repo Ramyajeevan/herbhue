@@ -240,9 +240,7 @@ class HomeController extends Controller
   
         $category_id=request()->category_id;
         $subcategory_id=request()->subcategory_id;
-        $min_price=request()->min_price;
-        $max_price=request()->max_price;
-        $products = $this->homeRepository->getProducts($category_id,$subcategory_id,$min_price,$max_price);
+        $products = $this->homeRepository->getProducts($category_id,$subcategory_id);
         /*
        if(isset($request->searchkey))
        {
@@ -262,7 +260,8 @@ class HomeController extends Controller
             $products[$i]->product_options=$product_options;
         }*/
         //$min_price=0;
-        return view('products', ['products' => $products,'category_id'=>$category_id,'subcategory_id'=>$subcategory_id,'min_price'=>$min_price,'max_price'=>$max_price]);
+        $category=$this->homeRepository->getAllCategories();
+        return view('products', ['products' => $products,'category_id'=>$category_id,'subcategory_id'=>$subcategory_id,"category"=>$category]);
     }
   	
   	public function productdetail($id)
@@ -384,11 +383,6 @@ public function personalization()
     {
       return view('shop');
     }
-
-    public function cart2()
-    {
-      return view('cart2');
-    }
 // added on 30-10-2023 by rahul 
   	public function mywishlist()
     {
@@ -401,7 +395,7 @@ public function personalization()
         $email=Session::get('username');
         $user=DB::table("tbl_user")->where("email",$email)->first();
         $wishlist=$this->homeRepository->getMyWishlist($user->id);
-        $related_products=$this->homeRepository->getRelatedProducts();
+        $related_products=$this->homeRepository->getAllRelatedProducts();
         return view('mywishlist',["user"=>$user,"wishlist"=>$wishlist,"related_products"=>$related_products]);
       }
     }
