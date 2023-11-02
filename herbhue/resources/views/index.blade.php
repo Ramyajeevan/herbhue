@@ -64,9 +64,14 @@
                             @endif
                         </div>
                         <p class="small text-center text-secondary py-0 my-0">220 gm</p>
-                        <h5 class="text-truncate text-center" style="max-width: 265px;">{{ $prod->name }}</h5>
-                        <p class="text-secondary text-center pb-1 mb-1  text-truncate" style="max-width: 265px;">
+                        <div class="d-flex justify-contyent-center">
+                          <h5 class="text-truncate text-center" style="max-width: 265px;">{{ $prod->name }}</h5>   
+                        </div>
+                        <div class="d-flex justify-contyent-center">
+                               <p class="text-secondary text-center pb-1 mb-1  text-truncate" style="max-width: 265px;">
                         {!! $prod->description !!}</p>
+                            </div>
+                     
                         <p class="text-secondary p-0 m-0 text-center">{{ $prod->describe }}</p>
                         <p class="text-secondary text-center pb-0 mb-0">M.R.P: <span
                                 class="text-decoration-line-through text-secondary"> &pound; {{ $prod->product_options->mrp_price }}</span> </p>
