@@ -249,7 +249,7 @@
         <p class="text-center text-black mb-4">You may like to purchase</h5>
        <div class="row">
         <div class="col-md-2"></div>
-        <div class="col-md-8">  <div class="cate-1 owl-carousel owl-theme">
+        <div class="col-md-8">  <div class="purchase owl-carousel owl-theme">
             @foreach($related_products as $related)
             <div class="item">
                 <div class="card border-secondary">
@@ -442,7 +442,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <script>
-        $(".cate-1").owlCarousel({
+        $(".purchase").owlCarousel({
             loop: true,
             margin: 20,
             nav: true,
@@ -458,7 +458,7 @@
                     nav: true,
                 },
                 1000: {
-                    items: 4,
+                    items: 3,
                     nav: true,
                 },
             },
