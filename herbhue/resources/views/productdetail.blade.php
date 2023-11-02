@@ -234,7 +234,6 @@
         </div>
     </div>
 </div>  
-
 <div class="container-fluid bg-light py-2">
     <div class="container">
         <h4 class="text-black mt-3">Description</h4>
