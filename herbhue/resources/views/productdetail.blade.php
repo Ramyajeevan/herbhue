@@ -355,8 +355,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-5">
-
+                    <div class="col-md-5 pt-5 text-center"> 
+                    <button type="button" class="btn btn-outline-dark btn-lg">Write a Review</button>
                     </div>
                 </div>
             </div>
