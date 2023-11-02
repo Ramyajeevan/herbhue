@@ -98,9 +98,9 @@
                             </div>
                     </div>
                     @if(empty(Session::get('username')))
-                        <a href="{{ route('login') }}"  class="btn bg-black text-white w-100 btn-lg py-3">Place Order</a>
+                        <a href="{{ route('login') }}"  class="btn bg-black text-white w-100 btn-lg py-3">Checkout</a>
                         @else
-                        <a href="{{ route('checkout') }}"  class="btn bg-black text-white w-100 btn-lg py-3">Place Order</a>
+                        <a href="{{ route('checkout') }}"  class="btn bg-black text-white w-100 btn-lg py-3">Checkout</a>
                         @endif
                 </div>
 
