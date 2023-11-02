@@ -237,7 +237,7 @@
 <div class="container-fluid bg-light py-2">
     <div class="container">
         <h4 class="text-black mt-3">Description</h4>
-        <p class="text-secondary small border-bottom pb-4 mb-5 border-3">
+        <p class="text-secondary small  pb-4 mb-5">
         {!! $products->description !!}
         </p>
     </div>
@@ -355,7 +355,9 @@
                         </div>
                     </div>
                     <div class="col-md-5 pt-5 text-center"> 
-                    <button type="button" class="btn btn-outline-dark btn-lg">Write a Review</button>
+                    <button type="button" class="btn btn-outline-dark btn-lg" style="position: absolute;
+    top: 128px;
+    right: 170px;">Write a Review</button>
                     </div>
                 </div>
             </div>
