@@ -12,7 +12,7 @@
 </style>
 @endsection
 @section('content')
-<div class="container-fluid">
+<div class="container-fluid my-5">
     <div class="container">
         <div class="row mt-3">
             <div class="col-md-6">
