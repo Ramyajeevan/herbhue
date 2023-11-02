@@ -49,11 +49,13 @@
                 <h2 class="pb-1 mb-1">Popular Combo Deals</h2>
                 <p>New wellness range just for you!</p>
             </div>
-            <p class="text-black fs-4 fw-bold pt-2">View All</p>
+            <!-- <p class="text-black fs-4 fw-bold pt-2">View All</p> -->
+        
+      
         </div>
-        <div class="cate-1 owl-carousel owl-theme">
+        <div class="row">
             @foreach($product as $prod)
-            <div class="item">
+            <div class="col-md-3 mb-3">
                 <div class="card border-secondary">
                     <div class="card-body">
                         <div class="text-center mb-3">
@@ -64,9 +66,13 @@
                             @endif
                         </div>
                         <p class="small text-center text-secondary py-0 my-0">220 gm</p>
-                        <h5 class="text-truncate text-center" style="max-width: 265px;">{{ $prod->name }}</h5>
-                        <p class="text-secondary text-center pb-1 mb-1  text-truncate" style="max-width: 265px;">
-                        {!! $prod->description !!}</p>
+                        <div class="d-flex justify-content-center">
+                          <h5 class="text-truncate text-center" style="max-width: 265px;">{{ $prod->name }}</h5>   
+                        </div>
+                        <div class="d-flex justify-content-center">
+                               <p class="text-secondary text-center pb-1 mb-1  text-truncate" style="max-width: 265px;"> {!! $prod->description !!}</p>
+                            </div>
+                     
                         <p class="text-secondary p-0 m-0 text-center">{{ $prod->describe }}</p>
                         <p class="text-secondary text-center pb-0 mb-0">M.R.P: <span
                                 class="text-decoration-line-through text-secondary"> &pound; {{ $prod->product_options->mrp_price }}</span> </p>
@@ -76,13 +82,17 @@
                 </div>
             </div>
             @endforeach
-        </div>
+        </div> 
+        <div class="text-center">
+          <button type="button" class="btn btn-outline-dark btn-lg ">View More</button>
+            </div>
     </div>         
 </div>
 
 
 <div class="container-fluid bg-light py-4">
-    <div class="container">
+    <div class="container"> 
+    <h3 class="text-center">HerbHue Promise</h3>
         <div class="row">
             <div class="col-md-4 mb-3">
                 <div class="d-flex justify-content-center">
@@ -105,21 +115,23 @@
                 Experiential scientists put product quality, safety and excellence above all.
                 </p></div>
                 <div class="col-md-12 text-center">
-                <button type="button" class="btn btn-secondary rounded-pill ">LEARN MORE</button>
+                <button type="button" class="btn btn-secondary rounded-pill text-black  py-3 ">LEARN MORE</button>
                 </div>
         </div>
     </div>
 </div>
 
 
-<div class="container-fluid bg-white py-2">
+<div class="container-fluid bg-white py-2 my-5">
     <div class="container mt-3 mb-4">
         <h3>Shop by Health Concerns</h3>
-        <div class="row mt-3">
-            @foreach($category as $cat)
-            <div class="col-md-2 col-6">
-                <img src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/{{ $cat->image }}" class="w-100" alt="">
+        <div class="cate-1 owl-carousel owl-theme">
+        @foreach($category as $cat)
+            <div class="item">
+                <div class="card border-0">
+                     <img src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/{{ $cat->image }}" class="w-100 card-img-top" alt="">
                 <h5 class="text-center mt-2">{{ $cat->name }}</h5>
+                </div>
             </div>
             @endforeach
         </div>
@@ -136,7 +148,7 @@
                                 <!-- <p class="text-secondary">For your skin, gut and muscle health.</p> -->
                             </div>
                             <div class="desc-bottom">
-                            <a href="{{ route('products')}}?category_id={{ $cat->id}}" class="btn btn-secondary rounded-pill ">LEARN MORE</a>
+                            <a href="{{ route('products')}}?category_id={{ $cat->id}}" class="btn btn-secondary text-black rounded-pill ">LEARN MORE</a>
                             </div>
                         </div>
                     </div>
@@ -148,7 +160,7 @@
 </div>
 
 
-<div class="container-fluid mb-4">
+<div class="container-fluid my-5">
     <div class="container">
         <h5 class=" text-black mb-4">Trending Now</h5>
         <div class="cate-3 owl-carousel owl-theme">
@@ -158,15 +170,21 @@
                     <div class="card-body">
                         <div class="text-center mb-3">
                             @if($wellprod->image1!="")
-                            <img src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/{{ $wellprod->image1 }}" class="w-100" alt="">
+                            <img src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/{{ $wellprod->image1 }}" class="w-100" style="height:300px" alt="">
                             @else
-                            <img src="{{ asset('img/no_image.svg') }}"  class="w-75" alt="">
+                            <img src="{{ asset('img/no_image.svg') }}"  class="w-100" alt="" style="height:300px">
                             @endif
                         </div>
                         <p class="small text-center text-secondary py-0 my-0">220 gm</p>
-                        <h5 class="text-truncate text-center" style="max-width: 265px;">{{ $wellprod->name }}</h5>  
-                        <p class="text-secondary text-center pb-1 mb-1  text-truncate" style="max-width: 265px;">
+                        <div class="d-flex justify-content-center">
+                            <h5 class="text-truncate text-center" style="max-width: 265px;">{{ $wellprod->name }}</h5> 
+                        </div>
+                     
+                        <div class="d-flex justify-content-center">
+                               <p class="text-secondary text-center pb-1 mb-1  text-truncate" style="max-width: 265px;">
                         {{ $wellprod->describe }}</p>
+                            </div> 
+                     
                         <a href="{{ route('productdetail', $wellprod->id) }}" class="btn btn-outline-dark text-black bg-white fw-bold w-100 text-black">Buy 
                             <span class="text-decoration-line-through text-muted mx-1"> &pound; {{ $wellprod->product_options->mrp_price }}</span> 
                             <span class="text-black"> &pound; {{ $wellprod->product_options->price }}</span>
@@ -179,8 +197,7 @@
         </div>
     </div>
 </div>
-
-<div class="container-fluid">
+<div class="container-fluid my-5">
     <div class="container">
         <h3 class=" text-black mb-4">Our Top Brands</h3>
         <div class="cate-4 owl-carousel owl-theme">
@@ -196,9 +213,9 @@
 </div>
                 
 
-<div class="container-fluid mb-4">
+<div class="container-fluid my-5">
     <div class="container">
-        <h3 class=" text-black text-center mb-4">Recommended by you</h3>
+        <h3 class=" text-black text-center ">Recommended by you</h3>
         <p class="text-center">Discover their stories and why they recommend HerbHue.</p>
         <div class="testimonial owl-carousel owl-theme">
             @foreach($ratings as $rat)
@@ -211,9 +228,9 @@
                             @endfor
                         </p>
 
-                        <span class="fs-4 fw-bold">{{ $rat->user_name }}</span>
-                        <small class="text-muted">{{ $rat->days }} ago</small>
-                        <h5>{{ $rat->product_name }}</h5>
+                        <span class="fs-6 fw-bold">{{ $rat->user_name }}</span>
+                        <small class="text-muted fs-10">{{ $rat->days }} ago</small>
+                        <p class="py-0 my-0">{{ $rat->product_name }}</p>
                         <p class="pt-0 mt-0">{{ $rat->review }}</p>
                     </div>
                 </div>
@@ -244,11 +261,11 @@
                     nav: true,
                 },
                 600: {
-                    items: 2,
+                    items: 3,
                     nav: true,
                 },
                 1000: {
-                    items: 4,
+                    items: 6,
                     nav: true,
                 },
             },
@@ -296,7 +313,7 @@
                     nav: true,
                 },
                 1000: {
-                    items: 3,
+                    items: 4,
                     nav: true,
                 },
             },

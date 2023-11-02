@@ -3,16 +3,23 @@
 <title>Herbhue - Cart</title>
 @endsection
 @section('css')
-
+<style>
+    .order-summary{
+    background:#ACB69C2B;
+    position: sticky; 
+    top: 158px;
+}
+</style>
 @endsection
 @section('content')
-<div class="container-fluid">
+<div class="container-fluid my-5">
     <div class="container">
         <div class="row mt-3">
-            <div class="col-md-5">
-                <div class="card border-radius-20 border-secondary">
+            <div class="col-md-6">
+                <div class="card border-0">
                     <div class="card-header bg-transparent d-flex justify-content-between ">
-                        <h3>{{ count($cart) }} Item in your Cart</h3>
+                        <h5>{{ count($cart) }} Item in your Cart</h3>
+                        
                     </div>
                     <div class="card-body">
                         @foreach($cart as $cart_product)
@@ -39,14 +46,14 @@
                                         <a href="javascript:void(0);" onclick="deletecart({{ $cart_product->id }});"><img src="{{ asset('img/delete_FILL0_wght400_GRAD0_opsz24.svg') }}" alt="" style="width: 20px;"></a>
                                     </p>
                                
-                                    <p class="text-green text-end fw-bold pb-1 mb-1">
-                                        <a href="javascript:void(0);" @if(!empty(Session::get('username'))) onclick="addtowishlist({{ $cart_product->product_id }});" @else onclick="showalert();" @endif>Save for Later</a>
+                                    <p class="text-black text-end fw-bold pb-1 mb-1">
+                                        <a href="javascript:void(0);" @if(!empty(Session::get('username'))) onclick="addtowishlist({{ $cart_product->product_id }});" @else onclick="showalert();" @endif><i class="fa fa-heart"></i> Save for Later</a>
                                     </p>
                                     <div class="d-flex justify-content-end">
-                                        <a class="minus btn btn-success btn-sm shadow"  style="height: 35px;" onclick="decrementvalue({{ $cart_product->option_id }})" href="javascript:void(0);">-</a>
+                                        <a class="minus btn btn-dark btn-sm shadow"  style="height: 35px;" onclick="decrementvalue({{ $cart_product->option_id }})" href="javascript:void(0);">-</a>
                                         <input type="number" class="count shadow border-0 border-top border-bottom value{{ $cart_product->option_id }}"
                                         name="qty" value="{{ $cart_product->quantity }}" style="width: 40px; height: 35px;" disabled="">
-                                        <a class="plus btn btn-success btn-sm   shadow"
+                                        <a class="plus btn btn-dark btn-sm   shadow"
                                             style="height: 35px;"  onclick="incrementvalue({{ $cart_product->option_id }})" href="javascript:void(0);">+</a>
                                     </div>
                                 </div>
@@ -55,8 +62,57 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-7">
-                <div class="card mb-4">
+            <div class="col-md-6">
+
+            <div class="card border-0  rounded-0 p-4 order-summary">
+                    <p class="fs-5  mt-1">Order Summary</p>
+                    <p class="d-flex justify-content-between px-0 pb-2 mb-1">
+                        <strong>Cart value</strong> 
+                        <span class="text-muted">&pound; {{ $cart_total }}</span>
+                    </p>    
+                    <p class="d-flex justify-content-between border-bottom px-0 pb-2 mb-1">
+                        <strong>Delivery Charges</strong> 
+                        <span class="text-success">free</span>
+                    </p>    
+                    @php $coupon_amount=0; @endphp
+                    @if(!empty(Session::get('coupon_code')))
+                    @php $coupon_amount=Session::get('coupon_amount'); @endphp
+                    
+                    <p class="d-flex justify-content-between border-bottom px-0 pb-2 mb-1">
+                        <strong>Coupon Charges</strong> 
+                        <span  class="text-muted">&pound; {{ $coupon_amount }}</span>
+                    </p>
+                    @endif
+                    <p class="d-flex justify-content-between border-bottom px-0 pb-2 mb-1">
+                        <strong>Order Total</strong> 
+                        <span class="text-success">&pound; {{ $cart_total-$coupon_amount }}</span>
+                    </p> 
+
+                    <p class="d-flex justify-content-between px-0 pb-2 mb-1">
+                        <strong>Amount To be paid</strong> 
+                        <span class="text-success">&pound; {{ $cart_total-$coupon_amount }}</span>
+                    </p> 
+
+                    <div class="card-footer bg-transparent border-0">
+                           
+                    <div class="card shadow mt-4 pt-1 pb-0">
+                                <div class="card-body d-flex justify-content-between" data-bs-toggle="modal" data-bs-target="#exampleModal" style="cursor:pointer;">
+
+                                    <h4><img src="{{ asset('img/Group 70.svg') }}" alt="" style="width: 35px;" class="me-2">Apply Coupon</h4>
+
+                                    <p class="pb-0 mb-0"><img src="{{ asset('img/Down Arrow.svg') }}" style="width: 15px;" alt=""></p>
+                                </div>
+                            </div>
+                    </div>
+                    @if(empty(Session::get('username')))
+                        <a href="{{ route('login') }}"  class="btn bg-black text-white w-100 btn-lg py-3">Checkout</a>
+                        @else
+                        <a href="{{ route('checkout') }}"  class="btn bg-black text-white w-100 btn-lg py-3">Checkout</a>
+                        @endif
+                </div>
+
+
+                <!-- <div class="card mb-4">
                     <div class="card-header bg-white">
                         <h4>Cart total: <span class="fw-bold">&pound; {{ $cart_total }}</span> </h4>
                     </div>
@@ -91,7 +147,7 @@
                       
                         <p class="d-flex justify-content-between text-secondary"> <span>Coupon Charges</span> <span>&pound; {{ $coupon_amount }}</span></p>
                         @endif
-                      <!--  <p class="d-flex justify-content-between text-secondary"> <span>Handling Charges</span> <span>£  19.00</span></p> -->
+                    
                         <hr class="m-0 p-0">
                         <p class="d-flex justify-content-between text-secondary"> <span>Order Total</span> <span>&pound; {{ $cart_total-$coupon_amount }}</span></p>
 
@@ -99,8 +155,9 @@
                         <p class="d-flex justify-content-between text-secondary"> <span>Amount to be paid</span> <span>&pound; {{ $cart_total-$coupon_amount }}</span></p>
 
                     </div>
-                </div>
+                </div> -->
             </div>
+
         </div>
     </div>
 
@@ -116,12 +173,12 @@
             <a href="javascript:void(0);" class="close" data-bs-dismiss="modal" aria-label="Close"><img  src="{{ asset('img/close_FILL0_wght400_GRAD0_opsz48 (2).svg') }}" style="width: 60px;position:absolute;top: -17%;left: 40%;background: white;padding: 2%; clip-path:circle();" alt="X"></a>
 
                     <div class="mb-3">
-                        <label for="coupon_code" class="form-label text-green">Coupon Code </label>
+                        <label for="coupon_code" class="form-label text-black">Coupon Code </label>
                         <input type="text" class="form-control border-0 border-bottom border border-black rounded-0" id="coupon_code" name="coupon_code" placeholder="Enter Coupon Code" required>
                     </div>
                     
                     <div>
-                        <button type="button" class="btn btn-primary w-100" onclick="applycoupon();">Apply Coupon</button>
+                        <button type="button" class="btn btn-dark text-white w-100" onclick="applycoupon();">Apply Coupon</button>
 
                     </div>
  

@@ -33,11 +33,11 @@
                     </div>
 
                     <div class="form-group">
-                        <input type="email" placeholder=" " id="email" name="email" required placeholder="Email ID">
+                        <input type="email"   id="email" name="email" required placeholder="Email ID">
                          
                     </div>
                     <div class="form-group">
-                        <input type="password" placeholder=" " id="password" name="password" required placeholder="Password">
+                        <input type="password"   id="password" name="password" required placeholder="Password">
                          
                     </div>
                     <div class="d-flex justify-content-between mb-4">

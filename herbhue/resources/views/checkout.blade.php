@@ -9,10 +9,16 @@
     border: none;
     height: 40px;
 }
+
+.order-summary{
+    background:#ACB69C2B;
+    position: sticky; 
+    top: 158px;
+}
     </style>
 @endsection
 @section('content')
-<div class="container-fluid">
+<div class="container-fluid mb-5">
     <div class="container mt-5">
         <div class="row">
             <div class="col-md-6">
@@ -235,7 +241,7 @@
                 </form>
             </div>
             <div class="col-md-6">
-                <div class="card bg-light-green  rounded-0 p-4 sticky-top">
+                <div class="card border-0  rounded-0 p-4 order-summary">
                     <p class="fs-5 ps-3 mt-1">Order Summary</p>
                     <p class="d-flex justify-content-between px-0 pb-2 mb-1">
                         <strong>Cart value</strong> 
@@ -289,5 +295,4 @@
         });
     });
 </script>
-
 @endsection

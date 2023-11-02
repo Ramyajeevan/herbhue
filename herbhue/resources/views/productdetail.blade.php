@@ -145,9 +145,30 @@
                     @endif
                     </span>
                 </h5>
-                <p class="fs-5">M.R.P: <strong class="text-decoration-line-through">&pound; 
+                <p class="fs-6">M.R.P: <strong class="text-decoration-line-through">&pound; 
                 <span id="mrp_price">{{ $products->product_options[0]->mrp_price }}</span></strong> </p>
-
+                <div class="d-flex">
+                    <div class="me-3 text-center">
+                        <img src="{{asset('img/cetorganic.webp')}}" class="pd-icon" alt="">
+                        <p class="text-center fs-10 mt-2">CERT. ORGANIC</p>
+                    </div>
+                    <div class="me-3 text-center">
+                        <img src="{{asset('img/glutenfree.webp')}}" class="pd-icon" alt="">
+                        <p class="text-center fs-10 mt-2">GLUTEN-FREE</p>
+                    </div>
+                    <div class="me-3 text-center">
+                        <img src="{{asset('img/no-additives.webp')}}" class="pd-icon" alt="">
+                        <p class="text-center fs-10 mt-2">NO ADDITIVES</p>
+                    </div>
+                    <div class="me-4 text-center">
+                        <img src="{{asset('img/non-gmo.webp')}} " class="pd-icon" alt="">
+                        <p class="text-center fs-10 mt-2">NON-GMO</p>
+                    </div>
+                    <div class="me-3 text-center">
+                        <img src="{{asset('img/vegan.webp')}} " class="pd-icon" alt="">
+                        <p class="text-center fs-10 mt-2">VEGAN</p>
+                    </div>
+                </div>
                 <div class="mb-4">
                     <p class="small text-black fw-bold">Size</p>
                         <!-- @if($products->product_options[0]->stock > 0)
@@ -188,28 +209,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="d-flex">
-                    <div class="me-3 text-center">
-                        <img src="{{asset('img/cetorganic.webp')}}" class="pd-icon" alt="">
-                        <p class="text-center fs-10 mt-2">CERT. ORGANIC</p>
-                    </div>
-                    <div class="me-3 text-center">
-                        <img src="{{asset('img/glutenfree.webp')}}" class="pd-icon" alt="">
-                        <p class="text-center fs-10 mt-2">GLUTEN-FREE</p>
-                    </div>
-                    <div class="me-3 text-center">
-                        <img src="{{asset('img/no-additives.webp')}}" class="pd-icon" alt="">
-                        <p class="text-center fs-10 mt-2">NO ADDITIVES</p>
-                    </div>
-                    <div class="me-4 text-center">
-                        <img src="{{asset('img/non-gmo.webp')}} " class="pd-icon" alt="">
-                        <p class="text-center fs-10 mt-2">NON-GMO</p>
-                    </div>
-                    <div class="me-3 text-center">
-                        <img src="{{asset('img/vegan.webp')}} " class="pd-icon" alt="">
-                        <p class="text-center fs-10 mt-2">VEGAN</p>
-                    </div>
-                </div>
+                
                     <!-- <div class="d-flex mb-3">
                         <p class="fs-5 text-secondary me-2">Quantity</p>
                         <span class="minus btn btn-success btn-sm shadow  " style="height: 35px;">-</span>
@@ -234,20 +234,21 @@
         </div>
     </div>
 </div>  
-
 <div class="container-fluid bg-light py-2">
     <div class="container">
-        <h3 class="text-black">Description</h3>
-        <p class="text-secondary fs-5 border-bottom pb-4 mb-5 border-3">
+        <h4 class="text-black mt-3">Description</h4>
+        <p class="text-secondary small  pb-4 mb-5">
         {!! $products->description !!}
         </p>
     </div>
 </div>
             
-<div class="container-fluid">
+<div class="container-fluid my-5">
     <div class="container">
-        <h5 class="text-center text-black mb-4">You may like to purchase</h5>
-        <div class="cate-1 owl-carousel owl-theme">
+        <p class="text-center text-black mb-4">You may like to purchase</h5>
+       <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">  <div class="purchase owl-carousel owl-theme">
             @foreach($related_products as $related)
             <div class="item">
                 <div class="card border-secondary">
@@ -273,9 +274,11 @@
                 </div>
             </div>
             @endforeach
-        </div>
+        </div></div>
+        <div class="col-md-2"></div>
+       </div>
     </div>
-    <div class="container">
+    <div class="container my-5">
         <div class="card">
             <div class="card-body">
                 <div class="row ">
@@ -351,8 +354,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-5">
-
+                    <div class="col-md-5 pt-5 text-center"> 
+                    <button type="button" class="btn btn-outline-dark btn-lg" style="position: absolute;
+    top: 128px;
+    right: 170px;">Write a Review</button>
                     </div>
                 </div>
             </div>
@@ -408,19 +413,19 @@
                 <li class="list-group-item border-bottom py-2" >
                     <div class="d-flex justify-content-between">
                         <div class="d-flex">
-                            <img src="{{asset('img/verified-user.png')}}" width="60px" height="60px" alt="uaer" class="me-4">
-                            <h5 class="pt-3">{{ $rating_product->user_name }}</h5>
+                            <img src="{{asset('img/verified-user.png')}}" width="40px" height="40px" alt="uaer" class="me-4">
+                            <h6 class="py-0 my-0">{{ $rating_product->user_name }}</h5>
                         </div>
-                        <p class="text-muted pt-3">
+                        <p class="text-muted py-0 my-0">
                         {{ $rating_product->days }} Ago
                         </p>
                     </div>
-                    <p class="fs-5">
+                    <p class="small">
                     <?php for($k=1;$k<=5;$k++) { 
                         if($k<=$rating_product->rating){ ?>
-                        <i class="fa fa-star text-warning me-2"></i>
+                        <i class="fa fa-star text-warning "></i>
                         <?php } else { ?>
-                        <i class="fa fa-star-o text-warning me-2"></i>
+                        <i class="fa fa-star-o text-warning "></i>
                     <?php } } ?>
                     </p>
                     <p>{{ $rating_product->review }}</p>
@@ -438,7 +443,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <script>
-        $(".cate-1").owlCarousel({
+        $(".purchase").owlCarousel({
             loop: true,
             margin: 20,
             nav: true,
@@ -454,7 +459,7 @@
                     nav: true,
                 },
                 1000: {
-                    items: 4,
+                    items: 3,
                     nav: true,
                 },
             },
