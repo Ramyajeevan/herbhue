@@ -412,19 +412,19 @@
                 <li class="list-group-item border-bottom py-2" >
                     <div class="d-flex justify-content-between">
                         <div class="d-flex">
-                            <img src="{{asset('img/verified-user.png')}}" width="60px" height="60px" alt="uaer" class="me-4">
-                            <h5 class="pt-3">{{ $rating_product->user_name }}</h5>
+                            <img src="{{asset('img/verified-user.png')}}" width="40px" height="40px" alt="uaer" class="me-4">
+                            <h6 class="py-0 my-0">{{ $rating_product->user_name }}</h5>
                         </div>
-                        <p class="text-muted pt-3">
+                        <p class="text-muted py-0 my-0">
                         {{ $rating_product->days }} Ago
                         </p>
                     </div>
-                    <p class="fs-5">
+                    <p class="small">
                     <?php for($k=1;$k<=5;$k++) { 
                         if($k<=$rating_product->rating){ ?>
-                        <i class="fa fa-star text-warning me-2"></i>
+                        <i class="fa fa-star text-warning "></i>
                         <?php } else { ?>
-                        <i class="fa fa-star-o text-warning me-2"></i>
+                        <i class="fa fa-star-o text-warning "></i>
                     <?php } } ?>
                     </p>
                     <p>{{ $rating_product->review }}</p>
