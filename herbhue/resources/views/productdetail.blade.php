@@ -244,7 +244,7 @@
     </div>
 </div>
             
-<div class="container-fluid mb-5">
+<div class="container-fluid my-5">
     <div class="container">
         <p class="text-center text-black mb-4">You may like to purchase</h5>
        <div class="row">
