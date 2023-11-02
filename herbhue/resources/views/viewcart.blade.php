@@ -3,7 +3,6 @@
 <title>Herbhue - Cart</title>
 @endsection
 @section('css')
-
 @endsection
 @section('content')
 <div class="container-fluid">
