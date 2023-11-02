@@ -237,17 +237,19 @@
 
 <div class="container-fluid bg-light py-2">
     <div class="container">
-        <h3 class="text-black">Description</h3>
-        <p class="text-secondary fs-5 border-bottom pb-4 mb-5 border-3">
+        <h4 class="text-black mt-3">Description</h4>
+        <p class="text-secondary small border-bottom pb-4 mb-5 border-3">
         {!! $products->description !!}
         </p>
     </div>
 </div>
             
-<div class="container-fluid">
+<div class="container-fluid mb-5">
     <div class="container">
-        <h5 class="text-center text-black mb-4">You may like to purchase</h5>
-        <div class="cate-1 owl-carousel owl-theme">
+        <p class="text-center text-black mb-4">You may like to purchase</h5>
+       <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">  <div class="cate-1 owl-carousel owl-theme">
             @foreach($related_products as $related)
             <div class="item">
                 <div class="card border-secondary">
@@ -273,9 +275,11 @@
                 </div>
             </div>
             @endforeach
-        </div>
+        </div></div>
+        <div class="col-md-2"></div>
+       </div>
     </div>
-    <div class="container">
+    <div class="container my-5">
         <div class="card">
             <div class="card-body">
                 <div class="row ">

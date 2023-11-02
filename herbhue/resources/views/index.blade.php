@@ -51,9 +51,9 @@
             </div>
             <p class="text-black fs-4 fw-bold pt-2">View All</p>
         </div>
-        <div class="cate-1 owl-carousel owl-theme">
-            @foreach($product as $prod)
-            <div class="item">
+        <div class="row">
+        @foreach($product as $prod)
+            <div class="col-md-3 mb-3">
                 <div class="card border-secondary">
                     <div class="card-body">
                         <div class="text-center mb-3">
@@ -68,8 +68,7 @@
                           <h5 class="text-truncate text-center" style="max-width: 265px;">{{ $prod->name }}</h5>   
                         </div>
                         <div class="d-flex justify-contyent-center">
-                               <p class="text-secondary text-center pb-1 mb-1  text-truncate" style="max-width: 265px;">
-                        {!! $prod->description !!}</p>
+                               <p class="text-secondary text-center pb-1 mb-1  text-truncate" style="max-width: 265px;"> {!! $prod->description !!}</p>
                             </div>
                      
                         <p class="text-secondary p-0 m-0 text-center">{{ $prod->describe }}</p>
@@ -81,13 +80,14 @@
                 </div>
             </div>
             @endforeach
-        </div>
+        </div> 
     </div>         
 </div>
 
 
 <div class="container-fluid bg-light py-4">
-    <div class="container">
+    <div class="container"> 
+    <h3 class="text-center">HerbHue Promise</h3>
         <div class="row">
             <div class="col-md-4 mb-3">
                 <div class="d-flex justify-content-center">
@@ -110,7 +110,7 @@
                 Experiential scientists put product quality, safety and excellence above all.
                 </p></div>
                 <div class="col-md-12 text-center">
-                <button type="button" class="btn btn-secondary rounded-pill ">LEARN MORE</button>
+                <button type="button" class="btn btn-secondary rounded-pill text-black btn-lg py-3 ">LEARN MORE</button>
                 </div>
         </div>
     </div>
@@ -120,11 +120,13 @@
 <div class="container-fluid bg-white py-2">
     <div class="container mt-3 mb-4">
         <h3>Shop by Health Concerns</h3>
-        <div class="row mt-3">
-            @foreach($category as $cat)
-            <div class="col-md-2 col-6">
-                <img src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/{{ $cat->image }}" class="w-100" alt="">
+        <div class="cate-1 owl-carousel owl-theme">
+        @foreach($category as $cat)
+            <div class="item">
+                <div class="card border-0">
+                     <img src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/{{ $cat->image }}" class="w-100 card-img-top" alt="">
                 <h5 class="text-center mt-2">{{ $cat->name }}</h5>
+                </div>
             </div>
             @endforeach
         </div>
@@ -216,9 +218,9 @@
                             @endfor
                         </p>
 
-                        <span class="fs-4 fw-bold">{{ $rat->user_name }}</span>
+                        <span class="fs-6 fw-bold">{{ $rat->user_name }}</span>
                         <small class="text-muted">{{ $rat->days }} ago</small>
-                        <h5>{{ $rat->product_name }}</h5>
+                        <p>{{ $rat->product_name }}</p>
                         <p class="pt-0 mt-0">{{ $rat->review }}</p>
                     </div>
                 </div>
@@ -249,11 +251,11 @@
                     nav: true,
                 },
                 600: {
-                    items: 2,
+                    items: 3,
                     nav: true,
                 },
                 1000: {
-                    items: 4,
+                    items: 6,
                     nav: true,
                 },
             },
