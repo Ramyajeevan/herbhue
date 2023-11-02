@@ -122,7 +122,7 @@
 </div>
 
 
-<div class="container-fluid bg-white py-2">
+<div class="container-fluid bg-white py-2 my-5">
     <div class="container mt-3 mb-4">
         <h3>Shop by Health Concerns</h3>
         <div class="cate-1 owl-carousel owl-theme">
@@ -160,7 +160,7 @@
 </div>
 
 
-<div class="container-fluid mb-4">
+<div class="container-fluid my-5">
     <div class="container">
         <h5 class=" text-black mb-4">Trending Now</h5>
         <div class="cate-3 owl-carousel owl-theme">
