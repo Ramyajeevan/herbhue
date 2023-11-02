@@ -65,7 +65,7 @@
             <div class="col-md-6">
 
             <div class="card border-0  rounded-0 p-4 order-summary">
-                    <p class="fs-5 ps-3 mt-1">Order Summary</p>
+                    <p class="fs-5  mt-1">Order Summary</p>
                     <p class="d-flex justify-content-between px-0 pb-2 mb-1">
                         <strong>Cart value</strong> 
                         <span class="text-muted">&pound; {{ $cart_total }}</span>
@@ -95,12 +95,12 @@
 
                     <div class="card-footer bg-transparent border-0">
                            
-                    <div class="card shadow mt-4 py-2">
+                    <div class="card shadow mt-4 pt-1 pb-0">
                                 <div class="card-body d-flex justify-content-between" data-bs-toggle="modal" data-bs-target="#exampleModal" style="cursor:pointer;">
 
                                     <h4><img src="{{ asset('img/Group 70.svg') }}" alt="" style="width: 35px;" class="me-2">Apply Coupon</h4>
 
-                                    <p><img src="{{ asset('img/Down Arrow.svg') }}" style="width: 15px;" alt=""></p>
+                                    <p class="pb-0 mb-0"><img src="{{ asset('img/Down Arrow.svg') }}" style="width: 15px;" alt=""></p>
                                 </div>
                             </div>
                     </div>
