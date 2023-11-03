@@ -92,6 +92,101 @@
                   <textarea name="question" id="question" class="form-control" required></textarea>
               </div>
             </div>
+            <hr style="color:currentcolor;">
+            <h4 class="card-title">Add Recommendations</h4>
+            <div class="mb-3 row">
+              <label class="col-md-2 col-form-label" for="recommendations"></label>
+              <div align="center" class="col-md-5 fw-bold">
+              Recommendations
+              </div>
+              <div align="center" class="col-md-5 fw-bold">
+              Image
+              </div>
+            </div>
+
+            <div class="mb-3 row">
+              <label class="col-md-2 col-form-label" for="recommendation1">1</label>
+              <div class="col-md-5">
+                <textarea name="recommendation1" id="recommendation1" class="form-control" required></textarea>
+              </div>
+              <div align="center" class="col-md-5">
+                <div class="input-group mb-3">
+                  <span class="input-group-text">Upload</span>
+
+                  <div class="custom-file" style="width:82.75%;">
+                    <input type="file" class="form-control" id="image1" name="image1">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-3 row">
+              <label class="col-md-2 col-form-label" for="recommendation2">2</label>
+              <div class="col-md-5">
+                <textarea name="recommendation2" id="recommendation2" class="form-control"></textarea>
+              </div>
+              <div align="center" class="col-md-5">
+                <div class="input-group mb-3">
+                  <span class="input-group-text">Upload</span>
+
+                  <div class="custom-file" style="width:82.75%;">
+                    <input type="file" class="form-control" id="image2" name="image2">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-3 row">
+              <label class="col-md-2 col-form-label" for="recommendation3">3</label>
+              <div class="col-md-5">
+                <textarea name="recommendation3" id="recommendation3" class="form-control"></textarea>
+              </div>
+              <div align="center" class="col-md-5">
+                <div class="input-group mb-3">
+                  <span class="input-group-text">Upload</span>
+
+                  <div class="custom-file" style="width:82.75%;">
+                    <input type="file" class="form-control" id="image3" name="image3">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="mb-3 row">
+              <label class="col-md-2 col-form-label" for="recommendation4">4</label>
+              <div class="col-md-5">
+                <textarea name="recommendation4" id="recommendation4" class="form-control"></textarea>
+              </div>
+              <div align="center" class="col-md-5">
+                <div class="input-group mb-3">
+                  <span class="input-group-text">Upload</span>
+
+                  <div class="custom-file" style="width:82.75%;">
+                    <input type="file" class="form-control" id="image4" name="image4">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="mb-3 row">
+              <label class="col-md-2 col-form-label" for="recommendation5">5</label>
+              <div class="col-md-5">
+                <textarea name="recommendation5" id="recommendation5" class="form-control"></textarea>
+              </div>
+              <div align="center" class="col-md-5">
+                <div class="input-group mb-3">
+                  <span class="input-group-text">Upload</span>
+
+                  <div class="custom-file" style="width:82.75%;">
+                    <input type="file" class="form-control" id="image5" name="image5">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
             <div class="mb-3 row">
               <label class="col-md-2 col-form-label">&nbsp;</label>
               <div class="col-md-10">

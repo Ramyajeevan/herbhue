@@ -4,6 +4,7 @@ namespace App\Repositories\Backend;
 
 use App\Models\Personalise;
 use App\Models\User;
+use DB;
 use App\Repositories\BaseRepository;
 /**
  * Class UserRepository.
@@ -40,6 +41,20 @@ class PersonaliseRepository extends BaseRepository
         $personalise->user_id = $post["user_id"];
         $personalise->question = $post["question"];
         $personalise->save();
+        $id = DB::table('tbl_recommendation')->insertGetId([
+            'personalise_id' => $personalise->id,
+            'recommendation1' => $post["recommendation1"],
+            'recommendation2' => $post["recommendation2"],
+            'recommendation3' => $post["recommendation3"],
+            'recommendation4' => $post["recommendation4"],
+            'recommendation5' => $post["recommendation5"],
+            'image1' => $post["image1"],
+            'image2' => $post["image2"],
+            'image3' => $post["image3"],
+            'image4' => $post["image4"],
+            'image5' => $post["image5"]
+        ]);
+
         return $personalise;
     }
 
@@ -49,7 +64,11 @@ class PersonaliseRepository extends BaseRepository
 
         return  $personalise;
     }
-
+    public function getAllRecommendations($id)
+    {
+        $recommendations = DB::table('tbl_recommendation')->where("personalise_id",$id)->first();
+        return $recommendations;
+    }
     public function updatePersonalise($post,$id)
     {
         $personalise = Personalise::find($id);
@@ -59,6 +78,44 @@ class PersonaliseRepository extends BaseRepository
             $personalise->user_id = $post["user_id"];
             $personalise->question = $post["question"];
             $personalise->save();
+
+            $rec_id = DB::table('tbl_recommendation')->where('personalise_id',$id)->update([
+                'recommendation1' => $post["recommendation1"],
+                'recommendation2' => $post["recommendation2"],
+                'recommendation3' => $post["recommendation3"],
+                'recommendation4' => $post["recommendation4"],
+                'recommendation5' => $post["recommendation5"]
+            ]);
+            if($post["image1"]!="")
+            {
+                $rec_id = DB::table('tbl_recommendation')->where('personalise_id',$id)->update([
+                    'image1' => $post["image1"]
+                ]);
+            }
+            if($post["image2"]!="")
+            {
+                $rec_id = DB::table('tbl_recommendation')->where('personalise_id',$id)->update([
+                    'image2' => $post["image2"]
+                ]);
+            }
+            if($post["image3"]!="")
+            {
+                $rec_id = DB::table('tbl_recommendation')->where('personalise_id',$id)->update([
+                    'image3' => $post["image3"]
+                ]);
+            }
+            if($post["image4"]!="")
+            {
+                $rec_id = DB::table('tbl_recommendation')->where('personalise_id',$id)->update([
+                    'image4' => $post["image4"]
+                ]);
+            }
+            if($post["image5"]!="")
+            {
+                $rec_id = DB::table('tbl_recommendation')->where('personalise_id',$id)->update([
+                    'image5' => $post["image5"]
+                ]);
+            }
             return $personalise;
         }else{
             return false;
@@ -71,6 +128,7 @@ class PersonaliseRepository extends BaseRepository
             $personalise = Personalise::find($id);
             if(isset($personalise)){
                 $personalise->delete();
+                DB::table('tbl_recommendation')->where("personalise_id",$id)->delete();
             }else{
                 return false;
             }
