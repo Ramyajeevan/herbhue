@@ -245,7 +245,7 @@
             
 <div class="container-fluid my-5">
     <div class="container">
-        <p class="text-center text-black mb-4">You may like to purchase</h5>
+        <p class="text-center text-black mb-4 fs-3">You may like to purchase</h5>
        <div class="row">
         <div class="col-md-2"></div>
         <div class="col-md-8">  <div class="purchase owl-carousel owl-theme">
@@ -355,15 +355,13 @@
                         </div>
                     </div>
                     <div class="col-md-5 pt-5 text-center"> 
-                    <button type="button" class="btn btn-outline-dark btn-lg" style="position: absolute;
-    top: 128px;
-    right: 170px;">Write a Review</button>
+                    <button type="button" class="btn btn-outline-dark btn-lg" style="position: absolute;top: 128px;right: 170px;" @if(!empty(Session::get('username'))) onclick="showratingform();" @else onclick="showalert();" @endif>Write a Review</button>
                     </div>
                 </div>
             </div>
         </div>            
 
-            @if(!empty(Session::get('username')))
+        <div id="addrating" class="d-none">
             <form method="post" action="{{ route('addrating') }}">
                 @csrf
                 <input type="hidden" name="product_id" id="product_id" value="{{  $products->id }}">
@@ -384,7 +382,7 @@
             <textarea class="form-control w-25" placeholder="Your Message" name="review" id="review" required></textarea>
             <button type="submit" class="btn btn-primary mt-3">Add Review</button>
             </form>
-            @endif
+        </div>
  
         <div class="card my-5">
             <div class="card-header bg-white">
@@ -495,6 +493,10 @@
     {
         alert('You are not Logged In. Please Register/LogIn yourself !');
         window.location.href="{{route('login') }}";
+    }
+    function showratingform()
+    {
+        $("#addrating").removeClass('d-none');
     }
     function addtowishlist(product_id)
     {

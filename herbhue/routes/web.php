@@ -80,6 +80,7 @@ Route::get('thankyou/{order_id}',[OrderController::class, 'thankyou'])->name('th
 Route::get('payment',[OrderController::class, 'payment'])->name('payment');
 Route::post('placeorder1',[OrderController::class, 'placeorder1'])->name('placeorder1');
 
+Route::post('personalise/update/{id}',[HomeController::class, 'personaliseupdate'])->name('personalise.update');
 
 // added on 30-10-2023
 

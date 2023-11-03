@@ -374,16 +374,27 @@ class HomeController extends Controller
 
 // added on 30-10-2023 by rahul 
 
-public function personalization()
-    {
-      return view('personalization');
-    }
+
 
     public function shop()
     {
       return view('shop');
     }
 // added on 30-10-2023 by rahul 
+    public function personalization()
+    {
+      if(empty(Session::get('username')))
+      {
+          return redirect()->route('login')->with('errors', 'Login and continue');
+      }
+      else
+      {
+        $email=Session::get('username');
+        $user=DB::table("tbl_user")->where("email",$email)->first();
+        $personalise=$this->homeRepository->getMyPersonalise($user->id);
+        return view('personalization',['personalise'=>$personalise]);
+      }
+    }
   	public function mywishlist()
     {
       if(empty(Session::get('username')))
@@ -496,5 +507,26 @@ public function personalization()
        return  redirect()->route('resetpassword')->with('email',$touseremail);
       }
       
+    }
+
+    public function personaliseupdate(Request $request, $id)
+    {
+      $email=Session::get('username');
+      $user=DB::table('tbl_user')->where("email",$email)->first();
+      if(!$user)
+      {
+        return redirect()->back()->with('errors', 'Email not exists!');
+      }
+      else
+      {
+          $var="answer".$id;
+          $answer=$request->$var;
+          $save=$this->homeRepository->personaliseupdate($id,$answer);
+          if($save){
+            return  redirect()->route('personalization')->with('success', 'Answer added successfully!');
+          }else{
+            return redirect()->back()->with('errors','Error!');
+          }
+      }
     }
 }

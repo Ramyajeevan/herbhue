@@ -425,4 +425,18 @@ class HomeRepository extends BaseRepository
         }
         return $related_products;
     }
+
+    public function getMyPersonalise($user_id)
+    {
+        $personalise=DB::table("tbl_personalize")->where("user_id",$user_id)->get();
+        return $personalise;
+    }
+
+    public function personaliseupdate($id,$answer)
+    {
+        $personalise=DB::table("tbl_personalize")->where("id",$id)->update([
+            "answer"=>$answer
+        ]);
+        return $personalise;
+    }
 }
