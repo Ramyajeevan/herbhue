@@ -99,7 +99,7 @@
                         </li>
 
                         <li class="list-group-item py-3">
-                            <a href="{{ route('profile-contact') }}" class="text-black">
+                            <a href="{{ route('profilecontact') }}" class="text-black">
                             <div class="row">
                                 <div class="col-3">
                                     <img src="{{asset('img/contact.svg')}}" width="30px" alt="">
