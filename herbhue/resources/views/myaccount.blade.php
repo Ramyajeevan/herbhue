@@ -16,15 +16,20 @@
             <div class="card border-0 pt-0">
         <div class="card-body pt-0">
         <h5 class="card-tittle fw-bold">Edit Profile</h5>
-        <form method="post" action="{{ route('myaccountsettings') }}">
+        <form method="post" enctype="multipart/form-data" action="{{ route('myaccountsettings') }}">
                     @csrf()
         <div class="row">
             <div class="col-3">
+                <!--<img src="{{asset('img/editimg.png')}}" width="100px" height="100px" alt="">-->
+                @if($user->photo=="")
                 <img src="{{asset('img/editimg.png')}}" width="100px" height="100px" alt="">
+                @else
+                <img src="{{asset('images/')}}/{{ $user->photo }}" width="100px" height="100px" alt="">
+                @endif
                 <img src="{{asset('img/upload.png')}}" alt="" style="position: absolute; left: 78px;  width: 35px;  top: 97px;  z-index: 9;">
             </div>
             <div class="col-9 pt-4">
-
+                <input type="file" name="photo" id="photo" style="">
                 <button type="button" class="btn btn-dark">Change Profile Photo</button>
             </div>
         </div>
@@ -40,7 +45,7 @@
         <div class="form-group mb-3">
             <label for="email" class="fw-bold">Email</label>
 
-            <input type="email" placeholder="shruti94580@gmail.com " id="email" name="email" value="{{ $user->email }}" disabled class="form-control rounded-0 ">
+            <input type="email" placeholder="abc@gmail.com " id="email" name="email" value="{{ $user->email }}" disabled class="form-control rounded-0 ">
 
         </div>
 
@@ -48,8 +53,13 @@
         <div class="form-group mb-3">
             <label for="password">Password</label>
 
-            <input type="password" placeholder="Shruti@1234#"  id="password" name="password" value="{{ $user->password }}" required class="form-control rounded-0 ">
+            <input type="password" placeholder="abc@1234#"  id="password" name="password" value="{{ $user->password }}" required class="form-control rounded-0 ">
            <!-- <label for="exampleInputEmail1">Minimum 6 characters required</label>-->
+        </div>
+
+        <div class="form-group mb-3 text-center">
+              <button type="submit" class="btn btn-dark">Update Profile</button>
+           
         </div>
         </form>
     </div>
