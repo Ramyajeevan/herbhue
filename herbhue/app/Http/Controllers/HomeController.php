@@ -164,36 +164,25 @@ class HomeController extends Controller
     
     public function myaccountsettings(Request $request)
     {
+      $imageName="";
+      if($request->photo!="")
+       {
+	    $imageName = time().'.'.$request->photo->extension();  
+     
+        $request->photo->move(public_path('images'), $imageName);
+       }
       $email=Session::get('username');
       $user=DB::table('tbl_user')->where("email",$email)->first();
       $user_id=$user->id;
-	    DB::table('tbl_user')->where("email",$email)->update(["name"=>$request->name,"mobile"=>$request->mobile,'dob'=>$request->dob]);
+
+
+	    DB::table('tbl_user')->where("email",$email)->update(["name"=>$request->name,"password"=>$request->password]);
+      if($imageName!="")
+      DB::table('tbl_user')->where("email",$email)->update(["photo"=>$imageName]);
        return redirect()->route('myaccount');
     }
     
-    public function myaddresses(Request $request)
-    {
-        if(empty(Session::get('username')))
-      {
-          return redirect()->route('login')->with('errors', 'Login and continue');
-      }
-      else
-      {
-        $email=Session::get('username');
-        $user=DB::table('tbl_user')->where("email",$email)->first();
-        $user_id=$user->id;
-        $addresses=DB::table('tbl_address')->where("user_id",$user_id)->get();
-         $url = url()->current();
-          $url = explode('/', $url);
-         // dd($url);
-
-          if(!isset($url[5])){
-              $url[5] = '';
-          }
-        return view('myaddresses',["user"=>$user,"addresses"=>$addresses,'page'=>$url['5']]);
-        //return view('myaddresses');
-      }
-    }
+    
     
      public function deleteaddress(Request $request)
     {
@@ -401,12 +390,68 @@ class HomeController extends Controller
     }*/
 
 
-    public function editaddress()
+    public function editaddress($address_id)
     {
-      return view('editaddress');
+      $email=Session::get('username');
+      $user=DB::table('tbl_user')->where("email",$email)->first();
+      if(!$user)
+      {
+        return redirect()->back()->with('errors', 'Email not exists!');
+      }
+      else
+      {
+        $address=DB::table('tbl_address')->where("id",$address_id)->first();
+      return view('editaddress',["user"=>$user,"address"=>$address]);
+      }
     } 
 
+    public function addaddress()
+    {
+      $email=Session::get('username');
+      $user=DB::table('tbl_user')->where("email",$email)->first();
+      if(!$user)
+      {
+        return redirect()->back()->with('errors', 'Email not exists!');
+      }
+      else
+      {
+      return view('addaddress',["user"=>$user]);
+      }
+    } 
 
+    public function addnewaddress(Request $request)
+    {
+      $email=Session::get('username');
+      $user=DB::table('tbl_user')->where("email",$email)->first();
+      if(!$user)
+      {
+        return redirect()->back()->with('errors', 'Email not exists!');
+      }
+      else
+      {
+        $firstname=$request->firstname;
+      $lastname=$request->lastname;
+      $street_address=$request->street_address;
+      $street_address2=$request->street_address2;
+      $company_name=$request->company_name;
+
+      $city=$request->city;
+      $pincode=$request->pincode;
+      $phone=$request->phone;
+      $address_id=DB::table('tbl_address')->insertGetId([
+        'user_id'=>$user->id,
+        'firstname' => $firstname, 
+       'lastname' => $lastname, 
+        'street_address' => $street_address,
+       'street_address2' => $street_address2,
+        'city'=> $city,
+        'pincode'=>$pincode,
+        'company_name'=>$company_name,
+        'phone'=>$phone
+       ]);
+        return redirect()->route('myaddress');
+      }
+    }
     public function profilecontact()
     {
       $email=Session::get('username');
@@ -519,7 +564,7 @@ class HomeController extends Controller
       $message=$request->message;
       $save=$this->homeRepository->contactus($name,$email,$message);
       if($save){
-        return  redirect()->route('contact')->with('success', 'Concern Person will contact you shortly!');
+        return  redirect()->route('profilecontact')->with('success', 'Concern Person will contact you shortly!');
       }else{
         return redirect()->back()->with('errors','Error!');
       }
@@ -580,7 +625,47 @@ class HomeController extends Controller
       }
       else
       {
-      return view('myaddress',['user'=>$user]);
+        $email=Session::get('username');
+        $user=DB::table('tbl_user')->where("email",$email)->first();
+        $user_id=$user->id;
+        $addresses=DB::table('tbl_address')->where("user_id",$user_id)->get();
+        //echo count($addresses);
+        return view('myaddress',["user"=>$user,"addresses"=>$addresses]);
+      }
+    }
+
+    public function updateaddress(Request $request,$id)
+    {
+      $email=Session::get('username');
+      $user=DB::table('tbl_user')->where("email",$email)->first();
+      if(!$user)
+      {
+        return redirect()->back()->with('errors', 'Email not exists!');
+      }
+      else
+      {
+        $email=Session::get('username');
+        $user=DB::table('tbl_user')->where("email",$email)->first();
+        $user_id=$user->id;
+        $firstname=$request->firstname;
+        $lastname=$request->lastname;
+        $street_address=$request->street_address;
+        $street_address2=$request->street_address2;
+        $company_name=$request->company_name;
+        $city=$request->city;
+        $pincode=$request->pincode;
+        $phone=$request->phone;
+        $address_id=DB::table('tbl_address')->where("id",$id)->update([
+          'firstname' => $firstname, 
+        'lastname' => $lastname, 
+          'street_address' => $street_address,
+        'street_address2' => $street_address2,
+          'city'=> $city,
+          'pincode'=>$pincode,
+          'company_name'=>$company_name,
+          'phone'=>$phone
+        ]);
+          return redirect()->route('myaddress');
       }
     }
 

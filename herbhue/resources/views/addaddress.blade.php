@@ -1,6 +1,6 @@
 @extends('layouts.app') 
 @section('title')
-<title>Herbhue - Edit Address</title>
+<title>Herbhue - Add Address</title>
 @endsection
 @section('css') 
 @endsection
@@ -14,18 +14,18 @@
             <div class="col-md-8">
             <div class="card rounded-0 p-3 mb-3"> 
                         <div class="card-body"> 
-                            <h4>Edit Address</h4>
+                            <h4>Add New Address</h4>
                             <div class="row">
-                                <form method="post" action="{{route('updateaddress',$address->id)}}" >
+                                <form method="post" action="{{ route('addnewaddress') }}">
                                     @csrf
                                 <div class="col-md-6 mb-2">
                                     <div class="form-group">
-                                        <input type="text" placeholder="First Name " class="form-control rounded-0 " value="{{ $address->firstname }}" id="firstname" name="firstname">
+                                        <input type="text" placeholder="First Name " class="form-control rounded-0 " id="firstname" name="firstname" required>
                                     </div>
                                 </div>
                                 <div class="col-md-6 mb-2">
                                     <div class="form-group">
-                                        <input type="text" placeholder="Last Name " class="form-control rounded-0 " value="{{ $address->lastname }}" id="lastname" name="lastname">
+                                        <input type="text" placeholder="Last Name " class="form-control rounded-0 " id="lastname" name="lastname">
                                     </div>
                                 </div>
                                 <div class="col-md-12 mb-2">
@@ -34,22 +34,22 @@
                                 </div>
                                 <div class="col-md-12 mb-2">
                                     <div class="form-group">
-                                        <input type="text" placeholder="HOUSE NUMBER AND STREET NAME" class="form-control rounded-0 " value="{{ $address->street_address }}"  id="street_address" name="street_address">
+                                        <input type="text" placeholder="HOUSE NUMBER AND STREET NAME" class="form-control rounded-0 "  id="street_address" name="street_address" required>
                                     </div>
                                 </div>
                                 <div class="col-md-12 mb-2">
                                     <div class="form-group">
-                                        <input type="text" placeholder="APARTMENT, SUITE" class="form-control rounded-0 " id="street_address2" value="{{ $address->street_address2 }}" name="street_address2">
+                                        <input type="text" placeholder="APARTMENT, SUITE" class="form-control rounded-0 " id="street_address2" name="street_address2">
                                     </div>
                                 </div>
                                 <div class="col-md-4 mb-2">
                                     <div class="form-group">
-                                        <input type="text" placeholder="TOWN / CITY" class="form-control rounded-0 " id="city" name="city" value="{{ $address->city }}" required>
+                                        <input type="text" placeholder="TOWN / CITY" class="form-control rounded-0 " id="city" name="city" required>
                                     </div>
                                 </div>
                                 <div class="col-md-4 mb-2">
                                     <div class="form-group">
-                                        <input type="text" placeholder="POSTCODE" class="form-control rounded-0 "  id="pincode" name="pincode" value="{{ $address->pincode }}" required>
+                                        <input type="text" placeholder="POSTCODE" class="form-control rounded-0 "  id="pincode" name="pincode" required>
                                     </div>
                                 </div>
                                 <div class="col-md-4 mb-2">
@@ -59,16 +59,16 @@
                                 </div>
                                 <div class="col-md-12 mb-2">
                                     <div class="form-group">
-                                        <input type="text" placeholder="COMPANY (OPTIONAL)" class="form-control rounded-0 " id="company_name" name="company_name" value="{{ $address->company_name }}">
+                                        <input type="text" placeholder="COMPANY (OPTIONAL)" class="form-control rounded-0 " id="company_name" name="company_name">
                                     </div>
                                 </div>
                                 <div class="col-md-12 mb-2">
                                     <div class="form-group">
-                                        <input type="text" placeholder="PHONE" class="form-control rounded-0 " id="phone" name="phone" value="{{ $address->phone }}" required>
+                                        <input type="text" placeholder="PHONE" class="form-control rounded-0 " id="phone" name="phone" required>
                                     </div>
                                 </div>
                                 <div class="col-md-12 mb-2">
-                                <button type="submit" class="btn btn-dark btn-lg rounded-0 px-3 mt-3 w-100"><span class="fs-6 me-2">Update Address</button>
+                                <button type="submit" class="btn btn-dark btn-lg rounded-0 px-3 mt-3 w-100"><span class="fs-6 me-2">Add Address</button>
                                 </div>
                                 </form>
                             </div>
