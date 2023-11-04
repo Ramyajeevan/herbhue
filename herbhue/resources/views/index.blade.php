@@ -125,28 +125,32 @@
 </div>
 <div class="container-fluid my-5">
     <div class="container">
-    <div class="cate-10 owl-carousel owl-theme">
-        
+        <div class="cate-10 owl-carousel owl-theme">
+        @foreach($product as $prod)
             <div class="item">
                  <div class="card bg-light border-0 py-3">
                     <div class="card-body">
                         <div class="row">
                             <div class="col-7">
-                            <p class="py-0 my-0">Immunity Booster</p>
-                            <h4 class="py-0 my-0">Jeevan Sanjeevani</h4>
-                            <p class="small py-0 my-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <p class="py-0 my-0">{{ $prod->category_name }}</p>
+                            <h4 class="py-0 my-0">{{ $prod->name }}</h4>
+                            <p class="small py-0 my-0">{!! $prod->description !!}</p>
 
                             
-                            <button type="button" class="btn mt-4 btn-dark rounded-pill">Shop Now</button>
+                            <a href="{{ route('productdetail', $prod->id) }}" class="btn mt-4 btn-dark rounded-pill">Shop Now</a>
                             </div>
                             <div class="col-md-5">
-                                <img src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/1697012848-1.png" class="w-100" alt="">
-                            </div>
+                            @if($prod->image1!="")
+                            <img src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/{{ $prod->image1 }}" class="w-100" alt="">
+                            @else
+                            <img src="{{ asset('img/no_image.svg') }}" class="w-100" alt="">
+                            @endif
+                             </div>
                         </div>
                     </div>
                  </div>
             </div>
-        
+        @endforeach
         </div>
     </div>
 </div>

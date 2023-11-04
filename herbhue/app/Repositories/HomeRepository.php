@@ -47,6 +47,10 @@ class HomeRepository extends BaseRepository
         $products = Product::limit(4)->orderbydesc("id")->get();
         for($i=0;$i<count($products);$i++)
         {
+            $category=Category::find($products[$i]->category_id);
+            if(isset($category)) $category_name=$category->name; else $category_name="";
+            $products[$i]->category_name=$category_name;
+          
             $product_options=DB::table("tbl_product_options")->where("product_id",$products[$i]->id)->first();
             $products[$i]->product_options=$product_options;
             $products[$i]->description=Str::limit($products[$i]->description, 30, '...');
