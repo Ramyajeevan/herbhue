@@ -70,7 +70,7 @@
     <div class="container">
         <div class="row pb-2">
             <div class="col-9 text-center">
-                <div class="pt-1 mob-view">
+                <div class="pt-3 mob-view">
                     <ul class="  d-flex ul">
             
                         <li class="">
@@ -143,7 +143,7 @@
 <header class="px-2 py-3 py-lg-0 px-sm-0 category-header border-top">
     <div class="container">
         <div class="d-flex  align-items-center justify-content-between">
-            <img src="{{ asset('img/logo.png') }}" alt="" class="site-logo" style="width: 170px;">
+            <img src="{{ asset('img/logo.png') }}" alt="" class="site-logo" style="width: 105px;">
             <nav class="d-none d-lg-block">
                 <ul class="main-menu d-flex flex-column flex-lg-row align-items-lg-center list-unstyled p-0 m-0">
                 @php

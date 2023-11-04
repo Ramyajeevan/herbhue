@@ -12,13 +12,16 @@
         crossorigin="anonymous" referrerpolicy="no-referrer">
 @endsection
 @section('content')
-<div class="container-fluid">
+<div class="container-fluid my-5">
     <div class="container">
         <div class="row mt-3">
-            <div class="col-md-12">
+            <div class="col-md-4">
+            @include('includes.myaccountsidenav')
+            </div>
+            <div class="col-md-8">
                 <div class="card rounded-2 border-secondary">
                     <div class="card-header bg-transparent d-flex justify-content-between ">
-                        <h3>{{ count($wishlist) }} Item in your Wishlist</h3>
+                        <h5>{{ count($wishlist) }} Item in your Wishlist</h5>
                     </div>
                     <div class="card-body">
                         @if(count($wishlist)>0)
@@ -27,7 +30,7 @@
                             <div class="col-2">
                                 <img src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/{{ $wish->product_image }}" class="w-75" alt="">
                             </div>
-                            <div class="col-7">
+                            <div class="col-5">
                                 <h5>{{ $wish->product_name }}</h5>
                                 <p class="text-secondary p-0 m-0">{{ $wish->describe }}</p>
                                 <span class="text-secondary">M.R.P: 
@@ -36,15 +39,15 @@
                                 </span>
 
                             </div>
-                            <div class="col-3">
+                            <div class="col-5 d-flex justify-content-between">
                                 <p class="text-end">
                                     <a href="javascript:void(0);" onclick="deletewishlist({{ $wish->id }});">
                                         <img src="{{ asset('img/delete_FILL0_wght400_GRAD0_opsz24.svg') }}" alt=""  style="width: 20px;">
                                     </a>
                                 </p>
                                 <div class="text-end mt-5">
-                                    <button type="button"  onclick="movetocart({{ $wish->id }});" class="btn btn-success w-50 py-2 h5 fw-bold"> Add  
-                                        <img src="{{ asset('img/add_circle_FILL1_wght400_GRAD0_opsz48 (1).svg') }}" style="width: 25px; position: relative; top: -3px;left: 3px;" alt="">
+                                    <button type="button"  onclick="movetocart({{ $wish->id }});" class="btn btn-dark text-white w-50 py-2 h5 fw-bold"> Move to Cart  
+                                        <!-- <img src="{{ asset('img/add_circle_FILL1_wght400_GRAD0_opsz48 (1).svg') }}" style="width: 25px; position: relative; top: -3px;left: 3px;" alt=""> -->
                                     </button>
                                 </div>
                             </div>
@@ -64,7 +67,7 @@
 
 </div>
 
-<div class="container-fluid bg-light-blue py-5 mt-5">
+<!-- <div class="container-fluid bg-light-blue py-5 mt-5">
     <div class="container">
         <h4 class="text-black">Before you check out</h4>
         <div class="cate-1 owl-carousel owl-theme">
@@ -73,7 +76,7 @@
                 <div class="card border-secondary">
                     <div class="card-body">
                         <div class="text-center mb-3">
-                            <img src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/{{ $related->image1 }}" class="w-75" alt="">
+                            <img src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/{{ $related->image1 }}" style="width:100%; height:250px;" alt="">
                         </div>
                         <h5>{{ $related->name }}</h5>
                         <p class="text-secondary p-0 m-0">{{ $related->describe }}</p>
@@ -89,7 +92,7 @@
         </div>
 
     </div>
-</div>
+</div> -->
 @endsection
 @section('script')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"

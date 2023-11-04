@@ -380,6 +380,46 @@ class HomeController extends Controller
     {
       return view('shop');
     }
+
+
+    public function editprofile()
+    {
+      $email=Session::get('username');
+      $user=DB::table('tbl_user')->where("email",$email)->first();
+      if(!$user)
+      {
+        return redirect()->back()->with('errors', 'Email not exists!');
+      }
+      else
+      {
+      return view('editprofile',['user'=>$user]);
+      }
+    }
+   /* public function myaddress()
+    {
+      return view('myaddress');
+    }*/
+
+
+    public function editaddress()
+    {
+      return view('editaddress');
+    } 
+
+
+    public function profilecontact()
+    {
+      $email=Session::get('username');
+      $user=DB::table('tbl_user')->where("email",$email)->first();
+      if(!$user)
+      {
+        return redirect()->back()->with('errors', 'Email not exists!');
+      }
+      else
+      {
+      return view('profilecontact',['user'=>$user]);
+      }
+    }
 // added on 30-10-2023 by rahul 
     public function personalization()
     {
@@ -529,4 +569,19 @@ class HomeController extends Controller
           }
       }
     }
+
+    public function myaddress()
+    {
+      $email=Session::get('username');
+      $user=DB::table('tbl_user')->where("email",$email)->first();
+      if(!$user)
+      {
+        return redirect()->back()->with('errors', 'Email not exists!');
+      }
+      else
+      {
+      return view('myaddress',['user'=>$user]);
+      }
+    }
+
 }

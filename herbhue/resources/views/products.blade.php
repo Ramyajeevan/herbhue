@@ -5,14 +5,22 @@
 @section('css')
 
 @endsection
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css"
+        integrity="sha512-UTNP5BXLIptsaj5WdKFrkFov94lDx+eBvbKyoe1YAfjeRPC+gT5kyZ10kOHCfNZqEui1sxmqvodNUx3KbuYI/A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+        integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
 @section('content')
 <div class="container-fluid mb-5">
     <img src="{{asset('img/shop-banner.png')}}" class="w-100" height="300px" alt="">
     <div class="container my-5">
-        <div class="row">
-            @foreach($products as $prod)
-            <div class="col-md-3">
-                <div class="card border-secondary shadow">
+    <div class="cate1 owl-carousel owl-theme">
+    @foreach($products as $prod)
+            <div class="item">
+            <div class="card border-secondary shadow">
                     <div class="card-body">
                         <div class="text-center mb-3">
                             @if($prod->image1!="")
@@ -34,7 +42,8 @@
                 </div>
             </div>
             @endforeach
-        </div>
+        </div>  
+        
     </div>
 
     <div class="container">
@@ -57,7 +66,36 @@
         </div>
     </div>
 </div>
+
+
 @endsection
 @section('script')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+        integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+        <script async="" defer="" src="https://buttons.github.io/buttons.js"></script>
+    <script>
+        $(".cate1").owlCarousel({
+            loop: true,
+            margin: 20,
+            nav: true,
+            autoplay: false,
+            dots: false,
+            responsive: {
+                0: {
+                    items: 1,
+                    nav: true,
+                },
+                600: {
+                    items: 1,
+                    nav: true,
+                },
+                1000: {
+                    items: 3,
+                    nav: true,
+                },
+            },
+        });
+</script>
 @endsection

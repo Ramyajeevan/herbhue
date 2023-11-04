@@ -5,7 +5,7 @@
 @section('css')
 <style>
         .form-control {
-    background-color: #f4f4f4;
+    background-color: white;
     border: none;
     height: 40px;
 }
@@ -66,58 +66,56 @@
                     <div class="card rounded-0 p-3 mb-3">
                         <div class="card-body">
                             <div class="row">
-                                <div class="col-md-6 mb-3">
+                                <div class="col-md-6 mb-2">
                                     <div class="form-group">
                                         <input type="text" placeholder="First Name " class="form-control rounded-0 " id="firstname" name="firstname">
                                     </div>
                                 </div>
-                                <div class="col-md-6 mb-3">
+                                <div class="col-md-6 mb-2">
                                     <div class="form-group">
                                         <input type="text" placeholder="Last Name " class="form-control rounded-0 " id="lastname" name="lastname">
                                     </div>
                                 </div>
-                                <div class="col-md-12 mb-3">
+                                <div class="col-md-12 mb-2">
                                     <small>COUNTRY</small>
                                     <p class="py-0 m-0">United Kingdom (UK)</p>
                                 </div>
-                                <div class="col-md-12 mb-3">
+                                <div class="col-md-12 mb-2">
                                     <div class="form-group">
                                         <input type="text" placeholder="HOUSE NUMBER AND STREET NAME" class="form-control rounded-0 "  id="street_address" name="street_address">
                                     </div>
                                 </div>
-                                <div class="col-md-12 mb-3">
+                                <div class="col-md-12 mb-2">
                                     <div class="form-group">
                                         <input type="text" placeholder="APARTMENT, SUITE" class="form-control rounded-0 " id="street_address2" name="street_address2">
                                     </div>
                                 </div>
-                                <div class="col-md-4 mb-3">
+                                <div class="col-md-4 mb-2">
                                     <div class="form-group">
                                         <input type="text" placeholder="TOWN / CITY" class="form-control rounded-0 " id="city" name="city">
                                     </div>
                                 </div>
-                                <div class="col-md-4 mb-3">
+                                <div class="col-md-4 mb-2">
                                     <div class="form-group">
                                         <input type="text" placeholder="POSTCODE" class="form-control rounded-0 "  id="pincode" name="pincode">
                                     </div>
                                 </div>
-                                <div class="col-md-4 mb-3">
+                                <div class="col-md-4 mb-2">
                                     <div class="form-group">
                                         <input type="text" placeholder="COUNTRY " class="form-control rounded-0 ">
                                     </div>
                                 </div>
-                                <div class="col-md-12 mb-3">
+                                <div class="col-md-12 mb-2">
                                     <div class="form-group">
                                         <input type="text" placeholder="COMPANY (OPTIONAL)" class="form-control rounded-0 " id="company_name" name="company_name">
                                     </div>
                                 </div>
-                                <div class="col-md-12 mb-3">
+                                <div class="col-md-12 mb-2">
                                     <div class="form-group">
                                         <input type="text" placeholder="PHONE" class="form-control rounded-0 " id="phone" name="phone">
                                     </div>
                                 </div>
-                                <div class="col-md-12">
-                                    <textarea class="form-control" placeholder="ORDER NOTES (OPTIONAL)" id="notes" name="notes"></textarea>
-                                </div>
+                               
                             </div>
                         </div>
                     </div>
@@ -132,64 +130,70 @@
                                 </label>
                             </div>
                             <div class="row mt-4" id="billingdetailform">
-                                <div class="col-md-6 mb-3">
+                                <div class="col-md-6 mb-2">
                                     <div class="form-group">
                                         <input type="text" placeholder="First Name " class="form-control rounded-0 "  name="billing_firstname" id="billing_firstname">  
                                     </div>
                                 </div>
-                                <div class="col-md-6 mb-3">
+                                <div class="col-md-6 mb-2">
                                     <div class="form-group">
                                         <input type="text" placeholder="Last Name "  name="billing_lastname" id="billing_lastname" class="form-control rounded-0 ">
                                     </div>
                                 </div>
-                                <div class="col-md-12 mb-3">
+                                <div class="col-md-12 mb-2">
                                     <small>COUNTRY</small>
-                                    <p class="py-0 m-0">United Kingdom (UK)</p>
+                                    <p class="py-0 m-0"><img src="{{asset('img/UK_flag.png')}}" width="20px" alt=""> United Kingdom (UK)</p>
                                 </div>
                                 <div class="col-md-12 mb-3">
                                     <div class="form-group">
                                         <input type="text" placeholder="HOUSE NUMBER AND STREET NAME" class="form-control rounded-0 " name="billing_street_address" id="billing_street_address">
                                     </div>
                                 </div>
-                                <div class="col-md-12 mb-3">
+                                <div class="col-md-12 mb-2">
                                     <div class="form-group">
                                         <input type="text" placeholder="APARTMENT, SUITE" class="form-control rounded-0 " name="billing_street_address2" id="billing_street_address2">
                                     </div>
                                 </div>
-                                <div class="col-md-4 mb-3">
+                                <div class="col-md-4 mb-2">
                                     <div class="form-group">
                                         <input type="text" placeholder="TOWN / CITY" class="form-control rounded-0 " name="billing_city" id="billing_city">
                                     </div>
                                 </div>
-                                <div class="col-md-4 mb-3">
+                                <div class="col-md-4 mb-2">
                                     <div class="form-group">
                                         <input type="text" placeholder="POSTCODE" class="form-control rounded-0 " name="billing_pincode" id="billing_pincode">
                                     </div>
                                 </div>
-                                <div class="col-md-4 mb-3">
+                                <div class="col-md-4 mb-2">
                                     <div class="form-group">
                                         <input type="text" placeholder="COUNTRY " class="form-control rounded-0 ">
                                     </div>
                                 </div>
-                                <div class="col-md-12 mb-3">
+                                <div class="col-md-12 mb-2">
                                     <div class="form-group">
                                         <input type="text" placeholder="COMPANY (OPTIONAL)" class="form-control rounded-0 " name="billing_company" id="billing_company">
                                     </div>
                                 </div>
-                                <div class="col-md-12 mb-3">
+                                <div class="col-md-12 mb-2">
                                     <div class="form-group">
                                         <input type="text" placeholder="PHONE" class="form-control rounded-0 " name="billing_phone" id="billing_phone">
                                     </div>
                                 </div>
-                                <div class="col-md-12">
+                                <!-- <div class="col-md-12">
                                     <textarea class="form-control" placeholder="ORDER NOTES (OPTIONAL)" id="billing_notes" name="billing_notes"></textarea>
-                                </div>
+                                </div> -->
+                                <div class="form-check">
+                                <input class="form-check-input rounded-0" type="checkbox" value="different" name="billing_address" id="savforlater">
+                                <label class="form-check-label" for="savforlater">
+                                Save this information for next time
+                                </label>
+                            </div>
                             </div>
                         </div>
                     </div>
                 
                                                         
-                    <div class="card rounded-0 p-3 mb-3">
+                    <div class="card rounded-0 px-3 mb-3">
                         <div class="card-body">
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="card_type" id="Credit" checked value="card">
@@ -197,27 +201,27 @@
                                 Credit or Debit Card
                                 </label>
                                 
-                                    <img src="{{asset('img/american.svg')}}" width="20px" class="me-1" alt="American">
+                                    <!-- <img src="{{asset('img/american.svg')}}" width="20px" class="me-1" alt="American">
                                     <img src="{{asset('img/discover.svg')}}" width="20px" class="me-1" alt="Discover">
                                 
                                 <img src="{{asset('img/visa.svg')}}" width="20px" class="me-1" alt="Visa">
-                                <img src="{{asset('img/mastercard.svg')}}" width="20px" class="me-1" alt="Mastercard">
+                                <img src="{{asset('img/mastercard.svg')}}" width="20px" class="me-1" alt="Mastercard"> -->
                                 
                             </div>
                             <div class="Credit my-3">
-                                <div class="input-group mb-3">
-                                    <span class="input-group-text rounded-0 border-0" id="basic-addon1"><i class="fa fa-credit-card text-muted"></i></span>
+                                <div class="input-group mb-2">
+                                    <span class="input-group-text rounded-0 " id="basic-addon1"><i class="fa fa-credit-card text-muted"></i></span>
                                     <input type="text" class="form-control" placeholder="Card Number" id="cardnumber" name="cardnumber" aria-describedby="basic-addon1">
                                 </div>
-                                <div class="row mt-3">
-                                    <div class="col-md-4">
-                                        <input type="text" class="form-control" placeholder="MM" id="expire_month" name="expire_month" aria-describedby="basic-addon1">
+                                <div class="row mt-2">
+                                    <div class="col-4">
+                                        <input type="text" class="form-control border" placeholder="MM" id="expire_month" name="expire_month" aria-describedby="basic-addon1">
                                     </div>
-                                    <div class="col-md-4">
-                                        <input type="text" class="form-control" placeholder="YY" id="expire_year" name="expire_year" aria-describedby="basic-addon1">
+                                    <div class="col-4">
+                                        <input type="text" class="form-control border" placeholder="YY" id="expire_year" name="expire_year" aria-describedby="basic-addon1">
                                     </div>
-                                    <div class="col-md-4">
-                                        <input type="text" class="form-control" placeholder="CVV" id="cvv" name="cvv" aria-describedby="basic-addon1"> 
+                                    <div class="col-4">
+                                        <input type="text" class="form-control border" placeholder="CVV" id="cvv" name="cvv" aria-describedby="basic-addon1"> 
                                     </div>
                                 </div>
                             </div>
@@ -241,14 +245,14 @@
                 </form>
             </div>
             <div class="col-md-6">
-                <div class="card border-0  rounded-0 p-4 order-summary">
-                    <p class="fs-5 ps-3 mt-1">Order Summary</p>
+            <div class="card border-0  rounded-0 p-4 order-summary">
+                    <p class="fs-5  mt-1">Your Order</p>
                     <p class="d-flex justify-content-between px-0 pb-2 mb-1">
-                        <strong>Cart value</strong> 
+                        <strong class="text-muted">Cart value</strong> 
                         <span class="text-muted">&pound; {{ $cart_total }}</span>
                     </p>    
                     <p class="d-flex justify-content-between border-bottom px-0 pb-2 mb-1">
-                        <strong>Delivery Charges</strong> 
+                        <strong class="text-muted">Delivery Charges</strong> 
                         <span class="text-success">free</span>
                     </p>    
                     @php $coupon_amount=0; @endphp
@@ -256,25 +260,37 @@
                     @php $coupon_amount=Session::get('coupon_amount'); @endphp
                     
                     <p class="d-flex justify-content-between border-bottom px-0 pb-2 mb-1">
-                        <strong>Coupon Charges</strong> 
+                        <strong class="text-muted">Coupon Charges</strong> 
                         <span  class="text-muted">&pound; {{ $coupon_amount }}</span>
                     </p>
                     @endif
                     <p class="d-flex justify-content-between border-bottom px-0 pb-2 mb-1">
                         <strong>Order Total</strong> 
-                        <span class="text-success">&pound; {{ $cart_total-$coupon_amount }}</span>
+                        <span class="text-black">&pound; {{ $cart_total-$coupon_amount }}</span>
                     </p> 
 
                     <p class="d-flex justify-content-between px-0 pb-2 mb-1">
                         <strong>Amount To be paid</strong> 
-                        <span class="text-success">&pound; {{ $cart_total-$coupon_amount }}</span>
+                        <span class="text-black">&pound; {{ $cart_total-$coupon_amount }}</span>
                     </p> 
 
-                    <div class="card-footer bg-white border-0">
+                    <div class="card-footer bg-transparent border-0">
                            
-                   
+                    <div class="card shadow mt-4 pt-1 pb-0">
+                                <div class="card-body d-flex justify-content-between" data-bs-toggle="modal" data-bs-target="#" style="cursor:pointer;">
+
+                                    <h4><img src="{{ asset('img/coupan-black.png') }}" alt="" style="width: 35px;" class="me-2">Apply Coupon</h4>
+
+                                    <p class="pb-0 mb-0"><img src="{{ asset('img/Down Arrow.svg') }}" style="width: 15px;" alt=""></p>
+                                </div>
+                            </div>
                     </div>
+                    
                 </div>
+
+
+                
+            </div>
             </div>
         </div>
     </div>

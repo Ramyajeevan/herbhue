@@ -89,9 +89,9 @@
 <div class="container-fluid">
     <div class="container mt-5">
         <div class="row mb-4">
-            <div class="col-md-6">
+            <div class="col-md-6 mb-4">
                 <div class="row">
-                    <div class="col-3"> 
+                    <div class="col-md-3 web-view"> 
                         <div id="thumbs" class=" text-center">
                             @if(!empty($products->image1))
                             <img src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/{{ $products->image1 }}" alt="1st image  " class="mb-2" />
@@ -110,7 +110,7 @@
                             @endif
                         </div>
                     </div>
-                    <div class="col-9">
+                    <div class="col-md-9 mb-3">
                         <div class="productImage text-center">
                         @if($products->image1!="")
                         <img id="largeImage" class="w-100" src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/{{ $products->image1 }}" alt="Default Image">
@@ -119,6 +119,25 @@
                         @endif
                         </div>
                         <button type="button" class="btn bg-black text-white w-100 rounded-0 mt-3 btn-lg" onclick="addtocart();">Add to cart</button>
+                    </div>
+                    <div class="col-md-3 mob-view"> 
+                        <div id="thumbs" class=" text-center">
+                            @if(!empty($products->image1))
+                            <img src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/{{ $products->image1 }}" alt="1st image  " class="mb-2" />
+                            @endif
+                            @if(!empty($products->image2))
+                            <img src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/{{ $products->image2 }}" alt="2nd image  "class="mb-2" />
+                            @endif
+                            @if(!empty($products->image3))
+                            <img src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/{{ $products->image3 }}" alt="3rd image  " class="mb-2" />
+                            @endif
+                            @if(!empty($products->image4))
+                            <img src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/{{ $products->image4 }}" alt="4th image  " class="mb-2" />
+                            @endif
+                            @if(!empty($products->image5))
+                            <img src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/{{ $products->image5 }}" alt="5th image  "  class="mb-2" />
+                            @endif
+                        </div>
                     </div>
                 </div>
             </div>
@@ -289,7 +308,7 @@
                             </div>
                             <div class="card-body">
                                 <div class="row">
-                                    <div class="col-4 pt-4">
+                                    <div class="col-md-4 pt-4">
                                         <h3 class="text-center mb-0 pb-0">{{ $stars }}</h3>
                                         <p class="py-0 my-0 fs-5 text-center">
                                             <?php
@@ -303,7 +322,7 @@
                                         </p>
                                         <p class="py-1 my-1 text-center">Total Ratings : {{ $totalusers }}</p>
                                     </div>
-                                    <div class="col-8">
+                                    <div class="col-md-8">
                                         <div class="skill-wrapper d-flex justify-content-center mb-2">
                                             <span class="float-left me-3 text-nowrap h4">5 <i class="fa fa-star text-secondary"></i></span>
                                             <div class="progress me-3">
@@ -355,13 +374,15 @@
                         </div>
                     </div>
                     <div class="col-md-5 pt-5 text-center"> 
-                    <button type="button" class="btn btn-outline-dark btn-lg" style="position: absolute;top: 128px;right: 170px;" @if(!empty(Session::get('username'))) onclick="showratingform();" @else onclick="showalert();" @endif>Write a Review</button>
+                    <button type="button" class="btn btn-outline-dark btn-lg web-view" style="position: absolute;top: 128px;right: 170px;" @if(!empty(Session::get('username'))) onclick="showratingform();" @else onclick="showalert();" @endif>Write a Review</button>
+
+                    <button type="button" class="btn btn-outline-dark btn-lg mob-view"  @if(!empty(Session::get('username'))) onclick="showratingform();" @else onclick="showalert();" @endif>Write a Review</button>
                     </div>
                 </div>
             </div>
         </div>            
 
-        <div id="addrating" class="d-none">
+        <div id="addrating" class="d-none my-5">
             <form method="post" action="{{ route('addrating') }}">
                 @csrf
                 <input type="hidden" name="product_id" id="product_id" value="{{  $products->id }}">
@@ -380,7 +401,7 @@
             </div>
             <br><br>
             <textarea class="form-control w-25" placeholder="Your Message" name="review" id="review" required></textarea>
-            <button type="submit" class="btn btn-primary mt-3">Add Review</button>
+            <button type="submit" class="btn btn-dark text-white mt-3">Add Review</button>
             </form>
         </div>
  

@@ -34,10 +34,12 @@
                                 <div class="col-6">
                                     <h6 class="fw-bold">{{ $cart_product->product_name }}</h6>
                                     <p class="text-secondary p-0 m-0">{{ $cart_product->describe }}</p>
-                                    <span class="text-secondary">M.R.P: <span
+                                    <span class="text-secondary text-nowrap">M.R.P: <span
                                             class="text-decoration-line-through text-secondary">&pound; {{ $cart_product->mrp_price }}</span><span
                                             class="fw-bold text-black ms-3">&pound; {{ $cart_product->price }}</span></span>
-
+                                            <p class="text-black  fw-bold pb-1 mb-1 mob-view">
+                                        <a href="javascript:void(0);" class="text-dark" @if(!empty(Session::get('username'))) onclick="addtowishlist({{ $cart_product->product_id }});" @else onclick="showalert();" @endif><i class="fa fa-heart"></i> Save for Later</a>
+                                    </p>
 
                                 </div>
                                 <div class="col-3">
@@ -46,8 +48,8 @@
                                         <a href="javascript:void(0);" onclick="deletecart({{ $cart_product->id }});"><img src="{{ asset('img/delete_FILL0_wght400_GRAD0_opsz24.svg') }}" alt="" style="width: 20px;"></a>
                                     </p>
                                
-                                    <p class="text-black text-end fw-bold pb-1 mb-1">
-                                        <a href="javascript:void(0);" @if(!empty(Session::get('username'))) onclick="addtowishlist({{ $cart_product->product_id }});" @else onclick="showalert();" @endif><i class="fa fa-heart"></i> Save for Later</a>
+                                    <p class="text-black text-end fw-bold pb-1 mb-1 web-view">
+                                        <a href="javascript:void(0);" class="text-dark" @if(!empty(Session::get('username'))) onclick="addtowishlist({{ $cart_product->product_id }});" @else onclick="showalert();" @endif><i class="fa fa-heart"></i> Save for Later</a>
                                     </p>
                                     <div class="d-flex justify-content-end">
                                         <a class="minus btn btn-dark btn-sm shadow"  style="height: 35px;" onclick="decrementvalue({{ $cart_product->option_id }})" href="javascript:void(0);">-</a>
@@ -93,9 +95,9 @@
                         <span class="text-success">&pound; {{ $cart_total-$coupon_amount }}</span>
                     </p> 
 
-                    <div class="card-footer bg-transparent border-0">
+                    <div class="card-footer bg-transparent border-0 p-0">
                            
-                    <div class="card shadow mt-4 pt-1 pb-0">
+                    <div class="card shadow my-4 pt-1 pb-0">
                                 <div class="card-body d-flex justify-content-between" data-bs-toggle="modal" data-bs-target="#exampleModal" style="cursor:pointer;">
 
                                     <h4><img src="{{ asset('img/Group 70.svg') }}" alt="" style="width: 35px;" class="me-2">Apply Coupon</h4>

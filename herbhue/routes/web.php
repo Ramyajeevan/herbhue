@@ -89,4 +89,10 @@ Route::get('/personalization',[HomeController::class, 'personalization'])->name(
 Route::get('/shop',[HomeController::class, 'shop'])->name('shop');
 
 Route::get('/cart2',[HomeController::class, 'cart2'])->name('cart2');
+
+Route::get('/editprofile',[HomeController::class, 'editprofile'])->name('editprofile');
+Route::get('/myaddress',[HomeController::class, 'myaddress'])->name('myaddress');
+Route::get('/editaddress',[HomeController::class, 'editaddress'])->name('editaddress');
+Route::get('/profilecontact',[HomeController::class, 'profilecontact'])->name('profilecontact'); 
+
 ?>

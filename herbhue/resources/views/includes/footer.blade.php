@@ -11,7 +11,7 @@
         <h4 class="text-black fw-bold mb-1 pb-1 text-center">Sign up and save</h4>
         <p class="text-black py-0 my-0 text-center">Sign up for email updates on products offers and discounts</p>
        <div class="d-flex justify-content-center mt-4">
-       <div class="input-group mb-3 w-50 ">
+       <div class="input-group mb-3  subscribe  ">
         <input type="email" id="subscribeEmail" name="subscribeEmail" class="rounded-start-pill shadow form-control   form-control-lg" aria-label="Recipient's username" aria-describedby="button-addon2" placeholder="Enter your email">
         <button class="btn btn-secondary shadow rounded-end-circle  px-5 text-white" type="button" id="button-addon2" onclick="subscribe();">Sign Up</button>
         </div>
@@ -59,7 +59,7 @@
                     <img src="{{ asset('img/Address Icon.svg') }}" width="18px" class="me-2"alt="address">Lorem Ipsum is simply 
                     <br>dummy text of the prin.
                 </p>
-                <ul class="ul">
+                <ul class="ul d-flex justify-conter-center">
                     <li class="social-icon me-2"><img src="{{ asset('img/Facebook.png') }}" alt="social icon"></li>
                     <li class="social-icon me-2"><img src="{{ asset('img/Insta.png') }}" alt="social icon"></li>
                     <li class="social-icon me-2"><img src="{{ asset('img/Pinterest.png') }}" alt="social icon"></li>
@@ -70,7 +70,7 @@
             <!-- Grid column -->
 
             <!-- Grid column -->
-            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+            <div class="col-md-2 col-lg-2 col-xl-2 col-6 mx-auto mb-4">
                 <!-- Links -->
                 <h6 class="text-black fw-bold mb-4">
                     Information
@@ -95,7 +95,7 @@
             <!-- Grid column -->
 
             <!-- Grid column -->
-            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+            <div class="col-md-3 col-lg-2 col-xl-2 col-6 mx-auto mb-4">
                 <!-- Links -->
                 <h6 class="text-black fw-bold mb-4">
                     Accounts
@@ -155,8 +155,8 @@
                         <img src="{{ asset('img/reliable.png') }}" alt="reliable" width="80px">
                     </div>
                     <div class="col-10 ps-3">
-                        <h6 class="text-black">Reliable</h6>
-                        <p class="text-secondary small"> All products displayed on Gem Solution are procured from
+                        <h6 class="text-black text-start ps-2 ps-lg-0">Reliable</h6>
+                        <p class="text-secondary small text-start ps-2 ps-lg-0"> All products displayed on Gem Solution are procured from
                             verified and licensed pharmacies. All labs listed on the platform are accredited</p>
 
                     </div>
@@ -168,8 +168,8 @@
                         <img src="{{ asset('img/secure.png') }}" alt="Secure"   width="60px">
                     </div>
                     <div class="col-10 ps-3">
-                        <h6 class="text-black">Secure</h6>
-                        <p class="text-secondary small"> Gem Solution uses Secure Sockets Layer (SSL) 128-bit encryption and is Payment Card Industry Data Security Standard (PCI DSS) compliant</p>
+                        <h6 class="text-black text-start ps-2 ps-lg-0">Secure</h6>
+                        <p class="text-secondary small text-start ps-2 ps-lg-0"> Gem Solution uses Secure Sockets Layer (SSL) 128-bit encryption and is Payment Card Industry Data Security Standard (PCI DSS) compliant</p>
 
                     </div>
                 </div>
@@ -181,8 +181,8 @@
                         <img src="{{ asset('img/affordable.png') }}" alt="Affordable"   width="80px">
                     </div>
                     <div class="col-10 ps-3">
-                        <h6 class="text-black">Affordable</h6>
-                        <p class="text-secondary small">Find affordable medicine substitutes, save up to 50% on health products, up to 80% off on lab tests and free doctor consultations.</p>
+                        <h6 class="text-black text-start ps-2 ps-lg-0">Affordable</h6>
+                        <p class="text-secondary small text-start ps-2 ps-lg-0">Find affordable medicine substitutes, save up to 50% on health products, up to 80% off on lab tests and free doctor consultations.</p>
 
                     </div>
                 </div>

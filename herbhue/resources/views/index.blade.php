@@ -56,13 +56,16 @@
         <div class="row">
             @foreach($product as $prod)
             <div class="col-md-3 mb-3">
-                <div class="card border-secondary">
+
+
+            
+                <div class="card border-secondary shadow">
                     <div class="card-body">
                         <div class="text-center mb-3">
                             @if($prod->image1!="")
-                            <img src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/{{ $prod->image1 }}"style="width:100%; height:230px;" alt="">
+                            <img src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/{{ $prod->image1 }}"style="width:85%; height:186px;" alt="">
                             @else
-                            <img src="{{ asset('img/no_image.svg') }}" style="width:100%; height:230px;" alt="">
+                            <img src="{{ asset('img/no_image.svg') }}" style="width:85%; height:186px;" alt="">
                             @endif
                         </div>
                         <p class="small text-center text-secondary py-0 my-0">220 gm</p>
@@ -120,7 +123,33 @@
         </div>
     </div>
 </div>
+<div class="container-fluid my-5">
+    <div class="container">
+    <div class="cate-10 owl-carousel owl-theme">
+        
+            <div class="item">
+                 <div class="card bg-light border-0 py-3">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-7">
+                            <p class="py-0 my-0">Immunity Booster</p>
+                            <h4 class="py-0 my-0">Jeevan Sanjeevani</h4>
+                            <p class="small py-0 my-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 
+                            
+                            <button type="button" class="btn mt-4 btn-dark rounded-pill">Shop Now</button>
+                            </div>
+                            <div class="col-md-5">
+                                <img src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/1697012848-1.png" class="w-100" alt="">
+                            </div>
+                        </div>
+                    </div>
+                 </div>
+            </div>
+        
+        </div>
+    </div>
+</div>
 
 <div class="container-fluid bg-white py-2 my-5">
     <div class="container mt-3 mb-4">
@@ -162,7 +191,7 @@
 
 <div class="container-fluid my-5">
     <div class="container">
-        <h5 class=" text-black mb-4">Trending Now</h5>
+        <h2 class=" text-black mb-4">Trending Now</h2>
         <div class="cate-3 owl-carousel owl-theme">
             @foreach($wellproduct as $wellprod)
             <div class="item">
@@ -327,7 +356,7 @@
             dots: false,
             responsive: {
                 0: {
-                    items: 1,
+                    items: 2,
                     nav: true,
                 },
                 600: {
@@ -335,7 +364,7 @@
                     nav: true,
                 },
                 1000: {
-                    items: 5,
+                    items: 6,
                     nav: true,
                 },
             },
@@ -347,7 +376,7 @@
             loop: true,
             margin: 20,
             nav: true,
-            autoplay: false,
+            autoplay: true,
             dots: false,
             responsive: {
                 0: {
@@ -365,7 +394,27 @@
             },
         });
 
-
+        $(".cate-10").owlCarousel({
+            loop: true,
+            margin: 20,
+            nav: false,
+            autoplay: true,
+            dots: false,
+            responsive: {
+                0: {
+                    items: 1,
+                    nav: true,
+                },
+                600: {
+                    items: 1,
+                    nav: true,
+                },
+                1000: {
+                    items: 2,
+                    nav: true,
+                },
+            },
+        });
     </script>
     <script>
 
