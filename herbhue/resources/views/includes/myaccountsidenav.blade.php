@@ -14,7 +14,7 @@
                 <div class="card shadow border-3 border-secondary">
                     <ul class="list-group list-group-flush">
                     <li class="list-group-item py-3">
-                            <a href="{{ route('editprofile') }}" class="text-black">
+                            <a href="{{ route('myaccount') }}" class="text-black">
                             <div class="row">
                                 <div class="col-3">
                                     <img src="{{asset('img/edit.svg')}}" width="30px" alt="">
