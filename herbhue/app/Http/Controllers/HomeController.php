@@ -176,7 +176,7 @@ class HomeController extends Controller
       $user_id=$user->id;
 
 
-	    DB::table('tbl_user')->where("email",$email)->update(["name"=>$request->name,"password"=>$request->password]);
+	    DB::table('tbl_user')->where("email",$email)->update(["name"=>$request->name,"password"=>$request->password,"mobile"=>$request->mobile]);
       if($imageName!="")
       DB::table('tbl_user')->where("email",$email)->update(["photo"=>$imageName]);
        return redirect()->route('myaccount');

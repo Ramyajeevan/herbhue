@@ -6,7 +6,7 @@
 
 @endsection
 @section('content')
-<div class="container-fluid">
+<div class="container-fluid my-5">
     <div class="container">
         <div class="row mt-3">
             <div class="col-md-4">
@@ -22,27 +22,28 @@
             <div class="col-3">
                 <!--<img src="{{asset('img/editimg.png')}}" width="100px" height="100px" alt="">-->
                 @if($user->photo=="")
-                <img src="{{asset('img/editimg.png')}}" width="100px" height="100px" alt="">
+                <img src="{{asset('img/editing.png')}}" width="100px" height="100px" style="clip-path:circle();" alt="">
                 @else
-                <img src="{{asset('images/')}}/{{ $user->photo }}" width="100px" height="100px" alt="">
+                <img src="{{asset('images/')}}/{{ $user->photo }}" width="100px" height="100px" style="clip-path:circle();" alt="">
                 @endif
                 <img src="{{asset('img/upload.png')}}" alt="" style="position: absolute; left: 78px;  width: 35px;  top: 97px;  z-index: 9;">
             </div>
             <div class="col-9 pt-4">
-                <input type="file" name="photo" id="photo" style="">
-                <button type="button" class="btn btn-dark">Change Profile Photo</button>
+            <input type="file" name="photo" id="photo" style="display: none;">
+            <button type="button" class="btn btn-dark" onclick="document.getElementById('photo').click()">Change Profile Photo</button>
+
             </div>
         </div>
 
 
-        <div class="form-group mb-3">
+        <div class="form-group mb-4">
             <label for="name" class="fw-bold">Full Name</label>
 
             <input type="text" placeholder="Full Name " value="{{ $user->name }}" class="form-control rounded-0"  id="name" name="name" placeholder="Name" required>
 
         </div>
 
-        <div class="form-group mb-3">
+        <div class="form-group mb-4">
             <label for="email" class="fw-bold">Email</label>
 
             <input type="email" placeholder="abc@gmail.com " id="email" name="email" value="{{ $user->email }}" disabled class="form-control rounded-0 ">
@@ -50,15 +51,21 @@
         </div>
 
 
-        <div class="form-group mb-3">
-            <label for="password">Password</label>
+        <div class="form-group mb-4">
+            <label for="password" class="fw-bold">Password</label>
 
             <input type="password" placeholder="abc@1234#"  id="password" name="password" value="{{ $user->password }}" required class="form-control rounded-0 ">
-           <!-- <label for="exampleInputEmail1">Minimum 6 characters required</label>-->
+           <label for="exampleInputEmail1">Minimum 6 characters required</label>
+        </div>
+        <label for="password" class="fw-bold">Mobile Number</label>
+        <div class="input-group mb-4">
+        <span class="input-group-text bg-white">
+            <img src="{{ asset('img/UK_flag.png') }}" width="20px" alt="">+44</span>
+            <input type="text" class="form-control" placeholder="1111111111" id="mobile" name="mobile" value="{{ $user->mobile }}" onkeypress="return onlyNumberKey(event);" >
         </div>
 
-        <div class="form-group mb-3 text-center">
-              <button type="submit" class="btn btn-dark">Update Profile</button>
+        <div class="form-group mb-4">
+              <button type="submit" class="btn btn-dark px-3">Save</button>
            
         </div>
         </form>
@@ -71,4 +78,18 @@
 
 </div>
  
+@endsection
+@section('script')
+<script>
+        function onlyNumberKey(evt) {
+            // Only ASCII character in that range allowed
+            var keyCode = evt.which ? evt.which : evt.keyCode
+
+                if (!(keyCode >= 48 && keyCode <= 57)) {
+                //alert("Only numbers are allowed!");
+                return false;
+            }
+            
+        }
+    </script>
 @endsection
