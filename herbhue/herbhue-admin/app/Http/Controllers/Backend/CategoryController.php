@@ -70,7 +70,8 @@ class CategoryController extends Controller
         $image->move($destinationPath,$imagename);
          $post = [
             'name' => $request->name,
-            'image'=>$imagename
+            'image'=>$imagename,
+            'description' => $request->description
         ];
         //dd($post);
         $save = $this->categoryRepository->saveCategory($post);
@@ -119,8 +120,21 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-          $post = [
-            'name' => $request->name
+
+        
+        $imagename='';
+        if($request->file('image')!="")
+        {
+        $image = $request->file('image');
+        $imagename = time().'-1.'.$image->extension();
+
+        $destinationPath = public_path('images');
+        $image->move($destinationPath,$imagename);
+        }
+        $post = [
+            'name' => $request->name,
+            'image'=>$imagename,
+            'description' => $request->description
         ];
         
         $updateCategory = $this->categoryRepository->updateCategory($post,$id);

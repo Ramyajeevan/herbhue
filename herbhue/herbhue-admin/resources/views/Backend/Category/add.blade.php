@@ -81,6 +81,14 @@
                 <input class="form-control" type="text" id="name" name="name" placeholder="Enter Category name" required/>
               </div>
             </div>
+
+            <div class="mb-3 row">
+              <label for="name" class="col-md-2 col-form-label">Category Description</label>
+              <div class="col-md-10">
+                <textarea class="form-control"  id="description" name="description" placeholder="Enter Category description"></textarea>
+              </div>
+            </div>
+
             <div class="mb-3 row">
               <label class="col-md-2 col-form-label" for="image">Category Image</label>
               <div class="col-md-10">

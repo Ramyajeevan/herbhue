@@ -32,6 +32,7 @@ class CategoryRepository extends BaseRepository
         $category = new Category;
         $category->name = $post['name'];
         $category->image = $post['image'];
+        $category->description = $post['description'];
         $category->save();
        return true;
         }
@@ -55,6 +56,9 @@ class CategoryRepository extends BaseRepository
             if(isset($category))
             {
                 $category->name = $post['name'];
+                $category->description = $post['description'];
+                if($post['image']!="")
+                $category->image = $post['image'];
                 $category->save();
                 return true;
             }

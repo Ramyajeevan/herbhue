@@ -178,8 +178,7 @@
                             <img src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/{{ $cat->image }}" class=" card-img-top mb-3" width="150" alt="">
                             <div class="top-desc">
                                 <h4>{{ $cat->name }}</h4>
-                                <!-- maam pls make the description dynamic  -->
-                                <!-- <p class="text-secondary">For your skin, gut and muscle health.</p> -->
+                                 <p class="text-secondary">{{ $cat->description }}<</p>
                             </div>
                             <div class="desc-bottom">
                             <a href="{{ route('products')}}?category_id={{ $cat->id}}" class="btn btn-secondary text-black rounded-pill ">LEARN MORE</a>
