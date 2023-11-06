@@ -68,7 +68,7 @@
                             <img src="{{ asset('img/no_image.svg') }}" style="width:85%; height:186px;" alt="">
                             @endif
                         </div>
-                        <p class="small text-center text-secondary py-0 my-0">220 gm</p>
+                        <p class="small text-center text-secondary py-0 my-0">{{ $prod->product_options->quantity }} {{ $prod->product_options->quantitytype }}</p>
                         <div class="d-flex justify-content-center">
                           <h5 class="text-truncate text-center" style="max-width: 265px;">{{ $prod->name }}</h5>   
                         </div>
@@ -86,7 +86,7 @@
             </div>
             @endforeach
         </div> 
-        <div class="text-center">
+        <div class="text-center my-3">
           <button type="button" class="btn btn-outline-dark btn-lg ">View More</button>
             </div>
     </div>         
@@ -124,26 +124,25 @@
     </div>
 </div>
 <div class="container-fluid my-5">
-    <div class="container">
-        <div class="cate-10 owl-carousel owl-theme">
+<div class="cate-10 owl-carousel owl-theme">
         @foreach($product as $prod)
             <div class="item">
-                 <div class="card bg-light border-0 py-3">
+                 <div class="card  border-0 py-3" style="background:#E7EEE4;">
                     <div class="card-body">
                         <div class="row">
                             <div class="col-7">
                             <p class="py-0 my-0">{{ $prod->category_name }}</p>
                             <h4 class="py-0 my-0">{{ $prod->name }}</h4>
-                            <p class="small py-0 my-0">{!! $prod->description !!}</p>
+                            <p class="small py-0 my-0">{!! $prod->description !!}</p> <br>
 
-                            
+                            <span class="badge border  rounded-1">MRP:  &pound; {{ $prod->product_options->mrp_price }}</span>
                             <a href="{{ route('productdetail', $prod->id) }}" class="btn mt-4 btn-dark rounded-pill">Shop Now</a>
                             </div>
                             <div class="col-md-5">
                             @if($prod->image1!="")
-                            <img src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/{{ $prod->image1 }}" class="w-100" alt="">
+                            <img src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/{{ $prod->image1 }}" style="width:200px; height:200px;" alt="">
                             @else
-                            <img src="{{ asset('img/no_image.svg') }}" class="w-100" alt="">
+                            <img src="{{ asset('img/no_image.svg') }}" style="width:200px; height:200px;" alt="">
                             @endif
                              </div>
                         </div>
@@ -152,7 +151,6 @@
             </div>
         @endforeach
         </div>
-    </div>
 </div>
 
 <div class="container-fluid bg-white py-2 my-5">
@@ -169,15 +167,18 @@
             @endforeach
         </div>
     </div>
-    <div class="container mt-5">
+    
+</div>
+<div class="container-fluid mt-5">
         <div class="row">
              @foreach($category as $cat)
                 @if($loop->index<3)
                      <div class="col-md-4 mb-3">
                         <div class="card border-0">
-                            <img src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/{{ $cat->image }}" class=" card-img-top mb-3" width="150px" alt="">
+                            <img src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/{{ $cat->image }}" class=" card-img-top mb-3" width="150" alt="">
                             <div class="top-desc">
                                 <h4>{{ $cat->name }}</h4>
+                                <!-- maam pls make the description dynamic  -->
                                 <!-- <p class="text-secondary">For your skin, gut and muscle health.</p> -->
                             </div>
                             <div class="desc-bottom">
@@ -190,12 +191,10 @@
           
         </div>
     </div>
-</div>
-
 
 <div class="container-fluid my-5">
     <div class="container">
-        <h2 class=" text-black mb-4">Trending Now</h2>
+        <h2 class=" text-black mb-4">Trending Now</h2> 
         <div class="cate-3 owl-carousel owl-theme">
             @foreach($wellproduct as $wellprod)
             <div class="item">
@@ -203,12 +202,12 @@
                     <div class="card-body">
                         <div class="text-center mb-3">
                             @if($wellprod->image1!="")
-                            <img src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/{{ $wellprod->image1 }}" class="w-100" style="height:300px" alt="">
+                            <img src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/{{ $wellprod->image1 }}" class="w-100" style="height:220px;" alt="">
                             @else
-                            <img src="{{ asset('img/no_image.svg') }}"  class="w-100" alt="" style="height:300px">
+                            <img src="{{ asset('img/no_image.svg') }}"  class="w-100" alt="" style="height:220px;">
                             @endif
                         </div>
-                        <p class="small text-center text-secondary py-0 my-0">220 gm</p>
+                       <p class="small text-center text-secondary py-0 my-0">{{ $wellprod->product_options->quantity }} {{ $wellprod->product_options->quantitytype }}</p>
                         <div class="d-flex justify-content-center">
                             <h5 class="text-truncate text-center" style="max-width: 265px;">{{ $wellprod->name }}</h5> 
                         </div>
@@ -285,21 +284,18 @@
         $(".cate-1").owlCarousel({
             loop: true,
             margin: 20,
-            nav: true,
+            nav: false,
             autoplay: false,
             dots: false,
             responsive: {
                 0: {
-                    items: 1,
-                    nav: true,
+                    items: 1, 
                 },
                 600: {
-                    items: 3,
-                    nav: true,
+                    items: 3, 
                 },
                 1000: {
-                    items: 6,
-                    nav: true,
+                    items: 6, 
                 },
             },
         });
@@ -336,6 +332,7 @@
             nav: true,
             autoplay: false,
             dots: false,
+            navText: ['<img src="{{ asset('img/owl-arrow.png') }}">', '<img src="{{ asset('img/owl-arrow.png') }}">'], // Add your image paths here
             responsive: {
                 0: {
                     items: 1,
@@ -351,6 +348,8 @@
                 },
             },
         });
+
+
 
         $(".cate-4").owlCarousel({
             loop: true,
@@ -380,7 +379,9 @@
             loop: true,
             margin: 20,
             nav: true,
-            autoplay: true,
+            autoplay:true,
+            autoplayTimeout:1000,
+            autoplayHoverPause:true,
             dots: false,
             responsive: {
                 0: {
@@ -407,15 +408,15 @@
             responsive: {
                 0: {
                     items: 1,
-                    nav: true,
+                    
                 },
                 600: {
                     items: 1,
-                    nav: true,
+                     
                 },
                 1000: {
                     items: 2,
-                    nav: true,
+                    
                 },
             },
         });
