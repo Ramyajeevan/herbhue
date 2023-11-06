@@ -87,7 +87,7 @@
             @endforeach
         </div> 
         <div class="text-center my-3">
-          <button type="button" class="btn btn-outline-dark btn-lg ">View More</button>
+          <a href="{{ route('products') }}" class="btn btn-outline-dark btn-lg ">View More</a>
             </div>
     </div>         
 </div>

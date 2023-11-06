@@ -277,7 +277,7 @@
                     <div class="card-footer bg-transparent border-0">
                            
                     <div class="card shadow mt-4 pt-1 pb-0">
-                                <div class="card-body d-flex justify-content-between" data-bs-toggle="modal" data-bs-target="#" style="cursor:pointer;">
+                                <div class="card-body d-flex justify-content-between" data-bs-toggle="modal" data-bs-target="#exampleModal" style="cursor:pointer;">
 
                                     <h4><img src="{{ asset('img/coupan-black.png') }}" alt="" style="width: 35px;" class="me-2">Apply Coupon</h4>
 
@@ -291,6 +291,30 @@
 
                 
             </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+
+            <div class="modal-body">
+
+            <a href="javascript:void(0);" class="close" data-bs-dismiss="modal" aria-label="Close"><img  src="{{ asset('img/close_FILL0_wght400_GRAD0_opsz48 (2).svg') }}" style="width: 60px;position:absolute;top: -17%;left: 40%;background: white;padding: 2%; clip-path:circle();" alt="X"></a>
+
+                    <div class="mb-3">
+                        <label for="coupon_code" class="form-label text-black">Coupon Code </label>
+                        <input type="text" class="form-control border-0 border-bottom border border-black rounded-0" id="coupon_code" name="coupon_code" placeholder="Enter Coupon Code" required>
+                    </div>
+                    
+                    <div>
+                        <button type="button" class="btn btn-dark text-white w-100" onclick="applycoupon();">Apply Coupon</button>
+
+                    </div>
+ 
             </div>
         </div>
     </div>
@@ -310,5 +334,37 @@
             }
         });
     });
+    function applycoupon()
+    {
+      var coupon=$("#coupon_code").val();
+      if(coupon!="")
+      {
+       var url="{{URL('applycoupon')}}";
+         $.ajax(
+        {
+          url: url,
+          method: 'post', 
+          data:{"coupon_code":coupon, "_token": "{{ csrf_token() }}" },
+          success: function (response)
+          {
+            if(response=="notvalid")
+            {
+                alert("Please enter the valid coupon code");
+            }
+            else
+            {
+                alert("Coupon code applied");
+                window.location.reload();
+            }
+           
+          }
+        });
+      }
+      else
+      {
+          alert("Please enter the coupon code");
+      }
+      
+    }
 </script>
 @endsection
