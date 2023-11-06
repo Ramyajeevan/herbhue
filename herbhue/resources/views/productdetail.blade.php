@@ -279,7 +279,7 @@
                         <img src="{{ asset('img/no_image.svg') }}" style="width:100%; height:230px;" alt="">
                         @endif
                         </div>
-                        <p class="small text-center text-secondary py-0 my-0">220 gm</p>
+                        <p class="small text-center text-secondary py-0 my-0">{{ $related->quantity }} {{ $related->quantitytype }}</p>
                         <h5 class="text-truncate text-center" style="max-width: 265px;">{{ $related->name }}</h5>
                         <p class="text-secondary text-center pb-1 mb-1  text-truncate" style="max-width: 265px;">
                         {{ $related->describe }}</p>

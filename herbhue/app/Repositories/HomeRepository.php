@@ -411,7 +411,9 @@ class HomeRepository extends BaseRepository
         $related_products=$related_products->get();
         for($i=0;$i<count($related_products);$i++)
         {
-            $product_options=DB::table("tbl_product_options")->select("price","mrp_price")->where("product_id",$related_products[$i]->id)->first();
+            $product_options=DB::table("tbl_product_options")->select("quantity","quantitytype","price","mrp_price")->where("product_id",$related_products[$i]->id)->first();
+            $related_products[$i]->quantity=$product_options->quantity;
+            $related_products[$i]->quantitytype=$product_options->quantitytype;
             $related_products[$i]->price=$product_options->price;
             $related_products[$i]->mrp_price=$product_options->mrp_price;
         }
