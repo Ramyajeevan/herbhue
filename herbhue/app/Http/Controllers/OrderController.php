@@ -243,7 +243,9 @@ class OrderController extends Controller
       Session::forget('coupon_code');
       Session::forget('coupon_amount');
     }
-    return view('thankyou',['order_id'=>$order_id]);
+    $order=DB::table('tbl_order')->where("order_id",$order_id)->first();
+    $order_amount=$order->total;
+    return view('thankyou',['order_id'=>$order_id,'order_amount'=>$order_amount]);
     
   }
 

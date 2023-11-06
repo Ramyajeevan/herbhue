@@ -17,7 +17,7 @@
                 <h3 class="text-black fw-bold text-center">Order Confirmed</h3>
                 <p class="fs-5 text-center ">Your order is currently being processed. <br> You will received an order confirmation email shortly.</p>
 
-                <p class="fs-5 text-center ">Total Price for item £482.00</p>
+                <p class="fs-5 text-center ">Total Price for item &pound; {{ $order_amount }}</p>
                 <p class="fs-5 text-center "><a href="#" class="text-decoration-none text-black"> View Details > </a></p>
                 <div class="text-center">
                     <a href="{{ route('products') }}"    title="Continue Shopping"> <button type="button" class="btn btn-dark">Continue Shopping</button></a>
