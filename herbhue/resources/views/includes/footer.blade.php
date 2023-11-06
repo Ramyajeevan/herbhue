@@ -12,27 +12,10 @@
         <p class="text-black py-0 my-0 text-center">Sign up for email updates on products offers and discounts</p>
        <div class="d-flex justify-content-center mt-4">
        <div class="input-group mb-3  subscribe  ">
-        <input type="email" id="subscribeEmail" name="subscribeEmail" class="rounded-start-pill shadow form-control   form-control-lg" aria-label="Recipient's username" aria-describedby="button-addon2" placeholder="Enter your email">
-        <button class="btn btn-secondary shadow rounded-end-circle  px-5 text-white" type="button" id="button-addon2" onclick="subscribe();">Sign Up</button>
+        <input type="email" id="subscribeEmail" name="subscribeEmail" class="rounded-start-pill shadow form-control   form-control-lg" aria-describedby="button-addon2" placeholder="Enter your email">
+        <button class="btn btn-secondary shadow rounded-end-circle  px-5 text-white" type="button" id="button-addon2" onclick="subscribe();">Subscribe</button>
         </div>
        </div>
-        <!-- <div class="row">
-            <div class="col-lg-6">
-                <div class="me-5 d-none d-lg-block">
-                    <span class="h4 fw-bold text-white">Sign Up To Newsletter</span>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="input-group mb-3">
-                    <input type="email" id="subscribeEmail" name="subscribeEmail" class="form-control rounded-pill   form-control-lg w-100"
-                        aria-label="Recipient's username" aria-describedby="button-addon2">
-                        <button class="btn btn-primary  px-3 rounded-pill signup z-99" type="button"  id="button-addon2" onclick="subscribe();">Sign Up</button>
-                </div>
-            </div>
-
-        </div> -->
-
-
     </div>
     <!-- Right -->
 </section>
@@ -76,20 +59,20 @@
                     Information
                 </h6>
                 <p class="pb-0 mb-0">
-                    <a href="javascript:void(0);" class="text-black fw-medium">Home</a>
+                    <a href="{{ route('home') }}" class="text-black fw-medium">Home</a>
                 </p>
                 <p class="pb-0 mb-0">
-                    <a href="javascript:void(0);" class="text-black fw-medium">About</a>
+                    <a href="{{ route('aboutus') }}" class="text-black fw-medium">About</a>
                 </p>
                 <p class="pb-0 mb-0">
-                    <a href="javascript:void(0);" class="text-black fw-medium">Shop</a>
+                    <a href="{{ route('products') }}" class="text-black fw-medium">Shop</a>
                 </p>
                 <p class="pb-0 mb-0">
                     <a href="javascript:void(0);" class="text-black fw-medium">Blog</a>
                 </p>
 
                 <p class="pb-0 mb-0">
-                    <a href="javascript:void(0);" class="text-black fw-medium">Contact Us</a>
+                    <a href="{{ route('contact') }}" class="text-black fw-medium">Contact Us</a>
                 </p>
             </div>
             <!-- Grid column -->
@@ -101,20 +84,20 @@
                     Accounts
                 </h6>
                 <p class="pb-0 mb-0">
-                    <a href="javascript:void(0);" class="text-black fw-medium">Your Account</a>
+                    <a href="{{ route('myaccount') }}" class="text-black fw-medium">Your Account</a>
                 </p>
                 <p class="pb-0 mb-0">
-                    <a href="javascript:void(0);" class="text-black fw-medium">Login/Register</a>
+                    <a href="{{ route('login') }}" class="text-black fw-medium">Login/Register</a>
                 </p>
                 <p class="pb-0 mb-0">
-                    <a href="javascript:void(0);" class="text-black fw-medium">Order History</a>
+                    <a href="{{ route('myorders') }}" class="text-black fw-medium">Order History</a>
                 </p>
                 <p class="pb-0 mb-0">
-                    <a href="javascript:void(0);" class="text-black fw-medium">Wishlist</a>
+                    <a href="{{ route('mywishlist') }}" class="text-black fw-medium">Wishlist</a>
                 </p>
 
                 <p class="pb-0 mb-0">
-                    <a href="javascript:void(0);" class="text-black fw-medium">Cart</a>
+                    <a href="{{ route('viewcart') }}" class="text-black fw-medium">Cart</a>
                 </p>
             </div>
             <!-- Grid column -->
@@ -156,7 +139,7 @@
                     </div>
                     <div class="col-10 ps-3">
                         <h6 class="text-black text-start ps-2 ps-lg-0">Reliable</h6>
-                        <p class="text-secondary small text-start ps-2 ps-lg-0"> All products displayed on Gem Solution are procured from
+                        <p class="text-secondary small text-start ps-2 ps-lg-0"> All products displayed on Herbhue are procured from
                             verified and licensed pharmacies. All labs listed on the platform are accredited</p>
 
                     </div>
@@ -169,7 +152,7 @@
                     </div>
                     <div class="col-10 ps-3">
                         <h6 class="text-black text-start ps-2 ps-lg-0">Secure</h6>
-                        <p class="text-secondary small text-start ps-2 ps-lg-0"> Gem Solution uses Secure Sockets Layer (SSL) 128-bit encryption and is Payment Card Industry Data Security Standard (PCI DSS) compliant</p>
+                        <p class="text-secondary small text-start ps-2 ps-lg-0"> Herbhue uses Secure Sockets Layer (SSL) 128-bit encryption and is Payment Card Industry Data Security Standard (PCI DSS) compliant</p>
 
                     </div>
                 </div>
