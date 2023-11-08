@@ -68,7 +68,7 @@
                     <a href="{{ route('products') }}" class="text-black fw-medium">Shop</a>
                 </p>
                 <p class="pb-0 mb-0">
-                    <a href="javascript:void(0);" class="text-black fw-medium">Blog</a>
+                    <a href="{{ route('blogpage') }}" class="text-black fw-medium">Blog</a>
                 </p>
 
                 <p class="pb-0 mb-0">
