@@ -16,9 +16,10 @@
 @section('content')
 <div class="container-fluid mb-5">
     <img src="{{asset('img/shop-banner.png')}}" class="w-100" height="300px" alt="">
-    <div class="container my-5">
-    <div class="cate1 owl-carousel owl-theme">
-    @foreach($products as $prod)
+    <div class="container my-5" data-aos="fade-up"
+     data-aos-duration="2000">
+            <div class="cate1 owl-carousel owl-theme">
+            @foreach($products as $prod)
             <div class="item">
             <div class="card border-secondary shadow">
                     <div class="card-body">
@@ -48,7 +49,8 @@
         
     </div>
 
-    <div class="container">
+    <div class="container" data-aos="fade-up"
+     data-aos-duration="2000">
 
     <div class="cate12 owl-carousel owl-theme">
          @foreach($category as $cat)

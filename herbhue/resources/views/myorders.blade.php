@@ -6,7 +6,8 @@
 
 @endsection
 @section('content')
-<div class="container-fluid">
+<div class="container-fluid"  data-aos="fade-up"
+     data-aos-duration="2000">
 <div class="container mb-5">
     <h4 class="text-black my-4">My Order List</h4>
  <div class="table-responsive">

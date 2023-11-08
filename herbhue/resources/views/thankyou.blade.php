@@ -7,7 +7,8 @@
 @endsection
 @section('content')
 <div class="container-fluid my-5">
-    <div class="container">
+    <div class="container"  data-aos="zoom-in"
+     data-aos-duration="2000">
         <div class="row">
             <div class="col-md-8 border-end">
                 <div class="d-flex justify-content-center">

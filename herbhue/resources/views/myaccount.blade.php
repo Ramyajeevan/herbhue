@@ -9,10 +9,12 @@
 <div class="container-fluid my-5">
     <div class="container">
         <div class="row mt-3">
-            <div class="col-md-4">
+            <div class="col-md-4"  data-aos="fade-up"
+     data-aos-duration="2000">
             @include('includes.myaccountsidenav')
             </div>
-            <div class="col-md-8">
+            <div class="col-md-8"  data-aos="fade-up"
+     data-aos-duration="2000">
             <div class="card border-0 pt-0">
         <div class="card-body pt-0">
         <h5 class="card-tittle fw-bold">Edit Profile</h5>

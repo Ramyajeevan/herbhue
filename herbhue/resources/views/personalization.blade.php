@@ -10,7 +10,8 @@
 </style>
 @section('content')
 <div class="container-fluid mb-5">
-  <div class="container mt-5">
+  <div class="container mt-5"  data-aos="fade-up"
+     data-aos-duration="2000">
     <div class="accordion" id="accordionExample">
         @foreach($personalise as $personal)
         <div class="accordion-item">

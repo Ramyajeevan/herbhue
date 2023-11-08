@@ -13,10 +13,12 @@
 <div class="container-fluid my-4">
     <div class="container">
         <div class="row mt-3">
-            <div class="col-md-4 mb-4">
+            <div class="col-md-4 mb-4"  data-aos="fade-up"
+     data-aos-duration="2000">
             @include('includes.myaccountsidenav')
             </div>
-            <div class="col-md-8 mb-4">
+            <div class="col-md-8 mb-4"  data-aos="fade-up"
+     data-aos-duration="2000">
             <div class="card shadow border-0 rounded-0 p-3">
                     <div class="card-body">
                         <h3 class=" text-black">Contact Us</h4>

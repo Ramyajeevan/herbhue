@@ -7,7 +7,8 @@
 
 <!-- Section: Social media -->
 <section class=" p-4 border-bottom " style=" background:#FDF4F4;">
-    <div class="container  ">
+    <div class="container  " data-aos="zoom-in"
+     data-aos-duration="2000">
         <h4 class="text-black fw-bold mb-1 pb-1 text-center">Sign up and save</h4>
         <p class="text-black py-0 my-0 text-center">Sign up for email updates on products offers and discounts</p>
        <div class="d-flex justify-content-center mt-4">

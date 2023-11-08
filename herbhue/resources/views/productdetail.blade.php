@@ -319,7 +319,8 @@ figure.zoom img {
         <div class="col-md-2"></div>
        </div>
     </div>
-    <div class="container my-5">
+    <div class="container my-5"  data-aos="fade-up"
+     data-aos-duration="2000">
         <div class="card">
             <div class="card-body">
                 <div class="row ">

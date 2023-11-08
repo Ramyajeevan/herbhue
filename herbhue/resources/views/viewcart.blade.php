@@ -12,7 +12,8 @@
 </style>
 @endsection
 @section('content')
-<div class="container-fluid my-5">
+<div class="container-fluid my-5"  data-aos="fade-up"
+     data-aos-duration="2000">
     <div class="container">
         @if(count($cart)>0)
         <div class="row mt-3">
@@ -67,7 +68,8 @@
             </div>
             <div class="col-md-6">
 
-            <div class="card border-0  rounded-0 p-4 order-summary">
+            <div class="card border-0  rounded-0 p-4 order-summary"  data-aos="fade-up"
+     data-aos-duration="2000">
                     <p class="fs-5  mt-1">Order Summary</p>
                     <p class="d-flex justify-content-between px-0 pb-2 mb-1">
                         <strong>Cart value</strong> 

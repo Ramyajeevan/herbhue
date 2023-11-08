@@ -23,7 +23,8 @@
 </div> -->
 
 <div class="container-fluid py-5">
-    <div class="container">
+    <div class="container" data-aos="fade-up"
+     data-aos-duration="2000">
         <div class="row">
             <div class="col-md-3"></div>
             <div class="col-md-6">

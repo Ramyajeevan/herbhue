@@ -8,10 +8,12 @@
 <div class="container-fluid my-5">
     <div class="container">
         <div class="row mt-3">
-            <div class="col-md-4 mb-4">
+            <div class="col-md-4 mb-4"  data-aos="fade-up"
+     data-aos-duration="2000">
             @include('includes.myaccountsidenav')
             </div>
-            <div class="col-md-8 mb-4">
+            <div class="col-md-8 mb-4"  data-aos="fade-up"
+     data-aos-duration="2000">
            <div class="card border-0">
             <div class="card-body">
                 <h5 class="card-tittle mb-4">My Addresses</h5> 

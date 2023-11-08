@@ -15,10 +15,12 @@
 <div class="container-fluid my-5">
     <div class="container">
         <div class="row mt-3">
-            <div class="col-md-4 mb-4">
+            <div class="col-md-4 mb-4"  data-aos="fade-up"
+     data-aos-duration="2000">
             @include('includes.myaccountsidenav')
             </div>
-            <div class="col-md-8 mb-4">
+            <div class="col-md-8 mb-4"  data-aos="fade-up"
+     data-aos-duration="2000">
                 <div class="card rounded-2 border-secondary">
                     <div class="card-header bg-transparent d-flex justify-content-between ">
                         <h5>{{ count($wishlist) }} Item in your Wishlist</h5>

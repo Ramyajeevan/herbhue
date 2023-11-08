@@ -37,15 +37,19 @@
 
 
 
-                <h5 class="fw-bold mb-2">{{ $blogs->title }}</h5>
+                <h5 class="fw-bold mb-2"  data-aos="fade-up"
+                     data-aos-duration="2000">{{ $blogs->title }}</h5>
 
-                <img src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/{{ $blogs->image }}" width="100%" height="380px" class="my-3" alt="">
+                <img src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/{{ $blogs->image }}"  data-aos="zoom-in"
+     data-aos-duration="2000" width="100%" height="380px" class="my-3" alt="">
 
-                <p class="fs-5">
+                <p class="fs-5"  data-aos="fade-up"
+     data-aos-duration="2000">
                 {{ $blogs->description }}
                 </p>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4"  data-aos="fade-up"
+     data-aos-duration="2000">
                 <h3 class="fw-bold">More</h3>
                 @if(count($related_blogs)>0)
                 @foreach($related_blogs as $related)  
