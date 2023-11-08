@@ -149,14 +149,8 @@ class HomeController extends Controller
         $email=Session::get('username');
         $user=DB::table("tbl_user")->where("email",$email)->first();
         $orders=DB::table("tbl_order")->where("user_id",$user->id)->latest('id')->get();
-        $url = url()->current();
-          $url = explode('/', $url);
-         // dd($url);
-
-          if(!isset($url[5])){
-              $url[5] = '';
-          }
-        return view('myaccount',["user"=>$user,"orders"=>$orders,'page'=>$url['5']]);
+        $addresses=DB::table('tbl_address')->where("user_id",$user_id)->get();
+        return view('myaccount',["user"=>$user,"orders"=>$orders,'addresses'=>$addresses]);
         //return view('myaccount');
       }
     }
@@ -590,9 +584,9 @@ class HomeController extends Controller
         $link= url()->to("resetpassword")."?email=".$user->email;
         $message .='<p><a href="'.$link.'">Click here</a> to reset your password.</p>';
         $message .= '</div>';
-       // $mail_sent = Parent::sendmail($message, env('APP_NAME').' Forgot Password', env('MAIL_USERNAME'), env('APP_NAME'),$touseremail,$user->name);
-       // return redirect()->back()->with('success', 'Kindly Check your email to reset your password');
-       return  redirect()->route('resetpassword')->with('email',$touseremail);
+        $mail_sent = Parent::sendmail($message, env('APP_NAME').' Forgot Password', env('MAIL_USERNAME'), env('APP_NAME'),$touseremail,$user->name);
+        return redirect()->back()->with('success', 'Kindly Check your email to reset your password');
+        //return  redirect()->route('resetpassword')->with('email',$touseremail);
       }
       
     }
@@ -681,5 +675,28 @@ class HomeController extends Controller
         return view('blogpage', ['blogs' => $blogs,'related_blogs'=>$related_blogs]);
     }
     
+    public function success()
+    {
+      $session_id=request()->category_id;
+      try {
+        require 'vendor/autoload.php';
+$stripe = new \Stripe\StripeClient('sk_test_51O5pJDL5fakvGlAxziOdJArTdmG6JrwbxKiAp2cOl4Bkr1NmupQ2DYDulBakyvfs3cycTRI1kL3AvGhqqdzqWCOY00gC0RZkXy');
+
+        $session = $stripe->checkout->sessions->retrieve($session_id);
+        $customer = $stripe->customers->retrieve($session->customer);
+        echo "<h1>Thanks for your order, $customer->name!</h1>";
+        http_response_code(200);
+      } catch (Error $e) {
+        http_response_code(500);
+        echo json_encode(['error' => $e->getMessage()]);
+      }
+      echo "Success";exit;
+    }
+
+    public function cancel(Request $request)
+    {
+      echo "cancel";exit;
+    }
+
 
 }
