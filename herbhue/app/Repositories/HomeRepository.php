@@ -6,6 +6,7 @@ use App\Models\Banner;
 use App\Models\Category;
 use App\Models\Brand;
 use App\Models\User;
+use App\Models\Blog;
 use App\Models\Product;
 use App\Models\Contact;
 use DB;
@@ -444,5 +445,28 @@ class HomeRepository extends BaseRepository
             "answer"=>$answer
         ]);
         return $personalise;
+    }
+
+
+    public function getBlogs($id)
+    {
+        if($id=="")
+        {
+            $ids=Blog::first();
+            $id=$ids->id;
+        }
+        $blogs=Blog::find($id);
+        return $blogs;
+    }
+    
+    public function getRelatedBlogs($id)
+    {
+        if($id=="")
+        {
+            $ids=Blog::first();
+            $id=$ids->id;
+        }
+        $blogs=Blog::where("id","!=",$id)->get();
+        return $blogs;
     }
 }

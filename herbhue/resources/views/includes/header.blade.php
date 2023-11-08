@@ -67,11 +67,11 @@
         <div class="w-25 px-4"><button type="button" class="btn btn-primary-light w-100 text-nowrap btn-lg">Quick Order</button></div>
     </div> -->
 
-    <div class="container">
+    <div class="container web-view">
         <div class="row pb-2">
             <div class="col-9 text-center">
                 <div class="pt-3 mob-view">
-                    <ul class="  d-flex ul">
+                    <ul class="  d-flex ul2">
             
                         <li class="">
                             <a class="nav-link text-nowrap small" href="{{ route('login') }}"> 
@@ -89,7 +89,78 @@
                  <a  href="{{ route('home') }}" class="web-view"><img src="{{ asset('img/logo.png') }}" alt="" class="main-logo" style="width: 170px;position: relative;left: 57%; top: 0px;"></a>   
             </div>
             <div class="col-3">
-                <ul class="d-flex ul justify-content-end" style="position: relative;top: 13px;">
+                <ul class="d-flex ul2 justify-content-end" style="position: relative;top: 13px;  ">
+                    <li class="">
+                        <a class="nav-link" href="javascript:void(0);">
+                        <button type="button" class="btn bg-transparent border-0 position-relative">
+                            <img src="{{ asset('img/search icon (2).svg') }}" alt="" class="nav-icon">
+                        </button>
+                        </a>
+                    </li>
+                    @php
+                    $cart_items=0;
+                    $session_id=Session::getId();
+                    $cart_items=DB::table('tbl_cart')->where("session_id",$session_id)->sum("quantity");
+                    @endphp
+                    <li class="me-1">
+                        <a class="nav-link" href="{{ route('viewcart') }}">
+                        <button type="button" class="btn bg-transparent border-0 position-relative">
+                            <img src="{{ asset('img/Cart Icon (1).svg') }}" alt="" class="nav-icon">
+                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                            {{ $cart_items }}
+                            </span>
+                        </button>
+                        </a>
+                    </li>
+                    @php
+                    $wishlist_count=0;
+                    if(!empty(Session::get('username')))
+                    {
+                        $email=Session::get('username');
+                            $user=DB::table("tbl_user")->where("email",$email)->first();
+                            $wishlist_count=DB::table("tbl_wishlist")->where("user_id",$user->id)->count();
+                        // $wishlist_count=1;
+                    }
+                    @endphp
+                    <li class="">
+                        <a class="nav-link" href="{{ route('mywishlist') }}">
+                        <button type="button" class="btn bg-transparent border-0 position-relative">
+                            <img src="{{ asset('img/Wishlist Icon (1).svg') }}" alt="" class="nav-icon">
+                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                            {{ $wishlist_count }}
+                            </span>
+                        </button>
+                            
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mob-view">
+        <div class="d-flex justify-content-between pb-2">
+            <div class="text-center">
+                <div class="pt-3 ">
+                    <ul class="  d-flex list-unstyled">
+            
+                        <li class="">
+                            <a class="nav-link text-nowrap small" href="{{ route('login') }}"> 
+                                <span class="me-3"> <img src="{{ asset('img/login.svg') }}" alt="" class="nav-icon me-1"> Login </span>
+                            </a>
+                        </li>
+                        <li class="">
+                            <a class="nav-link text-nowrap small" href="{{ route('register') }}"> 
+                                <span> <img src="{{ asset('img/register.svg') }}" alt="" class="nav-icon me-1"> Sign Up</span> 
+                            </a>
+                        </li>
+                               
+                    </ul>
+                </div>
+                 
+            </div>
+            <div class="me-3">
+                <ul class="d-flex list-unstyled" style="position: relative;top: 13px;  ">
                     <li class="">
                         <a class="nav-link" href="javascript:void(0);">
                         <button type="button" class="btn bg-transparent border-0 position-relative">

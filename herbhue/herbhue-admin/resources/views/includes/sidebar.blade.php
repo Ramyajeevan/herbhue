@@ -222,6 +222,32 @@
             </li>
           </ul>
         </li>
+
+        <li class="nav-small-cap">
+          <i class="mdi mdi-dots-horizontal"></i>
+          <span class="hide-menu">Others</span>
+        </li>
+        <li class="sidebar-item">
+          <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0);" aria-expanded="false">
+            <i data-feather="sidebar" class="feather-icon"></i>
+            <span class="hide-menu">Blog </span>
+          </a>
+          <ul aria-expanded="false" class="collapse first-level">
+            <li class="sidebar-item">
+              <a href="{{ route('blog.index') }}" class="sidebar-link">
+                <i class="mdi mdi-view-quilt"></i>
+                <span class="hide-menu"> View Blog </span>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a href="{{ route('blog.create') }}" class="sidebar-link">
+                <i class="mdi mdi-view-parallel"></i>
+                <span class="hide-menu"> Add Blog </span>
+              </a>
+            </li>
+          </ul>
+        </li>
+
         <li class="nav-small-cap">
           <i class="mdi mdi-dots-horizontal"></i>
           <span class="hide-menu">Ratings</span>

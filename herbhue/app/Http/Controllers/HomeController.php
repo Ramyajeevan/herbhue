@@ -384,11 +384,14 @@ class HomeController extends Controller
       return view('editprofile',['user'=>$user]);
       }
     }
-   /* public function myaddress()
-    {
-      return view('myaddress');
-    }*/
 
+    // added on 07-11-2023
+   public function blog()
+    {
+      return view('blog');
+    }
+
+    // end  added on 07-11-2023
 
     public function editaddress($address_id)
     {
@@ -668,5 +671,15 @@ class HomeController extends Controller
           return redirect()->route('myaddress');
       }
     }
+
+    public function blogpage()
+    {
+        $id=request()->id;
+        $blogs = $this->homeRepository->getBlogs($id);
+        //dd($blogs);
+        $related_blogs = $this->homeRepository->getRelatedBlogs($id);
+        return view('blogpage', ['blogs' => $blogs,'related_blogs'=>$related_blogs]);
+    }
+    
 
 }

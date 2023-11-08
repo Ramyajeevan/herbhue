@@ -9,6 +9,8 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
         integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
         crossorigin="anonymous" referrerpolicy="no-referrer">
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"> -->
 <style>
     .rate {
     float: left;
@@ -83,6 +85,20 @@
 		width:100%;
 	}
 }
+        figure.zoom {
+ 
+  
+  overflow: hidden;
+  cursor: zoom-in;
+}
+figure.zoom img:hover {
+  opacity: 0;
+}
+figure.zoom img {
+  transition: opacity 0.5s;
+  display: block;
+  width: 100%;
+}
 </style>
 @endsection
 @section('content')
@@ -94,31 +110,33 @@
                     <div class="col-md-3 web-view"> 
                         <div id="thumbs" class=" text-center">
                             @if(!empty($products->image1))
+ 
                             <img src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/{{ $products->image1 }}" alt="1st image  " class="mb-2" />
                             @endif
-                            @if(!empty($products->image2))
-                            <img src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/{{ $products->image2 }}" alt="2nd image  "class="mb-2" />
+                            @if(!empty($products->image2)) 
+                           <img src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/{{ $products->image2 }}" alt="2nd image  "class="mb-2" />
                             @endif
-                            @if(!empty($products->image3))
-                            <img src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/{{ $products->image3 }}" alt="3rd image  " class="mb-2" />
+                            @if(!empty($products->image3)) 
+                           <img src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/{{ $products->image3 }}" alt="3rd image  " class="mb-2" />
                             @endif
-                            @if(!empty($products->image4))
-                            <img src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/{{ $products->image4 }}" alt="4th image  " class="mb-2" />
+                            @if(!empty($products->image4)) 
+                           <img src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/{{ $products->image4 }}" alt="4th image  " class="mb-2" />
                             @endif
-                            @if(!empty($products->image5))
-                            <img src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/{{ $products->image5 }}" alt="5th image  "  class="mb-2" />
+                            @if(!empty($products->image5)) 
+                           <img src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/{{ $products->image5 }}" alt="5th image  "  class="mb-2" />
                             @endif
                         </div>
                     </div>
                     <div class="col-md-9 mb-3">
                         <div class="productImage text-center">
                         @if($products->image1!="")
-                        <img id="largeImage" class="w-100" src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/{{ $products->image1 }}" alt="Default Image">
+ 
+                      <img id="largeImage" class="w-100" src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/{{ $products->image1 }}" alt="Default Image">
                         @else
                         <img src="{{ asset('img/no_image.svg') }}" class="w-100" alt="">
                         @endif
                         </div>
-                        <button type="button" class="btn bg-black text-white w-100 rounded-0 mt-3 btn-lg" onclick="addtocart();">Add to cart</button>
+                        <button type="button" class="btn bg-black text-white web-view w-100 rounded-0 mt-3 btn-lg" onclick="addtocart();">Add to cart</button>
                     </div>
                     <div class="col-md-3 mob-view"> 
                         <div id="thumbs" class=" text-center">
@@ -138,6 +156,8 @@
                             <img src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/{{ $products->image5 }}" alt="5th image  "  class="mb-2" />
                             @endif
                         </div>
+
+                        <button type="button" class="btn bg-black text-white w-100 rounded-0 mt-3 btn-lg" onclick="addtocart();">Add to cart</button>
                     </div>
                 </div>
             </div>
@@ -376,7 +396,9 @@
                     <div class="col-md-5 pt-5 text-center"> 
                     <button type="button" class="btn btn-outline-dark btn-lg web-view" style="position: absolute;top: 128px;right: 170px;" @if(!empty(Session::get('username'))) onclick="showratingform();" @else onclick="showalert();" @endif>Write a Review</button>
 
-                    <button type="button" class="btn btn-outline-dark btn-lg mob-view"  @if(!empty(Session::get('username'))) onclick="showratingform();" @else onclick="showalert();" @endif>Write a Review</button>
+                  <div class="d-flex justify-content-center mob-view">
+                  <button type="button" class="btn btn-outline-dark btn-lg "  @if(!empty(Session::get('username'))) onclick="showratingform();" @else onclick="showalert();" @endif>Write a Review</button>
+                  </div>
                     </div>
                 </div>
             </div>
@@ -433,13 +455,13 @@
                     <div class="d-flex justify-content-between">
                         <div class="d-flex">
                             <img src="{{asset('img/verified-user.png')}}" width="40px" height="40px" alt="uaer" class="me-4">
-                            <h6 class="py-0 my-0">{{ $rating_product->user_name }}</h5>
+                            <h6 class="py-2 my-0">{{ $rating_product->user_name }}</h5>
                         </div>
                         <p class="text-muted py-0 my-0">
                         {{ $rating_product->days }} Ago
                         </p>
                     </div>
-                    <p class="small">
+                    <p class="small pb-0 mb-0">
                     <?php for($k=1;$k<=5;$k++) { 
                         if($k<=$rating_product->rating){ ?>
                         <i class="fa fa-star text-warning "></i>
@@ -461,6 +483,15 @@
 @section('script')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+<!--     <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script> 
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script> -->
+
+<script>
+    Fancybox.bind("[data-fancybox]", {
+        // Your custom options
+    });
+
+</script>
     <script>
         $(".purchase").owlCarousel({
             loop: true,
@@ -585,5 +616,16 @@
 				$(".progress-bar").removeClass("progressbar-active");
 			}
 		});
+</script>
+
+<script type="text/javascript">
+function zoom(e){
+  var zoomer = e.currentTarget;
+  e.offsetX ? offsetX = e.offsetX : offsetX = e.touches[0].pageX
+  e.offsetY ? offsetY = e.offsetY : offsetX = e.touches[0].pageX
+  x = offsetX/zoomer.offsetWidth*100
+  y = offsetY/zoomer.offsetHeight*100
+  zoomer.style.backgroundPosition = x + '% ' + y + '%';
+}
 </script>
 @endsection

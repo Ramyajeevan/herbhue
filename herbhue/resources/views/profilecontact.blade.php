@@ -3,18 +3,23 @@
 <title>Herbhue - Edit Profile</title>
 @endsection
 @section('css') 
+<style>
+    ::placeholder {
+   font-size:12px;
+}
+</style>
 @endsection
 @section('content')
-<div class="container-fluid">
+<div class="container-fluid my-4">
     <div class="container">
         <div class="row mt-3">
-            <div class="col-md-4">
+            <div class="col-md-4 mb-4">
             @include('includes.myaccountsidenav')
             </div>
-            <div class="col-md-8">
+            <div class="col-md-8 mb-4">
             <div class="card shadow border-0 rounded-0 p-3">
                     <div class="card-body">
-                        <h6 class=" text-black">Contact Us</h4>
+                        <h3 class=" text-black">Contact Us</h4>
                         <p class="small text-black">For Any Query, Related To Any Product. Drop Your Details Below</p>
                         <form method="post" action="{{ route('contactus') }}">
                             @csrf
@@ -63,8 +68,10 @@
                                  <textarea class="form-control form-control-lg  rounded-0" id="message" name="message" rows="3" placeholder="Go ahead, we are listing..." required></textarea>
                             </div>
                              
-                            
-                            <button type="submit" class="btn btn-dark text-white w-100  rounded-0">Submit</button>
+                            <div class="text-end">
+                                <button type="submit" class="btn btn-dark text-white   rounded-0">Submit</button>
+                            </div>
+                           
                         </form>
                     </div>
                 </div>   

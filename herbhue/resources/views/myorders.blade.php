@@ -9,8 +9,8 @@
 <div class="container-fluid">
 <div class="container mb-5">
     <h4 class="text-black my-4">My Order List</h4>
-
-    <table class="table">
+ <div class="table-responsive">
+        <table class="table">
         @if(count($orders)>0)
         <thead>
             <tr>
@@ -39,7 +39,7 @@
                 <td class="fw-bold align-items-center">{{ $ord->added_date }}</td>
                 <td class="fw-bold align-items-center">{{ $ord->status }}</td>
                 <td class="fw-bold align-items-center">&pound; {{ $ord->total }}</td>
-                <td><button type="button" class="btn btn-success px-3 rounded-pill btn-sm">View</button>
+                <td><button type="button" class="btn btn-success px-3 text-black rounded-pill btn-sm">View</button>
                 </td>
             </tr>
             @endforeach
@@ -52,6 +52,8 @@
         </tbody>
         @endif
     </table>
+ </div>
+
 
 </div>
 </div>

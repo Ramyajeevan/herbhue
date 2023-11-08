@@ -56,33 +56,32 @@
         <div class="row">
             @foreach($product as $prod)
             <div class="col-md-3 mb-3">
+<!--new ui   -->
 
-
-            
                 <div class="card border-secondary shadow">
-                    <div class="card-body">
-                        <div class="text-center mb-3">
-                            @if($prod->image1!="")
-                            <img src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/{{ $prod->image1 }}"style="width:85%; height:186px;" alt="">
-                            @else
-                            <img src="{{ asset('img/no_image.svg') }}" style="width:85%; height:186px;" alt="">
-                            @endif
-                        </div>
-                        <p class="small text-center text-secondary py-0 my-0">{{ $prod->product_options->quantity }} {{ $prod->product_options->quantitytype }}</p>
-                        <div class="d-flex justify-content-center">
-                          <h5 class="text-truncate text-center" style="max-width: 265px;">{{ $prod->name }}</h5>   
-                        </div>
-                        <div class="d-flex justify-content-center">
-                               <p class="text-secondary text-center pb-1 mb-1  text-truncate" style="max-width: 265px;"> {!! $prod->description !!}</p>
-                            </div>
-                     
-                        <p class="text-secondary p-0 m-0 text-center">{{ $prod->describe }}</p>
-                        <p class="text-secondary text-center pb-0 mb-0">M.R.P: <span
-                                class="text-decoration-line-through text-secondary"> &pound; {{ $prod->product_options->mrp_price }}</span> </p>
-                        <p class="text-center">&pound; {{ $prod->product_options->price }}</p>
-                        <a href="{{ route('productdetail', $prod->id) }}" class="btn btn-secondary text-black fw-bold w-100">View Product</a>
-                    </div>
+
+            <div class="card-body">
+                <div class="text-center mb-3">
+                @if($prod->image1!="")
+                <img src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/{{ $prod->image1 }}" style="width:100%; height:230px;" alt="">
+                @else
+                <img src="{{ asset('img/no_image.svg') }}" style="width:100%; height:230px;" alt="">
+                @endif
                 </div>
+                <p class="small text-center text-secondary py-0 my-0">{{ $prod->product_options->quantity }} {{ $prod->product_options->quantitytype }}</p>
+                <div class="d-flex justify-content-center">
+                <h5 class="text-truncate text-center" style="max-width: 265px;">{{ $prod->name }}</h5>
+                </div>
+                <div class="d-flex justify-content-center">
+                <p class="text-secondary text-center pb-1 mb-1  text-truncate" style="max-width: 265px;">
+                {!! $prod->description !!}</p></div>
+                
+                <a href="{{ route('productdetail', $prod->id) }}" class="btn btn-outline-dark text-black bg-white fw-bold w-100 text-black">Buy <span class="text-decoration-line-through text-muted mx-1"> &pound; {{ $prod->product_options->mrp_price }}</span> <span class="text-black"> &pound; {{ $prod->product_options->price }}</span></a>
+            </div>
+
+         </div>
+<!--                 end  -->
+
             </div>
             @endforeach
         </div> 
@@ -135,14 +134,14 @@
                             <h4 class="py-0 my-0">{{ $prod->name }}</h4>
                             <p class="small py-0 my-0">{!! $prod->description !!}</p> <br>
 
-                            <span class="badge border  rounded-1">MRP:  &pound; {{ $prod->product_options->mrp_price }}</span>
+                            <p class=" text-black fw-bold mb-1 pb-0">MRP:  &pound; {{ $prod->product_options->mrp_price }}</p>
                             <a href="{{ route('productdetail', $prod->id) }}" class="btn mt-4 btn-dark rounded-pill">Shop Now</a>
                             </div>
-                            <div class="col-md-5">
+                            <div class="col-5">
                             @if($prod->image1!="")
-                            <img src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/{{ $prod->image1 }}" style="width:200px; height:200px;" alt="">
+                            <img src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/{{ $prod->image1 }}"  class="cat-img" alt="">
                             @else
-                            <img src="{{ asset('img/no_image.svg') }}" style="width:200px; height:200px;" alt="">
+                            <img src="{{ asset('img/no_image.svg') }}" class="cat-img" alt="">
                             @endif
                              </div>
                         </div>
@@ -328,22 +327,19 @@
         $(".cate-3").owlCarousel({
             loop: true,
             margin: 20,
-            nav: true,
+            nav: false,
             autoplay: false,
             dots: false,
             navText: ['<img src="{{ asset('img/owl-arrow.png') }}">', '<img src="{{ asset('img/owl-arrow.png') }}">'], // Add your image paths here
             responsive: {
                 0: {
                     items: 1,
-                    nav: true,
                 },
                 600: {
                     items: 2,
-                    nav: true,
                 },
                 1000: {
                     items: 4,
-                    nav: true,
                 },
             },
         });
@@ -377,23 +373,20 @@
         $(".testimonial").owlCarousel({
             loop: true,
             margin: 20,
-            nav: true,
+            nav: false,
             autoplay:true,
             autoplayTimeout:1000,
             autoplayHoverPause:true,
             dots: false,
             responsive: {
                 0: {
-                    items: 1,
-                    nav: true,
+                    items: 1, 
                 },
                 600: {
-                    items: 2,
-                    nav: true,
+                    items: 2, 
                 },
                 1000: {
-                    items: 4,
-                    nav: true,
+                    items: 4, 
                 },
             },
         });

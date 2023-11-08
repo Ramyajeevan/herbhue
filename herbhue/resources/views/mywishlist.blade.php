@@ -15,10 +15,10 @@
 <div class="container-fluid my-5">
     <div class="container">
         <div class="row mt-3">
-            <div class="col-md-4">
+            <div class="col-md-4 mb-4">
             @include('includes.myaccountsidenav')
             </div>
-            <div class="col-md-8">
+            <div class="col-md-8 mb-4">
                 <div class="card rounded-2 border-secondary">
                     <div class="card-header bg-transparent d-flex justify-content-between ">
                         <h5>{{ count($wishlist) }} Item in your Wishlist</h5>
@@ -39,22 +39,29 @@
                                 </span>
 
                             </div>
-                            <div class="col-5 d-flex justify-content-between">
-                                <p class="text-end">
+                            <div class="col-5 d-flex justify-content-end">
+                                
+                                <div class="text-end">
+                                <p class="text-end ms-2">
                                     <a href="javascript:void(0);" onclick="deletewishlist({{ $wish->id }});">
                                         <img src="{{ asset('img/delete_FILL0_wght400_GRAD0_opsz24.svg') }}" alt=""  style="width: 20px;">
                                     </a>
                                 </p>
-                                <div class="text-end mt-5">
-                                    <button type="button"  onclick="movetocart({{ $wish->id }});" class="btn btn-dark text-white w-50 py-2 h5 fw-bold"> Move to Cart  
-                                        <!-- <img src="{{ asset('img/add_circle_FILL1_wght400_GRAD0_opsz48 (1).svg') }}" style="width: 25px; position: relative; top: -3px;left: 3px;" alt=""> -->
+    
+                                    <button type="button" onclick="movetocart(7);" class="btn btn-dark text-white rounded-1  py-2" style="font-size:13px;"> Move to Cart  
+                                        <!-- <img src="http://herbhue.azurewebsites.net/img/add_circle_FILL1_wght400_GRAD0_opsz48 (1).svg" style="width: 25px; position: relative; top: -3px;left: 3px;" alt=""> -->
                                     </button>
                                 </div>
                             </div>
+                           
                         </div>
                         @endforeach
                         @else
                         <div class="row border-bottom pb-2">
+                        <div class="d-flex justify-content-center">
+                               <img src="{{asset('img/no-wishlist.png')}}" alt="" class="w-75">
+                        </div>
+                     
                             <p align="center">No items found in wishlist</p>
                         </div>
                         @endif

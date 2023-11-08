@@ -97,4 +97,7 @@ Route::get('profilecontact',[HomeController::class, 'profilecontact'])->name('pr
 Route::get('addaddress',[HomeController::class, 'addaddress'])->name('addaddress');
 Route::post('addnewaddress',[HomeController::class, 'addnewaddress'])->name('addnewaddress');
 Route::post('updateaddress/{id}',[HomeController::class, 'updateaddress'])->name('updateaddress');
+Route::get('blogpage/{id?}',[HomeController::class, 'blogpage'])->name('blogpage'); 
+
+Route::get('/blog',[HomeController::class, 'blog'])->name('blog');
 ?>

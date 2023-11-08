@@ -13,7 +13,7 @@
        <div class="d-flex justify-content-center mt-4">
        <div class="input-group mb-3  subscribe  ">
         <input type="email" id="subscribeEmail" name="subscribeEmail" class="rounded-start-pill shadow form-control   form-control-lg" aria-describedby="button-addon2" placeholder="Enter your email">
-        <button class="btn btn-secondary shadow rounded-end-circle  px-5 text-white" type="button" id="button-addon2" onclick="subscribe();">Subscribe</button>
+        <button class="btn btn-secondary shadow rounded-end-circle  px-lg-5 text-white" type="button" id="button-addon2" onclick="subscribe();">Subscribe</button>
         </div>
        </div>
     </div>
@@ -42,7 +42,7 @@
                     <img src="{{ asset('img/Address Icon.svg') }}" width="18px" class="me-2"alt="address">Lorem Ipsum is simply 
                     <br>dummy text of the prin.
                 </p>
-                <ul class="ul d-flex justify-conter-center">
+                <ul class="ul3 ps-0">
                     <li class="social-icon me-2"><img src="{{ asset('img/Facebook.png') }}" alt="social icon"></li>
                     <li class="social-icon me-2"><img src="{{ asset('img/Insta.png') }}" alt="social icon"></li>
                     <li class="social-icon me-2"><img src="{{ asset('img/Pinterest.png') }}" alt="social icon"></li>
@@ -53,7 +53,7 @@
             <!-- Grid column -->
 
             <!-- Grid column -->
-            <div class="col-md-2 col-lg-2 col-xl-2 col-6 mx-auto mb-4">
+            <div class="col-md-2 col-lg-2 col-xl-2 col-4 mx-auto mb-4">
                 <!-- Links -->
                 <h6 class="text-black fw-bold mb-4">
                     Information
@@ -78,7 +78,7 @@
             <!-- Grid column -->
 
             <!-- Grid column -->
-            <div class="col-md-3 col-lg-2 col-xl-2 col-6 mx-auto mb-4">
+            <div class="col-md-3 col-lg-2 col-xl-2 col-4 mx-auto mb-4">
                 <!-- Links -->
                 <h6 class="text-black fw-bold mb-4">
                     Accounts
@@ -103,7 +103,7 @@
             <!-- Grid column -->
 
             <!-- Grid column -->
-            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+            <div class="col-md-4 col-lg-3 col-xl-3 col-4 mx-auto mb-md-0 mb-4">
                 <!-- Links -->
                 <h6 class="text-black fw-bold mb-4">
                     Useful Links

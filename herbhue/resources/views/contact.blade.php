@@ -7,6 +7,9 @@
     body{
         background:#F8F8F8 !important;
     }
+    ::placeholder {
+   font-size:12px;
+}
  </style>
 @endsection
 @section('content')
@@ -89,13 +92,13 @@
             <div class="col-md-5 p-3 bg-white">
                 <h4 class="text-black fw-bold ">HERBHUE</h4>
                 <ul class="list-unstyled">
-                    <li class="fs-5 mb-4"><img src="{{asset('img/location.png')}}" width="30px" class="me-2" alt="">Address: Lorem Ipsum is simply dummy text of the prin.</li>
-                    <li class="fs-5 mb-4"><img src="{{asset('img/phone.png')}}" width="30px" class="me-2" alt="">For Queries: +44 0000 000 000</li>
+                    <li class="fs-5 mb-4"><img src="{{asset('img/location-pin.png')}}" width="30px" class="me-2" alt="">Address: Lorem Ipsum is simply dummy text of the prin.</li>
+                    <li class="fs-5 mb-4"><img src="{{asset('img/phone-icon.png')}}" width="30px" class="me-2" alt="">For Queries: +44 0000 000 000</li>
                     <li class="fs-5 mb-4"> For Complaint Email To: <br> @herbhue.azurewebsite.net
 
                     </li>
 
-                    <li class="fs-5 mb-4"><img src="{{asset('img/hours.png')}}" width="30px" class="me-2" alt="">Hours of operation <br> Open all 7 days 9 am to 6 pm</li>
+                    <li class="fs-5 mb-4"><img src="{{asset('img/calender-icon.png')}}" width="30px" class="me-2" alt="">Hours of operation <br> Open all 7 days 9 am to 6 pm</li>
 
                 </ul>
             </div>

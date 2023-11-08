@@ -98,11 +98,11 @@
                     <div class="card-footer bg-transparent border-0 p-0">
                            
                     <div class="card shadow my-4 pt-1 pb-0">
-                                <div class="card-body d-flex justify-content-between" data-bs-toggle="modal" data-bs-target="#exampleModal" style="cursor:pointer;">
+                                <div class="card-body d-flex justify-content-between py-2" data-bs-toggle="modal" data-bs-target="#exampleModal" style="cursor:pointer;">
 
                                     <h4><img src="{{ asset('img/Group 70.svg') }}" alt="" style="width: 35px;" class="me-2">Apply Coupon</h4>
 
-                                    <p class="pb-0 mb-0"><img src="{{ asset('img/Down Arrow.svg') }}" style="width: 15px;" alt=""></p>
+                                    <p class="pb-0 mb-0"><img src="{{ asset('img/Down Arrow.svg') }}" style="width: 12px;" alt=""></p>
                                 </div>
                             </div>
                     </div>

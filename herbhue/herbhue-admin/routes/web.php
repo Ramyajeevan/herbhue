@@ -13,6 +13,7 @@ use App\Http\Controllers\Backend\OrderController;
 use App\Http\Controllers\Backend\TicketController;
 use App\Http\Controllers\Backend\BrandController;
 use App\Http\Controllers\Backend\PersonaliseController;
+use App\Http\Controllers\Backend\BlogController;
 use App\Http\Controllers\HomeController;
 /*
 |--------------------------------------------------------------------------
@@ -117,4 +118,11 @@ Route::post('personalise/create',[PersonaliseController::class, 'store'])->name(
 Route::delete('personalise/{id}',[PersonaliseController::class, 'destroy'])->name('personalise.destroy');
 Route::get('personalise/update/{id}',[PersonaliseController::class, 'edit'])->name('personalise.edit');
 Route::post('personalise/update/{id}',[PersonaliseController::class, 'update'])->name('personalise.update');
+
+Route::get('blog',[BlogController::class, 'index'])->name('blog.index');
+Route::get('blog/create',[BlogController::class, 'create'])->name('blog.create');
+Route::post('blog/create',[BlogController::class, 'store'])->name('blog.store');
+Route::delete('blog/{id}',[BlogController::class, 'destroy'])->name('blog.destroy');
+Route::get('blog/update/{id}',[BlogController::class, 'edit'])->name('blog.edit');
+Route::post('blog/update/{id}',[BlogController::class, 'update'])->name('blog.update');
 ?>

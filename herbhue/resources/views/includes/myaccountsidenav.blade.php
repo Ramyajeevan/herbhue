@@ -12,12 +12,12 @@
 
 
                 <div class="card shadow border-3 border-secondary">
-                    <ul class="list-group list-group-flush">
-                    <li class="list-group-item py-3">
+                    <ul class="list-group list-group-flush pt-1">
+                    <li class="list-group-item py-2">
                             <a href="{{ route('myaccount') }}" class="text-black">
                             <div class="row">
                                 <div class="col-3">
-                                    <img src="{{asset('img/edit.svg')}}" width="30px" alt="">
+                                    <img src="{{asset('img/edit.svg')}}" width="20px" alt="">
                                 </div>
                                 <div class="col-6">
                                     <h5>Edit Profile</h5>
@@ -30,11 +30,11 @@
                             </div>
                             </a>
                         </li>
-                        <li class="list-group-item py-3">
+                        <li class="list-group-item py-2">
                             <a href="{{ route('myorders') }}" class="text-black">
                             <div class="row">
                                 <div class="col-3">
-                                    <img src="{{asset('img/order.svg')}}" width="30px" alt="">
+                                    <img src="{{asset('img/order.svg')}}" width="20px" alt="">
                                 </div>
                                 <div class="col-6">
                                     <h5>My Orders</h5>
@@ -46,11 +46,11 @@
                             </div>
                             </a>
                         </li>
-                        <li class="list-group-item py-3">
+                        <li class="list-group-item py-2">
                         <a href="{{ route('myaddress') }}" class="text-black">
                             <div class="row">
                                 <div class="col-3">
-                                    <img src="{{asset('img/location.svg')}}" width="30px" alt="">
+                                    <img src="{{asset('img/location.svg')}}" width="20px" alt="">
                                 </div>
                                 <div class="col-6">
                                     <h5>My Addresses</h5>
@@ -62,11 +62,11 @@
                             </div>
                          </a>
                         </li>
-                        <li class="list-group-item py-4">
+                        <li class="list-group-item py-2">
                             <a href="{{ route('viewcart') }}" class="text-black">
                             <div class="row">
                                 <div class="col-3">
-                                    <img src="{{asset('img/cart.svg')}}" width="30px" alt="">
+                                    <img src="{{asset('img/cart.svg')}}" width="20px" alt="">
                                 </div>
                                 <div class="col-6">
                                     <h5>My Cart</h5>
@@ -80,11 +80,11 @@
                         </li>
 
 
-                        <li class="list-group-item py-3">
+                        <li class="list-group-item py-2">
                             <a href="{{ route('mywishlist') }}" class="text-black">
                             <div class="row">
                                 <div class="col-3">
-                                    <img src="{{asset('img/wishlist.svg')}}" width="30px" alt="">
+                                    <img src="{{asset('img/wishlist.svg')}}" width="20px" alt="">
                                 </div>
                                 <div class="col-6">
                                     <h5>My Wishlist</h5>
@@ -98,11 +98,11 @@
                             </a>
                         </li>
 
-                        <li class="list-group-item py-3">
+                        <li class="list-group-item py-2">
                             <a href="{{ route('profilecontact') }}" class="text-black">
                             <div class="row">
                                 <div class="col-3">
-                                    <img src="{{asset('img/contact.svg')}}" width="30px" alt="">
+                                    <img src="{{asset('img/contact.svg')}}" width="20px" alt="">
                                 </div>
                                 <div class="col-6">
                                     <h5>Contact Us</h5>
@@ -116,11 +116,11 @@
                             </a>
                         </li>
 
-                        <li class="list-group-item py-3">
+                        <li class="list-group-item py-2">
                             <a href="{{ route('logout') }}">
                             <div class="row">
                                 <div class="col-3">
-                                    <img src="{{asset('img/logout.svg')}}" width="30px" alt="">
+                                    <img src="{{asset('img/logout.svg')}}" width="20px" alt="">
                                 </div>
                                 <div class="col-6">
                                     <h5 style="color:#212529;">Log Out</h5>

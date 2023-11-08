@@ -29,10 +29,12 @@
                             <img src="{{ asset('img/no_image.svg') }}" style="width:100%; height:230px;" alt="">
                             @endif
                         </div>
-                        <p class="small text-center text-secondary py-0 my-0">{{ $prod->product_options->quantity }} {{ $prod->product_options->quantitytype }}</p>
-                        <h5 class="text-truncate text-center" style="max-width: 265px;">{{ $prod->name }}</h5>
+                        <p class="small text-center text-secondary py-0 my-0">220 gm</p>
+                        <div class="d-flex justify-content-center">
+                        <h5 class="text-truncate text-center" style="max-width: 265px;">{{ $prod->name }}</h5></div>
+                        <div class="d-flex justify-content-center">
                         <p class="text-secondary text-center pb-1 mb-1  text-truncate" style="max-width: 265px;">
-                        {!! $prod->description !!}</p>
+                        {!! $prod->description !!}</p></div>
                         
                         <a href="{{ route('productdetail', $prod->id) }}" class="btn btn-outline-dark text-black bg-white fw-bold w-100 text-black">Buy 
                             <span class="text-decoration-line-through text-muted mx-1"> &pound; {{ $prod->product_options->mrp_price }}</span> 
@@ -47,10 +49,11 @@
     </div>
 
     <div class="container">
-        <div class="row">
-            @foreach($category as $cat)
-            <div class="col-md-4 mb-3">
-                <div class="card border-0">
+
+    <div class="cate12 owl-carousel owl-theme">
+         @foreach($category as $cat)
+            <div class="item">
+            <div class="card border-0">
                     <img src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/{{ $cat->image }}" class=" card-img-top mb-3" width="150px" alt="">
                     <div class="top-desc">
                         <h4>{{ $cat->name }}</h4>
@@ -62,8 +65,8 @@
                 </div>
             </div>
             @endforeach
-
         </div>
+       
     </div>
 </div>
 
@@ -92,7 +95,30 @@
                     nav: true,
                 },
                 1000: {
-                    items: 3,
+                    items: 4,
+                    nav: true,
+                },
+            },
+        });
+
+
+        $(".cate12").owlCarousel({
+            loop: true,
+            margin: 20,
+            nav: true,
+            autoplay: false,
+            dots: false,
+            responsive: {
+                0: {
+                    items: 1,
+                    nav: true,
+                },
+                600: {
+                    items: 1,
+                    nav: true,
+                },
+                1000: {
+                    items: 4,
                     nav: true,
                 },
             },
