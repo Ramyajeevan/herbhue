@@ -17,7 +17,7 @@
         <div class="card-body pt-0">
         <h5 class="card-tittle fw-bold">Edit Profile</h5>
         <form method="post" enctype="multipart/form-data" action="{{ route('myaccountsettings') }}">
-                    @csrf()
+        @csrf()
         <div class="row">
             <div class="col-3">
                 <!--<img src="{{asset('img/editimg.png')}}" width="100px" height="100px" alt="">-->
