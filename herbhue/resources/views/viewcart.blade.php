@@ -14,6 +14,7 @@
 @section('content')
 <div class="container-fluid my-5">
     <div class="container">
+        @if(count($cart)>0)
         <div class="row mt-3">
             <div class="col-md-6">
                 <div class="card border-0">
@@ -114,57 +115,19 @@
                 </div>
 
 
-                <!-- <div class="card mb-4">
-                    <div class="card-header bg-white">
-                        <h4>Cart total: <span class="fw-bold">&pound; {{ $cart_total }}</span> </h4>
-                    </div>
-                    <div class="card-body">
-                        @if(empty(Session::get('username')))
-                        <a href="{{ route('login') }}"  class="btn btn-success w-100 btn-lg py-3">Add Delivery Address</a>
-                        @else
-                        <a href="{{ route('checkout') }}"  class="btn btn-success w-100 btn-lg py-3">Add Delivery Address</a>
-                        @endif
-                            <div class="card shadow mt-4 py-2">
-                                <div class="card-body d-flex justify-content-between" data-bs-toggle="modal" data-bs-target="#exampleModal" style="cursor:pointer;">
-
-                                    <h4><img src="{{ asset('img/Group 70.svg') }}" alt="" style="width: 35px;" class="me-2">Apply Coupon</h4>
-
-                                    <p><img src="{{ asset('img/Down Arrow.svg') }}" style="width: 15px;" alt=""></p>
-                                </div>
-                            </div>
-                    </div>
-                </div>
-                <div class="card mb-4">
-                    <div class="card-body">
-                        <h4 class="text-black mb-3">Bill Summary</h4>
-                        <p class="d-flex justify-content-between text-secondary"> <span>Total MRP</span> <span>&pound; {{ $cart_total_mrp }}</span></p>
-                        <p class="d-flex justify-content-between text-secondary"> <span>Discount on MRP</span> <span class="text-green">-&pound; {{ $cart_total_mrp - $cart_total }}</span></p>
-                        <hr class="m-0 p-0">
-                        <p class="d-flex justify-content-between text-secondary"> <span>Cart Value</span> <span>&pound; {{ $cart_total }}</span></p>
-
-                        <p class="d-flex justify-content-between text-secondary"> <span>Delivery Charges</span> <span class="text-green">Free</span></p>
-                        @php $coupon_amount=0; @endphp
-                        @if(!empty(Session::get('coupon_code')))
-                        @php $coupon_amount=Session::get('coupon_amount'); @endphp
-                      
-                        <p class="d-flex justify-content-between text-secondary"> <span>Coupon Charges</span> <span>&pound; {{ $coupon_amount }}</span></p>
-                        @endif
-                    
-                        <hr class="m-0 p-0">
-                        <p class="d-flex justify-content-between text-secondary"> <span>Order Total</span> <span>&pound; {{ $cart_total-$coupon_amount }}</span></p>
-
-                        <hr class="m-0 p-0">
-                        <p class="d-flex justify-content-between text-secondary"> <span>Amount to be paid</span> <span>&pound; {{ $cart_total-$coupon_amount }}</span></p>
-
-                    </div>
-                </div> -->
             </div>
 
         </div>
+        @else
+        <div class="row mt-3">
+            <img src="{{ asset('img/no-cart.png') }}" alt="Cart Empty">
+            Your cart is empty.
+        </div>
+        @endif
     </div>
 
 </div>
-
+@if(count($cart)>0)
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
@@ -188,6 +151,7 @@
         </div>
     </div>
 </div>
+@endif
 @endsection
 @section('script')
 <script>
