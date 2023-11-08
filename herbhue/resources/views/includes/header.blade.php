@@ -91,11 +91,11 @@
             <div class="col-3">
                 <ul class="d-flex ul2 justify-content-end" style="position: relative;top: 13px;  ">
                     <li class="">
-                        <a class="nav-link" href="javascript:void(0);">
-                        <button type="button" class="btn bg-transparent border-0 position-relative">
-                            <img src="{{ asset('img/search icon (2).svg') }}" alt="" class="nav-icon">
-                        </button>
-                        </a>
+                    <div class="input-group mb-3 input-group-sm">
+                        <input type="search" class="form-control rounded-start-pill" placeholder="Search.." aria-label="Recipient's username" aria-describedby="button-addon2">
+                        <button class="btn bg-white rounded-end-circle" type="button" id="button-addon2">   <i class="fa fa-search"></i></button>
+                        </div>
+                    
                     </li>
                     @php
                     $cart_items=0;
@@ -163,11 +163,11 @@
                 <ul class="d-flex list-unstyled" style="position: relative;top: 13px;  ">
                 <li class="">
                      <div class="input-group rounded-0">
-                        <input type="search" class="form-control rounded-0 border-0 border-bottom" placeholder="Search" aria-label="Search" aria-describedby="search-addon">
-                        <span class="input-group-text bg-white border-0" id="search-addon">
-                        <i class="fa fa-search"></i>
-                        </span>
-                    </div>
+                    <input type="search" class="form-control rounded-0 border-0 border-bottom" placeholder="Search" aria-label="Search" aria-describedby="search-addon">
+                    <span class="input-group-text bg-white border-0" id="search-addon">
+                    <i class="fa fa-search"></i>
+                    </span>
+                </div>
         
                     </li>
                     @php
