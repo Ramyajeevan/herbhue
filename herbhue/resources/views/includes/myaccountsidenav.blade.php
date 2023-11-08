@@ -13,7 +13,7 @@
 
                 <div class="card shadow border-3 border-secondary">
                     <ul class="list-group list-group-flush pt-1">
-                    <li class="list-group-item py-2">
+                    <li class="list-group-item py-2 px-lg-5">
                             <a href="{{ route('myaccount') }}" class="text-black">
                             <div class="row">
                                 <div class="col-3">
@@ -30,7 +30,7 @@
                             </div>
                             </a>
                         </li>
-                        <li class="list-group-item py-2">
+                        <li class="list-group-item py-2 px-lg-5">
                             <a href="{{ route('myorders') }}" class="text-black">
                             <div class="row">
                                 <div class="col-3">
@@ -46,7 +46,7 @@
                             </div>
                             </a>
                         </li>
-                        <li class="list-group-item py-2">
+                        <li class="list-group-item py-2 px-lg-5">
                         <a href="{{ route('myaddress') }}" class="text-black">
                             <div class="row">
                                 <div class="col-3">
@@ -62,7 +62,7 @@
                             </div>
                          </a>
                         </li>
-                        <li class="list-group-item py-2">
+                        <li class="list-group-item py-2 px-lg-5" >
                             <a href="{{ route('viewcart') }}" class="text-black">
                             <div class="row">
                                 <div class="col-3">
@@ -80,7 +80,7 @@
                         </li>
 
 
-                        <li class="list-group-item py-2">
+                        <li class="list-group-item py-2 px-lg-5">
                             <a href="{{ route('mywishlist') }}" class="text-black">
                             <div class="row">
                                 <div class="col-3">
@@ -98,7 +98,7 @@
                             </a>
                         </li>
 
-                        <li class="list-group-item py-2">
+                        <li class="list-group-item py-2 px-lg-5">
                             <a href="{{ route('profilecontact') }}" class="text-black">
                             <div class="row">
                                 <div class="col-3">
@@ -116,7 +116,7 @@
                             </a>
                         </li>
 
-                        <li class="list-group-item py-2">
+                        <li class="list-group-item py-2 px-lg-5">
                             <a href="{{ route('logout') }}">
                             <div class="row">
                                 <div class="col-3">

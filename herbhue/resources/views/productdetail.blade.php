@@ -102,7 +102,7 @@ figure.zoom img {
 </style>
 @endsection
 @section('content')
-<div class="container-fluid">
+<div class="container-fluid" >
     <div class="container mt-5">
         <div class="row mb-4">
             <div class="col-md-6 mb-4">
@@ -161,7 +161,8 @@ figure.zoom img {
                     </div>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6" data-aos="fade-up"
+     data-aos-duration="2000">
                 <h6 class="text-secondary">Home / {{ $products->category_name }}</h6>
                 <h3 class="text-black">{{ $products->name }}</h3>
                 <p>
@@ -273,7 +274,8 @@ figure.zoom img {
         </div>
     </div>
 </div>  
-<div class="container-fluid bg-light py-2">
+<div class="container-fluid bg-light py-2" data-aos="fade-up"
+     data-aos-duration="2000">
     <div class="container">
         <h4 class="text-black mt-3">Description</h4>
         <p class="text-secondary small  pb-4 mb-5">

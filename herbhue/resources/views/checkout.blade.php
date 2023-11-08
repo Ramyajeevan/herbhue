@@ -78,7 +78,7 @@
                                 </div>
                                 <div class="col-md-12 mb-2">
                                     <small>COUNTRY</small>
-                                    <p class="py-0 m-0">United Kingdom (UK)</p>
+                                    <p class="py-0 m-0"><img src="{{asset('img/UK_flag.png')}}" width="20px" alt=""> United Kingdom (UK)</p>
                                 </div>
                                 <div class="col-md-12 mb-2">
                                     <div class="form-group">

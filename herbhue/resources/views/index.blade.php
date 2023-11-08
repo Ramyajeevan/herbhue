@@ -42,7 +42,8 @@
 </div>
 
 
-<div class="container-fluid bg-white">
+<div class="container-fluid bg-white" data-aos="fade-up"
+     data-aos-duration="2000">
     <div class="container mt-3 mb-4">
         <div class="d-flex justify-content-between pt-4">
             <div>
@@ -56,7 +57,7 @@
         <div class="row">
             @foreach($product as $prod)
             <div class="col-md-3 mb-3">
-<!--new ui   -->
+                <!--new ui   -->
 
                 <div class="card border-secondary shadow">
 
@@ -80,7 +81,7 @@
             </div>
 
          </div>
-<!--                 end  -->
+                <!--                 end  -->
 
             </div>
             @endforeach
@@ -92,11 +93,12 @@
 </div>
 
 
-<div class="container-fluid bg-light py-4">
+<div class="container-fluid bg-light py-4" >
     <div class="container"> 
     <h3 class="text-center">HerbHue Promise</h3>
         <div class="row">
-            <div class="col-md-4 mb-3">
+            <div class="col-md-4 mb-3" data-aos="zoom-in"
+     data-aos-duration="1000">
                 <div class="d-flex justify-content-center">
                     <img src="{{asset('img/traceability-in.png')}}" style="width:150px" alt="img">
                 </div>
@@ -104,13 +106,15 @@
                 We use the finest ingredients and the most sought-after suppliers in our products.
                 </p>
             </div>
-            <div class="col-md-4 mb-3"><div class="d-flex justify-content-center">
+            <div class="col-md-4 mb-3" data-aos="zoom-in"
+     data-aos-duration="2000"><div class="d-flex justify-content-center">
                     <img src="{{asset('img/tested-and-certified-in.png')}}" style="width:150px"  alt="img">
                 </div>
                 <p class="text-center">
                 We invest in the latest expertise, technology and facilities.
                 </p></div>
-            <div class="col-md-4 mb-3"><div class="d-flex justify-content-center">
+            <div class="col-md-4 mb-3" data-aos="zoom-in"
+     data-aos-duration="3000"><div class="d-flex justify-content-center">
                     <img src="{{asset('img/science--and-safety-in.png')}}" style="width:150px"  alt="img">
                 </div>
                 <p class="text-center">
@@ -122,7 +126,8 @@
         </div>
     </div>
 </div>
-<div class="container-fluid my-5">
+<div class="container-fluid my-5" data-aos="fade-up"
+     data-aos-duration="2000">
 <div class="cate-10 owl-carousel owl-theme">
         @foreach($product as $prod)
             <div class="item">
@@ -152,7 +157,8 @@
         </div>
 </div>
 
-<div class="container-fluid bg-white py-2 my-5">
+<div class="container-fluid bg-white py-2 my-5" data-aos="fade-up"
+     data-aos-duration="2000">
     <div class="container mt-3 mb-4">
         <h3>Shop by Health Concerns</h3>
         <div class="cate-1 owl-carousel owl-theme">
@@ -168,7 +174,8 @@
     </div>
     
 </div>
-<div class="container-fluid mt-5">
+<div class="container-fluid mt-5" data-aos="fade-up"
+     data-aos-duration="2000">
         <div class="row">
              @foreach($category as $cat)
                 @if($loop->index<3)
@@ -190,7 +197,8 @@
         </div>
     </div>
 
-<div class="container-fluid my-5">
+<div class="container-fluid my-5" data-aos="fade-up"
+     data-aos-duration="2000">
     <div class="container">
         <h2 class=" text-black mb-4">Trending Now</h2> 
         <div class="cate-3 owl-carousel owl-theme">
@@ -227,7 +235,8 @@
         </div>
     </div>
 </div>
-<div class="container-fluid my-5">
+<div class="container-fluid my-5" data-aos="fade-up"
+     data-aos-duration="2000">
     <div class="container">
         <h3 class=" text-black mb-4">Our Top Brands</h3>
         <div class="cate-4 owl-carousel owl-theme">
@@ -243,7 +252,8 @@
 </div>
                 
 
-<div class="container-fluid my-5">
+<div class="container-fluid my-5" data-aos="fade-up"
+     data-aos-duration="2000">
     <div class="container">
         <h3 class=" text-black text-center ">Recommended by you</h3>
         <p class="text-center">Discover their stories and why they recommend HerbHue.</p>
@@ -375,7 +385,7 @@
             margin: 20,
             nav: false,
             autoplay:true,
-            autoplayTimeout:1000,
+            autoplayTimeout:1500,
             autoplayHoverPause:true,
             dots: false,
             responsive: {

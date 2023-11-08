@@ -7,6 +7,8 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
         <script async="" defer="" src="https://buttons.github.io/buttons.js"></script>
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         $(".cate-1").owlCarousel({
             loop: true,
@@ -81,27 +83,7 @@
 
 
 
-        $(".testimonial").owlCarousel({
-            loop: true,
-            margin: 20,
-            nav: true,
-            autoplay: false,
-            dots: false,
-            responsive: {
-                0: {
-                    items: 1,
-                    nav: true,
-                },
-                600: {
-                    items: 1,
-                    nav: true,
-                },
-                1000: {
-                    items: 2,
-                    nav: true,
-                },
-            },
-        });
+       
 
 
     </script>
@@ -206,3 +188,7 @@
         });
 
     </script>
+
+<script>
+  AOS.init();
+</script>
