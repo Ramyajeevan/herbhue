@@ -57,10 +57,10 @@
             <input type="password" placeholder="abc@1234#"  id="password" name="password" value="{{ $user->password }}" required class="form-control rounded-0 ">
            <label for="exampleInputEmail1">Minimum 6 characters required</label>
         </div>
-        <label for="password" class="fw-bold">Mobile Number</label>
+        <label for="mobile" class="fw-bold">Mobile Number</label>
         <div class="input-group mb-4">
         <span class="input-group-text bg-white" id="basic-addon1"><img src="http://herbhue.azurewebsites.net/img/UK_flag.png" width="20px" alt="">+44</span>
-        <input type="text" class="form-control" placeholder="1111111111" aria-label="Username" aria-describedby="basic-addon1">
+        <input type="text" class="form-control" placeholder="1111111111" aria-label="Username" id="mobile" name="mobile" value="{{ $user->mobile }}" aria-describedby="basic-addon1">
         </div>
 
         <div class="form-group mb-4">
