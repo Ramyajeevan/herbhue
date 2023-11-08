@@ -120,8 +120,13 @@
         </div>
         @else
         <div class="row mt-3">
-            <img src="{{ asset('img/no-cart.png') }}" alt="Cart Empty">
-            Your cart is empty.
+          <div class="col-md-3"></div>
+          <div class="col-md-6">   <img src="{{ asset('img/no-cart.png') }}" alt="Cart Empty" class="w-100">
+        <h5 class="text-center"> Your cart is empty.</h5>
+        </div>
+
+          <div class="col-md-3"></div>
+           
         </div>
         @endif
     </div>

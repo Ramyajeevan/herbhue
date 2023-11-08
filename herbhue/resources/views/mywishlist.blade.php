@@ -55,16 +55,18 @@
                             </div>
                            
                         </div>
-                        @endforeach
+                        @endforeach 
                         @else
-                        <div class="row border-bottom pb-2">
-                        <div class="d-flex justify-content-center">
-                               <img src="{{asset('img/no-wishlist.png')}}" alt="" class="w-75">
+                        <div class="row mt-3">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-6">   <img src="{{ asset('img/no-wishlist.png') }}" alt="Cart Empty" class="w-100">
+                        <h5 class="text-center">No items found in wishlist</h5>
                         </div>
-                     
-                            <p align="center">No items found in wishlist</p>
+
+                        <div class="col-md-3"></div>
+                        
                         </div>
-                        @endif
+                        @endif 
                     </div>
                 </div>
             </div>

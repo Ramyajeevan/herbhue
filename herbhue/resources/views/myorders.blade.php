@@ -46,9 +46,17 @@
         </tbody>
         @else
         <tbody>
-            <tr>
-                <td align="center">No Orders Found</td>
-            </tr>
+                
+                <div class="row mt-3">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">   <img src="{{ asset('img/no-order.png') }}" alt="Cart Empty" class="w-100">
+                <h5 class="text-center">No orders Found</h5>
+                </div>
+
+                <div class="col-md-3"></div>
+                
+                </div>
+        
         </tbody>
         @endif
     </table>
