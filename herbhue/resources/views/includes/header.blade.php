@@ -161,15 +161,7 @@
             </div>
             <div class="me-3">
                 <ul class="d-flex list-unstyled" style="position: relative;top: 13px;  ">
-                <li class="">
-                     <div class="input-group rounded-0">
-                    <input type="search" class="form-control rounded-0 border-0 border-bottom" placeholder="Search" aria-label="Search" aria-describedby="search-addon">
-                    <span class="input-group-text bg-white border-0" id="search-addon">
-                    <i class="fa fa-search"></i>
-                    </span>
-                </div>
-        
-                    </li>
+               
                     @php
                     $cart_items=0;
                     $session_id=Session::getId();
@@ -247,7 +239,10 @@
 
                 </ul>
             </nav>
-
+            <div class="input-group  input-group-sm" style="width:47%;">
+                        <input type="search" class="form-control rounded-start-pill" placeholder="Search.." aria-label="Recipient's username" aria-describedby="button-addon2">
+                        <button class="btn bg-white border border-start-0 rounded-end-circle" type="button" id="button-addon2">   <i class="fa fa-search"></i></button>
+                        </div>
             <div
                 class="side-menu-close d-flex d-lg-none flex-wrap flex-column align-items-center justify-content-end ml-auto">
                 <span></span>

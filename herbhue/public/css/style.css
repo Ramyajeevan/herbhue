@@ -460,8 +460,8 @@ header .main-menu .sub-menu {
   top: 100%;
   width: 250px;
   overflow: hidden;
-  border-top: 2px solid #3038AC ;
-  border-bottom: 2px solid #3038AC ;
+  border-top: 2px solid black ;
+  border-bottom: 2px solid black ;
   background: #fff;
   -webkit-box-shadow: 0 1px 5px 0 rgba(83, 83, 83, 0.2);
   box-shadow: 0 1px 5px 0 rgba(83, 83, 83, 0.2);
@@ -476,7 +476,7 @@ header .main-menu .sub-menu {
 header .main-menu .sub-menu a {
   padding: 11px 10px;
   display: block;
-  color: #173966;
+  color: black;
   font-weight: 600;
   font-size: 15px;
   transition: 0.4s;
@@ -487,11 +487,11 @@ header .main-menu .sub-menu a {
 }
 
 header .main-menu .sub-menu a i {
-  color: #03328e;
+  color: black;
 }
 
 header .main-menu .sub-menu a:hover {
-  background: #3038AC ;
+  background: black ;
   color: #fff;
 }
 

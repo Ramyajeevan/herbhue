@@ -5,7 +5,6 @@
 @section('css')
 <style>
     .aboutus img{
-        margin-top: 6%; 
         width: 100%;
         height: 400px;
     }
@@ -30,7 +29,7 @@
 <img src="https://herbhue.azurewebsites.net/herbhue-admin/public/images/1698671729.png" alt="" >
 
 </section>
-<div class="container-fluid">
+<div class="container-fluid mt-4">
     <div class="container">
         <div class="row">
             <div class="col-md-8">
