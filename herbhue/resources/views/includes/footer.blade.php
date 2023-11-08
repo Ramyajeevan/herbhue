@@ -70,7 +70,6 @@
                 <p class="pb-0 mb-0">
                     <a href="{{ route('blogpage') }}" class="text-black fw-medium">Blog</a>
                 </p>
-
                 <p class="pb-0 mb-0">
                     <a href="{{ route('contact') }}" class="text-black fw-medium">Contact Us</a>
                 </p>
