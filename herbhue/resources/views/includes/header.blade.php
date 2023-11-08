@@ -91,9 +91,9 @@
             <div class="col-3">
                 <ul class="d-flex ul2 justify-content-end" style="position: relative;top: 13px;  ">
                     <li class="">
-                    <div class="input-group mb-3 input-group-sm">
+                    <div class="input-group  input-group-sm">
                         <input type="search" class="form-control rounded-start-pill" placeholder="Search.." aria-label="Recipient's username" aria-describedby="button-addon2">
-                        <button class="btn bg-white rounded-end-circle" type="button" id="button-addon2">   <i class="fa fa-search"></i></button>
+                        <button class="btn bg-white border border-start-0 rounded-end-circle" type="button" id="button-addon2">   <i class="fa fa-search"></i></button>
                         </div>
                     
                     </li>
