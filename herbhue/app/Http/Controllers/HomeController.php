@@ -149,7 +149,7 @@ class HomeController extends Controller
         $email=Session::get('username');
         $user=DB::table("tbl_user")->where("email",$email)->first();
         $orders=DB::table("tbl_order")->where("user_id",$user->id)->latest('id')->get();
-        $addresses=DB::table('tbl_address')->where("user_id",$user_id)->get();
+        $addresses=DB::table('tbl_address')->where("user_id",$user->id)->get();
         return view('myaccount',["user"=>$user,"orders"=>$orders,'addresses'=>$addresses]);
         //return view('myaccount');
       }
@@ -677,13 +677,13 @@ class HomeController extends Controller
     
     public function success()
     {
-      $session_id=request()->category_id;
+      $session_id=request()->session_id;
       try {
-        require 'vendor/autoload.php';
+        require '../vendor/autoload.php';
 $stripe = new \Stripe\StripeClient('sk_test_51O5pJDL5fakvGlAxziOdJArTdmG6JrwbxKiAp2cOl4Bkr1NmupQ2DYDulBakyvfs3cycTRI1kL3AvGhqqdzqWCOY00gC0RZkXy');
 
         $session = $stripe->checkout->sessions->retrieve($session_id);
-        $customer = $stripe->customers->retrieve($session->customer);
+        $customer = $session->customer_details;
         echo "<h1>Thanks for your order, $customer->name!</h1>";
         http_response_code(200);
       } catch (Error $e) {
