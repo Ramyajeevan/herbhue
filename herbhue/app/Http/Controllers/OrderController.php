@@ -242,8 +242,8 @@ class OrderController extends Controller
       ]],
        'automatic_tax' => ['enabled' => true],
   'mode' => 'payment',
-      'success_url' => 'http://localhost/herbhue/public/index.php/thankyou/{CHECKOUT_SESSION_ID}/'.$order_id,
-      'cancel_url' => 'http://localhost/herbhue/public/index.php/cancel',
+      'success_url' => 'https://herbhue.azurewebsites.net/thankyou/{CHECKOUT_SESSION_ID}/'.$order_id,
+      'cancel_url' => 'https://herbhue.azurewebsites.net/cancel',
     ]);
 
     return redirect($checkout_session->url);
