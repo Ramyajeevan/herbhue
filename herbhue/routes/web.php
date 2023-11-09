@@ -76,7 +76,7 @@ Route::get('checkout',[CartController::class, 'checkout'])->name('checkout');
 Route::post('movetocart',[CartController::class, 'movetocart'])->name('movetocart');
 
 Route::post('placeorder',[OrderController::class, 'placeorder'])->name('placeorder');
-Route::get('thankyou/{order_id}',[OrderController::class, 'thankyou'])->name('thankyou');
+Route::get('thankyou/{session_id}/{order_id}',[OrderController::class, 'thankyou'])->name('thankyou');
 Route::get('payment',[OrderController::class, 'payment'])->name('payment');
 Route::post('placeorder1',[OrderController::class, 'placeorder1'])->name('placeorder1');
 
@@ -100,4 +100,6 @@ Route::post('updateaddress/{id}',[HomeController::class, 'updateaddress'])->name
 Route::get('blogpage/{id?}',[HomeController::class, 'blogpage'])->name('blogpage'); 
 
 Route::get('/blog',[HomeController::class, 'blog'])->name('blog');
+Route::get('success',[HomeController::class, 'success'])->name('success');
+Route::get('cancel',[HomeController::class, 'cancel'])->name('cancel');
 ?>

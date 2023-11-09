@@ -25,7 +25,8 @@ class OrderController extends Controller
 
   public function placeorder(Request $request)
   {
-    //dd($request); 
+    
+
     $msg="";
     if(!isset($request->address_id))
     {
@@ -223,7 +224,30 @@ class OrderController extends Controller
           ->update(['payment_method'=>$request->card_type,'cardnumber'=>$request->cardnumber,
           'expire_month'=>$request->expire_month,'expire_year'=>$request->expire_year,
           'cvv'=>$request->cvv]);
-        return redirect()->route('thankyou', [$order_id]);
+
+          require '../vendor/autoload.php';
+
+    $stripe = new \Stripe\StripeClient('sk_test_51O5pJDL5fakvGlAxziOdJArTdmG6JrwbxKiAp2cOl4Bkr1NmupQ2DYDulBakyvfs3cycTRI1kL3AvGhqqdzqWCOY00gC0RZkXy');
+
+    $checkout_session = $stripe->checkout->sessions->create([
+      'line_items' => [[
+        'price_data' => [
+          'currency' => 'GBP',
+          'product_data' => [
+            'name' => 'Herbhue',
+          ],
+          'unit_amount' => $net_total*100,
+        ],
+        'quantity' => 1,
+      ]],
+       'automatic_tax' => ['enabled' => true],
+  'mode' => 'payment',
+      'success_url' => 'http://localhost/herbhue/public/index.php/thankyou/{CHECKOUT_SESSION_ID}/'.$order_id,
+      'cancel_url' => 'http://localhost/herbhue/public/index.php/cancel',
+    ]);
+
+    return redirect($checkout_session->url);
+       // return redirect()->route('thankyou', [$order_id]);
 
       }
       else
@@ -236,7 +260,7 @@ class OrderController extends Controller
 
   }
  
-  public function thankyou($order_id)
+  public function thankyou($session_id,$order_id)
   {
     if(!empty(Session::get('coupon_code')))
     {
@@ -245,7 +269,18 @@ class OrderController extends Controller
     }
     $order=DB::table('tbl_order')->where("order_id",$order_id)->first();
     $order_amount=$order->total;
-    return view('thankyou',['order_id'=>$order_id,'order_amount'=>$order_amount]);
+    require '../vendor/autoload.php';
+$stripe = new \Stripe\StripeClient('sk_test_51O5pJDL5fakvGlAxziOdJArTdmG6JrwbxKiAp2cOl4Bkr1NmupQ2DYDulBakyvfs3cycTRI1kL3AvGhqqdzqWCOY00gC0RZkXy');
+
+try {
+  $session = $stripe->checkout->sessions->retrieve($session_id);
+  $customer = $session->customer_details;
+  return view('thankyou',['order_id'=>$order_id,'order_amount'=>$order_amount]);
+} catch (Error $e) {
+  http_response_code(500);
+  echo json_encode(['error' => $e->getMessage()]);
+}
+   
     
   }
 
