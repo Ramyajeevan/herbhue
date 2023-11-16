@@ -209,16 +209,16 @@ class HomeController extends Controller
       $order_products=DB::table("tbl_order_products")->where("order_id",$orders->order_id)->get();
       for($i=0;$i<count($order_products);$i++)
       {
-            $productdetail=DB::table("tbl_product")->where("id",$orders[$i]->product_id)->first();
+            $productdetail=DB::table("tbl_product")->where("id",$order_products[$i]->product_id)->first();
             if(isset($productdetail))
             {
-            $orders[$i]->product_name=$productdetail->name;
-            $orders[$i]->image1=$productdetail->image1;
+            $order_products[$i]->product_name=$productdetail->name;
+            $order_products[$i]->image1=$productdetail->image1;
             }
             else
             {
-                $orders[$i]->product_name="";
-                $orders[$i]->image1="";
+                $order_products[$i]->product_name="";
+                $order_products[$i]->image1="";
             }
       }
       $billing=DB::table("tbl_billing_address")->where("order_id",$orders->order_id)->first();
