@@ -24,6 +24,7 @@
       </tr>
       </thead>
       <tbody>
+        @if(count($order_products)>0)
         @foreach($order_products as $ord_prod)
         <tr>
   
@@ -31,6 +32,7 @@
           <td>&#8377; {{ $ord_prod->total }}</td>
         </tr>
         @endforeach
+        @endif
         <tr>
           <td>Sub Total</td>
           <td>&#8377; {{ $order->subtotal }}</td>
