@@ -222,14 +222,8 @@ class HomeController extends Controller
             }
       }
       $billing=DB::table("tbl_billing_address")->where("order_id",$orders->order_id)->first();
-      $url = url()->current();
-        $url = explode('/', $url);
-        // dd($url);
-        
-        if(!isset($url[5])){
-          $url[5] = '';
-        }
-      return view('vieworder', ["user"=>$user,'order' => $orders,'order_products'=>$order_products,'billing'=>$billing,'page'=>$url['5']]);
+    dd($order_products);
+      return view('vieworder', ["user"=>$user,'order' => $orders,'order_products'=>$order_products,'billing'=>$billing]);
     }
   	public function products()
     {
