@@ -152,10 +152,25 @@ class HomeRepository extends BaseRepository
         for($i=0;$i<count($orders);$i++)
         {
             $order_products=DB::table("tbl_order_products")->where("order_id",$orders[$i]->order_id)->first();
-            $orders[$i]->product_id=$order_products->product_id;
+            if(isset($order_products))
+            {
+                $orders[$i]->product_id=$order_products->product_id;
+            }
+            else
+            {
+                $orders[$i]->product_id="";
+            }
             $productdetail=DB::table("tbl_product")->where("id",$orders[$i]->product_id)->first();
+            if(isset($productdetail))
+            {
             $orders[$i]->product_name=$productdetail->name;
             $orders[$i]->image1=$productdetail->image1;
+            }
+            else
+            {
+                $orders[$i]->product_name="";
+                $orders[$i]->image1="";
+            }
             $orders[$i]->added_date=date("Y-m-d",strtotime($orders[$i]->added_date));
         }
         //dd($orders);

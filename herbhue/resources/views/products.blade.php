@@ -3,7 +3,51 @@
 <title>Herbhue - Shop Products</title>
 @endsection
 @section('css')
+<style>
+    
+ .owl-carousel .owl-nav button.owl-prev,
+.owl-carousel .owl-nav button.owl-next {
+  z-index: 1;
+  width: 40px;
+  height: 40px;
+  /* background-color: white; */
+  position: absolute;
+  top: 45% !important;
+  transform: translatey(-50%);
+  clip-path: circle();
+  /* color: #3038AC !important;
+  -webkit-box-shadow: 0px 1px 23px 0px rgba(0, 0, 0, 0.75) !important;
+  -moz-box-shadow: 0px 1px 23px 0px rgba(0, 0, 0, 0.75) !important;
+  box-shadow: 0px 1px 23px 0px rgba(0, 0, 0, 0.75) !important; */
 
+}
+
+/* .owl-nav button span {
+  font-size: 30px;
+  height: 100%;
+  display: block;
+  width: 100%;
+  line-height: 35px;
+  -webkit-box-shadow: 0px 1px 23px 0px rgba(0, 0, 0, 0.75) !important;
+  -moz-box-shadow: 0px 1px 23px 0px rgba(0, 0, 0, 0.75) !important;
+  box-shadow: 0px 1px 23px 0px rgba(0, 0, 0, 0.75) !important;
+}  */
+  .owl-carousel .owl-nav button.owl-prev {
+  left: 0;
+} 
+  .owl-carousel .owl-nav button.owl-next {
+  right: 0;
+}
+
+.owl-carousel .owl-nav {
+  margin: 0;
+}
+
+.owl-carousel .owl-item img {
+  display: flex !important;
+  width: 100% !important;
+} 
+</style>
 @endsection
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css"
@@ -16,8 +60,14 @@
 @section('content')
 <div class="container-fluid mb-5">
     <img src="{{asset('img/shop-banner.png')}}" class="w-100" height="300px" alt="">
-    <div class="container my-5" data-aos="fade-up"
-     data-aos-duration="2000">
+    
+    <div class="container my-3">
+<div class="input-group input-group-lg mb-3 rounded-0 shadow">
+  <input type="search" class="form-control" placeholder="Search by Product Name" aria-label="Recipient's username" aria-describedby="button-addon2">
+  <button class="btn  bg-transparent" type="button" id="button-addon2"><i class="fa fa-search"></i></button>
+</div>
+</div>
+    <div class="container my-5" >
             <div class="cate1 owl-carousel owl-theme">
             @foreach($products as $prod)
             <div class="item">
@@ -49,8 +99,7 @@
         
     </div>
 
-    <div class="container" data-aos="fade-up"
-     data-aos-duration="2000">
+    <div class="container" >
 
     <div class="cate12 owl-carousel owl-theme">
          @foreach($category as $cat)
@@ -84,20 +133,21 @@
         $(".cate1").owlCarousel({
             loop: true,
             margin: 20,
-            nav: true,
+            navText: ['<img src="{{ asset('img/arrow-right.png') }}">', '<img src="{{ asset('img/owl-arrow.png') }}">'],    
             autoplay: false,
+            nav: true,
             dots: false,
             responsive: {
                 0: {
-                    items: 1,
+                    items: 1, 
                     nav: true,
                 },
                 600: {
-                    items: 1,
+                    items: 1, 
                     nav: true,
                 },
                 1000: {
-                    items: 4,
+                    items: 4, 
                     nav: true,
                 },
             },
@@ -108,6 +158,7 @@
             loop: true,
             margin: 20,
             nav: true,
+            navText: ['<img src="{{ asset('img/arrow-right.png') }}">', '<img src="{{ asset('img/owl-arrow.png') }}">'],    
             autoplay: false,
             dots: false,
             responsive: {

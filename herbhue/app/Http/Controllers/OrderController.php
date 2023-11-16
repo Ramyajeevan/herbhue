@@ -226,8 +226,8 @@ class OrderController extends Controller
           'cvv'=>$request->cvv]);
 
           require '../vendor/autoload.php';
-
-    $stripe = new \Stripe\StripeClient('sk_test_51O5pJDL5fakvGlAxziOdJArTdmG6JrwbxKiAp2cOl4Bkr1NmupQ2DYDulBakyvfs3cycTRI1kL3AvGhqqdzqWCOY00gC0RZkXy');
+          require_once('../vendor/stripe/stripe-php/init.php');
+         $stripe = new \Stripe\StripeClient('sk_test_51O5pJDL5fakvGlAxziOdJArTdmG6JrwbxKiAp2cOl4Bkr1NmupQ2DYDulBakyvfs3cycTRI1kL3AvGhqqdzqWCOY00gC0RZkXy');
 
     $checkout_session = $stripe->checkout->sessions->create([
       'line_items' => [[
@@ -270,11 +270,13 @@ class OrderController extends Controller
     $order=DB::table('tbl_order')->where("order_id",$order_id)->first();
     $order_amount=$order->total;
     require '../vendor/autoload.php';
+      require_once('../vendor/stripe/stripe-php/init.php');
 $stripe = new \Stripe\StripeClient('sk_test_51O5pJDL5fakvGlAxziOdJArTdmG6JrwbxKiAp2cOl4Bkr1NmupQ2DYDulBakyvfs3cycTRI1kL3AvGhqqdzqWCOY00gC0RZkXy');
 
 try {
   $session = $stripe->checkout->sessions->retrieve($session_id);
   $customer = $session->customer_details;
+     DB::table('tbl_order')->where("order_id",$order_id)->update(['payment_status'=>$session->payment_status,'payment_id'=>$session->payment_intent]);
   return view('thankyou',['order_id'=>$order_id,'order_amount'=>$order_amount]);
 } catch (Error $e) {
   http_response_code(500);

@@ -399,8 +399,8 @@ figure.zoom img {
                     <div class="col-md-5 pt-5 text-center"> 
                     <button type="button" class="btn btn-outline-dark btn-lg web-view" style="position: absolute;top: 128px;right: 170px;" @if(!empty(Session::get('username'))) onclick="showratingform();" @else onclick="showalert();" @endif>Write a Review</button>
 
-                  <div class="d-flex justify-content-center mob-view">
-                  <button type="button" class="btn btn-outline-dark btn-lg "  @if(!empty(Session::get('username'))) onclick="showratingform();" @else onclick="showalert();" @endif>Write a Review</button>
+                  <div class="d-flex justify-content-center ">
+                  <button type="button" class="btn btn-outline-dark btn-lg mob-view "  @if(!empty(Session::get('username'))) onclick="showratingform();" @else onclick="showalert();" @endif>Write a Review</button>
                   </div>
                     </div>
                 </div>

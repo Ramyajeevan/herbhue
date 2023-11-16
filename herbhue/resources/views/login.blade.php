@@ -26,8 +26,7 @@
     <div class="container-fluid pb-0">
         <div class="row">
             <div class="col-lg-4"></div>
-            <div class="col-lg-4" data-aos="zoom-in"
-     data-aos-duration="2000">
+            <div class="col-lg-4"  >
             <form method="post" action="{{ route('login') }}">
                 @csrf
                 <div class="form-container">

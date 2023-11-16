@@ -50,7 +50,11 @@
                 
                 <div class="row mt-3">
                 <div class="col-md-3"></div>
-                <div class="col-md-6">   <img src="{{ asset('img/no-order.png') }}" alt="Cart Empty" class="w-100">
+                <div class="col-md-6">  
+                    
+                <div class="d-flex justify-content-center">
+                <img src="{{ asset('img/no-order.png') }}" alt="Cart Empty" class="w-75">
+            </div> 
                 <h5 class="text-center">No orders Found</h5>
                 </div>
 

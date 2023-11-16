@@ -69,7 +69,7 @@
     display:none !important;
   }
   }
-  .owl-carousel .owl-nav button.owl-next {
+  /* .owl-carousel .owl-nav button.owl-next {
             position: absolute !important;
             top: -40px;
             right: 0 !important;
@@ -88,7 +88,7 @@
         .owl-carousel .owl-nav button.owl-next:hover {
             background-color: transparent !important;
             color: black !important;
-        }
+        } */
 </style>
 <style>
     .rounded-start-pill{
@@ -220,6 +220,8 @@ function isEmail(email) {
     }
 }
     </script>
+
+
 
 </body>
 </html>

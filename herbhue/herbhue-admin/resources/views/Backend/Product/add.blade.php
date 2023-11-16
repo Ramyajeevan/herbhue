@@ -157,10 +157,10 @@
                         </select>
                       </td>
                       <td>
-                        <input type="text" onkeypress="return onlyNumberKey(event)" name="opt_price_0" class="form-control" required>
+                        <input type="text" name="opt_price_0" class="form-control decimal" required>
                       </td>
                       <td>
-                        <input type="text" onkeypress="return onlyNumberKey(event)" name="opt_mrp_price_0" class="form-control" required>
+                        <input type="text" name="opt_mrp_price_0" class="form-control decimal" required>
                       </td>
                       <td>
                         <input type="text" onkeypress="return onlyNumberKey(event)" name="opt_stock_0" class="form-control" required>
@@ -301,6 +301,16 @@
       });
     }
   }
+
+  $('.decimal').keyup(function(){
+    var val = $(this).val();
+    if(isNaN(val)){
+         val = val.replace(/[^0-9\.]/g,'');
+         if(val.split('.').length>2) 
+             val =val.replace(/\.+$/,"");
+    }
+    $(this).val(val); 
+});
 </script>
 <script src="https://cdn.gaic.com/cdn/ui-bootstrap/0.58.0/js/lib/ckeditor/ckeditor.js"></script>
 <script>
