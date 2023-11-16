@@ -28,6 +28,8 @@
         <tr>
           @php
           $product=DB::table("tbl_product")->where("id",$ord_prod->product_id)->first();
+          if(!isset($product))
+            $product->name="";
           @endphp
           <td>{{ $product->name }} x {{ $ord_prod->quantity }}</td>
           <td>&#8377; {{ $ord_prod->total }}</td>
