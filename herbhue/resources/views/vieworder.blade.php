@@ -26,13 +26,13 @@
       <tbody>
         @foreach($order_products as $ord_prod)
         <tr>
-          @php
+          <?php
           $product=DB::table("tbl_product")->where("id",$ord_prod->product_id)->first();
           if(!is_null($product->name))
             $product_name=$product->name;
           else
             $product_name="";
-          @endphp
+          ?>
           <td>{{ $product_name }} x {{ $ord_prod->quantity }}</td>
           <td>&#8377; {{ $ord_prod->total }}</td>
         </tr>
