@@ -40,7 +40,7 @@
                 <td class="fw-bold align-items-center">{{ $ord->added_date }}</td>
                 <td class="fw-bold align-items-center">{{ $ord->status }}</td>
                 <td class="fw-bold align-items-center">&pound; {{ $ord->total }}</td>
-                <td><button type="button" class="btn btn-success px-3 text-black rounded-pill btn-sm">View</button>
+                <td><a href="{{ route('vieworder', $ord->id) }}" class="btn btn-success px-3 text-black rounded-pill btn-sm">View</a>
                 </td>
             </tr>
             @endforeach
