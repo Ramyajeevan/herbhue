@@ -28,7 +28,7 @@
         @foreach($order_products as $ord_prod)
         <tr>
   
-          <td>{{ $ord_prod->name }} x {{ $ord_prod->quantity }}</td>
+          <td>{{ $ord_prod->product_name }} x {{ $ord_prod->quantity }}</td>
           <td>&#8377; {{ $ord_prod->total }}</td>
         </tr>
         @endforeach
