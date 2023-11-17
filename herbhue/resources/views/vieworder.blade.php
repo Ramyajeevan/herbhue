@@ -9,8 +9,6 @@
 <div class="container-fluid">
 <div class="container mb-5">
     <h4 class="text-black my-4">View Order {{ $order->order_id }}</h4>
-
-  		
   	<p>Order Number : <strong> {{ $order->order_id }}</strong><br>
      Date : <strong> {{ $order->added_date }}</strong><br>
      Payment Method : <strong>{{ $order->payment_method }}</strong><br>
