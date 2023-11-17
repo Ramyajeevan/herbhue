@@ -34,7 +34,9 @@ class Controller extends BaseController
                 "subject": "'.$subject.'",
                 "body": {
                     "contentType": "HTML",
-                    "content": "'.$content.'"
+                    "content": "'.$content.'<br>
+                    <p>Regards,</p>
+                    <p>'.$from_name.'</p>"
                 },
                 "toRecipients": [
                     {
