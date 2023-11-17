@@ -587,7 +587,7 @@ class HomeController extends Controller
          //$usermail = DB::table('tbl_user')->where("email",$email)->first();
         $touseremail=$user->email;
         $message = "<p>Dear User,</p><p>Your Password need to reset!</b></p>";
-        $message .= "<div style='width:49%;float:left;padding-right:10px;'>";
+        $message .= "<div style='width:100%;float:left;padding-right:10px;'>";
         $link= url()->to("resetpassword")."?email=".$user->email;
         $message .="<p><a href='".$link."'>Click here</a> to reset your password.</p>";
         $message .= "</div>";
