@@ -14,7 +14,7 @@
         <div class="auth-box">
           <div id="loginform">
             <div class="logo">
-              <span class="db"><img src="{{ asset('assets/images/logo-icon.png') }}" alt="logo" /></span>
+              <span class="db"><img src="{{ asset('assets/images/logo-icon.png') }}" alt="logo" width="50" /></span>
               <h5 class="font-medium mb-3">Sign In to Admin</h5>
             </div>
             
