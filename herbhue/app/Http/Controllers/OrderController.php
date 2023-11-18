@@ -226,7 +226,6 @@ class OrderController extends Controller
           'cvv'=>$request->cvv]);
           
            //send email for order placed
-    $email=Session::get('username');
     $order=DB::table('tbl_order')->where("order_id",$order_id)->first();
     $order_products=DB::table("tbl_order_products")->where("order_id",$order_id)->get();
     for($i=0;$i<count($order_products);$i++)
@@ -269,7 +268,7 @@ class OrderController extends Controller
     $content.=$billing->billing_phone.'</td><tr></table>';
     $user=DB::table('tbl_user')->where("email",$email)->first();
     $mail_sent = Parent::sendmail($content, env('APP_NAME').' Order Placed', env('MAIL_USERNAME'), env('APP_NAME'),$email,$user->name);
-    
+
           require '../vendor/autoload.php';
           require_once('../vendor/stripe/stripe-php/init.php');
          $stripe = new \Stripe\StripeClient('sk_test_51O5pJDL5fakvGlAxziOdJArTdmG6JrwbxKiAp2cOl4Bkr1NmupQ2DYDulBakyvfs3cycTRI1kL3AvGhqqdzqWCOY00gC0RZkXy');
