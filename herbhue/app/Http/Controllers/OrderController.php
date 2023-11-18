@@ -245,7 +245,50 @@ class OrderController extends Controller
       'success_url' => 'https://herbhue.azurewebsites.net/thankyou/{CHECKOUT_SESSION_ID}/'.$order_id,
       'cancel_url' => 'https://herbhue.azurewebsites.net/cancel',
     ]);
+    //send email for order placed
+    $email=Session::get('username');
+    $order=DB::table('tbl_order')->where("order_id",$order_id)->first();
+    $order_products=DB::table("tbl_order_products")->where("order_id",$order_id)->get();
+    for($i=0;$i<count($order_products);$i++)
+    {
+          $productdetail=DB::table("tbl_product")->where("id",$order_products[$i]->product_id)->first();
+          if(isset($productdetail))
+          {
+          $order_products[$i]->product_name=$productdetail->name;
+          $order_products[$i]->image1=$productdetail->image1;
+          }
+          else
+          {
+              $order_products[$i]->product_name="";
+              $order_products[$i]->image1="";
+          }
+    }
+    $billing=DB::table("tbl_billing_address")->where("order_id",$order_id)->first();
+    $shipping=DB::table("tbl_address")->where("order_id",$order_id)->first();
+    $content='<h4 class="text-black my-4">View Order '.$order->order_id.'</h4><p>Order Number : <strong>'.$order->order_id.'</strong><br>';
+    $content.='Date : <strong>'.$order->added_date.'</strong><br>Payment Method : <strong>'.$order->payment_method.'</strong><br></p>';
+    $content.='<h3 class="section-title section-title__sm mb-2 pb-2 font-size-18">Order details</h3><table class="table m-3"><thead>';
+    $content.='<tr><th class="product-name">Product</th><th class="product-subtotal">Total</th></tr></thead><tbody>';
+    if(count($order_products)>0)
+    {
+        foreach($order_products as $ord_prod)
+        {
+          $content.='<tr><td>'.$ord_prod->product_name .' x '. $ord_prod->quantity.'</td><td>&pound; '. $ord_prod->total.'</td></tr>';
+        }
+    }
+    $content.='<tr><td>Sub Total</td><td>&pound; '.$order->subtotal.'</td></tr><tr><td>Delivery Charge</td><td>&pound; '.$order->delivery_charge.'</td></tr>';
+    if($order->coupon_amount>0)
+    {
+        $content.='<tr><td>Coupon Amount</td><td>&pound; '.$order->coupon_amount.'</td></tr>';
+    }
 
+    $content.='<tr><td>Total</td><td>&pound; '.$order->total.'</td></tr></tbody></table>';
+    $content.='<table><tr><th><h3 class="section-title section-title__sm mb-2 pb-2 font-size-18">Billing Address</h3></th></tr>';
+    $content.='<tr><td>'.$billing->billing_firstname .' '.$billing->billing_lastname .'<br>'. $billing->billing_street_address .'<br>';
+    $content.= $billing->billing_street_address2.'<br>'.$billing->billing_city.'<br>'. $billing->billing_pincode.'<br>';
+    $content.=$billing->billing_phone.'</td><tr></table>';
+    $user=DB::table('tbl_user')->where("email",$email)->first();
+    $mail_sent = Parent::sendmail($content, env('APP_NAME').' Order Placed', env('MAIL_USERNAME'), env('APP_NAME'),$email,$user->name);
     return redirect($checkout_session->url);
        // return redirect()->route('thankyou', [$order_id]);
 
