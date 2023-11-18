@@ -62,10 +62,13 @@
     <img src="{{asset('img/shop-banner.png')}}" class="w-100" height="300px" alt="">
     
     <div class="container my-3">
+    <form id="prodcut-form" method="get" action="{{ route('products') }}">
+                    @csrf
 <div class="input-group input-group-lg mb-3 rounded-0 shadow">
-  <input type="search" class="form-control" placeholder="Search by Product Name" aria-label="Recipient's username" aria-describedby="button-addon2">
-  <button class="btn  bg-transparent" type="button" id="button-addon2"><i class="fa fa-search"></i></button>
+  <input type="text" class="form-control" placeholder="Search by Product Name" name="searchkey" value="{{ request()->get('searchkey') }}">
+  <button class="btn  bg-transparent" type="submit" id="button-addon2"><i class="fa fa-search"></i></button>
 </div>
+</form>
 </div>
     <div class="container my-5" >
             <div class="cate1 owl-carousel owl-theme">
@@ -80,7 +83,7 @@
                             <img src="{{ asset('img/no_image.svg') }}" style="width:100%; height:230px;" alt="">
                             @endif
                         </div>
-                        <p class="small text-center text-secondary py-0 my-0">220 gm</p>
+                        <p class="small text-center text-secondary py-0 my-0">{{ $prod->product_options->quantity }} {{ $prod->product_options->quantitytype }}</p>
                         <div class="d-flex justify-content-center">
                         <h5 class="text-truncate text-center" style="max-width: 265px;">{{ $prod->name }}</h5></div>
                         <div class="d-flex justify-content-center">

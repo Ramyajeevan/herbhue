@@ -39,7 +39,7 @@ Route::post('forgotpasswordlink',[HomeController::class, 'forgotpasswordlink'])-
 
 Route::get('myaccount',[HomeController::class, 'myaccount'])->name('myaccount');
 Route::post('myaccountsettings',[HomeController::class, 'myaccountsettings'])->name('myaccountsettings');
-Route::get('products/{category_id?}/{subcategory_id?}',[HomeController::class, 'products'])->name('products');
+Route::get('products/{category_id?}/{subcategory_id?}/{searchkey?}',[HomeController::class, 'products'])->name('products');
 Route::get('productdetail/{id}',[HomeController::class, 'productdetail'])->name('productdetail');
 
 Route::post('deletewishlist',[HomeController::class, 'deletewishlist'])->name('deletewishlist');

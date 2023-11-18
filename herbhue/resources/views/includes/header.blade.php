@@ -12,7 +12,7 @@
                     <a class="nav-link text-nowrap" href="javascript:void(0);">Offers </a>
                 </li>
                  <li class="me-3">
-                    <a class="nav-link text-nowrap" href="javascript:void(0);">Need Help ?</a>
+                    <a class="nav-link text-nowrap" href="{{ route('contact') }}">Need Help ?</a>
                 </li> 
             </ul>
         </div>
@@ -91,10 +91,16 @@
             <div class="col-3">
                 <ul class="d-flex ul2 justify-content-end" style="position: relative;top: 13px;  ">
                     <li class="">
-                    <div class="input-group  input-group-sm">
-                        <input type="search" class="form-control rounded-start-pill" placeholder="Search.." aria-label="Recipient's username" aria-describedby="button-addon2">
-                        <button class="btn bg-white border border-start-0 rounded-end-circle" type="button" id="button-addon2">   <i class="fa fa-search"></i></button>
-                        </div>
+                    <form id="header-form" method="get" action="{{ route('products') }}">
+                    @csrf
+            <div class="input-group  input-group-sm" >
+                   
+                    <input type="text" name="searchkey" id="searchkey" class="form-control rounded-start-pill" placeholder="Search.." value="{{ request()->get('searchkey') }}">
+                    <button class="btn bg-white border border-start-0 rounded-end-circle" type="submit"><i class="fa fa-search"></i></button>
+                    
+            </div>
+            </form>  
+
                     
                     </li>
                     @php
@@ -239,10 +245,15 @@
 
                 </ul>
             </nav>
+            <form id="header-form1" method="get" action="{{ route('products') }}">
+                    @csrf
             <div class="input-group  input-group-sm" style="width:47%;">
-                        <input type="search" class="form-control rounded-start-pill" placeholder="Search.." aria-label="Recipient's username" aria-describedby="button-addon2">
-                        <button class="btn bg-white border border-start-0 rounded-end-circle" type="button" id="button-addon2">   <i class="fa fa-search"></i></button>
-                        </div>
+                   
+                    <input type="text" name="searchkey" id="searchkey" class="form-control rounded-start-pill" placeholder="Search.." value="{{ request()->get('searchkey') }}">
+                    <button class="btn bg-white border border-start-0 rounded-end-circle" type="submit" id="button-addon2"><i class="fa fa-search"></i></button>
+                    
+            </div>
+            </form>
             <div
                 class="side-menu-close d-flex d-lg-none flex-wrap flex-column align-items-center justify-content-end ml-auto">
                 <span></span>

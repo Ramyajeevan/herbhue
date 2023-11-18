@@ -226,19 +226,17 @@ class HomeController extends Controller
     }
   	public function products()
     {
-      //dd(request());
+     // dd(request());
   
         $category_id=request()->category_id;
         $subcategory_id=request()->subcategory_id;
-        $products = $this->homeRepository->getProducts($category_id,$subcategory_id);
-        /*
-       if(isset($request->searchkey))
-       {
-           $products=$products->where("name", 'like', '%'.$request->searchkey.'%');
-       }
-       
-   
+        $searchkey=request()->searchkey;
+
+        $products = $this->homeRepository->getProducts($category_id,$subcategory_id,$searchkey);
         
+      
+   
+        /*
         $maxprice=0;
         $price=Product::max("selling_price");
         $maxprice=round($price);*/
