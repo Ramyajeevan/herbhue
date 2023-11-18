@@ -13,6 +13,7 @@ use App\Http\Controllers\Backend\OrderController;
 use App\Http\Controllers\Backend\TicketController;
 use App\Http\Controllers\Backend\BrandController;
 use App\Http\Controllers\Backend\PersonaliseController;
+use App\Http\Controllers\Backend\NewsletterController;
 use App\Http\Controllers\Backend\BlogController;
 use App\Http\Controllers\HomeController;
 /*
@@ -125,4 +126,9 @@ Route::post('blog/create',[BlogController::class, 'store'])->name('blog.store');
 Route::delete('blog/{id}',[BlogController::class, 'destroy'])->name('blog.destroy');
 Route::get('blog/update/{id}',[BlogController::class, 'edit'])->name('blog.edit');
 Route::post('blog/update/{id}',[BlogController::class, 'update'])->name('blog.update');
+
+Route::get('newsletter',[NewsletterController::class, 'index'])->name('newsletter.index');
+Route::get('newsletter/create',[NewsletterController::class, 'create'])->name('newsletter.create');
+Route::post('newsletter/send',[NewsletterController::class, 'send'])->name('newsletter.send');
+Route::delete('newsletter/{id}',[NewsletterController::class, 'destroy'])->name('newsletter.destroy');
 ?>
