@@ -261,12 +261,36 @@
             <li class="sidebar-item">
               <a href="{{ route('ratings.index') }}" class="sidebar-link">
                 <i class="mdi mdi-box-shadow"></i>
-                <span class="hide-menu"> View Ratings</span></a
-              >
+                <span class="hide-menu"> View Ratings</span></a>
             </li>
            
           </ul>
         </li>
+
+        <li class="nav-small-cap">
+          <i class="mdi mdi-dots-horizontal"></i>
+          <span class="hide-menu">Newsletter</span>
+        </li>
+        <li class="sidebar-item">
+          <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0);" aria-expanded="false">
+            <i data-feather="star" class="feather-icon"></i>
+            <span class="hide-menu">Newsletter </span>
+          </a>
+          <ul aria-expanded="false" class="collapse first-level">
+            <li class="sidebar-item">
+              <a href="{{ route('newsletter.index') }}" class="sidebar-link">
+                <i class="mdi mdi-box-shadow"></i>
+                <span class="hide-menu"> View Subscribers</span></a>
+            </li>
+            <li class="sidebar-item">
+              <a href="{{ route('newsletter.create') }}" class="sidebar-link">
+                <i class="mdi mdi-box-shadow"></i>
+                <span class="hide-menu"> Send Newsletter</span></a>
+            </li>
+           
+          </ul>
+        </li>
+        
         
 
           </ul>
