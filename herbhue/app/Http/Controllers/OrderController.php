@@ -224,28 +224,8 @@ class OrderController extends Controller
           ->update(['payment_method'=>$request->card_type,'cardnumber'=>$request->cardnumber,
           'expire_month'=>$request->expire_month,'expire_year'=>$request->expire_year,
           'cvv'=>$request->cvv]);
-
-          require '../vendor/autoload.php';
-          require_once('../vendor/stripe/stripe-php/init.php');
-         $stripe = new \Stripe\StripeClient('sk_test_51O5pJDL5fakvGlAxziOdJArTdmG6JrwbxKiAp2cOl4Bkr1NmupQ2DYDulBakyvfs3cycTRI1kL3AvGhqqdzqWCOY00gC0RZkXy');
-
-    $checkout_session = $stripe->checkout->sessions->create([
-      'line_items' => [[
-        'price_data' => [
-          'currency' => 'GBP',
-          'product_data' => [
-            'name' => 'Herbhue',
-          ],
-          'unit_amount' => $net_total*100,
-        ],
-        'quantity' => 1,
-      ]],
-       'automatic_tax' => ['enabled' => true],
-  'mode' => 'payment',
-      'success_url' => 'https://herbhue.azurewebsites.net/thankyou/{CHECKOUT_SESSION_ID}/'.$order_id,
-      'cancel_url' => 'https://herbhue.azurewebsites.net/cancel',
-    ]);
-    //send email for order placed
+          
+           //send email for order placed
     $email=Session::get('username');
     $order=DB::table('tbl_order')->where("order_id",$order_id)->first();
     $order_products=DB::table("tbl_order_products")->where("order_id",$order_id)->get();
@@ -289,6 +269,28 @@ class OrderController extends Controller
     $content.=$billing->billing_phone.'</td><tr></table>';
     $user=DB::table('tbl_user')->where("email",$email)->first();
     $mail_sent = Parent::sendmail($content, env('APP_NAME').' Order Placed', env('MAIL_USERNAME'), env('APP_NAME'),$email,$user->name);
+    
+          require '../vendor/autoload.php';
+          require_once('../vendor/stripe/stripe-php/init.php');
+         $stripe = new \Stripe\StripeClient('sk_test_51O5pJDL5fakvGlAxziOdJArTdmG6JrwbxKiAp2cOl4Bkr1NmupQ2DYDulBakyvfs3cycTRI1kL3AvGhqqdzqWCOY00gC0RZkXy');
+
+    $checkout_session = $stripe->checkout->sessions->create([
+      'line_items' => [[
+        'price_data' => [
+          'currency' => 'GBP',
+          'product_data' => [
+            'name' => 'Herbhue',
+          ],
+          'unit_amount' => $net_total*100,
+        ],
+        'quantity' => 1,
+      ]],
+       'automatic_tax' => ['enabled' => true],
+  'mode' => 'payment',
+      'success_url' => 'https://herbhue.azurewebsites.net/thankyou/{CHECKOUT_SESSION_ID}/'.$order_id,
+      'cancel_url' => 'https://herbhue.azurewebsites.net/cancel',
+    ]);
+   
     return redirect($checkout_session->url);
        // return redirect()->route('thankyou', [$order_id]);
 
