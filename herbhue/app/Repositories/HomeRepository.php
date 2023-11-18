@@ -85,7 +85,7 @@ class HomeRepository extends BaseRepository
         return  $products;
     }
 
-    public function getProducts($category_id,$subcategory_id)
+    public function getProducts($category_id,$subcategory_id,$searchkey)
     {
        
         $products = Product::where("id","!=","");
@@ -96,6 +96,11 @@ class HomeRepository extends BaseRepository
         if(!empty($subcategory_id))
         {
           $products=$products->where("subcategory_id",$subcategory_id);
+        }  
+        if(!empty($searchkey))
+        {
+            //echo "hai";echo $searchkey;
+          $products=$products->where("name","like","%".$searchkey."%");
         }  
         $products = $products->get();
         for($i=0;$i<count($products);$i++)
