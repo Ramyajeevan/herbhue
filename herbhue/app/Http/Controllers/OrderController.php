@@ -264,7 +264,7 @@ class OrderController extends Controller
           }
     }
     $billing=DB::table("tbl_billing_address")->where("order_id",$order_id)->first();
-    $shipping=DB::table("tbl_address")->where("order_id",$order_id)->first();
+    $shipping=DB::table("tbl_address")->where("id",$order->address_id)->first();
     $content='<h4 class="text-black my-4">View Order '.$order->order_id.'</h4><p>Order Number : <strong>'.$order->order_id.'</strong><br>';
     $content.='Date : <strong>'.$order->added_date.'</strong><br>Payment Method : <strong>'.$order->payment_method.'</strong><br></p>';
     $content.='<h3 class="section-title section-title__sm mb-2 pb-2 font-size-18">Order details</h3><table class="table m-3"><thead>';
