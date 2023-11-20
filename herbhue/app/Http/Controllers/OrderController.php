@@ -26,7 +26,8 @@ class OrderController extends Controller
   public function placeorder(Request $request)
   {
     
-
+    $successurl=url()->to("thankyou");
+    //echo $successurl;exit;
     $msg="";
     if(!isset($request->address_id))
     {
@@ -286,8 +287,8 @@ class OrderController extends Controller
       ]],
        'automatic_tax' => ['enabled' => true],
   'mode' => 'payment',
-      'success_url' => 'https://herbhue.azurewebsites.net/thankyou/{CHECKOUT_SESSION_ID}/'.$order_id,
-      'cancel_url' => 'https://herbhue.azurewebsites.net/cancel',
+      'success_url' => $successurl.'/{CHECKOUT_SESSION_ID}/'.$order_id,
+      'cancel_url' => url()->to("cancel")
     ]);
    
     return redirect($checkout_session->url);
