@@ -9,6 +9,8 @@
 <div class="container-fluid">
 <div class="container mb-5">
     <h4 class="text-black my-4">View Order {{ $order->order_id }}</h4>
+
+  		
   	<p>Order Number : <strong> {{ $order->order_id }}</strong><br>
      Date : <strong> {{ $order->added_date }}</strong><br>
      Payment Method : <strong>{{ $order->payment_method }}</strong><br>
@@ -27,27 +29,27 @@
         <tr>
   
           <td>{{ $ord_prod->product_name }} x {{ $ord_prod->quantity }}</td>
-          <td>&#8377; {{ $ord_prod->total }}</td>
+          <td>&pound; {{ $ord_prod->total }}</td>
         </tr>
         @endforeach
         @endif
         <tr>
           <td>Sub Total</td>
-          <td>&#8377; {{ $order->subtotal }}</td>
+          <td>&pound; {{ $order->subtotal }}</td>
         </tr>
          <tr>
           <td>Delivery Charge</td>
-          <td>&#8377; {{ $order->delivery_charge }}</td>
+          <td>&pound; {{ $order->delivery_charge }}</td>
         </tr>
         @if($order->coupon_amount>0)
          <tr>
           <td>Coupon Amount</td>
-          <td>&#8377; {{ $order->coupon_amount }}</td>
+          <td>&pound; {{ $order->coupon_amount }}</td>
         </tr>
         @endif
         <tr>
           <td>Total</td>
-          <td>&#8377; {{ $order->total }}</td>
+          <td>&pound; {{ $order->total }}</td>
         </tr>
       </tbody>
     </table> 
