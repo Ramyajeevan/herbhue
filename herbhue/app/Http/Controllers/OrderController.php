@@ -267,6 +267,7 @@ class OrderController extends Controller
     $content.='<tr><td>'.$billing->billing_firstname .' '.$billing->billing_lastname .'<br>'. $billing->billing_street_address .'<br>';
     $content.= $billing->billing_street_address2.'<br>'.$billing->billing_city.'<br>'. $billing->billing_pincode.'<br>';
     $content.=$billing->billing_phone.'</td><tr></table>';
+    $content .= "<br><p>Regards,</p><p>HERBHUE</p>";
     $user=DB::table('tbl_user')->where("email",$email)->first();
     $mail_sent = Parent::sendmail($content, env('APP_NAME').' Order Placed', env('MAIL_USERNAME'), env('APP_NAME'),$email,$user->name);
 

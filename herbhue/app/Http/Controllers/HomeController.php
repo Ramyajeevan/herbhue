@@ -588,7 +588,7 @@ class HomeController extends Controller
         $message .= "<div style='width:100%;float:left;padding-right:10px;'>";
         $link= url()->to("resetpassword")."?email=".$user->email;
         $message .="<p><a href='".$link."'>Click here</a> to reset your password.</p>";
-        $message .= "</div>";
+        $message .= "</div><br><p>Regards,</p><p>HERBHUE</p>";
         $mail_sent = Parent::sendmail($message, env('APP_NAME').' Forgot Password', env('MAIL_USERNAME'), env('APP_NAME'),$touseremail,$user->name);
         return redirect()->back()->with('success', 'Kindly Check your email to reset your password');
         //return  redirect()->route('resetpassword')->with('email',$touseremail);

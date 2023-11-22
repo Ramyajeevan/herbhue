@@ -69,6 +69,7 @@ class NewsletterController extends Controller
        $message .= "<div style='width:100%;float:left;padding-right:10px;'>";
        $message .="<p>".$request->message."</p>";
        $message .= "</div>";
+       $message .= "<br><p>Regards,</p><p>HERBHUE</p>";
        for($i=0;$i<count($emails);$i++)
        {
            $mail_sent = Parent::sendmail($message, env('APP_NAME').' Newsletter', env('MAIL_USERNAME'), env('APP_NAME'),$emails[$i],"User");
