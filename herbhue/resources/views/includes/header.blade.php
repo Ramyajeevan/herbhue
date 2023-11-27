@@ -239,12 +239,13 @@
 <!-- mobile menu  start -->
 
 
-  <header class="px-2 pb-3 py-lg-0 px-sm-0 category-header border-top mob-view" style="z-index:9999;">
+  <header class="px-2 pb-1 pt-3 py-lg-0 px-sm-0 category-header border-top mob-view" style="z-index:9999;">
     <div class="container">
         <div class="d-flex justify-content-between align-items-center  " style="position: relative;
     top: -14px; ">
       <div
-                class="side-menu-close d-flex  flex-wrap flex-column align-items-center justify-content-end ml-auto">
+                class="side-menu-close d-flex  flex-wrap flex-column align-items-center justify-content-end ml-auto" style="position: relative;
+    top: -12px;">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -284,7 +285,7 @@
             <div class="me-3">
                 <ul class="d-flex list-unstyled" style="position: relative;top: 13px; right: -21px; ">
                 <li class="me-1">
-                <button type="button" class="btn bg-transparent border-0" data-toggle="modal" data-target="#seacrch"> <i class="fa fa-search"></i>
+                <button type="button" class="btn bg-transparent border-0" onclick="openModal()"> <i class="fa fa-search"></i>
   </button>
                     </li>
                     @php
@@ -455,20 +456,18 @@
     });
 </script>
 
-<script>
-    (function(){
-   //Show Modal
-  $('#exampleModalLong').on('show.bs.modal', function (e) {
-    console.log('show');
-    $('.firstBlur').addClass('modalBlur');
-  })
-  
-  //Remove modal
-  $('#exampleModalLong').on('hide.bs.modal', function (e) {
-     console.log('hide');
-    $('.firstBlur').removeClass('modalBlur');
-  })
-})();
-</script>
+ <script>
+
+// Function to open the modal
+function openModal() {
+  $("#seacrch").css("display", "block");
+}
+
+// Function to close the modal
+function closeModal() {
+  $("#seacrch").css("display", "none");
+}
+ </script>
+
 
     
