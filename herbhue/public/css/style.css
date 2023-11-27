@@ -817,3 +817,122 @@ width: 100%;
   font-size: 10px !important;
 
 }
+
+
+
+
+
+/* sidenav */
+
+
+
+#sidenav2 { 
+  font-size: 0.9em;
+  z-index: 99999 !important;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width:15em;
+  background-color: #acb69c;
+  overflow-x: hidden;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  transform: translateX(-15em);
+  transition: transform 0.5s;
+ /* dropdown style */
+}
+#sidenav2 a {
+  color: black;
+}
+#sidenav2 a:hover {
+  color: black;
+}
+#sidenav2 .closebtn {
+  flex: 0 0 1.2em;
+  font-size: 2.2em;
+  width: 1.5em;
+  height: 1.2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-tap-highlight-color: transparent;
+ /* to remove the blinking of tap on mobile */
+}
+#sidenav2 .side-nav-items {
+  overflow-y: auto;
+  width: 100%;
+  font-size: 1.3em;
+  padding: 1em 0.5em 1em 1em;
+}
+#sidenav2 .side-nav-items .side-item {
+  margin-top: 1.3em;
+  border-bottom: 1px solid #2f2f2f;
+}
+#sidenav2 .side-nav-items .side-item:first-child {
+  margin-top: 0;
+}
+#sidenav2.show {
+  transform: translateX(0);
+  width:20em !important;
+
+}
+#sidenav2 .dropdown {
+  color: #b3b3b3;
+}
+#sidenav2 .dropdown > a::after {
+  content: "^";
+  display: inline-block;
+  font-size: 0.7em;
+  transform: translate(0.5em, -0.25em) rotateZ(180deg);
+}
+#sidenav2 .dropdown .dropdown-items {
+  padding: 0.3em 0 0.3em 0.5em;
+  max-height: 0;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  transition: all 0.7s;
+}
+#sidenav2 .dropdown .dropdown-items .dropdown-item {
+  padding-top: 0.3em;
+}
+#sidenav2 .dropdown .dropdown-items .dropdown-item::before {
+  content: " ";
+}
+ 
+#sidenav2 .dropdown:hover .dropdown-items {
+  max-height: 6em;
+}
+/* changing scrollbar on desktop */
+@media only screen and (min-width: 30rem) {
+  #sidenav2 .side-nav-items::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 1);
+    border-radius: 10px;
+    background-color: #ccc;
+ }
+  #sidenav2 .side-nav-items::-webkit-scrollbar {
+    width: 0.4em;
+    background-color: #757575;
+ }
+  #sidenav2 .side-nav-items::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+    background-color: #555;
+ }
+  .dropdown-items::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 1);
+    border-radius: 10px;
+    background-color: #ccc;
+ }
+  .dropdown-items::-webkit-scrollbar {
+    width: 0.4em;
+    background-color: #757575;
+ }
+  .dropdown-items::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+    background-color: #555;
+ }
+}

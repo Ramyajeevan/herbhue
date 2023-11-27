@@ -23,7 +23,7 @@
                    width="20px" alt=""> <span class="ms-2">United Kingdom</span> </a>
                </li>
                @if(empty(Session::get('username')))
-                 <li class="me-3">
+                 <li>
                       <a class="nav-link text-nowrap" href="{{ route('login') }}"> 
                         <span class="me-3"> <img src="{{ asset('img/login.svg') }}" alt="" class="nav-icon me-1"> Login |</span>
                       </a>
@@ -86,7 +86,13 @@
                                
                     </ul>
                 </div>
-                 <a  href="{{ route('home') }}" class="web-view"><img src="{{ asset('img/logo.png') }}" alt="" class="main-logo" style="width: 170px;position: relative;left: 57%; top: 0px;"></a>   
+                <div  class="d-flex justify-content-between">
+                <i class="fa fa-bars fs-4 pt-3" id="nav-toggle-btn"></i> 
+                
+                <a  href="{{ route('home') }}" class="web-view"><img src="{{ asset('img/logo.png') }}" alt="" class="main-logo" style="width: 170px;position: relative;left: -257px;
+    top: -2px;"></a>  
+                </div>
+               
             </div>
             <div class="col-3">
                 <ul class="d-flex ul2 justify-content-end" style="position: relative;top: 13px;  ">
@@ -211,7 +217,7 @@
 </div>
 </section>
 
-<header class="px-2 py-3 py-lg-0 px-sm-0 category-header border-top">
+<!-- <header class="px-2 py-3 py-lg-0 px-sm-0 category-header border-top">
     <div class="container">
         <div class="d-flex  align-items-center justify-content-between">
             <img src="{{ asset('img/logo.png') }}" alt="" class="site-logo" style="width: 105px;">
@@ -247,7 +253,7 @@
             </nav>
             <form id="header-form1" method="get" action="{{ route('products') }}">
                     @csrf
-            <div class="input-group  input-group-sm" style="width:47%;">
+            <div class="input-group  input-group-sm d-lg-none d-md-none" style="width:80%;">
                    
                     <input type="text" name="searchkey" id="searchkey" class="form-control rounded-start-pill" placeholder="Search.." value="{{ request()->get('searchkey') }}">
                     <button class="btn bg-white border border-start-0 rounded-end-circle" type="submit" id="button-addon2"><i class="fa fa-search"></i></button>
@@ -259,23 +265,80 @@
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </div>  
         </div>
     </div>
-</header>
+</header> -->
 
 <!-- side menu start -->
-<div class="side-menu-wrap">
+<!-- <div class="side-menu-wrap">
     <a href="{{url('/')}}" title="Site Logo" class="side-menu-logo d-block p-2">
         <img src="{{ asset('img/logo.png') }}" alt="" width="80px">
     </a>
-    <nav class="side-menu-nav">
-        <!-- auto generated side menu from top header menu -->
+    <nav class="side-menu-nav"> 
     </nav>
     <div class="side-menu-close d-flex flex-wrap flex-column align-items-center justify-content-center">
         <span></span>
         <span></span>
         <span></span>
     </div>
-</div>
+</div> -->
 <!-- side menu end -->
+
+
+
+<!-- sidenavbar -->
+<div id="sidenav2">
+  <a href="javascript:void(0)" class="closebtn">&times;</a>
+  <ul class="side-nav-items">
+    <li class="side-item"><a href="#">Category</a></li>
+    <li class="side-item dropdown">
+      <a href="#">Category</a>
+      <ul class="dropdown-items list-style-none">
+        <li class="dropdown-item"><a href="#">Category</a></li>
+        <li class="dropdown-item"><a href="#">Category</a></li>
+        <li class="dropdown-item"><a href="#">Category</a></li>
+      </ul>  
+    </li>
+    <li class="side-item"><a href="#">Category</a></li>
+    <li class="side-item"><a href="#">Category</a></li>
+    <li class="side-item dropdown">
+      <a href="#">Category</a>
+      <ul class="dropdown-items">
+        <li class="dropdown-item"><a href="#">Category</a></li>
+        <li class="dropdown-item"><a href="#">Category</a></li>
+      </ul>  
+    </li>
+  </ul>
+</div>
+
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+
+<script>
+    function removeScrollBarPushing() {
+        const offsetY = document.documentElement.scrollTop;
+        let i = 0;
+        const time = setInterval(function() {
+            if (i++ < 2) {
+                clearInterval(time);
+            }
+            document.documentElement.scrollTop = offsetY;
+        }, 1);
+    }
+
+    // open sidenav
+    document.getElementById('nav-toggle-btn').addEventListener('click', function() {
+        document.getElementById('sidenav2').classList.add('show');
+        removeScrollBarPushing();
+        document.body.style.overflowY = "hidden"; // Add this line
+    });
+
+    // close sidenav
+    document.querySelector('#sidenav2 .closebtn').addEventListener('click', function() {
+        document.getElementById('sidenav2').classList.remove('show');
+        document.body.style.overflowY = "auto"; // Reset overflow style
+    });
+</script>
