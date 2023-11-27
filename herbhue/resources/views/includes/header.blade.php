@@ -1,5 +1,5 @@
 
-<section class="sticky-top bg-white">
+<section class="sticky-top bg-white headnavbar">
         <div class="container-fluid web-view  border-bottom pb-1">
     <div class="container d-flex justify-content-between">
       <!-- <a href="{{url('/')}}"><img src="{{ asset('img/logo.png') }}" alt="" class="main-logo" style="width: 170px;"></a>  -->
@@ -88,7 +88,7 @@
                 </div>
                 <div  class="d-flex justify-content-between">
                 <div
-                class="side-menu-close d-flex d-lg-none flex-wrap flex-column align-items-center justify-content-end ml-auto">
+                class="side-menu-close d-flex flex-wrap flex-column align-items-center justify-content-end ml-auto">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -222,7 +222,7 @@
 </div>
 </section>
 
-  <header class="px-2 py-3 py-lg-0 px-sm-0 category-header border-top">
+  <header class="px-2 py-3 py-lg-0 px-sm-0 category-header border-top d-none">
     <div class="container">
         <div class="d-flex  align-items-center  ">
         <div
@@ -339,3 +339,33 @@
             </div>
         </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script>
+    $(document).ready(function() {
+        $(".headnavbar").css({ 
+                    "box-shadow": "none"
+         });
+
+        $(window).scroll(function() {
+            var scroll = $(window).scrollTop();
+            if (scroll > 8) {
+                $(".headnavbar").css({ 
+                    "box-shadow": "0 .5rem 1rem rgba(0,0,0,.15"
+
+             });
+
+                
+
+            } else {
+                $(".headnavbar").css({ 
+                    "box-shadow": "none"
+                });
+
+                
+
+            }
+        });
+    });
+</script>
+
+    
