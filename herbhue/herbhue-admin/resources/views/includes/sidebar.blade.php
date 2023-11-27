@@ -4,7 +4,7 @@
     if(!isset($url[7])){
         $url[7] = '';
     }
-  // print_r($url);
+   print_r($url);
 @endphp
 <!-- -------------------------------------------------------------- -->
 <!-- Left Sidebar - style you can find in sidebar.scss  -->
