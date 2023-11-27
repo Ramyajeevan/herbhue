@@ -14,7 +14,7 @@
         <div class="auth-box">
           <div id="loginform">
             <div class="logo">
-              <span class="db"><img src="{{ asset('assets/images/Herbhue_Logo.png') }}" alt="logo" width="50" /></span>
+              <span class="db"><img src="{{ asset('assets/images/Herbhue_Logo.png') }}" alt="logo" width="150" /></span>
             </div>
             
             @if(Session::has('success'))
