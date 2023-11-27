@@ -9714,7 +9714,7 @@ textarea.form-control-lg {
 
 .text-muted {
   --bs-text-opacity: 1;
-  color: var(--bs-secondary-color) !important;
+ /* color: var(--bs-secondary-color) !important;*/
 }
 
 .text-black-50 {
@@ -13131,7 +13131,7 @@ textarea.form-control-lg {
   background: #272b34;
 }
 #main-wrapper[data-layout=vertical] .topbar .top-navbar .navbar-header[data-logobg=skin6], #main-wrapper[data-layout=horizontal] .topbar .top-navbar .navbar-header[data-logobg=skin6] {
-  background: #fff;
+  background: #ACB69C;
 }
 #main-wrapper[data-layout=vertical] .topbar .top-navbar .navbar-header[data-logobg=skin6] .navbar-brand .dark-logo, #main-wrapper[data-layout=horizontal] .topbar .top-navbar .navbar-header[data-logobg=skin6] .navbar-brand .dark-logo {
   display: inline;
@@ -13172,7 +13172,7 @@ textarea.form-control-lg {
 #main-wrapper[data-layout=vertical] .topbar .navbar-collapse[data-navbarbg=skin6],
 #main-wrapper[data-layout=vertical] .topbar[data-navbarbg=skin6], #main-wrapper[data-layout=horizontal] .topbar .navbar-collapse[data-navbarbg=skin6],
 #main-wrapper[data-layout=horizontal] .topbar[data-navbarbg=skin6] {
-  background: #fff;
+  background: #ACB69C;
 }
 #main-wrapper[data-layout=vertical] .topbar .navbar-collapse[data-navbarbg=skin6] .navbar-nav > .nav-item > .nav-link .feather,
 #main-wrapper[data-layout=vertical] .topbar[data-navbarbg=skin6] .navbar-nav > .nav-item > .nav-link .feather, #main-wrapper[data-layout=horizontal] .topbar .navbar-collapse[data-navbarbg=skin6] .navbar-nav > .nav-item > .nav-link .feather,
@@ -13213,27 +13213,28 @@ textarea.form-control-lg {
   fill: rgba(41, 98, 255, 0.1);
 }
 #main-wrapper[data-layout=vertical] .left-sidebar[data-sidebarbg=skin6] .sidebar-nav ul .sidebar-item .sidebar-link:hover .feather, #main-wrapper[data-layout=horizontal] .left-sidebar[data-sidebarbg=skin6] .sidebar-nav ul .sidebar-item .sidebar-link:hover .feather {
-  color: #2962ff;
+  color: #000000;
 }
 #main-wrapper[data-layout=vertical] .left-sidebar[data-sidebarbg=skin6] .sidebar-nav ul .sidebar-item .sidebar-link i,
 #main-wrapper[data-layout=vertical] .left-sidebar[data-sidebarbg=skin6] .sidebar-nav ul .sidebar-item .sidebar-link .feather, #main-wrapper[data-layout=horizontal] .left-sidebar[data-sidebarbg=skin6] .sidebar-nav ul .sidebar-item .sidebar-link i,
 #main-wrapper[data-layout=horizontal] .left-sidebar[data-sidebarbg=skin6] .sidebar-nav ul .sidebar-item .sidebar-link .feather {
-  color: #4f5467;
+  color: #000000;
 }
 #main-wrapper[data-layout=vertical] .left-sidebar[data-sidebarbg=skin6] .sidebar-nav ul .sidebar-item .sidebar-link.active, #main-wrapper[data-layout=horizontal] .left-sidebar[data-sidebarbg=skin6] .sidebar-nav ul .sidebar-item .sidebar-link.active {
-  color: #2962ff;
+  color: #000000;
+  background:#ACB69C;
 }
 #main-wrapper[data-layout=vertical] .left-sidebar[data-sidebarbg=skin6] .sidebar-nav ul .sidebar-item .sidebar-link.active i,
 #main-wrapper[data-layout=vertical] .left-sidebar[data-sidebarbg=skin6] .sidebar-nav ul .sidebar-item .sidebar-link.active .feather, #main-wrapper[data-layout=horizontal] .left-sidebar[data-sidebarbg=skin6] .sidebar-nav ul .sidebar-item .sidebar-link.active i,
 #main-wrapper[data-layout=horizontal] .left-sidebar[data-sidebarbg=skin6] .sidebar-nav ul .sidebar-item .sidebar-link.active .feather {
-  color: #2962ff;
+  color: #000000;
 }
 #main-wrapper[data-layout=vertical] .left-sidebar[data-sidebarbg=skin6] .sidebar-nav ul .nav-small-cap, #main-wrapper[data-layout=horizontal] .left-sidebar[data-sidebarbg=skin6] .sidebar-nav ul .nav-small-cap {
-  color: #212529;
+  color: #000000;
   opacity: 0.7;
 }
 #main-wrapper[data-layout=vertical] .left-sidebar[data-sidebarbg=skin6] .sidebar-nav .has-arrow::after, #main-wrapper[data-layout=horizontal] .left-sidebar[data-sidebarbg=skin6] .sidebar-nav .has-arrow::after {
-  border-color: #212529;
+  border-color: #000000;
 }
 #main-wrapper[data-layout=vertical] .left-sidebar[data-sidebarbg=skin6] .sidebar-nav .user-content,
 #main-wrapper[data-layout=vertical] .left-sidebar[data-sidebarbg=skin6] .sidebar-nav .user-name,
@@ -14131,6 +14132,7 @@ sidebar navigation
 }
 .sidebar-nav > #sidebarnav > .sidebar-item > .sidebar-link:hover {
   /*background: rgba(0, 0, 0, 0.04);*/
+  background: #ACB69C;
 }
 
 /*******************
@@ -14794,7 +14796,7 @@ button:focus {
 body {
   margin: 0;
   overflow-x: hidden;
-  color: #3e5569;
+  color: #000000;
   background: #fff;
 }
 
@@ -14804,7 +14806,7 @@ html {
 }
 
 a {
-  color: #2962ff;
+  color: #000000;
   text-decoration: none;
 }
 
