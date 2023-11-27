@@ -8,7 +8,7 @@
       <!-- -------------------------------------------------------------- -->
       <div
         class="auth-wrapper d-flex no-block justify-content-center align-items-center"
-        style="background: grey;"
+        style="background:#ACB69C;"
       >
       <div class="auth-box">
           <div id="loginform">
