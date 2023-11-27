@@ -4,7 +4,7 @@
     if(!isset($url[7])){
         $url[7] = '';
     }
-  // print_r($url);
+   //print_r($url);
 @endphp
 <!-- -------------------------------------------------------------- -->
 <!-- Left Sidebar - style you can find in sidebar.scss  -->
@@ -20,24 +20,24 @@
           <span class="hide-menu">Personal</span>
         </li>
         <li class="sidebar-item">
-          <a class="sidebar-link waves-effect waves-dark  @if($url[6]=='home') active @endif" href="{{ route('home') }}">
+          <a class="sidebar-link waves-effect waves-dark" href="{{ route('home') }}">
             <i data-feather="home" class="feather-icon"></i><span class="hide-menu">Dashboard </span>
           </a>
         </li>
         <li class="sidebar-item">
-          <a class="sidebar-link has-arrow waves-effect waves-dark @if($url[6]=='banner') active @endif" href="javascript:void(0);" aria-expanded="false">
+          <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0);" aria-expanded="false">
             <i data-feather="image" class="feather-icon"></i>
             <span class="hide-menu">Banner </span>
           </a>
           <ul aria-expanded="false" class="collapse first-level">
             <li class="sidebar-item">
-              <a href="{{ route('banner.index') }}" class="sidebar-link  @if($url[6]=='banner'&&$url[7]=='') active @endif">
+              <a href="{{ route('banner.index') }}" class="sidebar-link">
                 <i class="mdi mdi-view-quilt"></i>
                 <span class="hide-menu"> View Banners </span>
               </a>
             </li>
             <li class="sidebar-item">
-              <a href="{{ route('banner.create') }}" class="sidebar-link @if($url[6]=='banner'&&$url[7]=='create') active @endif">
+              <a href="{{ route('banner.create') }}" class="sidebar-link">
                 <i class="mdi mdi-view-parallel"></i>
                 <span class="hide-menu"> Add Banner </span>
               </a>
@@ -52,19 +52,19 @@
        
         
         <li class="sidebar-item">
-          <a class="sidebar-link has-arrow waves-effect waves-dark @if($url[6]=='category') active @endif" href="javascript:void(0);" aria-expanded="false">
+          <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0);" aria-expanded="false">
             <i data-feather="sidebar" class="feather-icon"></i>
             <span class="hide-menu">Category </span>
           </a>
           <ul aria-expanded="false" class="collapse first-level">
             <li class="sidebar-item">
-              <a href="{{ route('category.index') }}" class="sidebar-link @if($url[6]=='category'&&$url[7]=='') active @endif">
+              <a href="{{ route('category.index') }}" class="sidebar-link">
                 <i class="mdi mdi-view-quilt"></i>
                 <span class="hide-menu"> View Categories </span>
               </a>
             </li>
             <li class="sidebar-item">
-              <a href="{{ route('category.create') }}" class="sidebar-link @if($url[6]=='category'&&$url[7]=='create') active @endif">
+              <a href="{{ route('category.create') }}" class="sidebar-link">
                 <i class="mdi mdi-view-parallel"></i>
                 <span class="hide-menu"> Add Category </span>
               </a>
@@ -73,19 +73,19 @@
         </li>
 
         <li class="sidebar-item">
-          <a class="sidebar-link has-arrow waves-effect waves-dark @if($url[6]=='subcategory') active @endif" href="javascript:void(0);" aria-expanded="false">
+          <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0);" aria-expanded="false">
             <i data-feather="sidebar" class="feather-icon"></i>
             <span class="hide-menu">Sub Category </span>
           </a>
           <ul aria-expanded="false" class="collapse first-level">
             <li class="sidebar-item">
-              <a href="{{ route('subcategory.index') }}" class="sidebar-link @if($url[6]=='subcategory'&&$url[7]=='') active @endif">
+              <a href="{{ route('subcategory.index') }}" class="sidebar-link">
                 <i class="mdi mdi-book-multiple"></i>
                 <span class="hide-menu"> View Sub Categories </span>
               </a>
             </li>
             <li class="sidebar-item">
-              <a href="{{ route('subcategory.create') }}" class="sidebar-link @if($url[6]=='subcategory'&&$url[7]=='create') active @endif">
+              <a href="{{ route('subcategory.create') }}" class="sidebar-link">
                 <i class="mdi mdi-book-plus"></i>
                 <span class="hide-menu"> Add Sub Category </span>
               </a>
@@ -93,19 +93,19 @@
           </ul>
         </li>
         <li class="sidebar-item">
-          <a class="sidebar-link has-arrow waves-effect waves-dark @if($url[6]=='product') active @endif" href="javascript:void(0);" aria-expanded="false">
+          <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0);" aria-expanded="false">
             <i data-feather="cpu" class="feather-icon"></i>
             <span class="hide-menu">Products </span>
           </a>
           <ul aria-expanded="false" class="collapse first-level">
             <li class="sidebar-item">
-              <a href="{{ route('product.index') }}" class="sidebar-link @if($url[6]=='product'&&$url[7]=='') active @endif">
+              <a href="{{ route('product.index') }}" class="sidebar-link">
                 <i class="mdi mdi-box-shadow"></i>
                 <span class="hide-menu"> View Products</span></a
               >
             </li>
             <li class="sidebar-item">
-              <a href="{{ route('product.create') }}" class="sidebar-link @if($url[6]=='product'&&$url[7]=='create') active @endif">
+              <a href="{{ route('product.create') }}" class="sidebar-link">
                 <i class="mdi mdi-application"></i>
                 <span class="hide-menu"> Add Product</span>
               </a>
