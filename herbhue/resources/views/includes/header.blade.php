@@ -301,7 +301,7 @@
 
 
 
-<div class="modal fade  " id="applycoupan" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-modal="true" role="dialog" style="display: block;">
+<div class="modal fade  " id="applycoupan" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-modal="true" role="dialog" >
         <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
             <div class="modal-content rounded-0">
                 <div class="modal-header py-2">
