@@ -10,8 +10,7 @@
         class="auth-wrapper d-flex no-block justify-content-center align-items-center"
         style="background: grey;"
       >
-      
-        <div class="auth-box">
+      <div class="auth-box">
           <div id="loginform">
             <div class="logo">
               <span class="db"><img src="{{ asset('assets/images/Herbhue_Logo.png') }}" alt="logo" width="150" /></span>
