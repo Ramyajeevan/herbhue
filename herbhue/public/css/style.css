@@ -808,7 +808,7 @@ ul.ul2 {
 
 
 ul.ul3 {
-  justify-content: center !important;
+  justify-content: start !important;
 }
 .subscribe{
 width: 100% !important;
