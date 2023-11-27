@@ -67,6 +67,10 @@
         <div class="w-25 px-4"><button type="button" class="btn btn-primary-light w-100 text-nowrap btn-lg">Quick Order</button></div>
     </div> -->
 
+
+
+
+<!-- web menu  start -->
     <div class="container web-view">
         <div class="row pb-2">
             <div class="col-9 text-center">
@@ -154,10 +158,20 @@
             </div>
         </div>
     </div>
-
-    <div class="container mob-view">
+<!-- mobile menu  end -->
+    <div class="container d-none">
         <div class="d-flex justify-content-between pb-2">
-            <div class="text-center">
+        <div  class="d-flex justify-content-between">
+        <div class="side-menu-close d-flex  flex-wrap flex-column align-items-center justify-content-end ml-auto">
+                <span></span>
+                <span></span>
+                <span></span>
+        </div>  
+                
+                <a  href="{{ route('home') }}"  ><img src="{{ asset('img/logo.png') }}" alt="" class="main-logo"  ></a>  
+                </div>
+            <div class="text-center d-none
+            ">
                 <div class="pt-3 ">
                     <ul class="  d-flex list-unstyled">
             
@@ -222,16 +236,20 @@
 </div>
 </section>
 
-  <header class="px-2 py-3 py-lg-0 px-sm-0 category-header border-top d-none">
+<!-- mobile menu  start -->
+
+
+  <header class="px-2 pb-3 py-lg-0 px-sm-0 category-header border-top mob-view" style="z-index:9999;">
     <div class="container">
-        <div class="d-flex  align-items-center  ">
-        <div
+        <div class="d-flex justify-content-between align-items-center  " style="position: relative;
+    top: -14px; ">
+      <div
                 class="side-menu-close d-flex  flex-wrap flex-column align-items-center justify-content-end ml-auto">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>  
-            <img src="{{ asset('img/logo.png') }}" alt="" class="site-logo" style="width: 105px;">
+            </div>   
+            <img src="{{ asset('img/logo.png') }}" alt="" class="site-logo" style="width: 105px; position: relative;">
             <nav class="d-none">
                 <ul class="main-menu d-flex flex-column flex-lg-row align-items-lg-center list-unstyled p-0 m-0">
                 @php
@@ -262,21 +280,68 @@
 
                 </ul>
             </nav>
+
+            <div class="me-3">
+                <ul class="d-flex list-unstyled" style="position: relative;top: 13px; right: -21px; ">
+                <li class="me-1">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong"> <i class="fa fa-search"></i>
+  </button>
+                    </li>
+                    @php
+                    $cart_items=0;
+                    $session_id=Session::getId();
+                    $cart_items=DB::table('tbl_cart')->where("session_id",$session_id)->sum("quantity");
+                    @endphp
+                    <li class="me-1">
+                        <a class="nav-link" href="{{ route('viewcart') }}">
+                        <button type="button" class="btn bg-transparent border-0 position-relative">
+                            <img src="{{ asset('img/Cart Icon (1).svg') }}" alt="" class="nav-icon">
+                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                            {{ $cart_items }}
+                            </span>
+                        </button>
+                        </a>
+                    </li>
+                    @php
+                    $wishlist_count=0;
+                    if(!empty(Session::get('username')))
+                    {
+                        $email=Session::get('username');
+                            $user=DB::table("tbl_user")->where("email",$email)->first();
+                            $wishlist_count=DB::table("tbl_wishlist")->where("user_id",$user->id)->count();
+                        // $wishlist_count=1;
+                    }
+                    @endphp
+                    <li class="">
+                        <a class="nav-link" href="{{ route('mywishlist') }}">
+                        <button type="button" class="btn bg-transparent border-0 position-relative">
+                            <img src="{{ asset('img/Wishlist Icon (1).svg') }}" alt="" class="nav-icon">
+                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                            {{ $wishlist_count }}
+                            </span>
+                        </button>
+                            
+                        </a>
+                    </li>
+
+                    <li class="">
+                        <a class="nav-link" href="{{ route('mywishlist') }}">
+                        <button type="button" class="btn bg-transparent border-0 position-relative">
+                            <img src="{{ asset('img/Wishlist Icon (1).svg') }}" alt="" class="nav-icon">
+                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                            {{ $wishlist_count }}
+                            </span>
+                        </button>
+                            
+                        </a>
+                    </li>
+                </ul>
+            </div>
            
           
         </div>
 
-        <div class="col-12">
-        <form id="header-form1" method="get" action="{{ route('products') }}">
-                    @csrf
-            <div class="input-group  input-group-sm d-lg-none d-md-none" style="width:80%;">
-                   
-                    <input type="text" name="searchkey" id="searchkey" class="form-control rounded-start-pill" placeholder="Search.." value="{{ request()->get('searchkey') }}">
-                    <button class="btn bg-white border border-start-0 rounded-end-circle" type="submit" id="button-addon2"><i class="fa fa-search"></i></button>
-                    
-            </div>
-            </form>
-        </div>
+       
     </div>
 </header>  
 
@@ -297,11 +362,34 @@
 
 
 
+
+
+
+<!-- mobile menu  end -->
  
 
 
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true" data-backdrop="true" data-keyboard="true">
+    <div class="modal-dialog modal-sm" role="document">
+      <div class="modal-content bg-transparent">
+        
+        <div class="col-12 mt-2">
+        <form id="header-form1" method="get" action="{{ route('products') }}">
+                    @csrf
+            <div class="input-group  input-group-sm d-lg-none d-md-none">
+                   
+                    <input type="text" name="searchkey" id="searchkey" class="form-control rounded-start-pill" placeholder="Search.." value="{{ request()->get('searchkey') }}">
+                    <button class="btn bg-white border border-start-0 rounded-end-circle" type="submit" id="button-addon2"><i class="fa fa-search"></i></button>
+                    
+            </div>
+            </form>
+        </div>
+       
+      </div>
+    </div>
+  </div>
 
-<div class="modal fade  " id="applycoupan" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-modal="true" role="dialog" >
+<div class="modal fade  " id="applycoupan" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"                     aria-labelledby="staticBackdropLabel" aria-modal="true" role="dialog" >
         <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
             <div class="modal-content rounded-0">
                 <div class="modal-header py-2">
@@ -309,7 +397,7 @@
                     <button type="button" class="btn border-0 text-orange" data-bs-dismiss="modal" aria-label="Close">Close</button>
                 </div>
                 <div class="modal-body"> 
-                    <h6 class="mt-4 mb-1">BEST OFFERS FOR YOU</h6>
+                    <h6 class="mt-2 mb-1">BEST OFFERS FOR YOU</h6>
 
                     <ul class="list-group list-group-flush rounded-0 border-0">
 
@@ -366,6 +454,22 @@
             }
         });
     });
+</script>
+
+<script>
+    (function(){
+   //Show Modal
+  $('#exampleModalLong').on('show.bs.modal', function (e) {
+    console.log('show');
+    $('.firstBlur').addClass('modalBlur');
+  })
+  
+  //Remove modal
+  $('#exampleModalLong').on('hide.bs.modal', function (e) {
+     console.log('hide');
+    $('.firstBlur').removeClass('modalBlur');
+  })
+})();
 </script>
 
     

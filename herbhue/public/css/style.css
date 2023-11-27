@@ -826,5 +826,10 @@ width: 100%;
 
 
 
+body.modalBlur > *:not(.modal) {
+  -webkit-filter: blur(8px);
+}
+
+
 
  
