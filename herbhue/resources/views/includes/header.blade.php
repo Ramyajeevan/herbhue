@@ -1,6 +1,6 @@
 
 <section class="sticky-top bg-white">
-<div class="container-fluid web-view  border-bottom pb-1">
+        <div class="container-fluid web-view  border-bottom pb-1">
     <div class="container d-flex justify-content-between">
       <!-- <a href="{{url('/')}}"><img src="{{ asset('img/logo.png') }}" alt="" class="main-logo" style="width: 170px;"></a>  -->
       <div class="pt-3">
@@ -87,7 +87,12 @@
                     </ul>
                 </div>
                 <div  class="d-flex justify-content-between">
-                <i class="fa fa-bars fs-4 pt-3" id="nav-toggle-btn"></i> 
+                <div
+                class="side-menu-close d-flex d-lg-none flex-wrap flex-column align-items-center justify-content-end ml-auto">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>  
                 
                 <a  href="{{ route('home') }}" class="web-view"><img src="{{ asset('img/logo.png') }}" alt="" class="main-logo" style="width: 170px;position: relative;left: -257px;
     top: -2px;"></a>  
@@ -217,11 +222,17 @@
 </div>
 </section>
 
-<!-- <header class="px-2 py-3 py-lg-0 px-sm-0 category-header border-top">
+  <header class="px-2 py-3 py-lg-0 px-sm-0 category-header border-top">
     <div class="container">
-        <div class="d-flex  align-items-center justify-content-between">
+        <div class="d-flex  align-items-center  ">
+        <div
+                class="side-menu-close d-flex d-lg-none flex-wrap flex-column align-items-center justify-content-end ml-auto">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>  
             <img src="{{ asset('img/logo.png') }}" alt="" class="site-logo" style="width: 105px;">
-            <nav class="d-none d-lg-block">
+            <nav class="d-none">
                 <ul class="main-menu d-flex flex-column flex-lg-row align-items-lg-center list-unstyled p-0 m-0">
                 @php
                 $category = DB::table('tbl_category')->select("id","name")->take(10)->get();
@@ -251,7 +262,12 @@
 
                 </ul>
             </nav>
-            <form id="header-form1" method="get" action="{{ route('products') }}">
+           
+          
+        </div>
+
+        <div class="col-12">
+        <form id="header-form1" method="get" action="{{ route('products') }}">
                     @csrf
             <div class="input-group  input-group-sm d-lg-none d-md-none" style="width:80%;">
                    
@@ -260,18 +276,12 @@
                     
             </div>
             </form>
-            <div
-                class="side-menu-close d-flex d-lg-none flex-wrap flex-column align-items-center justify-content-end ml-auto">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>  
         </div>
     </div>
-</header> -->
+</header>  
 
 <!-- side menu start -->
-<!-- <div class="side-menu-wrap">
+<div class="side-menu-wrap">
     <a href="{{url('/')}}" title="Site Logo" class="side-menu-logo d-block p-2">
         <img src="{{ asset('img/logo.png') }}" alt="" width="80px">
     </a>
@@ -282,63 +292,9 @@
         <span></span>
         <span></span>
     </div>
-</div> -->
+</div>
 <!-- side menu end -->
 
 
 
-<!-- sidenavbar -->
-<div id="sidenav2">
-  <a href="javascript:void(0)" class="closebtn">&times;</a>
-  <ul class="side-nav-items">
-    <li class="side-item"><a href="#">Category</a></li>
-    <li class="side-item dropdown">
-      <a href="#">Category</a>
-      <ul class="dropdown-items list-style-none">
-        <li class="dropdown-item"><a href="#">Category</a></li>
-        <li class="dropdown-item"><a href="#">Category</a></li>
-        <li class="dropdown-item"><a href="#">Category</a></li>
-      </ul>  
-    </li>
-    <li class="side-item"><a href="#">Category</a></li>
-    <li class="side-item"><a href="#">Category</a></li>
-    <li class="side-item dropdown">
-      <a href="#">Category</a>
-      <ul class="dropdown-items">
-        <li class="dropdown-item"><a href="#">Category</a></li>
-        <li class="dropdown-item"><a href="#">Category</a></li>
-      </ul>  
-    </li>
-  </ul>
-</div>
-
-
-
-<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-
-
-<script>
-    function removeScrollBarPushing() {
-        const offsetY = document.documentElement.scrollTop;
-        let i = 0;
-        const time = setInterval(function() {
-            if (i++ < 2) {
-                clearInterval(time);
-            }
-            document.documentElement.scrollTop = offsetY;
-        }, 1);
-    }
-
-    // open sidenav
-    document.getElementById('nav-toggle-btn').addEventListener('click', function() {
-        document.getElementById('sidenav2').classList.add('show');
-        removeScrollBarPushing();
-        document.body.style.overflowY = "hidden"; // Add this line
-    });
-
-    // close sidenav
-    document.querySelector('#sidenav2 .closebtn').addEventListener('click', function() {
-        document.getElementById('sidenav2').classList.remove('show');
-        document.body.style.overflowY = "auto"; // Reset overflow style
-    });
-</script>
+ 
