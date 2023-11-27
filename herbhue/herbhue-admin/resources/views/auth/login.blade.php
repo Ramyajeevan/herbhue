@@ -8,14 +8,13 @@
       <!-- -------------------------------------------------------------- -->
       <div
         class="auth-wrapper d-flex no-block justify-content-center align-items-center"
-        style="background: url({{ asset('assets/images/big/auth-bg.jpg') }}) no-repeat center center"
+        style="background: grey;"
       >
       
         <div class="auth-box">
           <div id="loginform">
             <div class="logo">
-              <span class="db"><img src="{{ asset('assets/images/logo-icon.png') }}" alt="logo" width="50" /></span>
-              <h5 class="font-medium mb-3">Sign In to Admin</h5>
+              <span class="db"><img src="{{ asset('assets/images/Herbhue_Logo.png') }}" alt="logo" width="50" /></span>
             </div>
             
             @if(Session::has('success'))
