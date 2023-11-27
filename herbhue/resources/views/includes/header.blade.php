@@ -284,7 +284,7 @@
             <div class="me-3">
                 <ul class="d-flex list-unstyled" style="position: relative;top: 13px; right: -21px; ">
                 <li class="me-1">
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong"> <i class="fa fa-search"></i>
+                <button type="button" class="btn bg-transparent border-0" data-toggle="modal" data-target="#seacrch"> <i class="fa fa-search"></i>
   </button>
                     </li>
                     @php
@@ -325,12 +325,9 @@
                     </li>
 
                     <li class="">
-                        <a class="nav-link" href="{{ route('mywishlist') }}">
-                        <button type="button" class="btn bg-transparent border-0 position-relative">
-                            <img src="{{ asset('img/Wishlist Icon (1).svg') }}" alt="" class="nav-icon">
-                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                            {{ $wishlist_count }}
-                            </span>
+                        <a class="nav-link" href="{{ route('register') }}">
+                        <button type="button" class="btn bg-transparent border-0 ">
+                        <span> <img src="{{ asset('img/register.svg') }}" alt="" class="nav-icon me-1"> </span> 
                         </button>
                             
                         </a>
@@ -366,29 +363,31 @@
 
 
 <!-- mobile menu  end -->
- 
+<div class="modal fade  " id="seacrch"  data-bs-keyboard="false" tabindex="-1"                      
+        aria-labelledby="staticBackdropLabel" aria-modal="true" role="dialog" >
+        <div class="modal-dialog   modal-dialog-centered">
+            <div class="modal-content rounded-0 bg-transparent">
+                
+                <div class="modal-body"> 
+                    
 
-
-<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true" data-backdrop="true" data-keyboard="true">
-    <div class="modal-dialog modal-sm" role="document">
-      <div class="modal-content bg-transparent">
-        
-        <div class="col-12 mt-2">
-        <form id="header-form1" method="get" action="{{ route('products') }}">
+                <form id="header-form1" method="get" action="{{ route('products') }}">
                     @csrf
-            <div class="input-group  input-group-sm d-lg-none d-md-none">
+            <div class="input-group  input-group-sm  ">
                    
                     <input type="text" name="searchkey" id="searchkey" class="form-control rounded-start-pill" placeholder="Search.." value="{{ request()->get('searchkey') }}">
                     <button class="btn bg-white border border-start-0 rounded-end-circle" type="submit" id="button-addon2"><i class="fa fa-search"></i></button>
                     
             </div>
             </form>
-        </div>
-       
-      </div>
-    </div>
-  </div>
 
+                   
+                </div>
+
+            </div>
+        </div>
+    </div>
+ 
 <div class="modal fade  " id="applycoupan" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"                     aria-labelledby="staticBackdropLabel" aria-modal="true" role="dialog" >
         <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
             <div class="modal-content rounded-0">

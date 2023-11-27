@@ -1,14 +1,13 @@
  <!-- Footer -->
 
 
- <footer class="text-center text-lg-start bg-white text-muted">
+ <footer class="text-start bg-white text-muted">
 
 
 
 <!-- Section: Social media -->
 <section class=" p-4 border-bottom " style=" background:#FDF4F4;">
-    <div class="container  " data-aos="zoom-in"
-     data-aos-duration="2000">
+    <div class="container  ">
         <h4 class="text-black fw-bold mb-1 pb-1 text-center">Sign up and save</h4>
         <p class="text-black py-0 my-0 text-center">Sign up for email updates on products offers and discounts</p>
        <div class="d-flex justify-content-center mt-4">
@@ -34,27 +33,26 @@
                     Got Questions? Call Us 24/7
                 </h6>
                 <p class="text-black fw-bold">
-                    <img src="{{ asset('img/Call Icon.svg') }}" width="18px" class="me-2" alt="call icon">+44 0000 000000
+                    <img src="{{ asset('img/Call Icon.svg') }}" width="18px" class="me-2" alt="call icon">+44 7480603398
                 </p>
                 <h6 class="text-uppercase fw-bold my-4 text-black">
                     Contact Info
                 </h6>
-                <p class="text-black ">
-                    <img src="{{ asset('img/Address Icon.svg') }}" width="18px" class="me-2"alt="address">Lorem Ipsum is simply 
-                    <br>dummy text of the prin.
+                <p class="text-black  fw-medium">
+                    <img src="{{ asset('img/Address Icon.svg') }}" width="18px" class="me-2"alt="address">Theodor Court, 1 Nobel Close, Colindale, NW9 5TF, United Kingdom
                 </p>
                 <ul class="ul3 ps-0">
-                    <li class="social-icon me-2"><img src="{{ asset('img/Facebook.png') }}" alt="social icon"></li>
-                    <li class="social-icon me-2"><img src="{{ asset('img/Insta.png') }}" alt="social icon"></li>
-                    <li class="social-icon me-2"><img src="{{ asset('img/Pinterest.png') }}" alt="social icon"></li>
-                    <li class="social-icon me-2"><img src="{{ asset('img/Twitter.png') }}" alt="social icon"></li>
-                    <li class="social-icon me-2"><img src="{{ asset('img/Youtube.png') }}" alt="social icon"></li>
+                    <li class="social-icon me-2"><a href="javascript:void(0);"><img src="{{ asset('img/Facebook.png') }}" alt="social icon"></a></li>
+                    <li class="social-icon me-2"><a href="javascript:void(0);"><img src="{{ asset('img/Insta.png') }}" alt="social icon"></a></li>
+                    <li class="social-icon me-2"><a href="javascript:void(0);"><img src="{{ asset('img/Pinterest.png') }}" alt="social icon"></a></li>
+                    <li class="social-icon me-2"><a href="javascript:void(0);"><img src="{{ asset('img/Twitter.png') }}" alt="social icon"></a></li>
+                    <li class="social-icon me-2"><a href="javascript:void(0);"><img src="{{ asset('img/Youtube.png') }}" alt="social icon"></a></li>
                 </ul>
             </div>
             <!-- Grid column -->
 
             <!-- Grid column -->
-            <div class="col-md-2 col-lg-2 col-xl-2 col-4 mx-auto mb-4">
+            <div class="col-md-2 col-lg-2 col-xl-2  mx-auto mb-4">
                 <!-- Links -->
                 <h6 class="text-black fw-bold mb-4">
                     Information
@@ -78,7 +76,7 @@
             <!-- Grid column -->
 
             <!-- Grid column -->
-            <div class="col-md-3 col-lg-2 col-xl-2 col-4 mx-auto mb-4">
+            <div class="col-md-3 col-lg-2 col-xl-2  mx-auto mb-4">
                 <!-- Links -->
                 <h6 class="text-black fw-bold mb-4">
                     Accounts
@@ -103,7 +101,7 @@
             <!-- Grid column -->
 
             <!-- Grid column -->
-            <div class="col-md-4 col-lg-3 col-xl-3 col-4 mx-auto mb-md-0 mb-4">
+            <div class="col-md-4 col-lg-3 col-xl-3  mx-auto mb-md-0 mb-4">
                 <!-- Links -->
                 <h6 class="text-black fw-bold mb-4">
                     Useful Links
@@ -135,11 +133,11 @@
             <div class="col-md-4">
                 <div class="row">
                     <div class="col-2">
-                        <img src="{{ asset('img/reliable.png') }}" alt="reliable" width="80px">
+                        <img src="{{ asset('img/Reliable.png') }}" alt="reliable" width="80px">
                     </div>
                     <div class="col-10 ps-3">
                         <h6 class="text-black text-start ps-2 ps-lg-0">Reliable</h6>
-                        <p class="text-secondary small text-start ps-2 ps-lg-0"> All products displayed on Herbhue are procured from
+                        <p class="text-secondary small text-start ps-2 ps-lg-0 fw-medium"> All products displayed on Herbhue are procured from
                             verified and licensed pharmacies. All labs listed on the platform are accredited</p>
 
                     </div>
@@ -148,11 +146,11 @@
             <div class="col-md-4">
                 <div class="row">
                     <div class="col-2">
-                        <img src="{{ asset('img/secure.png') }}" alt="Secure"   width="60px">
+                        <img src="{{ asset('img/Secure.png') }}" alt="Secure"   width="60px">
                     </div>
                     <div class="col-10 ps-3">
                         <h6 class="text-black text-start ps-2 ps-lg-0">Secure</h6>
-                        <p class="text-secondary small text-start ps-2 ps-lg-0"> Herbhue uses Secure Sockets Layer (SSL) 128-bit encryption and is Payment Card Industry Data Security Standard (PCI DSS) compliant</p>
+                        <p class="text-secondary small text-start ps-2 ps-lg-0 fw-medium"> Herbhue uses Secure Sockets Layer (SSL) 128-bit encryption and is Payment Card Industry Data Security Standard (PCI DSS) compliant</p>
 
                     </div>
                 </div>
@@ -161,11 +159,11 @@
             <div class="col-md-4">
                 <div class="row">
                     <div class="col-2">
-                        <img src="{{ asset('img/affordable.png') }}" alt="Affordable"   width="80px">
+                        <img src="{{ asset('img/Affordable.png') }}" alt="Affordable"   width="80px">
                     </div>
                     <div class="col-10 ps-3">
                         <h6 class="text-black text-start ps-2 ps-lg-0">Affordable</h6>
-                        <p class="text-secondary small text-start ps-2 ps-lg-0">Find affordable medicine substitutes, save up to 50% on health products, up to 80% off on lab tests and free doctor consultations.</p>
+                        <p class="text-secondary small text-start ps-2 ps-lg-0 fw-medium">Find affordable medicine substitutes, save up to 50% on health products, up to 80% off on lab tests and free doctor consultations.</p>
 
                     </div>
                 </div>
@@ -180,7 +178,7 @@
     <div class="container px-4 pt-1">
         <div class="row">
             <div class="col-md-7 pt-2">
-                <p class="fs-6 text-black">&copy; Herbhue | All Rights Reserved | Powered By SEO DIGITAL INDIA MARKETING</p>
+                <p class="fs-6 text-black fw-medium">&copy; Herbhue | All Rights Reserved | Powered By SEO DIGITAL INDIA MARKETING</p>
             </div>
             <div class="col-md-5 text-end">
                 <img src="{{ asset('img/Payment Method.png') }}" width="320px" alt="">
