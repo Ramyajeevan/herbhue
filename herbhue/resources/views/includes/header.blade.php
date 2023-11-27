@@ -9,7 +9,7 @@
                     <a class="nav-link text-nowrap" href="javascript:void(0);">24/7 Free Support</a>
                 </li>
                 <li class="me-3">
-                    <a class="nav-link text-nowrap" href="javascript:void(0);">Offers </a>
+                    <a class="nav-link text-nowrap" data-bs-toggle="modal" data-bs-target="#applycoupan" href="javascript:void(0);">Offers </a>
                 </li>
                  <li class="me-3">
                     <a class="nav-link text-nowrap" href="{{ route('contact') }}">Need Help ?</a>
@@ -226,7 +226,7 @@
     <div class="container">
         <div class="d-flex  align-items-center  ">
         <div
-                class="side-menu-close d-flex d-lg-none flex-wrap flex-column align-items-center justify-content-end ml-auto">
+                class="side-menu-close d-flex  flex-wrap flex-column align-items-center justify-content-end ml-auto">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -298,3 +298,44 @@
 
 
  
+
+
+
+<div class="modal fade  " id="applycoupan" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-modal="true" role="dialog" style="display: block;">
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+            <div class="modal-content rounded-0">
+                <div class="modal-header py-2">
+                    <h1 class="modal-title fs-6 py-0 my-0" id="staticBackdropLabel">COUPONS</h1>
+                    <button type="button" class="btn border-0 text-orange" data-bs-dismiss="modal" aria-label="Close">Close</button>
+                </div>
+                <div class="modal-body"> 
+                    <h6 class="mt-4 mb-1">BEST OFFERS FOR YOU</h6>
+
+                    <ul class="list-group list-group-flush rounded-0 border-0">
+
+                        <li class="list-group-item mb-3  ps-0  ">
+                            <div class="card">
+                                <div class="card-body">
+                                    <small class="text-muted d-block fs-6 text-success"> <img src="https://alhijrahabayas.com/img/apply_coupan.svg" alt="" class="me-1" width="14px"> Save ₹4463 using this coupon.</small>
+                                    <span class="badge bg-white text-muted border-dotted px-3 py-2 my-2">UKNOV23</span>
+                                    <p class="py-0 my-0 text-muted small">Get Discount Upto INR 8000 , Min Purchase Value 20K</p>
+                                </div>
+                                
+                            </div>
+
+
+                        </li>
+
+
+
+
+                    </ul>
+
+
+
+                   
+                </div>
+
+            </div>
+        </div>
+    </div>
