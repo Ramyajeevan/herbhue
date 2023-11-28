@@ -1,39 +1,58 @@
 @extends('layouts.app')
+@section('css')
+    <!-- This page plugin CSS -->
+    <link rel="stylesheet" href="{{ asset('dist/libs/datatables.net-bs5/css/dataTables.bootstrap5.min.css') }}">
+@endsection
 @section('content')
-<!--breadcrumb-->
-<div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
-	<div class="breadcrumb-title pe-3">Home</div>
-	<div class="ps-3">
-		<nav aria-label="breadcrumb">
-			<ol class="breadcrumb mb-0 p-0">
-				<li class="breadcrumb-item"><a href="#"><i class="bx bx-home-alt"></i></a>
-				</li>
-				<li class="breadcrumb-item active" aria-current="page">Customers List</li>
-			</ol>
-		</nav>
-	</div>
-</div>
-<!--end breadcrumb-->
-<h6 class="mb-0 text-uppercase">Customers List</h6>
-<hr/>
 @if(Session::has('success'))
-    <div class="alert alert-success border-0 bg-success alert-dismissible fade show py-2">
-		<div class="d-flex align-items-center">
-			<div class="font-35 text-white"><i class="bx bxs-check-circle"></i>
-			</div>
-			<div class="ms-3">
-				<h6 class="mb-0 text-white">Success</h6>
-				<div class="text-white">{{Session::get('success')}}</div>
-			</div>
-		</div>
-		<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-	 </div>
-   @endif
-<div class="card">
-  <div class="card-body">
-    <div class="table-responsive">
-      <table id="example2" class="table table-striped table-bordered">
-        <thead>
+<div class="alert customize-alert alert-dismissible text-success  alert-success fade show remove-close-icon" role="alert">
+    <span class="side-line bg-success"></span>
+    <div class="d-flex align-items-center font-weight-medium">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-info text-success feather-sm me-2 flex-shrink-0">
+            <circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="8"></line>
+        </svg>
+        <span class="text-truncate"> {{Session::get('success')}}</span>
+        <div class="ms-auto d-flex justify-content-end">
+        <a href="javascript:void(0)" class="px-2 btn" data-bs-dismiss="alert" aria-label="Close">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trash-2 fill-white text-success feather-sm">
+                <polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line>
+            </svg>
+        </a>
+        </div>
+    </div>
+</div>
+@endif
+@if(Session::has('errors'))
+<div class="alert customize-alert alert-dismissible text-danger  alert-danger fade show remove-close-icon" role="alert">
+    <span class="side-line bg-danger"></span>
+    <div class="d-flex align-items-center font-weight-medium">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-info text-danger feather-sm me-2 flex-shrink-0"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="8"></line></svg>
+        <span class="text-truncate">{{Session::get('errors')}}</span>
+        <div class="ms-auto d-flex justify-content-end">
+        <a href="javascript:void(0)" class="px-2 btn" data-bs-dismiss="alert" aria-label="Close">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trash-2 fill-white text-danger feather-sm"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg>
+        </a>
+        </div>
+    </div>
+</div>
+@endif
+<!-- -------------------------------------------------------------- -->
+<!-- Start Page Content -->
+<!-- -------------------------------------------------------------- -->
+<!-- File export -->
+<div class="row">
+  <div class="col-12">
+    <!-- ---------------------
+                  start File export
+              ---------------- -->
+    <div class="card">
+      <div class="border-bottom title-part-padding">
+        <h4 class="card-title mb-0">Customers List</h4>
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table id="file_export" class="table table-striped table-bordered display text-nowrap">
+            <thead>
           <tr>
             <th>Id</th>
             <th>Name</th>
@@ -99,12 +118,21 @@
           <tr>
               <td colspan='9' align="center">No Customer Found</td>
           </tr>
-          @endif
-        </tbody>
-      </table>
-    </div>
-  </div>
+          </tbody>
+
+</table>
 </div>
+</div>
+</div>
+<!-- ---------------------
+        end File export
+    ---------------- -->
+</div>
+</div>
+
+@endsection
+@if(count($customers)>0)
+@section('script')
 <script>
   function deletecustomer(id)
   {
@@ -126,3 +154,4 @@
   }  
 </script>
 @endsection
+@endif
