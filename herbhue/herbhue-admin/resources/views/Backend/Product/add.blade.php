@@ -312,54 +312,5 @@
     $(this).val(val); 
 });
 </script>
-<script src="https://cdn.gaic.com/cdn/ui-bootstrap/0.58.0/js/lib/ckeditor/ckeditor.js"></script>
-<script>
-$(() => {
-  CKEDITOR.config.toolbar = [
-    { name: 'clipboard', groups: [ 'clipboard', 'undo' ], items: [ 'Undo', 'Redo' ] },
-    { name: 'links', items: [ 'Link', 'Unlink'] },
-    { name: 'insert', items: [ 'Image', 'Table' ] },
-    { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ], items: [ 'Bold', 'Italic', 'Underline'] },
-    { name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ], items: [ 'NumberedList', 'BulletedList', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'] },
-    { name: 'styles', items: [ 'FontSize' ] },
-    { name: 'colors', items: [ 'TextColor' ] },
-    { name: 'others', items: [ '-' ] },
-    { name: 'document', items : [ 'Source'] },
-  ];  
-  CKEDITOR.on( 'dialogDefinition', function( ev ) {
-    // Take the dialog name and its definition from the event data.
-    var dialogName = ev.data.name;
-    var dialogDefinition = ev.data.definition;
-    if ( dialogName == 'link' ) {
-        // Get a reference to the "Link Info" tab.
-        var targetTab = dialogDefinition.getContents( 'target' );
-        // Set the default value for the URL field.
-//         var urlField = infoTab.get( 'url' );
-//         urlField[ 'default' ] = 'www.example.com';
-      
-//         var linkTpyeField = infoTab.get('linkType');
-//         linkTpyeField['items'] = [["URL", 'url']];
-      // 重写target 效果
-        var targetField = targetTab.elements[0].children[0];
-        
-        targetField['items'] = [["New Window (_blank)", "_blank"]];
-        targetField['default'] = '_blank';
-      // 隐藏advance
-      var advancedtab = dialogDefinition.getContents( "advanced" );
-      advancedtab['hidden'] = true;
-      //
-      //
-      //
-     
-    } else  if(dialogName === 'image'){
-      var imageInfo = dialogDefinition.getContents('info');
-      console.log('ccc', imageInfo)
-    }
-});
-  CKEDITOR.replace('description');
 
-});
-
-
-    </script>
 @endsection
