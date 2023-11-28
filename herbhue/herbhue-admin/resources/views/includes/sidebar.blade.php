@@ -20,7 +20,7 @@
           <span class="hide-menu">Personal</span>
         </li>
         <li class="sidebar-item">
-          <a class="sidebar-link waves-effect waves-dark  @if($url[6]=='home') active @endif" href="{{ route('home') }}">
+          <a class="sidebar-link waves-effect waves-dark  @if($url[6]=='home' || $url[6]=='dashboard') active @endif" href="{{ route('home') }}">
             <i data-feather="home" class="feather-icon"></i><span class="hide-menu">Dashboard </span>
           </a>
         </li>
